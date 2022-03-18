@@ -566,7 +566,7 @@ isso faz com que os bancos de dado sql sejam os melhores para serem simulados,um
 docker é um sistema de virtualização de maquinas que busca ser mais simples de ser gerenciado e entregar mais desempenho do hardware real da maquina que está sendo usada.
 o docker busca executar as chamadas de seus ambientes virtualizados ,chamados de containers,ao nivel do sistema operacional,logo a cima do kernel do sistma,
 isso faz com que seja possivel dedicar parte dos hardwares da maquina real para um container,sendo possivel dentre outras coisas dividir de forma fixa porções do hardware ,
-como definir limite de ram usado ou quantidade de nucleos de cpu usados,isso foi aplicado nos testes realizados,para padronizar as expecificações tecnicas dos container usados nos testes,como descrito em \myref{sec}{ontainers docker},
+como definir limite de ram usado ou quantidade de nucleos de cpu usados,isso foi aplicado nos testes realizados,para padronizar as expecificações tecnicas dos container usados nos testes,como descrito em \myref{sec}{containers docker},
 outra das funcionalidades do docker é a implementação de volumes,que é a fora de isolar as pastas do container e manter elas mesmo caso o container seja reinstalado para realizar atualização,
 essas atualizações são feitas por meio do metodo de instalação dos containers docker,as imagens,as imagens são feitas sequindo o modelo de snapshot,
 onde cada imagem não tem nenhum programa ou biblioteca atualizada a menos que seja deliberadamente feito pelo proprio programa ou pelo administrador do container durante sua execução,
@@ -808,16 +808,26 @@ foi necessário utilizar um hd ao invés de um ssd e como dito em \myref{sec}{ge
 \subsec{teste de tempo de operação de inserção no bd}
 este teste foi proposto para ser um teste de dois tipos,primiro um teste de operações sem falha,segundo um teste de operações de inserção para bancos de dado mais utilizados para esse propósito,
 dessa forma fica mais facil de determinar o cenário onde o banco de dados lida melhor com grande quantidade de inserções como em ambientes de registro de atividades,registros de logs ou de cadastros variados.
-para esse propósito foi utilizada uma variação do benchmark de criação de bd,foi usada uma inserção fracionada dos dados,o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000
+para esse propósito foi utilizada uma variação do benchmark de criação de bd,foi usada uma inserção fracionada dos dados,o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000,
+todos esses dados gerados foram gerados utilizando apenas a operação de inserção,sendo assim apenas esse tipo de dado foi utilizado durante tudo realizado nesse teste,isso por dois motivos principais:
+\begin{itemize}
+\item os dados de inserção foram projetados para não dar erro e sempre retornarem o resultado de operação inserida com sucesso,isso quer dizer que,caso nada tenha dado errado,apenas operações sem erro foram realizaas
+\item muitos bancos de dados são usados primariamente para inserção de dados,como bancos de dados de log e de analize de dados,como o próprio \myref{sec}{elasticsearch monitoring stack} utilizado durante os testes,onde operações de busca,listagem e filtragem não são a maioria,sendo assim é um comparativo para esse propósito de teste
+\end{itemize}
+
 
 
 \subsec{teste de tempo de operações variadas no bd}
 após a confirmação da funcionalidade de forma satisfatória da geração do sqlite foi iniciado o processo de interação com o banco de dados,
 esse processo foi dividido em algumas etapas,primeiramente para verificar se a operação funcionava corretamente,essa etapa foi feita seguindo os testes de funcionalidade ja descritos,
 onde uma pequena quantidade de operações era gerada,usando a geração de sqlite,em ambos os bancos de dados ao mesmo tempo,após essa etapa de confirmação de funcionalidade não foi feito um teste de desempenho,
-pois foi deixado para a etapa de testes paralelos,a qual se mostrou mais importante,visto que após a confirmação de funcionalidade mais testes para essa etapa não eram necessárias.
-apenas testes de realização de operações sem retorno,reset do banco de dados,leitura de arquivos,criação de usuarios e comunicação geral com o banco de dados foram feitos,
-todos esses testes tiveram resultados satisfatórios tornando possiveis as funcionalidades utilizadas da biblioteca \myref{subsec}{gerenciadosDeBD}
+pois foi deixado para a etapa de testes paralelos,a qual se mostrou mais importante,visto que após a confirmação de funcionalidade mais testes para essa etapa não eram necessárias.\newline
+apenas testes de realização de operações sem retorno,leitura de arquivos,criação de usuarios e comunicação geral com o banco de dados foram feitos,
+todos esses testes tiveram resultados satisfatórios tornando possiveis as funcionalidades utilizadas da biblioteca \myref{subsec}{gerenciadosDeBD},
+os dados gerados foram gerados seguindo o seguinte processo:\newline
+foram gerados 50.000 operações de inserção,e posteriormente foram pedidos 5.000.000 operações randômicas,
+o que resultou em 50.000 operações de inserção seguidos de 4.950.000 operações randômicas gerados.\newline
+o principal propósito desse teste foi de que muitos bancos de dados principalmente de sites de comércio eletrônico e sistemas de gerencia de estoque utilizam muitos tipos variados de operações,como as que foram utilizadas nesse teste,isso faz com que os resultados sejam facilmente aplicaveis para essas situações de mundo real mais cotidianas.
 
 %\subsection{teste de tempo de operações paralelas}
 %\label{subsec:teste de tempo de operações paralelas}
@@ -988,7 +998,7 @@ essa é a classe referida na seção \myref{sec}{geração de dados},todas as in
 %\section{software de benchmark}
 %\label{sec:software de benchmark}
 \sec{software de benchmark}
-o benchmark foi feito utilizando um software feito também desenvolvido por mim para esse propósito,
+o benchmark foi feito utilizando um software desenvolvido para o propósito deste teste,
 o software de benchmark está mais para um software para gerar estresse na maquina na qual está rodando o banco de dados por meio de varias execuções de comandos direto no banco de dados.
 o software de benchmark funciona carregando e construindo os dados a partir das inserções no arquivo sqlite,os testes de estresse foram tentados de algumas formas:\newline
 primeiramente o algoritimo inicia o container que contém o banco de dados que está sendo analizado,
@@ -1023,7 +1033,7 @@ esse container modificado possui um metodo de monitorar de dentro para fora tudo
 os dados foram todos gerados para um sqlite projetado para ser simples de aceitar qualquer formato de dados que pudesse ser gerado para qualquer tabela
 Essas etapas funcionam da seguinte forma:\newline
 No início, os dados foram gerados em sqlite pelo fato que, caso haja algum problema e o computador, que estava gerando os dados, seja abruptamente desligado,
-não se perdem as informações que já foram criadas e salvas no banco de dados. Desta forma, economiza tempo uma vez que esta etapa é a mais demorada da geração de dados.\newline
+não se perdem as informações que já foram criadas e salvas no banco de dados. Desta forma, economiza tempo uma vez que esta etapa é a mais demorada da geração de dados,para mis informações sobre o sqlite consulte o \myref{subsec}{sqlite}.\newline
 o codigo consegue gerar os dados de 3 formas,apenas a ultima é realmente utilizada.
 As outras duas foram feitas para propósito de testes
 
@@ -1037,21 +1047,28 @@ Todos esses tipos de geração são feitos pela mesma função que são alterado
 Assim a função prioriza os parâmetros referentes aos três tipos de geração.\newline
 Além dos parâmetros relacionados aos tipos de geração informados, existem os parâmetros relacionados a \myref{sec}{biblioteca faker} e uma lista que define quais tipos de operação,
 descritos em \myref{subsec}{tipos de dados gerados}, que define, caso não esteja vazia,
-quais os tipos de dados que serão gerados. Isso foi útil pois utilizou-se o tipo de criação de dados de inserção na primeira etapa, antes de gerar os dados dos outros tipos.\newline
+quais os tipos de dados que serão gerados.
+Isso foi útil pois utilizou-se o tipo de criação de dados de inserção na primeira etapa de testes,como descrito em \myref{subsec}{teste de tempo de operação de inserção no bd}, antes de gerar os dados dos outros tipos.\newline
 Devido a limitações intencionais, o valor total de operações inseridos em cada operação deve considerar a quantidade da operação anterior.
 Isso se faz necessário pois o algorítimo verifica apenas a quantidade total de elementos cadastrados no sqlite,
-ou seja, no caso dos testes feitos,foram gerados 50.000 operações de inserção,e posteriormente foram pedidos 5.000.000 operações randômicas,
-o que resultou em 50.000 operações de inserção seguidos de 4.950.000 operações randômicas gerados.
+ou seja, caso sejam requisitadas 3 tipos de geração diferentes teriam que ser passadas da seguinte forma:
+\begin{itemize}
+\item uma geração da quantidade X de dados,resultando em X dados gerados
+\item uma geração de Y dados,sendo que Y é igual a X+A,resultando em Y dados gerados
+\item uma geração de Z dados,sendo que Z é igual a X+A+B,resultando em Z dados gerados
+\end{itemize}
+sendo assim,os dados gerados teriam que ser algo como X=5,Y=10 e Z=15,onde cada etapa apenas teriam 5 dados adicionados ao sqlite
+
 a geração de dados inicialmente foi pensada para rodar em um servidor de forma sequencial,
 isso simplesmente por que não teria processamento paralelo inicialmente no software,
 entretanto quando isso se tornou necessário também foi possivel utilizar o codigo previamente existente da geração de dados para a geração de forma paralela,
 isso se mostrou uma grande vantagem para a etapa de desenvolvimento onde varios bancos de dados de testes foram gerados para que fosse garantido que todas as partes desenvolvidas do software estivessem funcionando corretamente,
-devido a forma como isso foi pensado,o grande limitador da velocidade de geração de dados é o fator randomico,
-devido a toda a recurção que ocorre em consequencia aos tratamentos de erros,
-alem disso o outro maior limitador é a velocidade de disco,
+devido a forma como isso foi pensado,o grande limitador da velocidade de geração de dados é o fator randômico,
+devido a toda a recurção que ocorre em consequência aos tratamentos de erros,
+além disso o outro maior limitador é a velocidade de disco,
 visto que a aplicação do sqlite3 aceita apenas uma inserção por vez no banco de dados de forma paralela,
-isso faz com que quanto mais rapido fosse possivel a escrita em disco mais rapidamente esse fator limitador era deixado de lado,
-devido ao fato de durante os testes praticamente todos ter sido usado ssd para o salvamento desses dados isso não impactou em quase nada na velocidade de geração dos dados
+isso faz com que quanto mais rápido fosse possível a escrita em disco mais rapidamente esse fator limitador era deixado de lado,
+devido ao fato de durante os testes da etapa de desenvolvimento todos terem sido usando um ssd para o salvamento desses dados isso não impactou em quase nada na velocidade de geração dos dados,mas na etapa de execução de testes isso se mostrou um problema,já que no dispositivo usado para executar o algoritmo dos testes o hd mecanico fez com que uma imensa diminuição da velocidade de leitura e escrita,sendo assim mesmo na operação de leitura,onde podem ser feitas varias leituras concorrentemente isso impactasse na performance e gerassem alguns erros como descrito em \myref{subsec}{erro de leitura pela falta de velocidade de disco}
 
 %\subsection{tipos de dados gerados}
 %\label{subsec:tipos de dados gerados}
@@ -1162,36 +1179,44 @@ esse bd constitui-se de todas as operações feitas durante o teste de estresse.
 %\chapter{problemas e erros}
 %\label{ch:problemas e erros}
 \ch{problemas e erros}
-durante o desenvolvimento varios tipos de erros aconteceram,em praticamente todas as etapas de desenvolvimento do algoritimo erros marcantes ocorreram,
+aqui foram descritos os erros mais marcantes durante os processos necessários para a obtenção dos resultados deste texto
+\sec{desenvolvimento do algoritimo}
+durante o desenvolvimento vários tipos de erros aconteceram,em praticamente todas as etapas de desenvolvimento do algoritimo erros marcantes ocorreram,
 os principais ocorreram durante a etapa de criação do sqlite,no processamento paralelo e na inserção dentro do banco de dados finais\newline
-durante a geração do sqlite varios problemas relacionados a geração ocorreram,
-um deles fez com que a funcionalidade de seleção de multiplos paises na geração de dados tivesse q ser travada apenas para o brasil,
-isso principalmente por que dos varios dados gerados,alguns cusam problemas ao ser trocado o pais,
-pois como foi dito em \myref{sec}{biblioteca faker} existem varios parametros diferentes dependendo do pais selecionado,o mais marcante desses dados no entanto é a geração de numeros de celular,
-visto que o brasil é um dos poucos paises que possuem essa opção dentre os existentes na biblioteca,apesar de não ser o unico problema encontrado,
-existem também problemas com os parametros de geração de endereço e alguns poucos dados de informações pessoais\newline
+os dados relevantes das maquinas usadas para o desenvolvimento foram um ryzen 3200g com 16gb de ram e ssd de 480gb e um i7 7500u com 8gb de ram e ssd de 240gb.
+\subsec{erros da geração do sqlite}
+durante a geração do sqlite vários problemas relacionados a geração ocorreram,
+um deles fez com que a funcionalidade de seleção de múltiplos paises na geração de dados tivesse q ser travada apenas para o brasil,
+isso principalmente por que dos vários dados gerados,alguns causam problemas ao ser trocado o pais,
+pois como foi dito em \myref{sec}{biblioteca faker} existem vários parâmetros diferentes dependendo do pais selecionado,o mais marcante desses dados no entanto é a geração de numeros de celular,
+visto que o brasil é um dos poucos paises que possuem essa opção dentre os existentes na biblioteca,apesar de não ser o único problema encontrado,
+existem também problemas com os parâmetros de geração de endereço e alguns poucos dados de informações pessoais.\newline
+
+\subsec{erro do processamento paralelo de threads}
 já durante a etapa de processamento paralelo,seus problemas de desenvolvimento e erros se misturam com a etapa de inserção de dados no banco de dados final,
 pois ambos foram desenvolvidos simultaneamente,apesar de o processamento paralelo tenha sido iniciado primeiro.\newline
-o processamento paralelo teve varios tipos de problemas,o primeiro problema marcante foi a implementação original dele,
-originalmente foi pensado em utilizar a implementação de threads ao invés de subprocessos,isso porque as threads são mais faceis de serem lidadas caso ocorra um erro,
+o processamento paralelo teve vários tipos de problemas,o primeiro problema marcante foi a implementação original dele,
+originalmente foi pensado em utilizar a implementação de threads ao invés de subprocessos,isso porque as threads são mais fáceis de serem lidadas caso ocorra um erro,
 isso por que os dados são comunicados diretamente pela classe queue,que é utilizada para se compartilhar dados em tempo real entre varias instancias de processamento durante a execução de um programa python.
-as palavras chave aqui são compartilhamento entre varias instancias,isso quer dizer que ela não faz distinção se as threads foram ou não iniciadas pela mesma classe,des de que existam threads elas compartilham as mesmas informações e espaço de memória\newline
-isso foi identificado devido a arvore de processos necessária para que os testes fossem feitos de forma simultanea,já que ao se iniciar uma thread de um processo,
-essa thread não pode iniciar uma outra thread hierárquicamente inferior a ela,isso resulta num problema da implementação da linguagem C sobre a qual a classe de processamento paralelo queue foi construida.
-esse erro de acordo com as documentações encontradas é devido ao compartilhamento de endereços de memória na linguagem c chamada "double free or corruption (out)" esse erro ocorre quando se remove ou adiciona alguma variavel ou indice de vetor de um processamento paralelo,
+As palavras chave aqui são compartilhamento entre varias instancias,isso quer dizer que ela não faz distinção se as threads foram ou não iniciadas pela mesma classe,des de que existam threads elas compartilham as mesmas informações e espaço de memória\newline
+isso foi identificado devido a arvore de processos necessária para que os testes fossem feitos de forma simultânea,já que ao se iniciar uma thread de um processo,
+essa thread não pode iniciar uma outra thread hierárquicamente inferior a ela,isso resulta num problema da implementação da linguagem C sobre a qual a classe de processamento paralelo queue foi construida.\newline
+Esse erro de acordo com as documentações encontradas é devido ao compartilhamento de endereços de memória na linguagem c chamada "double free or corruption (out)" esse erro ocorre quando se remove ou adiciona alguma variavel ou indice de vetor de um processamento paralelo,
 devido a forma como a biblioteca de processamento paralelo lida com valores das operações para evitar execução dupla de algum valor isso é necessário,
-entretanto quando se utilisa a biblioteca Manager ao invés da queue isso não ocorre,entretanto essa biblioteca está associada ao processamento paralelo de subprocessos,
+entretanto quando se utiliza a biblioteca Manager ao invés da queue isso não ocorre,entretanto essa biblioteca está associada ao processamento paralelo de subprocessos,
 por isso a migração de threads para subprocessos foi necessária\newline
+\subsec{erro do processamento paralelo de subprocessos daemon}
 um dos problemas encontrados foi uma mensagem de erro chamada de "AssertionError: daemonic processes are not allowed to have children" esse erro impede que processos daemon tenham processos filhos,
-isso fez com que o processo de subprocessamento tivesse q ser convertido de daemon para um processo convencional,isso pode ser problematico quando se quer fazer uma alimentação constante de dados,
-como era a idéia inicial,onde iriam ser criados 4 daemons 2 para cada servidor,um para cada tipo de banco de dados,e em seguida seriam inseridos os comandos de sql que seriam executados,
-isso faria com que fosse possivel um outro processo ler o sqlite e informar para cada um deles as operações que deveriam ser feitas,
-alternando entre primeiramente inserir os equivalentes ao mariadb e posteriormente os equivalentes ao postgres,mas devido a esse problema com dos daemons foi escolhida outra abordagem,
-onde 2 subprocessos convencionais eram criados por vez,esses por sua vez sendo correspondentes aos 2 servidores usando o mesmo tipo de banco de dados,
-e então as suas threads filhas iriam diretamente acessar o sqlite e executar as operações.\newline
+isso fez com que o processo de subprocessamento tivesse q ser convertido de daemon para um processo convencional,isso pode ser problemático quando se quer fazer um monitoramento do tempo de forma mais direta , isso pois no modo daemon é possivel rodar um codigo enquanto aguarda a execução dos processos daemon serem terminadas,esse foi o metodo escolhido no final do desenvolvimento,devido a modificação na forma como o processo que possui daemon foi implementado,sendo que apenas as threads filhas eram daemons,as threads principais,que são as onde o tempo é monitorado,foi utilizado o metodo de se esperar a execução de todos subprocessos terminarem e medir o tempo gasto pelo conjunto,onde essa thread retornava o tempo para a função que a chamou,o processo foi um pouco mais complexo de se implementar que o previamente proposto,mas terminou com o mesmo resultado.\newline
+\subsec{rollback de dados no postgres}
 outro erro marcante foi o de tratamento de rollback nas operações do postgres,devido a forma como as operações dos bancos de dados foram geradas,
-nenhuma das operações ,além é claro da inserção, é realmente válida ,o que quer dizer que de acordo com os metodos de segurança e otimização do postgres é necessário executar um rollback após a sua execução para evitar problemas,
-isso resulta entre outras coisas numa maior demora da execução do postgres quando dados considerados inválidos são executados e também numa maior necessidade de tratamento de erros na parte relacionada ao postgres da biblioteca \myref{subsec}{gerenciadosDeBD}
+nenhuma das operações ,além é claro da inserção, é realmente válida ,o que quer dizer que de acordo com os métodos de segurança e otimização do postgres é necessário executar um rollback após a sua execução para evitar problemas,
+isso resulta entre outras coisas numa maior demora da execução do postgres quando dados considerados inválidos são executados e também numa maior necessidade de tratamento de erros na parte relacionada ao postgres da biblioteca \myref{subsec}{gerenciadosDeBD},devido ao rollback necessário,durante a etapa de desenvolvimento foi necessário se reformular os tratamentos de erro de varias formas para que apenas os erros que realemnte necessitavam de rollback tivessem a operação executada,já que devido a hierarquia do tratamento de erro da biblioteca psycopg2,alguns erros que ocorriam eram entendidos como necessários de serem executados os rollback em vez do tratamento correto,principalmente o erro de timeout da conexão ou de conexão fechada.
+\sec{erros dos testes finais}
+durante a etapa de testes finais,ou seja,pós a etapa de testes de desenvolvimento,foi utilizado um servidor baseado no fx-6300,utilizando 4gb de ram e um hd mecanico de 160gb
+\subsec{erro de leitura pela falta de velocidade de disco}
+o hd mecanico da maquina dos testes finais possui velocidades limitadas pela sua tecnologia ,SATA2,isso impactou de forma consideravel a execução dos testes,isso pois mesmo com a possibilidade de serem feitos diversas leituras simultaneas no sqlite,mesmo sendo possivel varias leituras simultaneas ao mesmo tempo nesse metodo de armazenamento de dados,isso pois a latencia entre a requisição da consulta e todo o processo logico e fisico da leitura causasse um time out ocasional na biblioteca sqlite.
+uma solução para isso foi a substituição da midia de armazenamento do arquivo sqlite,foi utilizado um pendrive kingston 3.0 de 16gb,com velocidades de leitura superiores,de quase o dobro da velocidade, e latencia muito inferior que a tecnologia SATA2,após essa substituição não foi mais visto nenhum erro de timeout durante os testes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      Capítulo 5                      %
