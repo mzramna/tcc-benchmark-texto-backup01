@@ -799,22 +799,20 @@ Sendo assim, se existe um valor de perda entre as arquiteturas para esse teste �
 sendo que o pc amd64 mais potente apresentou testes cerca de 2 vezes mais rápidos e seu clock é aproximadamente o dobro do arm64.
 Esses valores foram dados em relação ao tempo gasto por elemento em cada iteração.
 com base nos resultados desses testes des e que o computador tenha varios núcleos o algoritimo será tão eficiente quanto,
-isso se deve ao fato que levando em conta o um pc com amd64 com 4 nucleos e 4 threads a um clock de 3.6ghz e um outro pc am64 de 2 nucleos e 4 threads a um clock de 2.7ghz os valores de tempo do pc amd mais fraco levou cerca de ? vezes mais tempo
+isso se deve ao fato que levando em conta o um pc com amd64 com 4 nucleos e 4 threads a um clock de 3.6ghz a 4.0ghz e um outro pc am64 de 2 nucleos e 4 threads a um clock de 2.7ghz a 3.5ghz os valores de tempo do pc amd mais fraco levou cerca de ? vezes mais tempo
 também foi realizado um segundo teste referente a esse ,seguindo os mesmos parametros,mas utilizando o processamento paralelo
 o maior diferencial entre os testes da arquitetura arm e x86 foi que na arquitetura arm devido a limitações dos recursos disponiveis,
-foi necessário utilizar um hd ao invés de um ssd e como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados
+foi necessário utilizar um hd ao invés de um ssd e como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados.
 
 
 \subsec{teste de tempo de operação de inserção no bd}
-este teste foi proposto para ser um teste de dois tipos,primiro um teste de operações sem falha,segundo um teste de operações de inserção para bancos de dado mais utilizados para esse propósito,
-dessa forma fica mais facil de determinar o cenário onde o banco de dados lida melhor com grande quantidade de inserções como em ambientes de registro de atividades,registros de logs ou de cadastros variados.
-para esse propósito foi utilizada uma variação do benchmark de criação de bd,foi usada uma inserção fracionada dos dados,o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000,
-todos esses dados gerados foram gerados utilizando apenas a operação de inserção,sendo assim apenas esse tipo de dado foi utilizado durante tudo realizado nesse teste,isso por dois motivos principais:
+este teste foi proposto para ser um teste de dois tipos,primeiro um teste de operações sem falha,segundo um teste de operações de inserção para bancos de dado mais utilizados para esse propósito:
 \begin{itemize}
-\item os dados de inserção foram projetados para não dar erro e sempre retornarem o resultado de operação inserida com sucesso,isso quer dizer que,caso nada tenha dado errado,apenas operações sem erro foram realizaas
+\item os dados de inserção foram projetados para não dar erro e sempre retornarem o resultado de operação inserida com sucesso,isso quer dizer que,caso nada tenha dado errado,apenas operações sem erro foram realizadas.
 \item muitos bancos de dados são usados primariamente para inserção de dados,como bancos de dados de log e de analize de dados,como o próprio \myref{sec}{elasticsearch monitoring stack} utilizado durante os testes,onde operações de busca,listagem e filtragem não são a maioria,sendo assim é um comparativo para esse propósito de teste
 \end{itemize}
-
+para esse propósito foi utilizada uma variação do benchmark de criação de bd,foi usada uma inserção fracionada dos dados,o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000.
+para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada nucleo do processador da maquina,onde 3 executavam os testes para o arm e 3 para o amd.
 
 
 \subsec{teste de tempo de operações variadas no bd}
@@ -828,6 +826,7 @@ os dados gerados foram gerados seguindo o seguinte processo:\newline
 foram gerados 50.000 operações de inserção,e posteriormente foram pedidos 5.000.000 operações randômicas,
 o que resultou em 50.000 operações de inserção seguidos de 4.950.000 operações randômicas gerados.\newline
 o principal propósito desse teste foi de que muitos bancos de dados principalmente de sites de comércio eletrônico e sistemas de gerencia de estoque utilizam muitos tipos variados de operações,como as que foram utilizadas nesse teste,isso faz com que os resultados sejam facilmente aplicaveis para essas situações de mundo real mais cotidianas.
+assim como no teste de inserção para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o arm e 3 para o amd.
 
 %\subsection{teste de tempo de operações paralelas}
 %\label{subsec:teste de tempo de operações paralelas}
@@ -1001,11 +1000,13 @@ essa é a classe referida na seção \myref{sec}{geração de dados},todas as in
 o benchmark foi feito utilizando um software desenvolvido para o propósito deste teste,
 o software de benchmark está mais para um software para gerar estresse na maquina na qual está rodando o banco de dados por meio de varias execuções de comandos direto no banco de dados.
 o software de benchmark funciona carregando e construindo os dados a partir das inserções no arquivo sqlite,os testes de estresse foram tentados de algumas formas:\newline
-primeiramente o algoritimo inicia o container que contém o banco de dados que está sendo analizado,
-após isso é inserindo uma quantidade definida de operações que é lida de forma sequencial do banco de dados inicial,
-após isso são executadas essas operações até que terminem,depois disso o mesmo procedimento é feito para a outra maquina,
-após isso o container com o banco de dados é desligado e o próximo tipo de banco de dados é iniciado nas duas maquinas,e o processo se repete\newline
+\begin{itemize}
+\item primeiramente o algoritimo inicia o container que contém o banco de dados que está sendo analizado
+\item após isso é inserindo uma quantidade definida de operações que é lida de forma sequencial do banco de dados inicial
+\item após isso são executadas essas operações até que terminem,depois disso o mesmo procedimento é feito para a outra maquina
+\item após isso o container com o banco de dados é desligado e o próximo tipo de banco de dados é iniciado nas duas maquinas,e o processo se repete\newline
 a outra forma é um pouco mais rapida e eficiente em relação a execução das multiplas maquinas.
+\end{itemize}
 Isso se dá pelo fato que o processo de inserção é feito de forma paralela,de forma que as inserções de cada banco de dados em todas as maquinas é feito simultaneamente,
 mas também de forma sequencial,o funcionamento é muito parecido com o da anterior,primeiro é criada uma thread para cada maquina,
 em cada thread é lido de forma sequencial as operações que serão inseridas,
@@ -1082,23 +1083,24 @@ Foram selecionadas para os teste apenas as operações mais utilizadas por um ba
 \item edição de elementos
 \item deleção de elementos filtrados
 \end{itemize}
-Antes de serem geradas, essas operações passam por vários processos de tratamento de erro para se certificar que não houve depêndencia alguma que não foi gerada como,
+Antes de serem geradas, a operação de inserção passa por vários processos de tratamento de erro para se certificar que não houve depêndencia alguma que não foi gerada como,
 por exemplo, gerar uma cidade sem existir um país cadastrado. Esse foi um dos motivos de ter sido utilizado um arquivo sqlite ao invés de outro método de armazenamento.
 Dessa forma pode-se executar essa consulta de dependência de forma rápida e apenas retornar índices válidos para associações de tabela.
-os varios dados gerados pelo programa de geração de dados são usados parcialmente para a geração dos dados novos,
+os vários dados gerados pelo programa de geração de dados são usados parcialmente para a geração dos dados novos,
 mas todos os dados gerados são gerados da forma mais simplificada e sendo assim,poucas coisas que ja existiam dentro do banco de dados dos dados ja cadastrados,
 apenas os ids cadastrados são usados,apenas para que as associações de dados sejam possiveis,os outros dados são ignorados,
 sendo assim não são consultados os dados para as queries e nem nenhum outro dado como update,sendo assim,
 a maioria dos dados gerados não conseguem retornar algum valor,como updates ou deleções,isso foi feito dessa forma apenas para simplificar o algoritimo,
 e seria totalmente possivel a modificação para que esses dados sejam levados em conta no futuro.
 
+
 %\subsection{alimentação do algoritmo}
 %\label{subsec:alimentação do algoritmo}
 \subsec{alimentação do algoritmo}
-O algoritmo funciona de forma que qualquer banco de dados possa ser utilizado para ter seus dados gerados.
-Basta utilizar um arquivo json e seguir um determinado padrão que é composto por uma tag para cada banco de dados,
-o nome do banco e dentro dele uma estrutura json com uma tag com o nome da coluna com seu conteúdo em um array de string contendo o primeiro tipo de dado e os outros valores adicionais.\newline
-Dentro do algoritimo existem vários tipos de dados aceitáveis, tais como id, nome, associação e timestamp,
+O algoritmo de geração de dados funciona de forma que qualquer banco de dados possa ser utilizado para ter seus dados gerados.
+Basta utilizar um arquivo json e seguir um determinado padrão que é composto por:
+uma tag com o nome de uma tabela do banco de dados e dentro dela uma estrutura json com uma tag com o nome da coluna com seu conteúdo em um array de string contendo o primeiro tipo de dado e os outros valores adicionais para a geração.\newline
+Dentro do algoríotimo existem vários tipos de dados aceitáveis, tais como id, nome, associação e timestamp,
 sendo que cada um deles possui um tipo bem definido pelo seu nome, mas o único que vale a pena citar seu funcionamento é o associação.
 Como descrito em \myref{subsec}{sqlite} existe uma tabela do sqlite contendo as quantidades de elementos associados a cada tabela do banco de dados final.
 O tipo de associação vai pegar esse valor e usar uma função de seleção randômica para que seja escolhido um elemento de id existente no intervalo descrito,
@@ -1112,8 +1114,7 @@ Os outros dados relevantes referentes ao funcionamento da chamada da função es
 \subsec{sqlite}
 O banco de dados do sqlite foi projetado para ser totalmente maleável e modular,
 de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark.
-Foi pensado no seguinte método para se facilitar o desenvolvimento sendo uma tabela de índices de total de elementos de cada tabela,
-sendo cada elemento composto apenas pelo nome da tabela e pelo total de elementos cadastrados, a outra tabela é um pouco mais complexa.
+Foi pensado no seguinte método para se facilitar o desenvolvimento sendo uma tabela de índices e uma tabela de operações, a tabela de indices possui apenas 3 colunas,uma id,uma com o nome da tabela e uma com o total de elementos dessa tabela,a outra tabela é um pouco mais complexa e está descrita a seguir:
 \begin{itemize}
     \item a tabela de operações a ser executada é constituida de uma coluna inteira para o tipo de operação que será realizada, de acordo com {subsec}{tipos de dados gerados}
     \item uma coluna é uma string contendo o nome do banco de dados que será executada a operação
@@ -1125,6 +1126,7 @@ sendo cada elemento composto apenas pelo nome da tabela e pelo total de elemento
  Dessa forma, independente se é apenas uma operação de listagem completa,
  que só necessita de ter preenchida a coluna com o nome do banco de dados e a coluna com o tipo de operação ou se for uma operação de update onde todos os campos podem estar preenchidos,
  o banco de dados sqlite consegue lidar de forma rápida e segura com qualquer uma das operações e dados gerados pelo algoritmo.
+ foi cogitado o uso de outras estruturações da tabela de operações,mas essa foi a que foi mais simples de ser implementada,valida para todas as operações e a mais reaproveitável
 
 
 %\section{containers docker}
@@ -1135,46 +1137,50 @@ um deles para o mariadb e outro para o postgres,os containers se certificam de c
 após isso o container durante a sua inicialização se certifica que o python está instalado e tudo necessário para que o daemon ,
 descrito em \myref{sec}{daemon de monitoramento},funcione,após isso o banco de dados do container é finalmente iniciado.
 essa forma de instalação do python se certifica que tanto o interpretador quanto as bibliotecas usadas estão sempre atualizadas todas as vezes que o container é instanciado,
-apesar de esse metodo causar uma grande demora na primeira inicialização do container,mas devido a forma como o script de incialização funciona somenta a primeira inicialização é impactada na sua velocidade de inicialização.
+apesar de esse metodo causar uma grande demora na primeira inicialização do container,mas devido a forma como o script de incialização funciona somente a primeira inicialização é impactada na sua velocidade de inicialização.
 os containers também possuem um healthcheck para verificar se o banco de dados está acessivel por fora do container,
-entretanto o contaienr não consegue exibir corretamente a saude do container devido a algum bug que não foi possivel de corrigir
+entretanto o container não consegue exibir corretamente a saúde do container devido a algum bug que não foi possivel de corrigir
 o container baseado no alpine possui uma especificidade,para a arquitetura armhf,presente no orangepipc +,
-ele só funciona até a versão 3.12 sem ter grandes modificações,isso devido a uma mudança no metodo como o sistema operacional manipula o relogio do sistema,
-o que quer dizer que não é possivel utilizar o gerenciador de pacotes dele que ,para se conectar ao servidor online,utiliza o ssl que,dentre outras coisas,
-utiliza o horario do sistema para certificar que a conexão é segura.sendo assim a versão utilizada foi a versão 3.12.
+ele só funciona até a versão 3.12 sem ter grandes modificações,isso devido a uma mudança no método como o sistema operacional manipula o relógio do sistema,
+o que quer dizer que não é possível utilizar o gerenciador de pacotes dele que ,para se conectar ao servidor online,utiliza o ssl que,dentre outras coisas,
+utiliza o horario do sistema para certificar que a conexão é segura.Sendo assim a versão utilizada foi a versão 3.12.
 outra expecificidade do alpine é que ele é um dos poucos sistemas linux que não possui o gcc incluso como pacote padrão do sistema,
 isso faz com que o python tenha alguns problemas ao instalar algumas bibliotecas,dentre elas o psutil,que foi utilizado pelo \myref{sec}{daemon de monitoramento},
 para solucionar isso foi necessário instalar um programa chamado linux-headers que é um conjunto de programas e bibliotecas padrões das distribuições linux,
-alem é claro do próprio gcc,após a adição desses programas o container pode funcionar corretamente
+alem é claro do próprio gcc,após a adição desses programas o container pôde funcionar corretamente.
 
 %\section{daemon de monitoramento}
 %\label{sec:daemon de monitoramento}
 \sec{daemon de monitoramento}
 o daemon de monitoramento monitora os status da maquina na qual está rodando,seja uma maquina fisica ou um container docker,
-para esse fim é tilizada a \myref{sec}{biblioteca psutil} que é a principal biblioteca python quando se trata de monitoramento de hardware.
-o daemon utiliza também uma biblioteca feita para simplificar o tratamento de log,uma das funcionalidades contidas nessa biblioteca é a comunicação com o aglutinador de logs logstash,isso feito em cima da biblioteca python-logstash.
+para esse fim é utilizada a \myref{sec}{biblioteca psutil} que é a principal biblioteca python quando se trata de monitoramento de hardware.
+o daemon utiliza também uma biblioteca feita para simplificar o tratamento de log,uma das funcionalidades contidas nessa biblioteca é a comunicação com o aglutinador de logs logstash do \myref{sec}{elasticsearch monitoring stack},isso feito em cima da biblioteca python-logstash.
 o arquivo de configuração do daemon é um json constituido de 2 partes,os parametros para se conectar ao logstash e os dados que serão coletados da maquina local,
 esses dados coletados serão enviados para o servidor logstash onde lá serão trabalhados
 o daemon envia esses dados com um intervalo de 0.1 segundos,que é apenas passado para que não sejam enviados dados errados de cpu para o servidor de log,
-mas poderia ser aumentado para diminuir o estresse na maquina que está rodando ele e diminuir um pouco o estresse do servidor de coleta de logs,que com as maquinas usadas não é necessário
+mas poderia ser aumentado para diminuir o estresse na maquina que está rodando ele e diminuir um pouco o estresse do servidor de coleta de logs,que com as maquinas usadas não é necessário,alem é claro de diminuir a quantidade da dados processados no pos processamento de resultados descritos em \myref{sec}{processamento de resultados}
 
 %\section{ambiente de desenvolvimento}
 %\label{sec:ambiente de desenvolvimento}
 \sec{ambiente de desenvolvimento}
-O ambiente utilizado foi dividido em duas partes, programação local e remota. Na programação remota as execuções foram feitas em um servidor baseado em Raspberry PI e na programação local foram feitas no próprio computador local.
-A programação remota se provou bem útil quando houve a necessidade de troca de computador ou sistema operacional, facilitando ainda a implementação de um servidor unificado de análise de log\newline
-Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da aplicação principal e ainda foi utilizada uma implementação da suite ELK \myref{sec}{elasticsearch monitoring stack} de análise de log.
+O ambiente utilizado foi dividido em duas partes, programação local e remota. Na programação remota as execuções foram feitas em um servidor baseado em Raspberry PI 4 e na programação local foram feitas em duas maquinas diferentes sendo computadores locais.
+A programação remota se provou bem útil quando houve a necessidade de troca de computador ou sistema operacional, facilitando ainda a implementação de um servidor unificado de análise de log pois era mais simples a comunicação entre o codigo executado e o servidor \myref{sec}{elasticsearch monitoring stack}.\newline
+Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da aplicação principal e ainda foi utilizada uma implementação do \myref{sec}{elasticsearch monitoring stack} de análise de log.
 Os dois primeiros foram escolhidos dentre outros motivos por serem opensource e estarem disponíveis tanto para Linux quanto Windows,
 visto que ambos sistemas operacionais foram utilizados para o desenvolvimento de acordo com a necessidade no momento.\newline
 Para o controle de versão foi utilizado o Git, deixando registrado todo o histórico de alterações do programa,
 o que se mostrou bem util para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código.\newline
 Para os testes iniciais do código foram utilizados containers docker não limitados durante a etapa de implementação dos scripts do DBbench,
-que demandam a existência dos servidores dos bancos de dados sendo executador,
+que demandam a existência dos servidores dos bancos de dados sendo executados,
 ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados.\newline
-A geração do banco de dados inicial foi feito completamente em um Raspberry Pi 4 com um pequeno overclock,
-essa geração foi feita durante alguns dias, visto que o mini pc, de acordo com testes de velocidade feitos \myref{sec}{testes de tempo},
-esse bd constitui-se de todas as operações feitas durante o teste de estresse.
+A geração do banco de dados inicial,descrito em \myref{subsec}{sqlite}, foi feito completamente em um Raspberry Pi 4 com um pequeno overclock,
+essa geração foi feita durante alguns dias, visto que o SBC, de acordo com testes de velocidade feitos \myref{sec}{testes de tempo},
+consome menos energia e ,devido a sua configuração,possui um acesso headless mais simplificado que as outras maquinas utilizadas.
 
+\sec{processamento de resultados}
+os dados coletados pelo \myref{sec}{elasticsearch monitoring stack} são extraidos para csv,processados para eliminação de dados irrelevantes,mesmo que durante o processo de \myref{sec}{daemon de monitoramento} apenas os dados selecionados sejam coletados,ainda existem dados irrelevantes na composição desses dados,após esse processamento inicial é usado um segundo processamento para eliminar duplicatas e para separar em 4 arquivos diferentes os resultados,um para cada banco de dados em cada maquina,a ultima etapa é a plotagem dos graficos utilizando a biblioteca altair que gera graficos interarivos em html que facilitam a pesquisa dos dados e exploração do grafico,ainda tem uma verificação manual para se certificar que os dados coletados estão corretamente associados ao servidor correto,isso resulta na certificação de que os dados antes de serem processados estejam corretamente identificados,o que é importante devido a forma como os dados são coletados e armazenados,principalmente os dados de tempo,que decidem semialeatoriamente qual a ordem que serão armazenados no array de tempos do arquivo json de resultados,isso por que caso o indice 1 seja o amd ele se manterá o mesmo até o final da execução,o que ocorreu na maioria dos testes realizados,mas não em todos.
+os graficos gerados pelo altair são arquivos html,mas devido ao massivo numero de dados gerados pelos logs o arquivo se torna muito grande e consome uma imensa quantidade de ram,inclusive em um dos computadores utilizados para a analise não sequer possivel abrir o arquivo html para a analise,e foi necessário abrir em outra maquina,existem otimizações possiveis para esse problema,mas nenhuma das soluções propostas foi capaz de corrigir o problema.
+foi gerado também um arquivo html que exibe todos os resultados de todas as maquinas ao mesmo tempo,ele é tão massivo que só foi possivel abrir o gerado pelo  \myref{subsec}{teste de tempo de operação de inserção no bd},o \myref{subsec}{teste de tempo de operações variadas no bd} resultou num html que o próprio navegador não consegue terminar o processo de carregar o arquivo.
 
 %\chapter{problemas e erros}
 %\label{ch:problemas e erros}
