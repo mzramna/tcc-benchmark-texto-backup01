@@ -708,7 +708,7 @@ foi usado um ambiente onde uma ferramenta externa configura o ambiente MPI para 
 uma das ferramentas é uma gambiarra para simular o monitoramento do swarm de forma externa ao docker
 o método usado para experimentar a plataforma virtualizada foi o wrf,que é um método de previsão do tempo
 foram usados o rasp 2 e 3 , nano pi neo,ntc chip e banana pi
-o ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas maquinas,a porcentagem de ganho entre usar todos os núcleos do rasp é de 71%,mas ao se usar processamento dentro do swarm a aceleração é de 17% de 1 a 2 maquinas e de 2% de 2 a 3 maquinas,isso provavelmente se deve a baixa velocidade de comunicação entre os rasp,isso devido ao proprio soc dele.
+o ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas maquinas,a porcentagem de ganho entre usar todos os núcleos do rasp é de 71\%,mas ao se usar processamento dentro do swarm a aceleração é de 17\% de 1 a 2 maquinas e de 2\% de 2 a 3 maquinas,isso provavelmente se deve a baixa velocidade de comunicação entre os rasp,isso devido ao proprio soc dele.
 levando em conta o custo,para essa aplicação o uso de soc é viável,já que o wrf consegue apresentar resultados básicos diariamente ou até de hora em hora.
 o desempenho multi-core de apenas uma maquina é quase o mesmo que o de 2 maquinas com multi-core em paralelo
 \cite{DockerSwarmsocmpi}
@@ -1224,9 +1224,6 @@ durante a etapa de testes finais,ou seja,pós a etapa de testes de desenvolvimen
 o HD mecânico da maquina dos testes finais possui velocidades limitadas pela sua tecnologia ,SATA2,isso impactou de forma considerável a execução dos testes,isso pois mesmo com a possibilidade de serem feitos diversas leituras simultâneas no sqlite,mesmo sendo possível varias leituras simultâneas ao mesmo tempo nesse método de armazenamento de dados,isso pois a latência entre a requisição da consulta e todo o processo logico e físico da leitura causasse um time out ocasional na biblioteca sqlite.
 uma solução para isso foi a substituição da mídia de armazenamento do arquivo sqlite,foi utilizado um pendrive Kingston 3.0 de 16GB,com velocidades de leitura superiores,de quase o dobro da velocidade, e latência muito inferior que a tecnologia SATA2,após essa substituição não foi mais visto nenhum erro de time-out durante os testes.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                      Capítulo 5                      %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\chapter{Resultados}
 %\label{ch: resultados} 
@@ -1250,6 +1247,15 @@ a principal diferença identificada em relação aos testes alem do previamente 
   \caption{valores tempo benchmark inserção fracionada}
   \label{fig:resultados insercao fracionada}
 \end{figure}
+
+\sec{resultados de operação completa fracionada}
+ao contrário do que era esperado,os valores gerados pelo \myref{sec}{software de benchmark} geraram de forma igualmente distribuida,ou seja,os dados gerados foram gerados com uma distribuição de aproximadamente 20\% para cada tipo de operação,isso por que por algum motivo desconhecido as operações de tipo 5,como descrito em \myref{subsec}{tipos de dados gerados},não foram gerados nenhuma vez durante os testes,fora isso todos os outros dados gerados ocorreram como o esperado,onde são feitas queries de seleção ,pesquisa e inserção da forma como era esperada e as operações ocorreram como o esperado.
+um fator interessante a se destacar é o de que,apesar da distribuição de operações ter sido homogênea,o custo de uso de hardware não foi,em certos momentos houve um grande uso de cpu ,mas nunca fugindo muito dos valores apresentados em \myref{sec}{resultados de inserção fracionada},e na maioria dos casos houve um maior uso de ram que o apresentado no dito teste,um fator a se destacar é o de que os primeiros ciclos de teste funcionaram da seguinte forma:
+\begin{itemize}
+\item a maior parte,cerca de 60\% dos dados , foi de inserção e o restante de operações variadas,diferente do esperado,isso provavelmente se deve a algum problema durante a gerencia dos arquivos salvos na maquina,não no algoritimo em si,isso se comprova nos próximos nove ciclos
+\item nos próximos nove ciclos,apenas dados de inserção foram gerados
+\item a partir do 11° ciclo ,no postgres ,houve um aumento significativo de ram,os valores que variavam entre 18 a 30\% começaram a varias de 18 a 53\% no amd e no arm a variação saiu de 20 a 34\% para de 20 a 52\%,
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
