@@ -1,20 +1,20 @@
 \documentclass[
-	% -- opções da classe memoir --
-	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	oneside,			% para impressão em verso e anverso. Oposto a oneside
-	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	french,				% idioma adicional para hifenização
-	spanish,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
-	]{abntex2}
+% -- opções da classe memoir --
+12pt,				% tamanho da fonte
+openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+oneside,			% para impressão em verso e anverso. Oposto a oneside
+a4paper,			% tamanho do papel. 
+% -- opções da classe abntex2 --
+%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+% -- opções do pacote babel --
+english,			% idioma adicional para hifenização
+french,				% idioma adicional para hifenização
+spanish,			% idioma adicional para hifenização
+brasil,				% o último idioma é o principal do documento
+]{abntex2}
 
 
 % ---
@@ -35,13 +35,17 @@
 \usepackage{underscore}
 \usepackage{amsfonts}
 \usepackage{listings}
-% ---
+\usepackage{amsmath}
+\usepackage{graphicx} % Usado para outros tipos de imagens
+\usepackage{float} % Usado para posicionamento de imagens
+\usepackage[notransparent]{svg}  % Eis o pacote que queremos.
+\usepackage{alltt}
+
 \linespread{1.5} % espaçamento entre linhas		
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
 \usepackage{lipsum}				% para geração de dummy text
-\usepackage{amsmath}
 % ---
 
 % ---
@@ -51,10 +55,11 @@
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 \usepackage{longtable}
 \usepackage{hyperref}
+\usepackage{verbatim}
 \hypersetup{
-    colorlinks=false,
-    pdfpagemode=FullScreen,
-    pdftitle={benchmark bancos de dados multi arquitetura},
+	colorlinks=false,
+	pdfpagemode=FullScreen,
+	pdftitle={benchmark bancos de dados multi arquitetura},
 }
 \hypersetup{final}
 \urlstyle{same}
@@ -70,14 +75,14 @@
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{}
 % Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		%Citado na página #2.%
-	\else
-		%Citado #1 vezes nas páginas #2.%
-	\fi}%
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%	Nenhuma citação no texto.%
+%	\or
+%	%Citado na página #2.%
+%	\else
+%	%Citado #1 vezes nas páginas #2.%
+%	\fi}%
 % ---
 
 
@@ -108,19 +113,19 @@
 % informações do PDF
 %\makeatletter
 %\hypersetup{
-     	%pagebackref=true,
-%		pdftitle={\@title}, 
-%		pdfauthor={\@author},
-%    	pdfsubject={\imprimirpreambulo},
-%	    pdfcreator={Matheus F O Baffa},
-%		pdfkeywords={content-based image retrieval}{desenvolvimento web}{exame de fundo de olho}{histograma backprojection}{íris}, 
-%		colorlinks=true,       		% false: boxed links; true: colored links
-%    	linkcolor=black,          	% color of internal links
-%    	citecolor=black,        		% color of links to bibliography
-%    	filecolor=black,      		% color of file links
-%		urlcolor=black,
-%		bookmarksdepth=4
-%}
+	%pagebackref=true,
+	%		pdftitle={\@title}, 
+	%		pdfauthor={\@author},
+	%    	pdfsubject={\imprimirpreambulo},
+	%	    pdfcreator={Matheus F O Baffa},
+	%		pdfkeywords={content-based image retrieval}{desenvolvimento web}{exame de fundo de olho}{histograma backprojection}{íris}, 
+	%		colorlinks=true,       		% false: boxed links; true: colored links
+	%    	linkcolor=black,          	% color of internal links
+	%    	citecolor=black,        		% color of links to bibliography
+	%    	filecolor=black,      		% color of file links
+	%		urlcolor=black,
+	%		bookmarksdepth=4
+	%}
 \makeatother
 \graphicspath{ {./imagens/} }
 % --- 
@@ -145,303 +150,337 @@
 % Início do documento
 % ----
 \begin{document}
-
-% Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
-
-% ----------------------------------------------------------
-% ELEMENTOS PRÉ-TEXTUAIS
-% ----------------------------------------------------------
-% \pretextual
-
-% ---
-% Capa
-% ---
-\begin{center}
-\textbf{ 
-INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO SUDESTE DE MINAS GERAIS - CAMPUS RIO POMBA}
-\end{center}
-
-\imprimircapa
-% ---
-
-% ---
-% Folha de rosto
-% (o * indica que haverá a ficha bibliográfica)
-% ---
-\imprimirfolhaderosto*
-% ---
-
-% ---
-% Inserir a ficha bibliografica
-% ---
-
-% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de
-% catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
-% Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
-% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
-% com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
-% o conteúdo de implementação deste arquivo pelo comando abaixo:
-%
-% \begin{fichacatalografica}
-%     \includepdf{fig_ficha_catalografica.pdf}
-% \end{fichacatalografica}
-\begin{fichacatalografica}
-	\vspace*{\fill}					% Posição vertical
-	\hrule							% Linha horizontal
-	\begin{center}					% Minipage Centralizado
-	\begin{minipage}[c]{12.5cm}		% Largura
 	
-	\imprimirautor
+	% Retira espaço extra obsoleto entre as frases.
+	\frenchspacing 
 	
-	\hspace{0.5cm} \imprimirtitulo  / \imprimirautor. --
-	\imprimirlocal, \imprimirdata-
+	% ----------------------------------------------------------
+	% ELEMENTOS PRÉ-TEXTUAIS
+	% ----------------------------------------------------------
+	% \pretextual
 	
-	\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
-	
-	\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
-	
-	\hspace{0.5cm}
-	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas, Campus Rio Pomba,
-	\imprimirdata.}\\
-	
-	\hspace{0.5cm}
-		1. 
-		2. 
-		I. 
-		II.
-		III.
-		IV. \\ 			
-	
-	\hspace{8.75cm} %CDU 02:141:005.7\\
-	
-	\end{minipage}
+	% ---
+	% Capa
+	% ---
+	\begin{center}
+		\textbf{ 
+			INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO SUDESTE DE MINAS GERAIS - CAMPUS RIO POMBA}
 	\end{center}
-	\hrule
-\end{fichacatalografica}
-% ---
-
-% ---
-% Inserir errata
-% ---
-%\begin{errata}
-%Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. %Exemplo:
-
-%\vspace{\onelineskip}
-%
-%FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
-%reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
-%rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
-%cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
-%Zootecnia, Universidade de São Paulo, São Paulo, 2011.
-
-%\begin{table}[htb]
-%\center
-%\footnotesize
-%\begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
-%  \hline
-%   \textbf{Folha} & \textbf{Linha}  & \textbf{Onde se lê} % & \textbf{Leia-se}  \\
-%    \hline
-%    1 & 10 & auto-conclavo & autoconclavo\\
-%   \hline
-%\end{tabular}
-%\end{table}
-%
-%\end{errata}
-% ---
-
-% ---
-% Inserir folha de aprovação
-% ---
-
-% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
-% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
-% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
-% imagem da página assinada pela banca com o comando abaixo:
-%
-% \includepdf{folhadeaprovacao_final.pdf}
-%
-\begin{folhadeaprovacao}
-
-  \begin{center}
-    {\ABNTEXchapterfont\large\imprimirautor}
-
-    \vspace*{\fill}\vspace*{\fill}
-    {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
-    \vspace*{\fill}
-    
-    \hspace{.45\textwidth}
-    \begin{minipage}{.5\textwidth}
-        \imprimirpreambulo
-    \end{minipage}%
-    \vspace*{\fill}
-   \end{center}
-    
-   Trabalho aprovado. \imprimirlocal, 00 de dezembro de 20XX.
-
-   \assinatura{\textbf{\imprimirorientador}, Orientador, IF Sudeste MG - Rio Pomba} 
-   \assinatura{\textbf{CICLANO}, Coorientador, IF Sudeste MG - Rio Pomba}
-   \assinatura{\textbf{Dr. BELTRANO} \\ IF Sudeste MG - Rio Pomba}
-   \assinatura{\textbf{Me. XXXXXXXXXXXXX} \\ IF Sudeste MG - Rio Pomba }
-   %\assinatura{\textbf{Professor W} \\ IF Sudeste MG - Rio Pomba}
-      
-   \begin{center}
-    \vspace*{0.5cm}
-    {\large\imprimirlocal}
-    \par
-    {\large\imprimirdata}
-    \vspace*{1cm}
-  \end{center}
-  
-\end{folhadeaprovacao}
-% ---
-
-
-% ---
-% Dedicatória
-% ---
-\begin{dedicatoria}
-   \vspace*{\fill}
-	\begin{flushright}
-        Este trabalho é dedicado a todos\\ 
-       aqueles que me inspiraram, em especial\\ 
-       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \\
-       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
-    \end{flushright}
-\end{dedicatoria}
-% ---
-
-% ---
-% Agradecimentos
-% ---
-\begin{agradecimentos}
-
-\end{agradecimentos}
-
-% resumo em português
-\begin{resumo}
-\noindent
-
- \vspace{\onelineskip}
-    
- \noindent
- \textbf{Palavras-chaves:} palavra1. palavra2. palavra3. palavra4.
-\end{resumo}
-
-% resumo em inglês
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-   \vspace{\onelineskip}
-    \noindent 
-
-   \vspace{\onelineskip}
-   
-   \noindent  \textbf{Key-words}:  word1. word2. word3. word4. word5.
- \end{otherlanguage*}
-\end{resumo}
-\urlstyle{same}
-
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\cleardoublepage
-
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\cleardoublepage
-
-\DeclareRobustCommand{\beginAutoTable}[4]{
-%nome da tabela e label
-%cabeçalho
-%quantidade total de colunas
-%formatação da tabela
-\label{tab:#1}
-  \begin{longtable}{#4}
-  \caption{#1}
-\\ \hline \multicolumn{#3}{c}{\textbf{#1}} \\ \hline 
-#2 \\ \hline \endfirsthead
-#2 \\ \hline \endhead
-}
-\newenvironment{easyTableAuto}[4]{
-\beginAutoTable{#1}{#2}{#3}{#4}
-}{
-  \end{longtable}
-}
-\newenvironment{easyTable2}[2]{
-\beginAutoTable{#1}{#2}{2}{p{.15\textwidth}|p{.80\textwidth}}
-}{
-  \end{longtable}
+	
+	\imprimircapa
+	% ---
+	
+	% ---
+	% Folha de rosto
+	% (o * indica que haverá a ficha bibliográfica)
+	% ---
+	\imprimirfolhaderosto*
+	% ---
+	
+	% ---
+	% Inserir a ficha bibliografica
+	% ---
+	
+	% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de
+	% catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
+	% Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
+	% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
+	% com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
+	% o conteúdo de implementação deste arquivo pelo comando abaixo:
+	%
+	% \begin{fichacatalografica}
+		%     \includepdf{fig_ficha_catalografica.pdf}
+		% \end{fichacatalografica}
+	\begin{fichacatalografica}
+		\vspace*{\fill}					% Posição vertical
+		\hrule							% Linha horizontal
+		\begin{center}					% Minipage Centralizado
+			\begin{minipage}[c]{12.5cm}		% Largura
+				
+				\imprimirautor
+				
+				\hspace{0.5cm} \imprimirtitulo  / \imprimirautor. --
+				\imprimirlocal, \imprimirdata-
+				
+				\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
+				
+				\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
+				
+				\hspace{0.5cm}
+				\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas, Campus Rio Pomba,
+					\imprimirdata.}\\
+				
+				\hspace{0.5cm}
+				1. 
+				2. 
+				I. 
+				II.
+				III.
+				IV. \\ 			
+				
+				\hspace{8.75cm} %CDU 02:141:005.7\\
+				
+			\end{minipage}
+		\end{center}
+		\hrule
+	\end{fichacatalografica}
+	% ---
+	
+	% ---
+	% Inserir errata
+	% ---
+	%\begin{errata}
+	%Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. %Exemplo:
+	
+	%\vspace{\onelineskip}
+	%
+	%FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
+		%reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
+		%rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
+	%cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
+	%Zootecnia, Universidade de São Paulo, São Paulo, 2011.
+	
+	%\begin{table}[htb]
+	%\center
+	%\footnotesize
+	%\begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
+	%  \hline
+	%   \textbf{Folha} & \textbf{Linha}  & \textbf{Onde se lê} % & \textbf{Leia-se}  \\
+	%    \hline
+	%    1 & 10 & auto-conclavo & autoconclavo\\
+	%   \hline
+	%\end{tabular}
+	%\end{table}
+	%
+	%\end{errata}
+	% ---
+	
+	% ---
+	% Inserir folha de aprovação
+	% ---
+	
+	% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
+	% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+	% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
+	% imagem da página assinada pela banca com o comando abaixo:
+	%
+	% \includepdf{folhadeaprovacao_final.pdf}
+	%
+	\begin{folhadeaprovacao}
+		
+		\begin{center}
+			{\ABNTEXchapterfont\large\imprimirautor}
+			
+			\vspace*{\fill}\vspace*{\fill}
+			{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+			\vspace*{\fill}
+			
+			\hspace{.45\textwidth}
+			\begin{minipage}{.5\textwidth}
+				\imprimirpreambulo
+			\end{minipage}%
+			\vspace*{\fill}
+		\end{center}
+		
+		Trabalho aprovado. \imprimirlocal, 00 de dezembro de 20XX.
+		
+		\assinatura{\textbf{\imprimirorientador}, Orientador, IF Sudeste MG - Rio Pomba} 
+		\assinatura{\textbf{CICLANO}, Coorientador, IF Sudeste MG - Rio Pomba}
+		\assinatura{\textbf{Dr. BELTRANO} \\ IF Sudeste MG - Rio Pomba}
+		\assinatura{\textbf{Me. XXXXXXXXXXXXX} \\ IF Sudeste MG - Rio Pomba }
+		%\assinatura{\textbf{Professor W} \\ IF Sudeste MG - Rio Pomba}
+		
+		\begin{center}
+			\vspace*{0.5cm}
+			{\large\imprimirlocal}
+			\par
+			{\large\imprimirdata}
+			\vspace*{1cm}
+		\end{center}
+		
+	\end{folhadeaprovacao}
+	% ---
+	
+	
+	% ---
+	% Dedicatória
+	% ---
+	\begin{dedicatoria}
+		\vspace*{\fill}
+		\begin{flushright}
+			Este trabalho é dedicado a todos\\ 
+			aqueles que me inspiraram, em especial\\ 
+			XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \\
+			XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+		\end{flushright}
+	\end{dedicatoria}
+	% ---
+	
+	% ---
+	% Agradecimentos
+	% ---
+	\begin{agradecimentos}
+		
+	\end{agradecimentos}
+	
+	% resumo em português
+	\begin{resumo}
+		\noindent
+		
+		\vspace{\onelineskip}
+		
+		\noindent
+		\textbf{Palavras-chaves:} palavra1. palavra2. palavra3. palavra4.
+	\end{resumo}
+	
+	% resumo em inglês
+	\begin{resumo}[Abstract]
+		\begin{otherlanguage*}{english}
+			\vspace{\onelineskip}
+			\noindent 
+			
+			\vspace{\onelineskip}
+			
+			\noindent  \textbf{Key-words}:  word1. word2. word3. word4. word5.
+		\end{otherlanguage*}
+	\end{resumo}
+	\urlstyle{same}
+	
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\listoffigures*
+	\cleardoublepage
+	
+	\pdfbookmark[0]{\listtablename}{lot}
+	\listoftables*
+	\cleardoublepage
+	
+	\DeclareRobustCommand{\beginAutoTable}[4]{
+		%nome da tabela e label
+		%cabeçalho
+		%quantidade total de colunas
+		%formatação da tabela
+		\label{tab:#1}
+		\begin{longtable}{#4}
+			\caption{#1}
+			\\ \hline \multicolumn{#3}{c}{\textbf{#1}} \\ \hline 
+			#2 \\ \hline \endfirsthead
+			#2 \\ \hline \endhead
+		}
+		\newenvironment{easyTableAuto}[4]{
+			\beginAutoTable{#1}{#2}{#3}{#4}
+		}{
+		\end{longtable}
+	}
+	\newenvironment{easyTable2}[2]{
+		\beginAutoTable{#1}{#2}{2}{p{.15\textwidth}|p{.80\textwidth}}
+	}{
+	\end{longtable}
 }
 \newenvironment{easyTable3}[2]{
-\beginAutoTable{#1}{#2}{3}{p{.16\textwidth}|p{.1\textwidth}|p{.70\textwidth}}
+	\beginAutoTable{#1}{#2}{3}{p{.16\textwidth}|p{.1\textwidth}|p{.70\textwidth}}
 }{
-  \end{longtable}
+\end{longtable}
 }
 \DeclareRobustCommand{\myref}[2]{
 \textit{#2}$^{\text{#1\ref{#1:#2}}}$
 }
 \newcounter{sig}
 \DeclareRobustCommand{\sig}[1]{
-   \refstepcounter{sig}
-   \label{sig:#1}
-   \item[#1]
-   }
+\refstepcounter{sig}
+\label{sig:#1}
+\item[#1]
+}
 \newcounter{ch}
 \DeclareRobustCommand{\ch}[1]{
-   \refstepcounter{ch}
-   \chapter{#1}
-   \label{ch:#1}
-   }
+\refstepcounter{ch}
+\chapter{#1}
+\label{ch:#1}
+}
 \newcounter{sec}
 \DeclareRobustCommand{\sec}[1]{
-   \refstepcounter{sec}
-   \section{#1}
-   \label{sec:#1}
-   }
+\refstepcounter{sec}
+\section{#1}
+\label{sec:#1}
+}
 \newcounter{subsec}
 \DeclareRobustCommand{\subsec}[1]{
-   \refstepcounter{subsec}
-   \subsection{#1}
-   \label{subsec:#1}
-   }
+\refstepcounter{subsec}
+\subsection{#1}
+\label{subsec:#1}
+}
+\newcounter{anexo}
+\DeclareRobustCommand{\anexo}[2]{
+\refstepcounter{anexo}
+\label{anexo:#1}
+\verbatiminput{#2}
+}
+\newcounter{imagem}
+\DeclareRobustCommand{\imagemsvg}[3]{
+%lable
+%arquivo
+%caption
+\refstepcounter{imagem}
+\begin{figure}[htbp]
+\includesvg[width=\textwidth]{#2}
+\caption{#3}
+\label{imagem:#1}
+\end{figure}
+}
+\DeclareRobustCommand{\imagempng}[3]{
+%lable
+%arquivo
+%caption
+\refstepcounter{imagem}
+\begin{figure}[htbp]
+\includegraphics[width=\textwidth]{#2}
+\caption{#3}
+\label{imagem:#1}
+\end{figure}
+}
+%\begin{figure}
+%\includegraphics{artigos relacionados/oltp mysql.png}
+%\caption{valores encontrados para o container mysql no artigo citado}
+%\label{fig:valores encontrados oltp mysql}
+%\end{figure}
 
 \begin{siglas}
-    \sig{DACC} Departamento Acadêmico de Ciência da Computação
-    
-    \sig{UFJF} Universidade Federal de Juiz de Fora
-    
-    \sig{arm} ARM, originalmente Acorn RISC Machine, e depois Advanced RISC Machine, é uma família de arquiteturas RISC desenvolvida pela empresa britânica ARM Holdings
-    
-    \sig{IDE} 
-    
-    \sig{x64}
-    
-    \sig{x86}
-    
-    \sig{aarch64}
-    
-    \sig{ram}
-    
-    \sig{GPU}
-    
-    \sig{TPU}
-    
-    \sig{CPU}
-    
-    \sig{JVM} JVM (Java Virtual Machine) é uma máquina abstrata. É uma especificação que fornece um ambiente de tempo de execução no qual o bytecode do java pode ser executado.
+\sig{DACC} Departamento Acadêmico de Ciência da Computação
+
+\sig{UFJF} Universidade Federal de Juiz de Fora
+
+\sig{arm} ARM, originalmente Acorn RISC Machine, e depois Advanced RISC Machine, é uma família de arquiteturas RISC desenvolvida pela empresa britânica ARM Holdings
+
+\sig{IDE} 
+
+\sig{x64}
+
+\sig{x86}
+
+\sig{aarch64}
+
+\sig{ram}
+
+\sig{GPU}
+
+\sig{TPU}
+
+\sig{CPU}
+
+\sig{JVM} JVM (Java Virtual Machine) é uma máquina abstrata. É uma especificação que fornece um ambiente de tempo de execução no qual o bytecode do java pode ser executado.
 As JVMs estão disponíveis para muitas plataformas de hardware e software (ou seja, a JVM depende da plataforma).
-    
-    \sig{IOT}
-    
-    \sig{SBC}
-    
-    \sig{BIOS}
-    
-    \sig{TTL}
-    
-    \sig{UART}
-    
-    \sig{WINE}
-    
+
+\sig{IOT}
+
+\sig{SBC}
+
+\sig{BIOS}
+
+\sig{TTL}
+
+\sig{UART}
+
+\sig{WINE}
+
 \end{siglas}
 
 
@@ -634,8 +673,8 @@ o ELK foi utilizado sem nenhum dos seus vários plugins de processamento de info
 todos os dados inseridos foram inseridos de uma dessas duas formas:
 \cite{elk}
 \begin{itemize}
- \item inseridos via interface web usando arquivos json diretamente no Kibana
- \item inseridos utilizando a \myref{subsec}{loggingSystem}
+\item inseridos via interface web usando arquivos json diretamente no Kibana
+\item inseridos utilizando a \myref{subsec}{loggingSystem}
 \end{itemize}
 os dados inseridos pela biblioteca \myref{subsec}{loggingSystem} foram inseridos de forma separada,
 onde as informações do \myref{sec}{daemon de monitoramento} foram inseridas em uma porta especifica e os dados filtrados,
@@ -692,23 +731,27 @@ disco e vários outros dados completos.a biblioteca consegue listar vários dado
 \ch{Trabalhos Relacionados}
 
 \sec{A Comparison of Database Performance of MariaDB and MySQL with OLTP Workload}
-foram usados vários tipos de bancos de dados alem do Postgres e do MariaDB para a comparação de performance,foram monitorados cpu e memoria ram
+foram usados vários tipos de bancos de dados alem do Postgres e do MariaDB,para a comparação de performance,mas o foco foi na comparação entre mariadb e mysql, foram monitorados cpu e memoria ram
 durante os testes foi usado um hypervisor chamado xen que é open-source
 as maquinas usadas foram amd64 com processadores xen e 4 GB de ram
 foi usada exatamente a mesma estrutura de BD em todos,e ela esta representada no artigo
-existe um gráfico do uso de hardware do MariaDB e MySQL,mas não de outros BD
+existe um gráfico do uso de hardware do MariaDB e MySQL,mas não de outros BD.
 MariaDB e MySQL foram muitos próximos em relação ao desempenho no 1 teste
-no 2 teste MariaDB foi ligeiramente mais pesado em relação a cpu que MySQL
-\cite{MariaDBMySQLOLTP}
+no 2 teste MariaDB foi ligeiramente mais pesado em relação a cpu que MySQL\cite{MariaDBMySQLOLTP}
+
+\imagempng{valores encontrados oltp mariadb}{artigos relacionados/oltp mariadb.png}{valores encontrados para o container mariadb para o 1 teste no artigo citado}
+\imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
+
+
 
 \sec{Automatisation de Docker Swarm sur SoCs ARM avec support MPI et Analyse des Performances}
 é uma analise de desempenho de docker swarm em soc arm 
 foi usado MPI como base para os aplicativos usados,o sistema base dos contêineres é alpine Linux .
 foi usado um ambiente onde uma ferramenta externa configura o ambiente MPI para processamento.isso foi usado para automatizar a implantação e monitoramento do docker swarm 
-uma das ferramentas é uma gambiarra para simular o monitoramento do swarm de forma externa ao docker
+uma das ferramentas é um processo de escaneamento das conexões ativas usando o netstat para simular o monitoramento do swarm de forma externa ao docker
 o método usado para experimentar a plataforma virtualizada foi o wrf,que é um método de previsão do tempo
 foram usados o rasp 2 e 3 , nano pi neo,ntc chip e banana pi
-o ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas maquinas,a porcentagem de ganho entre usar todos os núcleos do rasp é de 71\%,mas ao se usar processamento dentro do swarm a aceleração é de 17\% de 1 a 2 maquinas e de 2\% de 2 a 3 maquinas,isso provavelmente se deve a baixa velocidade de comunicação entre os rasp,isso devido ao proprio soc dele.
+o ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas maquinas,a porcentagem de ganho entre usar todos os núcleos do rasp é de 71\%,mas ao se usar processamento dentro do swarm a aceleração é de 17\% de 1 a 2 maquinas e de 2\% de 2 a 3 maquinas, de acordo com o autor isso provavelmente se deve a baixa velocidade de comunicação entre os raspberry pi 3,isso devido ao próprio soc dele.
 levando em conta o custo,para essa aplicação o uso de soc é viável,já que o wrf consegue apresentar resultados básicos diariamente ou até de hora em hora.
 o desempenho multi-core de apenas uma maquina é quase o mesmo que o de 2 maquinas com multi-core em paralelo
 \cite{DockerSwarmsocmpi}
@@ -1116,17 +1159,17 @@ O banco de dados do sqlite foi projetado para ser totalmente maleável e modular
 de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark.
 Foi pensado no seguinte método para se facilitar o desenvolvimento sendo uma tabela de índices e uma tabela de operações, a tabela de índices possui apenas 3 colunas,uma id,uma com o nome da tabela e uma com o total de elementos dessa tabela,a outra tabela é um pouco mais complexa e está descrita a seguir:
 \begin{itemize}
-    \item a tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com {subsec}{tipos de dados gerados}
-    \item uma coluna é uma string contendo o nome do banco de dados que será executada a operação
-    \item uma coluna inteira para, se for necessário, conter o id no banco de dados do elemento trabalhado na operação. No caso de uma inserção é o id do novo elemento por exemplo
-    \item uma coluna text, nessa coluna serão inseridos valores adicionais necessários para a execução da operação, como os parâmetros de quais colunas devem ser atualizadas em um update.
-    Aqui os dados inseridos são salvos em formato json para facilitar o trabalho com a linguagem Python, visto que existe uma conversão direta de string json para o tipo dictionary do Python.
-    \item uma coluna text seguindo a mesma ideia da coluna anterior. Esses dados os dados obrigatórios de qualquer operação,onde dependendo da operação os dados contidos são diferentes.
+\item a tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com {subsec}{tipos de dados gerados}
+\item uma coluna é uma string contendo o nome do banco de dados que será executada a operação
+\item uma coluna inteira para, se for necessário, conter o id no banco de dados do elemento trabalhado na operação. No caso de uma inserção é o id do novo elemento por exemplo
+\item uma coluna text, nessa coluna serão inseridos valores adicionais necessários para a execução da operação, como os parâmetros de quais colunas devem ser atualizadas em um update.
+Aqui os dados inseridos são salvos em formato json para facilitar o trabalho com a linguagem Python, visto que existe uma conversão direta de string json para o tipo dictionary do Python.
+\item uma coluna text seguindo a mesma ideia da coluna anterior. Esses dados os dados obrigatórios de qualquer operação,onde dependendo da operação os dados contidos são diferentes.
 \end{itemize}
- Dessa forma, independente se é apenas uma operação de listagem completa,
- que só necessita de ter preenchida a coluna com o nome do banco de dados e a coluna com o tipo de operação ou se for uma operação de update onde todos os campos podem estar preenchidos,
- o banco de dados sqlite consegue lidar de forma rápida e segura com qualquer uma das operações e dados gerados pelo algoritmo.
- foi cogitado o uso de outras estruturações da tabela de operações,mas essa foi a que foi mais simples de ser implementada,valida para todas as operações e a mais reaproveitável
+Dessa forma, independente se é apenas uma operação de listagem completa,
+que só necessita de ter preenchida a coluna com o nome do banco de dados e a coluna com o tipo de operação ou se for uma operação de update onde todos os campos podem estar preenchidos,
+o banco de dados sqlite consegue lidar de forma rápida e segura com qualquer uma das operações e dados gerados pelo algoritmo.
+foi cogitado o uso de outras estruturações da tabela de operações,mas essa foi a que foi mais simples de ser implementada,valida para todas as operações e a mais reaproveitável
 
 
 %\section{containers docker}
@@ -1242,12 +1285,19 @@ para o postgres a velocidade de disco de escrita é em torno de 500kbps para o a
 levando em conta a descrição de hardware de \myref{ch}{testes}, essas variações das velocidades são provavelmente devido a otimizações das arquiteturas para cada banco de dados.
 já a velocidade de leitura de disco é praticamente 0\% o tempo todo,isso provavelmente se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algorítimo de benchmark.
 a principal diferença identificada em relação aos testes alem do previamente informado é o tempo,em 60\% das vezes o postgres arm é mais rápido que o amd,enquanto isso em 85\% das vezes do MariaDB o amd é mais rápido
-\begin{figure}
-  \includegraphics{valores tempo benchmark inserção fracionada.jpg}
-  \caption{valores tempo benchmark inserção fracionada}
-  \label{fig:resultados insercao fracionada}
-\end{figure}
 
+\imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada}
+\begin{easyTableAuto}{dados encontrados de uso de hardware}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
+%nome da tabela e label
+%cabeçalho
+%quantidade total de colunas
+%formatação da tabela
+ postgres arm & 0 & 0 & 0 & 0\newline
+ 
+\end{easyTableAuto}
+%lable
+%arquivo
+%caption
 \sec{resultados de operação completa fracionada}
 ao contrário do que era esperado,os valores gerados pelo \myref{sec}{software de benchmark} geraram de forma igualmente distribuida,ou seja,os dados gerados foram gerados com uma distribuição de aproximadamente 20\% para cada tipo de operação,isso por que por algum motivo desconhecido as operações de tipo 5,como descrito em \myref{subsec}{tipos de dados gerados},não foram gerados nenhuma vez durante os testes,fora isso todos os outros dados gerados ocorreram como o esperado,onde são feitas queries de seleção ,pesquisa e inserção da forma como era esperada e as operações ocorreram como o esperado.
 um fator interessante a se destacar é o de que,apesar da distribuição de operações ter sido homogênea,o custo de uso de hardware não foi,em certos momentos houve um grande uso de cpu ,mas nunca fugindo muito dos valores apresentados em \myref{sec}{resultados de inserção fracionada},e na maioria dos casos houve um maior uso de ram que o apresentado no dito teste,um fator a se destacar é o de que os primeiros ciclos de teste funcionaram da seguinte forma:
@@ -1256,16 +1306,31 @@ um fator interessante a se destacar é o de que,apesar da distribuição de oper
 \item nos próximos nove ciclos,apenas dados de inserção foram gerados
 \item a partir do 11° ciclo ,no postgres ,houve um aumento significativo de ram,os valores que variavam entre 18 a 30\% começaram a varias de 18 a 53\% no amd e no arm a variação saiu de 20 a 34\% para de 20 a 52\%,
 \end{itemize}
+os tempos apresentados por esse teste estão descritos na \autoref{fig:resultados todos fracionada}
+\imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark inserção fracionada}
+%lable
+%arquivo
+%caption
 
+\begin{easyTableAuto}{dados encontrados de uso de hardware}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
+%nome da tabela e label
+%cabeçalho
+%quantidade total de colunas
+%formatação da tabela
+ postgres arm & 0 & 0 & 0 & 0\newline
+ 
+\end{easyTableAuto}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      Capítulo 6                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \chapter{Conclusão}
- \label{ch: conclusao}
- 
+\ch{Conclusão}
 
 
+\ch{anexos}
+%\anexo{log tempo insercao ,teste insercao/valores_tempo_velocidade_benchmark_fracionado.json}
+%\label{anexo:#1}
+%\lstinputlisting{apendices/teste insercao/valores_tempo_velocidade_benchmark_fracionado.json}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      REFERÊNCIAS                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1303,14 +1368,6 @@ um fator interessante a se destacar é o de que,apesar da distribuição de oper
 % ---
 % Inicia os anexos
 % ---
-\begin{anexosenv}
-
-% Imprime uma página indicando o início dos anexos
-\partanexos
-
-\chapter{logs teste de tempo}
-%\lstinputlisting[]{apêndices/teste_tempo.log}
-\end{anexosenv}
 
 % ---------------------------------------------------------------------------------------------
 % INDICE REMISSIVO
