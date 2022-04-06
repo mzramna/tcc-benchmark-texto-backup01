@@ -738,12 +738,11 @@ foi usada exatamente a mesma estrutura de BD em todos,e ela esta representada no
 existe um gráfico do uso de hardware do MariaDB e MySQL,mas não de outros BD.
 MariaDB e MySQL foram muitos próximos em relação ao desempenho no 1 teste
 no 2 teste MariaDB foi ligeiramente mais pesado em relação a cpu que MySQL\cite{MariaDBMySQLOLTP}
-
 \imagempng{valores encontrados oltp mariadb}{artigos relacionados/oltp mariadb.png}{valores encontrados para o container mariadb para o 1 teste no artigo citado}
 \imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
 
 
-
+\newline\newline\newline\newline
 \sec{Automatisation de Docker Swarm sur SoCs ARM avec support MPI et Analyse des Performances}
 é uma analise de desempenho de docker swarm em soc arm 
 foi usado MPI como base para os aplicativos usados,o sistema base dos contêineres é alpine Linux .
@@ -751,31 +750,32 @@ foi usado um ambiente onde uma ferramenta externa configura o ambiente MPI para 
 uma das ferramentas é um processo de escaneamento das conexões ativas usando o netstat para simular o monitoramento do swarm de forma externa ao docker
 o método usado para experimentar a plataforma virtualizada foi o wrf,que é um método de previsão do tempo
 foram usados o rasp 2 e 3 , nano pi neo,ntc chip e banana pi
-o ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas maquinas,a porcentagem de ganho entre usar todos os núcleos do rasp é de 71\%,mas ao se usar processamento dentro do swarm a aceleração é de 17\% de 1 a 2 maquinas e de 2\% de 2 a 3 maquinas, de acordo com o autor isso provavelmente se deve a baixa velocidade de comunicação entre os raspberry pi 3,isso devido ao próprio soc dele.
-levando em conta o custo,para essa aplicação o uso de soc é viável,já que o wrf consegue apresentar resultados básicos diariamente ou até de hora em hora.
-o desempenho multi-core de apenas uma maquina é quase o mesmo que o de 2 maquinas com multi-core em paralelo
-\cite{DockerSwarmsocmpi}
+o ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas maquinas,a porcentagem de ganho entre usar todos os núcleos do rasp é de 71\%,mas ao se usar processamento dentro do swarm a aceleração é de 17\% de 1 a 2 maquinas e de 2\% de 2 a 3 maquinas, de acordo com o autor isso provavelmente se deve a baixa velocidade de comunicação entre os raspberry pi 3,isso devido ao próprio soc dele.\newline
+levando em conta o custo,para essa aplicação o uso de soc é viável,já que o wrf consegue apresentar resultados básicos diariamente ou até de hora em hora.\newline
+o desempenho multi-core de apenas uma maquina é quase o mesmo que o de 2 maquinas com multi-core em paralelo\cite{DockerSwarmsocmpi}
+
 
 \sec{a comparative study of the effects of parallelization  on arm and intel based platforms}
-já no abstract ele descreve o mesmo cenário que eu quero por no tcc: cada vez mais se usa processadores arm para fazer o que só se fazia em amd64
+este artigo utiliza a mesma proposta abordada neste trabalho,cada vez mais maquinas arm são utilizadas ao redor do mundo.\newline
 o artigo explica múltiplos métodos de paralelização que são utilizados por ele para realizar os testes,assim como as diferenças das implementações deles entre intel e arm
-no processador arm é impossível usar a GPU para os testes,devido ao sistema operacional usado não ter drivers que disponibilizassem esse uso
-também explica como funcionam os métodos de monitoramento energéticos da plataforma intel e arm usadas
-alem dos medidores internos do cpu é usado um wattímetro
-as medições de consumo energético internos do cpu eram ativadas por uma função rodando dentro do próprio cpu 
-varias das aplicações foram otimizadas para que funcionassem da melhor forma possível em cada cpu,de forma que ma otimização não interferisse em nenhum deles
-os algorítimos descritos são algorítimos de processamento de imagem
-ele usa como métrica de desempenho quantos farmes foram processados por segundo,juntamente do total de frames e o total de energia gasta,de forma que ele consegue calcular aproximadamente o total de energia gasta para processar cada frame,sendo assim ele consegue saber o total de energia gasto pela função do código
-no método serial,que é o único exatamente igual em ambos, existe uma diferença bem sutil,mas com maior eficiência energética por parte do processador arm
-usando um dos vários kernels diferentes,existe uma velocidade de processamento exponencialmente maior por parte da intel que por parte do arm no melhor caso,no pior caso a velocidade por parte da intel é de 10 vezes maior que do arm
-o resultado é que o fps/joule é maior no intel que no arm nos melhores casos de cada kernel,mas essa diferença é bem pouca em um dos kernels,e absurda em outro
-\cite{armvsintel}
+no processador arm é impossível usar a GPU para os testes,devido ao sistema operacional usado não ter drivers que disponibilizassem esse uso.\newline
+como métricas de monitoramento utiliza-se o total de frames por segundo(fps),visto que os algoritimos utilizados são algoritimos de processamento de imagem, e potencia em joule utilizada pelas maquinas analizadas,o monitoramento de fps era feito por um monitor interno ao cpu e não um sistema externo.
+varias das aplicações foram otimizadas para que funcionassem da melhor forma possível em cada cpu,de forma que ma otimização interferisse o minimo possível nos resultados dos testes,essas otimizações form feitas em forma de kernels compilados diferentemente para o algoritimo.\newline
+a partir das metricas coletadas ele consegue calcular aproximadamente o total de energia gasta para processar cada frame,sendo assim ele consegue saber o total de energia gasto pela função do código
+no método serial,que é o único exatamente igual em ambos, existe uma diferença bem sutil,mas com maior eficiência energética por parte do processador arm,visto que após ser levado em conta o consumo e a quantidade de frames gerados é aplicada uma fórmula para comprovar a eficiencia energetica dos dispositivos usados.\newline
+usando um dos vários kernels diferentes,existe uma velocidade de processamento exponencialmente maior por parte da intel que por parte do arm no melhor caso,no pior caso a velocidade por parte da intel é de 10 vezes maior que do arm.\newline
+o resultado é que o fps/joule é maior no intel que no arm nos melhores casos de cada kernel,mas essa diferença é bem pouca em um dos kernels,e absurdamente alta em outro,chegando a cerca de 8.5 vezes mais eficiente no amd em relação ao arm no mesmo teste no pior caso de cada,chegando a conclusão que para um dos testes,teste SRAD,o ultrabook amd utilizado é claramente superior,enquanto no outro teste,o ultrabook é superior,mas o consumo energético do arm é 20\% menor no pior caso e no melhor caso é 60\% melhor,o consumo de energia médio do arm é 50\% do amd.\cite{armvsintel}\newline
+como conclusão sobre os valores apresentados deste trabalho,foi possivel também comprovar que hoje em dia,8 anos depois,as placas arm existentes consomem o mesmo tanto de energia,mas possuem muito mais poder computacional,enquanto os computadores amd portateis,como o ultrabook utilizado,apesar de tembém consumir uma quantidade equivalente de energia,não teve um ganho de performance tão grande quanto os computadores arm.
+
 
 \sec{KVM, Xen and Docker: a performance analysis for ARM based NFV and Cloud computing }
-começa falando as vantagens da arquitetura arm
-explica o que são os hypervisors e as diferenças do peso a nível de camada de hardware entre KVM,xen e docker em arm
-imagem ilustrativa dessa diferença é bem útil
-os testes de desempenho são feitos em com softwares que simulam uso de servidor,são algorítimos de benchmark
+os testes de desempenho são feitos em com softwares que simulam uso de servidor,são algorítimos de benchmark\newline
+é um estudo comparativo utilizando benchmarks sintéticos para encontrar um sistema de virtualização com melhor performance para a virtualização de funções de rede para a arquitetura arm.\newline
+neste estudo foram utilizados kvm,xen e docker,todos métodos de virtualização conceituados nos servidores comerciais com o propósito de provar qual deles funciona melhor para entregar mais poder bruto de performance enquanto mantém os aspectos de segurança necessários de um ambiente de mundo real.\newline
+este estudo explica muito bem as diferenças entre conatiners e hypervisors,que se basiam principalmente em que oscontainers utilizam os recursos,kernel e na maioria,o sistema operacional da maquina fisica,enquanto os hypervisors buscam virtualizar tudo e simular um hardware em cada aplicação virtualizada,cada uma tem suas vantagens e são abordadas neste artigo,sendo as principais delas que no container o acesso a poder computacional bruto é maior e que nos hypervisors as camadas de segurança são maiores.\newline
+dos dados encontrados vale resaltar que o docker apresentou em média um resultado pior quando comparada a velocidade de leitura e escrita em comparação com todos os outros métodos de virtualização,apesar dessa diferença ser bem pequena numa aplicação de mundo real onde a diferença real não chega a 100bps na maioria dos casos.\newline
+outro ponto a se destacar é que na velocidade de transferencia de rede o docker apresentou em testes de transferencia de rede valores mais lentos quando utilizados pacotes de poucos bytes ,onde para pacotes de até 4 pytes por pacote os valores eram em média iguais,mas para pacotes de 8 a 32 bytes as diferenças de velocidade eram consideravelmente maiores,onde o docker chega a ser cerca de 20mbps mais lento que os outros metodos,mas para pacotes maiores que isso todos os metodos utilizaram ao máximo a capacidade de transferencia de rede do hardware utilizado,100mbps.\newline
+em conclusão a autora disse que o kvm é mais simples de se portar para o arm em comparação ao xen,já que o QEMU,no qual o kvm se baseia,existe em todas as arquiteturas e que o docker ja existe nativamente para o arm,que as leituras de disco e rede funcionam melhor nos hypervisors devido aos metodos de cache que eles possuem e o docker não,demonstrou também que para pacotes grandes as velocidades de todos os metodos comparados são iguais ou maiores q a implementação nativa,em todos os testes de performance a diferença entre eles é bem pequena e varia de acordo com o teste,sendo assim o ideal seria uma solução mista onde seria utilizado um dentro do outro para melhorar a escalabilidade e segurança alem de outros fatores dos ambientes reais.
 \cite{KVMXenDocker}
 
 \sec{The Raspberry Pi: A Platform for Replicable Performance Benchmarks?}
@@ -1287,12 +1287,15 @@ já a velocidade de leitura de disco é praticamente 0\% o tempo todo,isso prova
 a principal diferença identificada em relação aos testes alem do previamente informado é o tempo,em 60\% das vezes o postgres arm é mais rápido que o amd,enquanto isso em 85\% das vezes do MariaDB o amd é mais rápido
 
 \imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada}
-\begin{easyTableAuto}{dados encontrados de uso de hardware}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
+\begin{easyTableAuto}{dados encontrados de uso de hardware teste inserção}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
 %nome da tabela e label
 %cabeçalho
 %quantidade total de colunas
 %formatação da tabela
- postgres arm & 0 & 0 & 0 & 0\newline
+ postgres arm & 8 & 25 & 27 & 28 \\ \hline
+ postgres amd & 18 & 27 & 30 & 30 \\ \hline
+ mariadb arm & 8 & 16 & 34 & 35 \\ \hline
+ mariadb amd & 18 & 27 & 34 & 35 \\ \hline
  
 \end{easyTableAuto}
 %lable
@@ -1307,18 +1310,20 @@ um fator interessante a se destacar é o de que,apesar da distribuição de oper
 \item a partir do 11° ciclo ,no postgres ,houve um aumento significativo de ram,os valores que variavam entre 18 a 30\% começaram a varias de 18 a 53\% no amd e no arm a variação saiu de 20 a 34\% para de 20 a 52\%,
 \end{itemize}
 os tempos apresentados por esse teste estão descritos na \autoref{fig:resultados todos fracionada}
-\imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark inserção fracionada}
+\imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark todas operações fracionadas}
 %lable
 %arquivo
 %caption
 
-\begin{easyTableAuto}{dados encontrados de uso de hardware}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
+\begin{easyTableAuto}{dados encontrados de uso de hardware teste completo}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
 %nome da tabela e label
 %cabeçalho
 %quantidade total de colunas
 %formatação da tabela
- postgres arm & 0 & 0 & 0 & 0\newline
- 
+ postgres arm & 16 & 33 & 61 & 63 \\ \hline
+ postgres amd & 9 & 45 & 62 & 63 \\ \hline
+ mariadb arm & 16 & 23 & 30 & 30 \\ \hline
+ mariadb amd & 9 & 16 & 35 & 35 \\ \hline
 \end{easyTableAuto}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
