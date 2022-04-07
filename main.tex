@@ -780,14 +780,20 @@ em conclusão a autora disse que o kvm é mais simples de se portar para o arm e
 
 \sec{The Raspberry Pi: A Platform for Replicable Performance Benchmarks?}
 mostra as vantagens do uso do raspberry pi para benchmark,que é fácil de replicar usando ssh e raspibian
-mostra as diferenças de resultados entre os diferentes rasp usados nos testes,os dados mostram que os resultados são bem aproximados ,mas não são os mesmos resultados
-\cite{rpiplatformreplicable}
+mostra as diferenças de resultados entre os diferentes rasp usados nos testes,os dados mostram que os resultados são bem aproximados ,mas não são os mesmos resultados.\newline
+os raspberry pi usaram foram o modelo 3,eles foram comprados do mesmo vendedor com um intervalo de 2 semanas,para se provar que o dispositivo poderia ser de facil replicação,adicionalmente foi comprado mais um terceiro raspberry pi de outro vendedor com um intervalo de diferença de alguns meses entre este e os 2 anteriores,isso para comprovar que lotes de fabricação diferentes não influenciariam a replicabilidade do dispositivo,foi utilizada uma imagem de instalação padronizada modificada pelos autores usando como base o sistema operacional oficial da epica,o raspibian,isso para manter uma diferença zero em relação a softwares usados e a unica existente sendo apenas no hardware usado,os cartões de memória utilizados nos computadores também possuiam o mesmo tamanho,mas não foram dadas maiores detalhes sobre eles.
+um dos testes demandava bastante uso de espaço de disco,sendo assim,foi necessário adicionar mais memória externa por meio de um hd externo.\newline
+em conclusão o autor chegou a conclusão que o raspberry pi é sim uma boa plataforma para replicabilidade,principalmente se utilizado o docker para padronizar mais o ambiente de replicação,o autor ainda concluiu dizendo que versões posteriores do raspberry pi poderia melhorar ainda mais esse cenário devido as melhorias de hardware que ocorreriam
+\cite{rpiplatformreplicable}\newline
+hoje em dia,após cerca de 4 anos após a conclusão deste trabalho,foi lançada uma versão nova e exponencialmente mais util em termos de testes replicaveis,pois não somos mais limitados apenas a placas de 1 gb de ram e a baixas velocidades de transferencia,tanto de disco quanto de rede,assim sendo as conclusões do autor algum tempo antes de ser lançada essa versão se comprovaram reais,e provavelmente isso cotinuará se comprovando cada vez mais,visto que após lançarem versões com 2 e 4gb de ram a raspberry pi foundation lançou mais uma versão de 8gb de ram e posteriormente uma versão oficial do seu sistema operacional oficial,agora chamado de raspberry pi os,com suporte a instruções 64bit,e essas melhorias ocorreram apenas em uma nova revisão da placa,as futuras evoluções podem ser ainda maiores.
 
 \sec{HS06 Benchmark for an ARM Server}
 se resume em um benchmark e analise de um servidor de arquitetura arm,esse servidor possui 12 slots para encaixes das placas de soc,cada placa de soc possui 4 cpu ,com 4 núcleos, um pente de RAM ,
-4 portas sata e um conector de porta 10 GBE para cada cpu,cada servidor consome cerca de 300w de energia
-o consumo energético desse servidor entre os analisados é o menor , o mais potente e com mais núcleos por rack
-\cite{hs06}
+4 portas sata e um conector de porta 10 GBE para cada cpu,resultando em 16 nucleos,4 pentes e 16 portas sata por placa soc,cada servidor consome cerca de 300w de energia,entretanto apenas um soc foi utilizado para os testes.\newline
+foram utilizados também para essa comparação mais 5 servidores amd64,sendo 1 hp,3 ibm e 1 dell.
+o consumo energético desse servidor entre os analisados é o menor , o mais potente em relação ao consumo energético,visto que de acordo com a tabela de resultados apresentada no texto o unico que conseguiu mais que 1 ponto por watt gasto foi o computador arm.
+\cite{hs06}\newline
+importante ressaltar que os resultados encontrados na maquina arm são bem baixos em pontuação em compraração com todos os outros servidores utilizados,mas ao mesmo tempo o consumo energético desse processador é exponencialmente menor que os outros servidores,principalmente ao se levar em conta que ele consome cerca de 5w de energia,enquanto os outros consomem entre 150 e 600w de energia.
 
 %\chapter{testes}
 %\label{ch: testes}
@@ -797,8 +803,7 @@ O Orange Pi é um SBC ARM baseado no processador allwinner h3 \cite{h3} com 3 US
 1GB de memória RAM DDR3, uma porta de rede 10/100 e wi-fi bgn. Essa configuração é relativamente antiga e seu processador é um 4-core de 1.3GHz no clock máximo,
 é um processador relativamente bom mas o conjunto de especificações não é bom o bastante para substituir um computador atual,
 devido a sua limitação de memória RAM e de capacidade gráfica, mas consegue funcionar de forma satisfatória como servidor doméstico ,
-visto que seu processador é bom o bastante para operações simplificadas e poucos acessos,mas quando se tratam de muitos acessos ele pode não ser potente o bastante para aguentar.
-
+visto que seu processador é bom o bastante para operações simplificadas e poucos acessos,mas quando se tratam de muitos acessos ele pode não ser potente o bastante para aguentar.\newline
 O notebook é um Lenovo G405\cite{G405},com um processador AMD E1-2100 \cite{E1} APU,um dual-core com clock máximo de 1.0GHz com 2 GB de memória RAM DDR3, 1 USB 2.0,2 USB 3.0, 
 porta de rede Gigabit e 2 portas sata3,entretanto essas portas sata não serão usadas já que o propósito é manter as 2 maquinas o mais próximas em relação a hardware possível,
 resultando assim na mais próxima velocidade e especificações possíveis,o sistema operacional por outro lado,
@@ -807,7 +812,7 @@ mas como apenas para inicializar o sistema isso interfere,foi considerado como e
 Outros métodos que serão usados para manter as maquinas mais similares serão limitar o clock de ambos para que se mantivessem o mais próximos possível,
 no Orangepi foi definido para um clock máximo de 1GHz,esse sendo um valor redondo para facilitar os cálculos de equivalência apesar de o Orangepi poder se manter estável com clock de 1.2GHz,
 clock superior a isso pode causar problema com o fornecimento de energia,visto que não foi pensado para realmente ser utilizado dessa forma sem modificações na placa,
-que é o clock mais estável para o Orange pi ,a memória usada será limitada a 1024 MB para o stack do docker.
+que é o clock mais estável para o Orange pi ,a memória usada será limitada a 1024 MB para o stack do docker.\newline
 Para o armazenamento do docker serão salvos em o armazenamento do docker foi movido nas 2 maquinas para um pendrive sandisk cruzer blade 2.0 de 16GB,
 ambos comprados ao mesmo tempo e provavelmente provenientes do mesmo lote.\newline
 alem disso serão usadas versões do sistema debian,no Orangepi o armina e no PC o próprio debian padrão,ambos na versão buster,a versão do docker usado em ambos é a versão community edition 20.10.12,
@@ -821,9 +826,9 @@ os algorítimos principais do código são a geração do sqlite e a inserção 
 o algorítimo de geração de banco de dados é muito impactado pela quantidade de núcleos de cpu da maquina na qual foi rodada,mais do que a arquitetura ou clock dela,
 enquanto na inserção do banco de dados as especificações do computador não pareceram interferir tanto quanto a aleatoriedade da consistência do funcionamento das threads,
 essa inconsistência acabou fazendo com que os testes tivessem que ser realizados sob supervisão,sendo muitas vezes necessário interromper uma etapa e depois reiniciá-la ,
-também por isso varias das operações foram testadas de formas diferentes.
+também por isso varias das operações foram testadas de formas diferentes.\newline
 foram utilizadas sempre 2 etapas de testes ,primeiro um teste generalizado de funcionalidade com valores pequenos e outro para comprovar eficacia com valores variáveis,
-esses valores alteram varias coisas,mas principalmente quantidade de elementos gerados,isso para saber se a quantidade de elementos afeta a velocidade das operações
+esses valores alteram varias coisas,mas principalmente quantidade de elementos gerados,isso para saber se a quantidade de elementos afeta a velocidade das operações.
 
 %\subsection{teste de tempo de criação do bd}
 %\label{subsec:teste de tempo de criação do bd}
@@ -831,21 +836,21 @@ esses valores alteram varias coisas,mas principalmente quantidade de elementos g
 o teste dessa etapa foi feito para dentre outras coisas comprovar o funcionamento do algorítimo de geração de dados descrito em \myref{subsec}{geradorDeSql} a medida que o desenvolvimento dessa biblioteca acontecia testes de geração tiveram que ser feitos,
 esses testes dentre outros propósitos foram usados para saber a eficiência da geração de dados,isso por que os dados gerados levavam uma quantidade parcialmente aleatória para serem gerados,muito devido aos dados gerados serem semi-procedurais,
 isso pois eles seguiam uma regar para serem gerados de forma aleatória,isso fez com que fosse necessário essa etapa de testes para saber se os dados gerados no final geravam dados que funcionariam com o propósito esperado,ou seja,
-se eram funcionais em um banco de dados sql relacional,seja MariaDB ou postgres.
+se eram funcionais em um banco de dados sql relacional,seja MariaDB ou postgres.\newline
 outra coisa que foi necessária durante o desenvolvimento que fez com que essa etapa de testes tivesse que ser mais bem feita foi a etapa de geração de dados de inserção,
-que foi desenvolvida para que apenas dados de inserção válidos fossem possíveis de serem gerados,diferente dos demais dados que apenas são queries de consulta aleatórias.
+que foi desenvolvida para que apenas dados de inserção válidos fossem possíveis de serem gerados,diferente dos demais dados que apenas são queries de consulta aleatórias.\newline
 na etapa principal desse teste foi feito um teste aditivo que testou 30 ciclos com adição de 100 em 100 elementos em cada ciclo. Foram feitos um teste de 4 sub ciclos internos para cada um dos 30 ciclos,
 tendo como objetivo o quanto de tempo é gasto em média para casos com muitos ou poucos dados gerados ,
-podendo assim gerar um valor de base de valor mínimo gasto obrigatoriamente para cada interação além de gerar bases de dados viáveis para os testes descritos em \myref{subsec}{teste de tempo de inserção no BD}.\newline
-Os testes desta etapa foram realizados em um PC arm64 e dois PCS amd64. Os dados resultaram em valores de tempo consistente em relação a diferença de frequências dos computadores.
+podendo assim gerar um valor de base de valor mínimo gasto obrigatoriamente para cada interação além de gerar bases de dados viáveis para os testes descritos em \myref{subsec}{teste de tempo de operação de inserção no BD}.\newline
+Os testes desta etapa foram realizados em um PC arm64 e dois PCS amd64. Os dados resultaram em valores de tempo consistente em relação a diferença de frequências dos computadores.\newline
 Sendo assim, se existe um valor de perda entre as arquiteturas para esse teste é um valor irrisório,
 sendo que o PC amd64 mais potente apresentou testes cerca de 2 vezes mais rápidos e seu clock é aproximadamente o dobro do arm64.
 Esses valores foram dados em relação ao tempo gasto por elemento em cada iteração.
 com base nos resultados desses testes des e que o computador tenha vários núcleos o algorítimo será tão eficiente quanto,
-isso se deve ao fato que levando em conta o um PC com amd64 com 4 núcleos e 4 threads a um clock de 3.6GHz a 4.0GHz e um outro PC AMD64 de 2 núcleos e 4 threads a um clock de 2.7GHz a 3.5GHz os valores de tempo do PC amd mais fraco levou cerca de ? vezes mais tempo
+isso se deve ao fato que levando em conta o um PC com amd64 com 4 núcleos e 4 threads a um clock de 3.6GHz a 4.0GHz e um outro PC AMD64 de 2 núcleos e 4 threads a um clock de 2.7GHz a 3.5GHz os valores de tempo do PC amd64 mais fraco levou cerca de 97\% do tempo do amd mais potente,isso devido tecnologia intel chamada "Tecnologia Intel® Turbo Boost frequência 2.0" que quando detecta que o coputador precisa de mais potencia aumenta o clock do cpu,em contra partida o processador amd64 mais potente não chegou a sentir tanto impacto deste teste e por isso usou da tecnologia amd chamada "Precision Boost 2" essa tecnologia permite que o processador varie seu clock de acordo com a necessidade tanto aumentando quanto diminuindo ele para economizar energia,dessa forma o clock do processador provavelmente foi diminuido já que apenas 1 dos nucleos do processador estava em carga alta e essa tecnologia leva em conta a porcentagem de todos os nucleos somados para funcionar,essa informação se baseia em testes descritos pela internet,visto que a amd não detalha muito esse processo da sua tecnologia.\newline
 também foi realizado um segundo teste referente a esse ,seguindo os mesmos parâmetros,mas utilizando o processamento paralelo
 o maior diferencial entre os testes da arquitetura arm e x86 foi que na arquitetura arm devido a limitações dos recursos disponíveis,
-foi necessário utilizar um HD ao invés de um ssd e como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados.
+foi necessário utilizar um HD ao invés de um ssd e como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados.\newline
 
 
 \subsec{teste de tempo de operação de inserção no BD}
