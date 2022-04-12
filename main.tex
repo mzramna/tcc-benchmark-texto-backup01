@@ -1394,8 +1394,11 @@ uma coia interessante ocorreu em uma etapa do teste,onde aparentemente a maquina
 %                      Capítulo 6                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ch{Conclusão}
-
-
+como conclusão dos testes realizados foi descoberto que a arquitetura arm é ,como esperado, a mais potente em relação a desempenho por watt de consumo,mas diferentemente do esperado os resultados de ambos foram bem proximos,quase iguais para cada banco de dados diferente,o que resultou numa eficiencia de cerca de 9 vezes para a arquitetura arm,visto que o computador arm utilizado consome 10w de energia enquanto o computador amd64 utilizado concome 90w de energia,isso considerando que o consumo de ambos foi de 100\% de consumo energetico o tempo todo.
+os testes realizados foram focados em manter ambos os servidores com a mesma exata característica de carga e desempenho,isso sempre visando o objetivo final de fazer com que a maior dos dados coletados pudessem ser diretamente comparáveis já que o mesmo numero de núcleos,ram,velocidade de disco e rede estavam disponiveis para ambas maquinas e o clock de ambas também foi limitado para exatos 1ghz para que as contas finais de comparação fossem mais simples,sendo assim pode-se considerar os testes como sendo testes 1 para 1 nas diferentes arquiteturas.
+os dados coletados apontam que a arquitetura arm possuiu uma porcentagem de uso de cpu mais baixa que a da arquitetura amd64,o que indica uma otimização em relação a isso do ponto de vista dessa arquitetura,essa diferença causou uma maior demora de processamento na arquitetura armhf,isso levando em conta que a diferença é bem baixa se tora irrisória em relação as comparações de arquiteturas.
+enquanto a arquitetura amd64 apresentou umconsumo maior de ram,sendo assim é possivel se indicar que os programas de banco de dados utilizados tiveram suas otimizações focadas em coisas diferentes.
+os bancos de dados mariadb e postgres apresentam diferenças visiveis entre si em relação a uso de ram e cpu.
 
 
 
