@@ -3,7 +3,7 @@
 12pt,				% tamanho da fonte
 openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
 oneside,			% para impressão em verso e anverso. Oposto a oneside
-a4paper,			% tamanho do papel. 
+a4paper,			% tamanho do papel.
 % -- opções da classe abntex2 --
 %chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
 %section=TITLE,		% títulos de seções convertidos em letras maiúsculas
@@ -21,10 +21,10 @@ brasil,				% o último idioma é o principal do documento
 % PACOTES
 % ---
 % ---
-% Pacotes fundamentais 
+% Pacotes fundamentais
 % ---
 \usepackage{cmap}				% Mapear caracteres especiais no PDF
-%\usepackage{lmodern}			% Usa a fonte Latin Modern		
+%\usepackage{lmodern}			% Usa a fonte Latin Modern
 \usepackage{helvet}
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
@@ -35,13 +35,16 @@ brasil,				% o último idioma é o principal do documento
 \usepackage{underscore}
 \usepackage{amsfonts}
 \usepackage{listings}
+\usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{graphicx} % Usado para outros tipos de imagens
 \usepackage{float} % Usado para posicionamento de imagens
 \usepackage[notransparent]{svg}  % Eis o pacote que queremos.
 \usepackage{alltt}
-
-\linespread{1.5} % espaçamento entre linhas		
+\usepackage{filecontents}
+\usepackage{listings}
+\usepackage{subfiles}
+\linespread{1.5} % espaçamento entre linhas
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
@@ -56,6 +59,7 @@ brasil,				% o último idioma é o principal do documento
 \usepackage{longtable}
 \usepackage{hyperref}
 \usepackage{verbatim}
+\usepackage{listings}
 \hypersetup{
 	colorlinks=false,
 	pdfpagemode=FullScreen,
@@ -63,9 +67,9 @@ brasil,				% o último idioma é o principal do documento
 }
 \hypersetup{final}
 \urlstyle{same}
-% --- 
+% ---
 % CONFIGURAÇÕES DE PACOTES
-% --- 
+% ---
 
 % ---
 % Configurações do pacote backref
@@ -88,7 +92,7 @@ brasil,				% o último idioma é o principal do documento
 
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
-% 
+%
 \titulo{Benchmark de desempenho entre bancos de dados em diferentes arquiteturas}
 
 \autor{Miguel Magalhães Lopes}
@@ -98,8 +102,8 @@ brasil,				% o último idioma é o principal do documento
 \coorientador{CICLANO}
 %\instituicao{}
 \tipotrabalho{Trabalho de Conclusão de Curso}
-% O preambulo deve conter o tipo do trabalho, o objetivo, 
-% o nome da instituição e a área de concentração 
+% O preambulo deve conter o tipo do trabalho, o objetivo,
+% o nome da instituição e a área de concentração
 \preambulo{Trabalho de Conclusão apresentado ao Campus Rio Pomba, do Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas Gerais, como parte das exigências do curso de Bacharelado em Ciência da Computação para a obtenção do título de Bacharel em Ciência da Computação.}
 % ---
 
@@ -114,11 +118,11 @@ brasil,				% o último idioma é o principal do documento
 %\makeatletter
 %\hypersetup{
 	%pagebackref=true,
-	%		pdftitle={\@title}, 
+	%		pdftitle={\@title},
 	%		pdfauthor={\@author},
 	%    	pdfsubject={\imprimirpreambulo},
 	%	    pdfcreator={Matheus F O Baffa},
-	%		pdfkeywords={content-based image retrieval}{desenvolvimento web}{exame de fundo de olho}{histograma backprojection}{íris}, 
+	%		pdfkeywords={content-based image retrieval}{desenvolvimento web}{exame de fundo de olho}{histograma backprojection}{íris},
 	%		colorlinks=true,       		% false: boxed links; true: colored links
 	%    	linkcolor=black,          	% color of internal links
 	%    	citecolor=black,        		% color of links to bibliography
@@ -128,11 +132,11 @@ brasil,				% o último idioma é o principal do documento
 	%}
 \makeatother
 \graphicspath{ {./imagens/} }
-% --- 
+% ---
 
-% --- 
-% Espaçamentos entre linhas e parágrafos 
-% --- 
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -150,39 +154,39 @@ brasil,				% o último idioma é o principal do documento
 % Início do documento
 % ----
 \begin{document}
-	
+
 	% Retira espaço extra obsoleto entre as frases.
-	\frenchspacing 
-	
+	\frenchspacing
+
 	% ----------------------------------------------------------
 	% ELEMENTOS PRÉ-TEXTUAIS
 	% ----------------------------------------------------------
 	% \pretextual
-	
+
 	% ---
 	% Capa
 	% ---
 	\begin{center}
-		\textbf{ 
+		\textbf{
 			INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO SUDESTE DE MINAS GERAIS - CAMPUS RIO POMBA}
 	\end{center}
-	
+
 	\imprimircapa
 	% ---
-	
+
 	% ---
 	% Folha de rosto
 	% (o * indica que haverá a ficha bibliográfica)
 	% ---
 	\imprimirfolhaderosto*
 	% ---
-	
+
 	% ---
 	% Inserir a ficha bibliografica
 	% ---
-	
+
 	% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de
-	% catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
+	% catalogação-na-publicação''. Você pode utilizar este modelo como referência.
 	% Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
 	% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
 	% com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
@@ -196,42 +200,42 @@ brasil,				% o último idioma é o principal do documento
 		\hrule							% Linha horizontal
 		\begin{center}					% Minipage Centralizado
 			\begin{minipage}[c]{12.5cm}		% Largura
-				
+
 				\imprimirautor
-				
+
 				\hspace{0.5cm} \imprimirtitulo  / \imprimirautor. --
 				\imprimirlocal, \imprimirdata-
-				
+
 				\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
-				
+
 				\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
-				
+
 				\hspace{0.5cm}
 				\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas, Campus Rio Pomba,
 					\imprimirdata.}\\
-				
+
 				\hspace{0.5cm}
-				1. 
-				2. 
-				I. 
+				1.
+				2.
+				I.
 				II.
 				III.
-				IV. \\ 			
-				
+				IV. \\
+
 				\hspace{8.75cm} %CDU 02:141:005.7\\
-				
+
 			\end{minipage}
 		\end{center}
 		\hrule
 	\end{fichacatalografica}
 	% ---
-	
+
 	% ---
 	% Inserir errata
 	% ---
 	%\begin{errata}
 	%Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. %Exemplo:
-	
+
 	%\vspace{\onelineskip}
 	%
 	%FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
@@ -239,7 +243,7 @@ brasil,				% o último idioma é o principal do documento
 		%rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
 	%cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
 	%Zootecnia, Universidade de São Paulo, São Paulo, 2011.
-	
+
 	%\begin{table}[htb]
 	%\center
 	%\footnotesize
@@ -254,11 +258,11 @@ brasil,				% o último idioma é o principal do documento
 	%
 	%\end{errata}
 	% ---
-	
+
 	% ---
 	% Inserir folha de aprovação
 	% ---
-	
+
 	% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
 	% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
 	% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
@@ -267,29 +271,29 @@ brasil,				% o último idioma é o principal do documento
 	% \includepdf{folhadeaprovacao_final.pdf}
 	%
 	\begin{folhadeaprovacao}
-		
+
 		\begin{center}
 			{\ABNTEXchapterfont\large\imprimirautor}
-			
+
 			\vspace*{\fill}\vspace*{\fill}
 			{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
 			\vspace*{\fill}
-			
+
 			\hspace{.45\textwidth}
 			\begin{minipage}{.5\textwidth}
 				\imprimirpreambulo
 			\end{minipage}%
 			\vspace*{\fill}
 		\end{center}
-		
+
 		Trabalho aprovado. \imprimirlocal, 00 de dezembro de 20XX.
-		
-		\assinatura{\textbf{\imprimirorientador}, Orientador, IF Sudeste MG - Rio Pomba} 
+
+		\assinatura{\textbf{\imprimirorientador}, Orientador, IF Sudeste MG - Rio Pomba}
 		\assinatura{\textbf{CICLANO}, Coorientador, IF Sudeste MG - Rio Pomba}
 		\assinatura{\textbf{Dr. BELTRANO} \\ IF Sudeste MG - Rio Pomba}
 		\assinatura{\textbf{Me. XXXXXXXXXXXXX} \\ IF Sudeste MG - Rio Pomba }
 		%\assinatura{\textbf{Professor W} \\ IF Sudeste MG - Rio Pomba}
-		
+
 		\begin{center}
 			\vspace*{0.5cm}
 			{\large\imprimirlocal}
@@ -297,63 +301,63 @@ brasil,				% o último idioma é o principal do documento
 			{\large\imprimirdata}
 			\vspace*{1cm}
 		\end{center}
-		
+
 	\end{folhadeaprovacao}
 	% ---
-	
-	
+
+
 	% ---
 	% Dedicatória
 	% ---
 	\begin{dedicatoria}
 		\vspace*{\fill}
 		\begin{flushright}
-			Este trabalho é dedicado a todos\\ 
-			aqueles que me inspiraram, em especial\\ 
+			Este trabalho é dedicado a todos\\
+			aqueles que me inspiraram, em especial\\
 			XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \\
 			XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
 		\end{flushright}
 	\end{dedicatoria}
 	% ---
-	
+
 	% ---
 	% Agradecimentos
 	% ---
 	\begin{agradecimentos}
-		
+
 	\end{agradecimentos}
-	
+
 	% resumo em português
 	\begin{resumo}
 		\noindent
-		
+
 		\vspace{\onelineskip}
-		
+
 		\noindent
 		\textbf{Palavras-chaves:} palavra1. palavra2. palavra3. palavra4.
 	\end{resumo}
-	
+
 	% resumo em inglês
 	\begin{resumo}[Abstract]
 		\begin{otherlanguage*}{english}
 			\vspace{\onelineskip}
-			\noindent 
-			
+			\noindent
+
 			\vspace{\onelineskip}
-			
+
 			\noindent  \textbf{Key-words}:  word1. word2. word3. word4. word5.
 		\end{otherlanguage*}
 	\end{resumo}
 	\urlstyle{same}
-	
+
 	\pdfbookmark[0]{\listfigurename}{lof}
 	\listoffigures*
 	\cleardoublepage
-	
+
 	\pdfbookmark[0]{\listtablename}{lot}
 	\listoftables*
 	\cleardoublepage
-	
+
 	\DeclareRobustCommand{\beginAutoTable}[4]{
 		%nome da tabela e label
 		%cabeçalho
@@ -362,7 +366,7 @@ brasil,				% o último idioma é o principal do documento
 		\label{tab:#1}
 		\begin{longtable}{#4}
 			\caption{#1}
-			\\ \hline \multicolumn{#3}{c}{\textbf{#1}} \\ \hline 
+			\\ \hline \multicolumn{#3}{c}{\textbf{#1}} \\ \hline
 			#2 \\ \hline \endfirsthead
 			#2 \\ \hline \endhead
 		}
@@ -408,12 +412,42 @@ brasil,				% o último idioma é o principal do documento
 \subsection{#1}
 \label{subsec:#1}
 }
+%\patchcmd{\verbatim@input}{\@verbatim}{\scriptsize\@verbatim}{}{}
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 \newcounter{anexo}
 \DeclareRobustCommand{\anexo}[2]{
 \refstepcounter{anexo}
 \label{anexo:#1}
-\verbatiminput{#2}
+\lstinputlisting{{\detokenize{apendices/#2}}}
 }
+
 \newcounter{imagem}
 \DeclareRobustCommand{\imagemsvg}[3]{
 %lable
@@ -437,6 +471,17 @@ brasil,				% o último idioma é o principal do documento
 \label{imagem:#1}
 \end{figure}
 }
+\DeclareRobustCommand{\apendicesvg}[2]{
+%lable
+%arquivo
+%caption
+\refstepcounter{imagem}
+\begin{figure}[htbp]
+\includesvg[width=\textwidth]{{\detokenize{#2}}}
+\caption{#1}
+\label{imagem:#1}
+\end{figure}
+}
 %\begin{figure}
 %\includegraphics{artigos relacionados/oltp mysql.png}
 %\caption{valores encontrados para o container mysql no artigo citado}
@@ -450,7 +495,7 @@ brasil,				% o último idioma é o principal do documento
 
 \sig{arm} ARM, originalmente Acorn RISC Machine, e depois Advanced RISC Machine, é uma família de arquiteturas RISC desenvolvida pela empresa britânica ARM Holdings
 
-\sig{IDE} 
+\sig{IDE}
 
 \sig{x64}
 
@@ -503,7 +548,7 @@ O mesmo pode ser dito para a arquitetura \myref{sig}{aarch64} ou arm64 que é um
 mas sim uma "denominação" das variantes e evoluções da arquitetura \myref{sig}{arm} com suporte a 64bit.As arquiteturas passaram a ser denominadas dessa forma a partir da armv8,
 entretanto existem versões do \myref{sig}{arm},como o armv7l, que consegue trabalhar com instruções de 64bit,apesar de ser uma arquitetura 32 bits.\newline
 O foco da pesquisa foi feito em cima do uso de servidores \myref{sig}{arm}, que é baixo, apesar de totalmente possível e existente no mundo corporativo.
-Existem alguns servidores comerciais que utilizam a arquitetura \myref{sig}{arm} para seu funcionamento. Desta forma foi feita uma comparação na utilização desses processadores para a simulação de uma aplicação de banco de dados. 
+Existem alguns servidores comerciais que utilizam a arquitetura \myref{sig}{arm} para seu funcionamento. Desta forma foi feita uma comparação na utilização desses processadores para a simulação de uma aplicação de banco de dados.
 Essa aplicação simula a utilização de forma realística de uma base de dados de uma locadora. \newline
 O cenário foi escolhido a partir de um esquema de banco de dados genérico da internet e foram utilizados os bancos de dados PostgreSQL e MariaDB, visto que são os bancos de dados de propósito geral mais utilizados atualmente.
 Foi preferido o MariaDB sobre o MySQL visto que não existe uma versão dele para a arquitetura \myref{sig}{arm} e ambos são basicamente o mesmo sistema.\newline
@@ -561,7 +606,7 @@ sem a necessidade dessa adaptação são usados programas chamados de emuladores
 Estes programas funcionam como uma camada de compatibilidade entre a arquitetura real da máquina que está rodando e a arquitetura na qual o programa foi projetado para funcionar.
 Entretanto esse processo pode acarretar em uma perda considerável de desempenho, podendo resultar em casos onde máquinas com  516 gigaflops sejam necessárias para se emular máquinas com 230 gigaflops,
 como no caso de um emulador do sistema de console Playstation 3 utilizando o emulador rpcs3, e mesmo com essa ineficiência, esse emulador não tem 100\% de compatibilidade com os softwares existentes na plataforma,
-de forma que nem todos os softwares dessa plataforma funcionam exatamente como deveriam, ou mesmo funcionam. Por mais que ambas as máquinas executem o mesmo kernel de sistema ainda sim haverá perda de desempenho muito grande pois apesar de, 
+de forma que nem todos os softwares dessa plataforma funcionam exatamente como deveriam, ou mesmo funcionam. Por mais que ambas as máquinas executem o mesmo kernel de sistema ainda sim haverá perda de desempenho muito grande pois apesar de,
 em teoria, serem o mesmo sistema operacional a diferença de arquiteturas possui um peso muito maior do que o sistema operacional utilizado.\newline
 
 Esse é um exemplo de como mesmo com tudo para ser um cenário igual de utilização ou mesmo um cenário melhor ao se trocar uma arquitetura de um computador inúmeras adaptações devem ser feitas ou,
@@ -580,8 +625,8 @@ Sendo assim, existem algumas pequenas variações no funcionamento dos computado
 Entretanto, uma peculiaridade tende a ser comum nos processadores \myref{sig}{arm},
 eles costumam apresentar uma \myref{sig}{GPU} integrada e algumas outras unidades de processamento especializadas nas quais os processadores \myref{sig}{x86} costumam ter que ser adicionadas com chips externos.
 Uma dessas unidades é o \myref{sig}{TPU} que ficou mais conhecida com o lançamento do Windows 11 que exige em sua instalação por propósitos de segurança.
-O principal propósito da arquitetura \myref{sig}{arm} entretanto não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes, 
-tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{arm} mais potente atualmente da marca e mais popular, 
+O principal propósito da arquitetura \myref{sig}{arm} entretanto não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes,
+tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{arm} mais potente atualmente da marca e mais popular,
 consome em torno de 15w hora. É uma grande diferença, principalmente levando em conta que ambos tem a capacidade de utilizar os mesmos programas de trabalho,
 se considerarmos sistema operacional Linux e programas open source, tanto editores de texto, navegadores de internet quanto \myref{sig}{IDE}s de programação que estão disponíveis para ambos e para um uso comum funcionam tão bem quanto em um cenário real.\newline
 
@@ -661,7 +706,7 @@ esse arquivo faz com que o mesmo arquivo docker-compose possa ser usado em mais 
 o docker-compose é implementado num programa a parte que utiliza do framework do docker padrão,
 sendo assim é basicamente um programa oficial que simplifica o deploy por inserir sempre os comandos pre definidos neles de forma modificada pelo conteúdo do arquivo .env .
 o docker-compose foi implementado originalmente junto da versão 0.7.0 do docker,essa foi a primeira versão do docker a permitir a linkagem de contêineres entre si,
-sem precisar de exposição das portas para processos 
+sem precisar de exposição das portas para processos
 
 
 \sec{elasticsearch monitoring stack}
@@ -711,8 +756,8 @@ que são dados gerados randomicamente para testar a capacidade de um algoritmo e
 Essa biblioteca é comumente utilizada na etapa de testes de um algoritmo, seja para testes de segurança,
 para proteger de bots de criação de contas ou algo semelhante. É também utilizado para testes de estresse,
 quanto para qualquer tipo de teste que dependa de dados "realísticos".\newline
-Essa biblioteca foi selecionada pois é de fácil utilização, 
-possui documentação abrangente e de fácil compreensão e suporte para múltiplos idiomas. 
+Essa biblioteca foi selecionada pois é de fácil utilização,
+possui documentação abrangente e de fácil compreensão e suporte para múltiplos idiomas.
 Apesar da biblioteca apenas suportar todos os seus tipos de geração mais completos na localização dos EUA,
 dentre esses está um tipo que corresponde a todo um perfil de usuário, contendo desde endereço até a senha fraca ou forte.
 Para propósitos de testes, foram gerados apenas dados na localização do Brasil.\newline
@@ -742,11 +787,23 @@ no 2 teste MariaDB foi ligeiramente mais pesado em relação a cpu que MySQL\cit
 \imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
 
 
-\newline\newline\newline\newline
+
+
+
+
+
+
+
+
+
+
+
+
+%\newline\newline\newline\newline
 \sec{Automatisation de Docker Swarm sur SoCs ARM avec support MPI et Analyse des Performances}
-é uma analise de desempenho de docker swarm em soc arm 
+é uma analise de desempenho de docker swarm em soc arm
 foi usado MPI como base para os aplicativos usados,o sistema base dos contêineres é alpine Linux .
-foi usado um ambiente onde uma ferramenta externa configura o ambiente MPI para processamento.isso foi usado para automatizar a implantação e monitoramento do docker swarm 
+foi usado um ambiente onde uma ferramenta externa configura o ambiente MPI para processamento.isso foi usado para automatizar a implantação e monitoramento do docker swarm
 uma das ferramentas é um processo de escaneamento das conexões ativas usando o netstat para simular o monitoramento do swarm de forma externa ao docker
 o método usado para experimentar a plataforma virtualizada foi o wrf,que é um método de previsão do tempo
 foram usados o rasp 2 e 3 , nano pi neo,ntc chip e banana pi
@@ -804,7 +861,7 @@ O Orange Pi é um SBC ARM baseado no processador allwinner h3 \cite{h3} com 3 US
 é um processador relativamente bom mas o conjunto de especificações não é bom o bastante para substituir um computador atual,
 devido a sua limitação de memória RAM e de capacidade gráfica, mas consegue funcionar de forma satisfatória como servidor doméstico ,
 visto que seu processador é bom o bastante para operações simplificadas e poucos acessos,mas quando se tratam de muitos acessos ele pode não ser potente o bastante para aguentar.\newline
-O notebook é um Lenovo G405\cite{G405},com um processador AMD E1-2100 \cite{E1} APU,um dual-core com clock máximo de 1.0GHz com 2 GB de memória RAM DDR3, 1 USB 2.0,2 USB 3.0, 
+O notebook é um Lenovo G405\cite{G405},com um processador AMD E1-2100 \cite{E1} APU,um dual-core com clock máximo de 1.0GHz com 2 GB de memória RAM DDR3, 1 USB 2.0,2 USB 3.0,
 porta de rede Gigabit e 2 portas sata3,entretanto essas portas sata não serão usadas já que o propósito é manter as 2 maquinas o mais próximas em relação a hardware possível,
 resultando assim na mais próxima velocidade e especificações possíveis,o sistema operacional por outro lado,
 no Orange pi ficou armazenada na sua memória interna emmc e no computador amd num HD 2.5`` samsung sata3 de 500GB,a memória onde o sistema operacional do Orange pi está armazenadas está longe de ser rápida,
@@ -1274,7 +1331,7 @@ uma solução para isso foi a substituição da mídia de armazenamento do arqui
 
 
 %\chapter{Resultados}
-%\label{ch: resultados} 
+%\label{ch: resultados}
 \ch{Resultados}
 
 \sec{resultados de inserção fracionada}
@@ -1301,7 +1358,7 @@ a principal diferença identificada em relação aos testes alem do previamente 
  postgres amd & 18 & 27 & 30 & 30 \\ \hline
  mariadb arm & 8 & 16 & 34 & 35 \\ \hline
  mariadb amd & 18 & 27 & 34 & 35 \\ \hline
- 
+
 \end{easyTableAuto}
 %lable
 %arquivo
@@ -1316,6 +1373,8 @@ um fator interessante a se destacar é o de que,apesar da distribuição de oper
 \end{itemize}
 os tempos apresentados por esse teste estão descritos na \autoref{fig:resultados todos fracionada}
 \imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark todas operações fracionadas}
+
+uma coia interessante ocorreu em uma etapa do teste,onde aparentemente a maquina que estava executando o teste travou e voltou a funcionar em seguinda,isso visto que como as imagens do \myref{anexo}{resultados todos parte 9} demonstram,durante um intervalo de tempo nenhum dos containers estavam ativos,e sendo assim,nenhuma operação estava sendo realizada neles.
 %lable
 %arquivo
 %caption
@@ -1337,10 +1396,14 @@ os tempos apresentados por esse teste estão descritos na \autoref{fig:resultado
 \ch{Conclusão}
 
 
-\ch{anexos}
-%\anexo{log tempo insercao ,teste insercao/valores_tempo_velocidade_benchmark_fracionado.json}
+
+
+
+
+%\anexo{log tempo insercao}{teste insercao/valores_tempo_velocidade_benchmark_fracionado.json}
 %\label{anexo:#1}
 %\lstinputlisting{apendices/teste insercao/valores_tempo_velocidade_benchmark_fracionado.json}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      REFERÊNCIAS                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1348,12 +1411,255 @@ os tempos apresentados por esse teste estão descritos na \autoref{fig:resultado
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
 % ---
-\bookmarksetup{startatroot}% 
+\bookmarksetup{startatroot}%
 % ---
 
 % ---------------------------------------------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
 % ---------------------------------------------------------------------------------------------
+
+%\ch{anexos}
+
+imagens
+%\apendicesvg{todos fracionada/dados do container concatenados_10.svg}{todos fracionada/dados do container concatenados_10.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_11.svg}{todos fracionada/dados do container concatenados_11.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_12.svg}{todos fracionada/dados do container concatenados_12.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_1.svg}{todos fracionada/dados do container concatenados_1.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_2.svg}{todos fracionada/dados do container concatenados_2.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_3.svg}{todos fracionada/dados do container concatenados_3.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_4.svg}{todos fracionada/dados do container concatenados_4.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_5.svg}{todos fracionada/dados do container concatenados_5.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_6.svg}{todos fracionada/dados do container concatenados_6.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_7.svg}{todos fracionada/dados do container concatenados_7.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_8.svg}{todos fracionada/dados do container concatenados_8.svg}
+%\apendicesvg{todos fracionada/dados do container concatenados_9.svg}{todos fracionada/dados do container concatenados_9.svg}
+%\apendicesvg{todos fracionada/todos tempos.svg}{todos fracionada/todos tempos.svg}
+
+\textbf{resultados todos parte 0}\label{anexo:resultados todos parte 0}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0.svg}{todos fracionada/uso do container container_postgres_amd_limpo0.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}%
+\pagebreak
+
+
+\textbf{resultados todos parte 1}\label{anexo:resultados todos parte 1}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1.svg}{todos fracionada/uso do container container_postgres_amd_limpo1.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 2}\label{anexo:resultados todos parte 2}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2.svg}{todos fracionada/uso do container container_postgres_amd_limpo2.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 3}\label{anexo:resultados todos parte 3}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3.svg}{todos fracionada/uso do container container_postgres_amd_limpo3.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 4}\label{anexo:resultados todos parte 4}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4.svg}{todos fracionada/uso do container container_postgres_amd_limpo4.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 5}\label{anexo:resultados todos parte 5}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5.svg}{todos fracionada/uso do container container_postgres_amd_limpo5.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 6}\label{anexo:resultados todos parte 6}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6.svg}{todos fracionada/uso do container container_postgres_amd_limpo6.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 7}\label{anexo:resultados todos parte 7}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7.svg}{todos fracionada/uso do container container_postgres_amd_limpo7.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 8}\label{anexo:resultados todos parte 8}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8.svg}{todos fracionada/uso do container container_postgres_amd_limpo8.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 9}\label{anexo:resultados todos parte 9}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9.svg}{todos fracionada/uso do container container_postgres_amd_limpo9.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 10}\label{anexo:resultados todos parte 10}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10.svg}{todos fracionada/uso do container container_postgres_amd_limpo10.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 11}\label{anexo:resultados todos parte 11}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11.svg}{todos fracionada/uso do container container_postgres_amd_limpo11.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}%
+\pagebreak\newline
+\textbf{resultados todos parte 12}\label{anexo:resultados todos parte 12}\newline%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo12}{todos fracionada/uso do container container_mariadb_armhf_limpo12.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo12}{todos fracionada/uso do container container_postgres_amd_limpo12.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12}{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}%
+\pagebreak\newline
+\pagebreak
+arquivos\newline
+%\fbox{\begin{minipage}{\textwidth}
+apendices relacionados ao teste completo\newline
+\fbox{\begin{minipage}{\textwidth}
+\textbf{logs todos mariadb_amd_processados}\label{anexo:logs todos mariadb_amd_processados.log}\newline
+uso de ram\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 2, 2, 0, 15, 54]\newline
+[6362, 50779, 216701, 273480, 32996, 555223, 99182, 3766, 341, 17]\newline
+[22, 19, 5, 2, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de ram é de 40\newline
+o valor com mais ocorrencias de uso de ram é 35\newline
+\newline
+\newline
+\newline
+uso de cpu\newline
+[4, 7, 2, 1, 0, 1, 5, 2482, 51165, 700744]\newline
+[0, 1288, 49, 11, 86, 3079, 290263, 2, 59534, 0]\newline
+[0, 246, 682, 9325, 0, 10315, 30, 9474, 334, 0]\newline
+[1448, 1, 0, 4629, 0, 142, 4702, 25, 738, 0]\newline
+[0, 2022, 56, 5, 321, 2814, 383, 1, 0, 0]\newline
+[0, 0, 1, 341, 1805, 181, 1, 80, 926, 0]\newline
+[0, 237, 6, 1426, 55, 0, 762, 0, 2, 114]\newline
+[0, 8, 1037, 1, 0, 487, 82, 83, 8, 0]\newline
+[0, 856, 0, 463, 90, 7, 0, 2, 50, 0]\newline
+[943, 647, 153, 2, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de cpu é de 10\newline
+o valor com mais ocorrencias de uso de cpu é 09\newline
+\end{minipage}}
+
+\fbox{\begin{minipage}{\textwidth}
+\textbf{logs todos mariadb_armhf_processados}\label{anexo:logs todos mariadb_armhf_processados.log}\newline
+uso de ram\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 5, 16, 8]\newline
+[16, 21, 58, 123, 903, 7033, 21051, 106000, 133555, 188308]\newline
+[240178, 33226, 110, 31, 45, 21, 74, 106, 22, 131]\newline
+[70, 7, 94, 4, 131, 52, 13, 276, 3, 168]\newline
+[369, 19, 1, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de ram é de 30\newline
+o valor com mais ocorrencias de uso de ram é 30\newline
+\newline
+\newline
+\newline
+uso de cpu\newline
+[21, 6, 7, 12, 15, 72, 129, 65494, 34474, 104121]\newline
+[5, 252, 96, 132, 2292, 7845, 385212, 10, 30660, 5]\newline
+[4, 1269, 188, 189609, 3, 22745, 145, 4737, 6845, 16]\newline
+[5311, 41, 0, 7238, 0, 816, 3030, 23, 3269, 0]\newline
+[1, 4067, 585, 12, 18, 1582, 2072, 6, 0, 0]\newline
+[0, 0, 2, 1352, 1081, 18, 3, 239, 1733, 0]\newline
+[0, 881, 1, 725, 174, 0, 1187, 0, 5, 646]\newline
+[1, 123, 458, 12, 0, 802, 519, 5, 95, 0]\newline
+[0, 227, 0, 433, 261, 77, 11, 2, 2, 0]\newline
+[102, 215, 145, 3, 1, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de cpu é de 20\newline
+o valor com mais ocorrencias de uso de cpu é 16\newline
+\end{minipage}}
+
+\fbox{\begin{minipage}{\textwidth}
+\textbf{logs todos postgres_amd_processados}\label{anexo:logs todos postgres_amd_processados.log}\newline
+ uso de ram\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 3263, 30386, 26906, 1113, 12273, 13977, 6987]\newline
+[12137, 12152, 14554, 16969, 24602, 32591, 34546, 26028, 29965, 35166]\newline
+[37614, 35360, 36454, 39982, 44499, 51398, 54360, 61957, 64734, 70274]\newline
+[73288, 71273, 74495, 71518, 69823, 62375, 54838, 46323, 40031, 42772]\newline
+[55185, 72958, 82168, 73553, 37296, 6388, 691, 523, 321, 93]\newline
+[15, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de ram é de 60\newline
+o valor com mais ocorrencias de uso de ram é 62\newline
+\newline
+\newline
+\newline
+uso de cpu\newline
+[6, 8, 1, 3, 1, 1, 31, 2597, 38173, 344957]\newline
+[0, 17264, 1282, 143, 901, 7344, 166851, 17, 177235, 1]\newline
+[0, 1847, 13955, 19279, 1, 94879, 784, 146286, 3954, 65]\newline
+[23579, 346, 3, 101781, 1, 6089, 124456, 2092, 25778, 0]\newline
+[3, 79642, 7366, 1016, 11027, 102958, 27511, 663, 2, 1]\newline
+[1, 1, 891, 26264, 84182, 9902, 1478, 8258, 57722, 38]\newline
+[18, 20908, 3810, 65989, 7925, 204, 60423, 14, 1976, 18270]\newline
+[927, 7100, 55495, 3289, 15, 44659, 17674, 9914, 6742, 61]\newline
+[35, 45854, 1037, 33769, 14665, 6772, 2917, 4874, 12472, 378]\newline
+[45469, 37198, 23804, 5302, 2657, 991, 261, 52, 2, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de cpu é de 10\newline
+o valor com mais ocorrencias de uso de cpu é 09\newline
+\end{minipage}}
+
+\fbox{\begin{minipage}{\textwidth}
+\textbf{logs todos postgres_armhf_processados}\label{anexo:logs todos postgres_armhf_processados.log}\newline
+ uso de ram\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 255, 7152, 16283]\newline
+[32831, 19896, 2336, 2662, 4372, 6181, 7587, 12039, 10345, 12301]\newline
+[15140, 20210, 21261, 22132, 25138, 25781, 24380, 24325, 25114, 28020]\newline
+[33401, 32594, 36043, 34009, 37117, 38893, 37737, 39704, 44899, 44957]\newline
+[44297, 46854, 46327, 49719, 51753, 48376, 52095, 58927, 59520, 68535]\newline
+[73293, 80115, 79706, 61333, 40287, 26496, 17648, 11358, 6472, 2002]\newline
+[577, 220, 94, 22, 80, 29, 4, 51, 100, 59]\newline
+[72, 55, 24, 12, 3, 27, 121, 72, 70, 61]\newline
+[71, 14, 7, 2, 2, 3, 1, 83, 61, 112]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de ram é de 60\newline
+o valor com mais ocorrencias de uso de ram é 61\newline
+\newline
+\newline
+\newline
+uso de cpu\newline
+[6, 12, 10, 28, 68, 588, 3618, 118494, 330874, 352961]\newline
+[85, 10533, 4960, 2176, 16008, 92217, 623653, 285, 282050, 39]\newline
+[7, 12853, 7361, 220074, 4, 274752, 2669, 134714, 22195, 439]\newline
+[89115, 1320, 2, 169013, 19, 15285, 93588, 4316, 64198, 23]\newline
+[36, 117739, 14214, 1406, 4456, 70651, 54517, 903, 19, 1]\newline
+[0, 10, 934, 47887, 58121, 3592, 1484, 11312, 81406, 91]\newline
+[69, 38937, 2630, 46263, 10104, 218, 75911, 31, 1597, 36127]\newline
+[632, 9434, 43290, 3032, 46, 69151, 34191, 2579, 8050, 88]\newline
+[52, 33862, 653, 46121, 23382, 6358, 2337, 1375, 1741, 188]\newline
+[25154, 40896, 30033, 3361, 890, 339, 148, 70, 8, 0]\newline
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
+a faixa com mais ocorrencias de uso de cpu é de 20\newline
+o valor com mais ocorrencias de uso de cpu é 16\newline
+\end{minipage}}
+%\end{minipage}}
+
 \postextual
 
 
