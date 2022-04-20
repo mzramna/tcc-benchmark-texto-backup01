@@ -413,34 +413,7 @@ brasil,				% o último idioma é o principal do documento
 \label{subsec:#1}
 }
 %\patchcmd{\verbatim@input}{\@verbatim}{\scriptsize\@verbatim}{}{}
-\lstdefinelanguage{json}{
-    basicstyle=\normalfont\ttfamily,
-    numbers=left,
-    numberstyle=\scriptsize,
-    stepnumber=1,
-    numbersep=8pt,
-    showstringspaces=false,
-    breaklines=true,
-    frame=lines,
-    backgroundcolor=\color{background},
-    literate=
-     *{0}{{{\color{numb}0}}}{1}
-      {1}{{{\color{numb}1}}}{1}
-      {2}{{{\color{numb}2}}}{1}
-      {3}{{{\color{numb}3}}}{1}
-      {4}{{{\color{numb}4}}}{1}
-      {5}{{{\color{numb}5}}}{1}
-      {6}{{{\color{numb}6}}}{1}
-      {7}{{{\color{numb}7}}}{1}
-      {8}{{{\color{numb}8}}}{1}
-      {9}{{{\color{numb}9}}}{1}
-      {:}{{{\color{punct}{:}}}}{1}
-      {,}{{{\color{punct}{,}}}}{1}
-      {\{}{{{\color{delim}{\{}}}}{1}
-      {\}}{{{\color{delim}{\}}}}}{1}
-      {[}{{{\color{delim}{[}}}}{1}
-      {]}{{{\color{delim}{]}}}}{1},
-}
+
 \newcounter{anexo}
 \DeclareRobustCommand{\anexo}[2]{
 \refstepcounter{anexo}
@@ -503,7 +476,7 @@ brasil,				% o último idioma é o principal do documento
 
 \sig{aarch64}
 
-\sig{ram}
+\sig{RAM}
 
 \sig{GPU}
 
@@ -540,51 +513,46 @@ As JVMs estão disponíveis para muitas plataformas de hardware e software (ou s
 \addcontentsline{toc}{chapter}{\textbf{Introdução}}
 \markright{Introdução}
 \label{ch:introducao}
-%\ch{introducao}
 Esta pesquisa foi baseada na crescente adoção de processadores \myref{sig}{arm}, que conseguem entregar uma eficiência energética muito superior a comumente utilizada nos computadores e servidores (de arquitetura \myref{sig}{x86}).
 Esta arquitetura possui uma versão 64 bit, que hoje em dia é praticamente a única variante utilizada a \myref{sig}{x64}. Essa arquitetura é, no geral,
 apenas uma variante aditiva da \myref{sig}{x86} na qual são adicionadas varias instruções e vários suportes, sendo o principal deles o suporte a comandos 64 bits.
-O mesmo pode ser dito para a arquitetura \myref{sig}{aarch64} ou arm64 que é uma variante aditiva da \myref{sig}{arm},essa não é ,como a \myref{sig}{x64} uma versão única,
-mas sim uma "denominação" das variantes e evoluções da arquitetura \myref{sig}{arm} com suporte a 64bit.As arquiteturas passaram a ser denominadas dessa forma a partir da armv8,
-entretanto existem versões do \myref{sig}{arm},como o armv7l, que consegue trabalhar com instruções de 64bit,apesar de ser uma arquitetura 32 bits.\newline
-O foco da pesquisa foi feito em cima do uso de servidores \myref{sig}{arm}, que é baixo, apesar de totalmente possível e existente no mundo corporativo.
-Existem alguns servidores comerciais que utilizam a arquitetura \myref{sig}{arm} para seu funcionamento. Desta forma foi feita uma comparação na utilização desses processadores para a simulação de uma aplicação de banco de dados.
+%O mesmo pode ser dito para a arquitetura \myref{sig}{aarch64} ou arm64 que é uma variante aditiva da \myref{sig}{arm},essa não é ,como a \myref{sig}{x64} uma versão única,
+%mas sim uma "denominação" das variantes e evoluções da arquitetura \myref{sig}{arm} com suporte a 64bit.As arquiteturas passaram a ser denominadas dessa forma a partir da armv8,
+%entretanto existem versões do \myref{sig}{arm},como o armv7l, que consegue trabalhar com instruções de 64bit,apesar de ser uma arquitetura 32 bits.\newline
+O foco da pesquisa foi feito em cima do uso de servidores \myref{sig}{arm}, que existente no mundo corporativo. Desta forma foi feita uma comparação na utilização desses processadores para a simulação de uma aplicação de banco de dados.
 Essa aplicação simula a utilização de forma realística de uma base de dados de uma locadora. \newline
-O cenário foi escolhido a partir de um esquema de banco de dados genérico da internet e foram utilizados os bancos de dados PostgreSQL e MariaDB, visto que são os bancos de dados de propósito geral mais utilizados atualmente.
+O cenário foi escolhido a partir de um esquema de banco de dados genérico da internet e foram utilizados os bancos de dados PostgreSQL e MariaDB, visto que são os bancos de dados de propósito geral mais utilizados atualmente com suporte a arquitetura \myref{sig}{arm}.
 Foi preferido o MariaDB sobre o MySQL visto que não existe uma versão dele para a arquitetura \myref{sig}{arm} e ambos são basicamente o mesmo sistema.\newline
 Foi criado um programa para a geração de dados realísticos baseados na biblioteca faker implementada na linguagem Python. Estes dados são gerados para cada país específico em idiomas e caracteres compatíveis com a região escolhida.
 Desta forma é plausível que estes dados, como nome, telefone, endereço e até mesmo usuário e senha sejam possíveis de existirem.
 Foi escolhido essa forma de inserção pois um preenchimento de dados totalmente randômico e de tamanho fixo podem apresentar discrepâncias com o desempenho num ambiente real de uso,
-afetando tanto o tempo, quanto carga dos processadores de forma negativa. Os dados utilizados em cada teste são exatamente os mesmos, com a diferença apenas da quantidade,
-simbolizando o uso em um ambiente real. Desta forma o benchmark se torna mais aplicável a realidade.\newline
+afetando tanto o tempo, quanto carga dos processadores de forma negativa. Os dados utilizados em cada ciclo de teste são exatamente os mesmos,
+simbolizando o uso em um ambiente real. Desta forma o benchmark se torna mais aplicável a realidade e de mais fácil comparação de desempenho que outros algorítimos encontrados.\newline
 
-%\chapter{Fundamentação Teórica}
-%\label{ch:fundamentacao teorica}
+
 \ch{fundamentação teórica}
 
 \sec{virtualização}
-virtualização é uma técnica usada para simular um computador dentro de outro,dependendo do método utilizado ele pode simular apenas uma camada ou mais de uma das camadas de hardware e software de um computador .
-um computador virtualizado pode receber vários nomes dependendo do método utilizado para virtualizar,os mais utilizados hoje em dia são maquinas virtuais e contêineres docker,
-a principal diferença deles é a camada de hardware na qual ele executa
+virtualização é uma técnica usada para simular um computador dentro de outro,dependendo do método utilizado ele pode simular apenas uma camada ou mais de uma das camadas de hardware e software de um computador.
+Um computador virtualizado pode receber vários nomes dependendo do método utilizado para virtualizar,os mais utilizados hoje em dia são maquinas virtuais e contêineres docker.
+A principal diferença deles é a camada de hardware na qual ele executa.
 
 \sec{maquina virtual}
 uma maquina virtual é rodada por um programa dentro de um sistema operacional,maquinas virtuais possuem varias limitações,
-dentre elas por rodar em uma camada de software ele possui um menor desempenho de cpu e não pode ter acesso a outros hardwares do computador ,
-na maioria dos mecanismos de virtualização de maquina virtual só pode-se acessar RAM,dispositivos de dados e hardwares plug’n’play como hardwares USB,entretanto não é possível de se utilizar placas de video ou outros hardwares PCI,
-uma vantagem desses mecanismos de virtualização é que você facilmente pode utilizar qualquer programa de um computador convencional nele
-uma maquina virtual geralmente é criada ao se instalar um sistema real de um computador convencional em uma maquina virtual,ou ao se usar uma mídia de restauração de maquina virtual
+dentre elas um menor desempenho de processamento e não pode ter acesso a outros hardwares do computador.
+Na maioria desse tipo de virtualização é permitido o acesso direto à memória principal, dispositivos de armazenamento de dados e hardwares plug’n’play como dispositivos de entrada e saída USB,entretanto não é possível de se utilizar placas de video ou outros hardwares PCI.
 
 \sec{arquiteturas}
-Por definição arquitetura de computador é um conjunto de circuitos eletrônicos padronizado associado a um conjunto de instruções de forma a simplificar a programação deles para que funcionem comandos diferentes do binário para a programação de um eletrônico.
-Os compiladores utilizam esses conjuntos de instrução para que seja convertido o código de uma linguagem de programação para um binário de um programa.
+Por definição arquitetura de computador é um conjunto de circuitos eletrônicos padronizado associado a um conjunto de instruções de forma a simplificar a programação deles para que funcionem comandos diferentes do binário.
+Os compiladores utilizam esses conjuntos de instrução para que seja convertido o código de uma linguagem de programação de alto nivel para uma de baixo nível.
 A arquitetura também define/limita várias propriedades do hardware, como quantidade máxima de \myref{sig}{RAM},
-de disco, suporte ou não de saída de video, capacidades de rede e vários outros, mesmo que algumas dessas limitações possam ser contornadas utilizando variações da arquitetura chamadas microarquiteturas.\newline
+de disco, suporte ou não de saída de video, capacidades de rede e vários outros.\newline
 
-Uma micro arquitetura é quando adiciona-se tanto um circuito eletrônico novo ao circuito original da arquitetura quanto apenas uma simplificação ou reorganização dos comandos originais de uma arquitetura,
-entretanto, em uma micro arquitetura essas modificações são muito pequenas de forma a serem mais similares a arquitetura original do que uma nova arquitetura.
-Dessa forma as micro arquiteturas podem ser consideradas updates de uma arquitetura e quando são acumulados muitos desses updates, pode ser que seja gerada uma nova arquitetura,
-como foi o caso da arquitetura \myref{sig}{x86} para a arquitetura \myref{sig}{x64}, onde nesta última foi um upgrade grande o bastante da \myref{sig}{x86} a ponto de ser considerado uma nova arquitetura.
-A principal e mais visível diferença entre esses dois é a mudança de 32bit(na \myref{sig}{x86}) para 64bit(no \myref{sig}{x64}).\newline
+%Uma micro arquitetura é quando adiciona-se tanto um circuito eletrônico novo ao circuito original da arquitetura quanto apenas uma simplificação ou reorganização dos comandos originais de uma arquitetura,
+%entretanto, em uma micro arquitetura essas modificações são muito pequenas de forma a serem mais similares a arquitetura original do que uma nova arquitetura.
+%Dessa forma as micro arquiteturas podem ser consideradas updates de uma arquitetura e quando são acumulados muitos desses updates, pode ser que seja gerada uma nova arquitetura,
+%como foi o caso da arquitetura \myref{sig}{x86} para a arquitetura \myref{sig}{x64}, onde nesta última foi um upgrade grande o bastante da \myref{sig}{x86} a ponto de ser considerado uma nova arquitetura.
+%A principal e mais visível diferença entre esses dois é a mudança de 32bit(na \myref{sig}{x86}) para 64bit(no \myref{sig}{x64}).\newline
 
 As arquiteturas também podem ser definidas sobre características fora da \myref{sig}{CPU}. Elas podem ser definidas em \myref{sig}{GPU},
 \myref{sig}{TPU} e vários outros módulos de hardware de um computador, inclusive existindo arquiteturas especiais que são aplicadas em nível de software.
@@ -658,7 +626,7 @@ mas esse segundo geralmente não é feito,visto que os contêineres quando preci
 um grande motivo disso é o docker-compose,como é descrito no \myref{sec}{docker-compose}.
 o docker foi desenvolvido a pedido da google usando a linguagem go,também desenvolvida por ela,ele foi desenvolvido visando a simplificação da gerencia dos clusters de processamento da google,
 que utilizam dezenas de computadores mais fracos para fazer o processamento ,
-de forma que é mais barato para compor o ambiente para o processamento tão potente quanto se comprasse varias armas muito mais caras,
+de forma que é mais barato para compor o ambiente para o processamento tão potente quanto se comprasse varias maquinas muito mais caras,
 alem disso o docker também facilita a manutenção devido a fácil reimplementação de um contêiner caso a maquina tenha algum problema,
 como visto em situações que ocorreram durante o período do desenvolvimento da aplicação,para se reinstalar o setácea de aplicações de monitoramento de dados do ELK \myref{sec}{elasticsearch monitoring stack} foi necessário apenas em torno de 2 horas,
 incluindo completa formatação do servidor onde o stack estava rodando,instalação do stack e completa configuração do mesmo,isso caso não fosse feito com docker facilmente levaria 1 dia para a completa reinstalação e reconfiguração do stack,
@@ -813,16 +781,16 @@ o desempenho multi-core de apenas uma maquina é quase o mesmo que o de 2 maquin
 
 
 \sec{a comparative study of the effects of parallelization  on arm and intel based platforms}
-este artigo utiliza a mesma proposta abordada neste trabalho,cada vez mais maquinas arm são utilizadas ao redor do mundo.\newline
+este artigo utiliza a mesma proposta abordada neste trabalho,cada vez mais maquinas \myref{sig}{arm} são utilizadas ao redor do mundo.\newline
 o artigo explica múltiplos métodos de paralelização que são utilizados por ele para realizar os testes,assim como as diferenças das implementações deles entre intel e arm
-no processador arm é impossível usar a GPU para os testes,devido ao sistema operacional usado não ter drivers que disponibilizassem esse uso.\newline
+no processador \myref{sig}{arm} é impossível usar a GPU para os testes,devido ao sistema operacional usado não ter drivers que disponibilizassem esse uso.\newline
 como métricas de monitoramento utiliza-se o total de frames por segundo(fps),visto que os algoritimos utilizados são algoritimos de processamento de imagem, e potencia em joule utilizada pelas maquinas analizadas,o monitoramento de fps era feito por um monitor interno ao cpu e não um sistema externo.
 varias das aplicações foram otimizadas para que funcionassem da melhor forma possível em cada cpu,de forma que ma otimização interferisse o minimo possível nos resultados dos testes,essas otimizações form feitas em forma de kernels compilados diferentemente para o algoritimo.\newline
 a partir das metricas coletadas ele consegue calcular aproximadamente o total de energia gasta para processar cada frame,sendo assim ele consegue saber o total de energia gasto pela função do código
 no método serial,que é o único exatamente igual em ambos, existe uma diferença bem sutil,mas com maior eficiência energética por parte do processador arm,visto que após ser levado em conta o consumo e a quantidade de frames gerados é aplicada uma fórmula para comprovar a eficiencia energetica dos dispositivos usados.\newline
-usando um dos vários kernels diferentes,existe uma velocidade de processamento exponencialmente maior por parte da intel que por parte do arm no melhor caso,no pior caso a velocidade por parte da intel é de 10 vezes maior que do arm.\newline
-o resultado é que o fps/joule é maior no intel que no arm nos melhores casos de cada kernel,mas essa diferença é bem pouca em um dos kernels,e absurdamente alta em outro,chegando a cerca de 8.5 vezes mais eficiente no amd em relação ao arm no mesmo teste no pior caso de cada,chegando a conclusão que para um dos testes,teste SRAD,o ultrabook amd utilizado é claramente superior,enquanto no outro teste,o ultrabook é superior,mas o consumo energético do arm é 20\% menor no pior caso e no melhor caso é 60\% melhor,o consumo de energia médio do arm é 50\% do amd.\cite{armvsintel}\newline
-como conclusão sobre os valores apresentados deste trabalho,foi possivel também comprovar que hoje em dia,8 anos depois,as placas arm existentes consomem o mesmo tanto de energia,mas possuem muito mais poder computacional,enquanto os computadores amd portateis,como o ultrabook utilizado,apesar de tembém consumir uma quantidade equivalente de energia,não teve um ganho de performance tão grande quanto os computadores arm.
+usando um dos vários kernels diferentes,existe uma velocidade de processamento exponencialmente maior por parte da intel que por parte do \myref{sig}{arm} no melhor caso,no pior caso a velocidade por parte da intel é de 10 vezes maior que do arm.\newline
+o resultado é que o fps/joule é maior no intel que no \myref{sig}{arm} nos melhores casos de cada kernel,mas essa diferença é bem pouca em um dos kernels,e absurdamente alta em outro,chegando a cerca de 8.5 vezes mais eficiente no amd em relação ao \myref{sig}{arm} no mesmo teste no pior caso de cada,chegando a conclusão que para um dos testes,teste SRAD,o ultrabook amd utilizado é claramente superior,enquanto no outro teste,o ultrabook é superior,mas o consumo energético do \myref{sig}{arm} é 20\% menor no pior caso e no melhor caso é 60\% melhor,o consumo de energia médio do \myref{sig}{arm} é 50\% do amd.\cite{armvsintel}\newline
+como conclusão sobre os valores apresentados deste trabalho,foi possivel também comprovar que hoje em dia,8 anos depois,as placas \myref{sig}{arm} existentes consomem o mesmo tanto de energia,mas possuem muito mais poder computacional,enquanto os computadores amd portateis,como o ultrabook utilizado,apesar de tembém consumir uma quantidade equivalente de energia,não teve um ganho de performance tão grande quanto os computadores arm.
 
 
 \sec{KVM, Xen and Docker: a performance analysis for ARM based NFV and Cloud computing }
@@ -832,7 +800,7 @@ neste estudo foram utilizados kvm,xen e docker,todos métodos de virtualização
 este estudo explica muito bem as diferenças entre conatiners e hypervisors,que se basiam principalmente em que oscontainers utilizam os recursos,kernel e na maioria,o sistema operacional da maquina fisica,enquanto os hypervisors buscam virtualizar tudo e simular um hardware em cada aplicação virtualizada,cada uma tem suas vantagens e são abordadas neste artigo,sendo as principais delas que no container o acesso a poder computacional bruto é maior e que nos hypervisors as camadas de segurança são maiores.\newline
 dos dados encontrados vale resaltar que o docker apresentou em média um resultado pior quando comparada a velocidade de leitura e escrita em comparação com todos os outros métodos de virtualização,apesar dessa diferença ser bem pequena numa aplicação de mundo real onde a diferença real não chega a 100bps na maioria dos casos.\newline
 outro ponto a se destacar é que na velocidade de transferencia de rede o docker apresentou em testes de transferencia de rede valores mais lentos quando utilizados pacotes de poucos bytes ,onde para pacotes de até 4 pytes por pacote os valores eram em média iguais,mas para pacotes de 8 a 32 bytes as diferenças de velocidade eram consideravelmente maiores,onde o docker chega a ser cerca de 20mbps mais lento que os outros metodos,mas para pacotes maiores que isso todos os metodos utilizaram ao máximo a capacidade de transferencia de rede do hardware utilizado,100mbps.\newline
-em conclusão a autora disse que o kvm é mais simples de se portar para o arm em comparação ao xen,já que o QEMU,no qual o kvm se baseia,existe em todas as arquiteturas e que o docker ja existe nativamente para o arm,que as leituras de disco e rede funcionam melhor nos hypervisors devido aos metodos de cache que eles possuem e o docker não,demonstrou também que para pacotes grandes as velocidades de todos os metodos comparados são iguais ou maiores q a implementação nativa,em todos os testes de performance a diferença entre eles é bem pequena e varia de acordo com o teste,sendo assim o ideal seria uma solução mista onde seria utilizado um dentro do outro para melhorar a escalabilidade e segurança alem de outros fatores dos ambientes reais.
+em conclusão a autora disse que o kvm é mais simples de se portar para o \myref{sig}{arm} em comparação ao xen,já que o QEMU,no qual o kvm se baseia,existe em todas as arquiteturas e que o docker ja existe nativamente para o arm,que as leituras de disco e rede funcionam melhor nos hypervisors devido aos metodos de cache que eles possuem e o docker não,demonstrou também que para pacotes grandes as velocidades de todos os metodos comparados são iguais ou maiores q a implementação nativa,em todos os testes de performance a diferença entre eles é bem pequena e varia de acordo com o teste,sendo assim o ideal seria uma solução mista onde seria utilizado um dentro do outro para melhorar a escalabilidade e segurança alem de outros fatores dos ambientes reais.
 \cite{KVMXenDocker}
 
 \sec{The Raspberry Pi: A Platform for Replicable Performance Benchmarks?}
@@ -850,7 +818,7 @@ se resume em um benchmark e analise de um servidor de arquitetura arm,esse servi
 foram utilizados também para essa comparação mais 5 servidores amd64,sendo 1 hp,3 ibm e 1 dell.
 o consumo energético desse servidor entre os analisados é o menor , o mais potente em relação ao consumo energético,visto que de acordo com a tabela de resultados apresentada no texto o unico que conseguiu mais que 1 ponto por watt gasto foi o computador arm.
 \cite{hs06}\newline
-importante ressaltar que os resultados encontrados na maquina arm são bem baixos em pontuação em compraração com todos os outros servidores utilizados,mas ao mesmo tempo o consumo energético desse processador é exponencialmente menor que os outros servidores,principalmente ao se levar em conta que ele consome cerca de 5w de energia,enquanto os outros consomem entre 150 e 600w de energia.
+importante ressaltar que os resultados encontrados na maquina \myref{sig}{arm} são bem baixos em pontuação em compraração com todos os outros servidores utilizados,mas ao mesmo tempo o consumo energético desse processador é exponencialmente menor que os outros servidores,principalmente ao se levar em conta que ele consome cerca de 5w de energia,enquanto os outros consomem entre 150 e 600w de energia.
 
 %\chapter{testes}
 %\label{ch: testes}
@@ -906,7 +874,7 @@ Esses valores foram dados em relação ao tempo gasto por elemento em cada itera
 com base nos resultados desses testes des e que o computador tenha vários núcleos o algorítimo será tão eficiente quanto,
 isso se deve ao fato que levando em conta o um PC com amd64 com 4 núcleos e 4 threads a um clock de 3.6GHz a 4.0GHz e um outro PC AMD64 de 2 núcleos e 4 threads a um clock de 2.7GHz a 3.5GHz os valores de tempo do PC amd64 mais fraco levou cerca de 97\% do tempo do amd mais potente,isso devido tecnologia intel chamada "Tecnologia Intel® Turbo Boost frequência 2.0" que quando detecta que o coputador precisa de mais potencia aumenta o clock do cpu,em contra partida o processador amd64 mais potente não chegou a sentir tanto impacto deste teste e por isso usou da tecnologia amd chamada "Precision Boost 2" essa tecnologia permite que o processador varie seu clock de acordo com a necessidade tanto aumentando quanto diminuindo ele para economizar energia,dessa forma o clock do processador provavelmente foi diminuido já que apenas 1 dos nucleos do processador estava em carga alta e essa tecnologia leva em conta a porcentagem de todos os nucleos somados para funcionar,essa informação se baseia em testes descritos pela internet,visto que a amd não detalha muito esse processo da sua tecnologia.\newline
 também foi realizado um segundo teste referente a esse ,seguindo os mesmos parâmetros,mas utilizando o processamento paralelo
-o maior diferencial entre os testes da arquitetura arm e x86 foi que na arquitetura arm devido a limitações dos recursos disponíveis,
+o maior diferencial entre os testes da arquitetura \myref{sig}{arm} e x86 foi que na arquitetura \myref{sig}{arm} devido a limitações dos recursos disponíveis,
 foi necessário utilizar um HD ao invés de um ssd e como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados.\newline
 
 
@@ -917,7 +885,7 @@ este teste foi proposto para ser um teste de dois tipos,primeiro um teste de ope
 \item muitos bancos de dados são usados primariamente para inserção de dados,como bancos de dados de log e de analise de dados,como o próprio \myref{sec}{elasticsearch monitoring stack} utilizado durante os testes,onde operações de busca,listagem e filtragem não são a maioria,sendo assim é um comparativo para esse propósito de teste
 \end{itemize}
 para esse propósito foi utilizada uma variação do benchmark de criação de BD,foi usada uma inserção fracionada dos dados,o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000.
-para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o arm e 3 para o amd.
+para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o \myref{sig}{arm} e 3 para o amd.
 
 
 \subsec{teste de tempo de operações variadas no BD}
@@ -931,7 +899,7 @@ os dados gerados foram gerados seguindo o seguinte processo:\newline
 foram gerados 50.000 operações de inserção,e posteriormente foram pedidos 5.000.000 operações randômicas,
 o que resultou em 50.000 operações de inserção seguidos de 4.950.000 operações randômicas gerados.\newline
 o principal propósito desse teste foi de que muitos bancos de dados principalmente de sites de comércio eletrônico e sistemas de gerencia de estoque utilizam muitos tipos variados de operações,como as que foram utilizadas nesse teste,isso faz com que os resultados sejam facilmente aplicáveis para essas situações de mundo real mais cotidianas.
-assim como no teste de inserção para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o arm e 3 para o amd.
+assim como no teste de inserção para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o \myref{sig}{arm} e 3 para o amd.
 
 %\subsection{teste de tempo de operações paralelas}
 %\label{subsec:teste de tempo de operações paralelas}
@@ -1337,16 +1305,13 @@ uma solução para isso foi a substituição da mídia de armazenamento do arqui
 \sec{resultados de inserção fracionada}
 o resultado encontrado do primeiro teste de manipulação de bancos de dados,que é o teste de inserção continua,onde foram inseridos de acordo com \myref{subsec}{teste de tempo de operação de inserção no BD},
 esses dados são comprovadamente sem ocorrência de erros de acordo com o codigo descrito em \myref{sec}{geração de dados},
-de acordo com os dados coletados pelo \myref{sec}{contêineres docker} o uso de cpu de ambos bancos de dados em ambas arquiteturas é muito variado,onde em algumas etapas fica a baixo dos 40\%,e em outras fica próximo a 100\%,
-em todos os núcleos disponíveis para o contêiner essa variação ocorre,entretanto o computador arm por ter mais núcleos físicos,é mais complicado de ser avaliada a porcentagem de uso devido a forma como o docker distribui a carga de uso de cpu.
+de acordo com os dados coletados pelo \myref{sec}{contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso,como o descrito nos arquivos de logs anexos e na tabela \myref{tab}{resultados insercao fracionada} essa variação ocorre,entretanto o computador \myref{sig}{arm} por ter mais núcleos físicos,é mais complicado de ser avaliada a porcentagem de uso devido a forma como o docker distribui a carga de uso de cpu.\newline
 Em relação ao uso de ram,ele se manteve mais constante,na arquitetura armhf o uso de RAM é bem menor que no amd64,
 nas duas arquiteturas diferença do uso de RAM é de cerca de 5\% ,onde no MariaDB a variação faça com que o uso de RAM seja ligeiramente maior no amd64.
-no postgres arm a memória RAM varia em torno de 20 a 28\%,já no postgres amd essa variação é de 24 a 32\%.para o MariaDB arm a memória fica entre 25 e 33\% e no amd varia de 28 a 36 \%,
-esses valores levam em conta que existem dados anormais,esses dados são ignorados.
-para o postgres a velocidade de disco de escrita é em torno de 500kbps para o arm e 3Mbps para o amd,já para o MariaDB é de 3.5Mbps para o arm e 9.5Mbps para o amd.
+para o postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{arm} e 3Mbps para o amd,já para o MariaDB é de 3.5Mbps para o \myref{sig}{arm} e 9.5Mbps para o amd.\newline
 levando em conta a descrição de hardware de \myref{ch}{testes}, essas variações das velocidades são provavelmente devido a otimizações das arquiteturas para cada banco de dados.
-já a velocidade de leitura de disco é praticamente 0\% o tempo todo,isso provavelmente se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algorítimo de benchmark.
-a principal diferença identificada em relação aos testes alem do previamente informado é o tempo,em 60\% das vezes o postgres arm é mais rápido que o amd,enquanto isso em 85\% das vezes do MariaDB o amd é mais rápido
+já a velocidade de leitura de disco é praticamente 0\% o tempo todo,isso provavelmente se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algorítimo de benchmark.\newline
+a principal diferença identificada em relação aos testes alem do previamente informado é o tempo,em 60\% das vezes o postgres \myref{sig}{arm} é mais rápido que o amd,enquanto isso em 85\% das vezes do MariaDB o amd é mais rápido.\newline
 
 \imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada}
 \begin{easyTableAuto}{dados encontrados de uso de hardware teste inserção}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
@@ -1364,17 +1329,17 @@ a principal diferença identificada em relação aos testes alem do previamente 
 %arquivo
 %caption
 \sec{resultados de operação completa fracionada}
-ao contrário do que era esperado,os valores gerados pelo \myref{sec}{software de benchmark} geraram de forma igualmente distribuida,ou seja,os dados gerados foram gerados com uma distribuição de aproximadamente 20\% para cada tipo de operação,isso por que por algum motivo desconhecido as operações de tipo 5,como descrito em \myref{subsec}{tipos de dados gerados},não foram gerados nenhuma vez durante os testes,fora isso todos os outros dados gerados ocorreram como o esperado,onde são feitas queries de seleção ,pesquisa e inserção da forma como era esperada e as operações ocorreram como o esperado.
+ao contrário do que era esperado,os valores gerados pelo \myref{sec}{software de benchmark} geraram de forma igualmente distribuida,ou seja,os dados gerados foram gerados com uma distribuição de aproximadamente 20\% para cada tipo de operação,isso por que por algum motivo desconhecido as operações de tipo 5,como descrito em \myref{subsec}{tipos de dados gerados},não foram gerados nenhuma vez durante os testes,fora isso todos os outros dados gerados ocorreram como o esperado,onde são feitas queries de seleção ,pesquisa e inserção da forma como era esperada e as operações ocorreram como o esperado.\newline
 um fator interessante a se destacar é o de que,apesar da distribuição de operações ter sido homogênea,o custo de uso de hardware não foi,em certos momentos houve um grande uso de cpu ,mas nunca fugindo muito dos valores apresentados em \myref{sec}{resultados de inserção fracionada},e na maioria dos casos houve um maior uso de ram que o apresentado no dito teste,um fator a se destacar é o de que os primeiros ciclos de teste funcionaram da seguinte forma:
 \begin{itemize}
 \item a maior parte,cerca de 60\% dos dados , foi de inserção e o restante de operações variadas,diferente do esperado,isso provavelmente se deve a algum problema durante a gerencia dos arquivos salvos na maquina,não no algoritimo em si,isso se comprova nos próximos nove ciclos
 \item nos próximos nove ciclos,apenas dados de inserção foram gerados
-\item a partir do 11° ciclo ,no postgres ,houve um aumento significativo de ram,os valores que variavam entre 18 a 30\% começaram a varias de 18 a 53\% no amd e no arm a variação saiu de 20 a 34\% para de 20 a 52\%,
+\item a partir do 11° ciclo ,no postgres ,houve um aumento significativo de ram,os valores que variavam entre 18 a 30\% começaram a varias de 18 a 53\% no amd e no \myref{sig}{arm} a variação saiu de 20 a 34\% para de 20 a 52\%,
 \end{itemize}
 os tempos apresentados por esse teste estão descritos na \autoref{fig:resultados todos fracionada}
 \imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark todas operações fracionadas}
 
-uma coia interessante ocorreu em uma etapa do teste,onde aparentemente a maquina que estava executando o teste travou e voltou a funcionar em seguinda,isso visto que como as imagens do \myref{anexo}{resultados todos parte 9} demonstram,durante um intervalo de tempo nenhum dos containers estavam ativos,e sendo assim,nenhuma operação estava sendo realizada neles.
+uma coia interessante ocorreu em uma etapa do teste,onde aparentemente a maquina que estava executando o teste travou e voltou a funcionar em seguinda,isso visto que como as imagens do \myref{anexo}{resultados todos parte 9} demonstram,durante um intervalo de tempo nenhum dos containers estavam ativos,e sendo assim,nenhuma operação estava sendo realizada neles.\newline
 %lable
 %arquivo
 %caption
@@ -1394,11 +1359,11 @@ uma coia interessante ocorreu em uma etapa do teste,onde aparentemente a maquina
 %                      Capítulo 6                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ch{Conclusão}
-como conclusão dos testes realizados foi descoberto que a arquitetura arm é ,como esperado, a mais potente em relação a desempenho por watt de consumo,mas diferentemente do esperado os resultados de ambos foram bem proximos,quase iguais para cada banco de dados diferente,o que resultou numa eficiencia de cerca de 9 vezes para a arquitetura arm,visto que o computador arm utilizado consome 10w de energia enquanto o computador amd64 utilizado concome 90w de energia,isso considerando que o consumo de ambos foi de 100\% de consumo energetico o tempo todo.
-os testes realizados foram focados em manter ambos os servidores com a mesma exata característica de carga e desempenho,isso sempre visando o objetivo final de fazer com que a maior dos dados coletados pudessem ser diretamente comparáveis já que o mesmo numero de núcleos,ram,velocidade de disco e rede estavam disponiveis para ambas maquinas e o clock de ambas também foi limitado para exatos 1ghz para que as contas finais de comparação fossem mais simples,sendo assim pode-se considerar os testes como sendo testes 1 para 1 nas diferentes arquiteturas.
-os dados coletados apontam que a arquitetura arm possuiu uma porcentagem de uso de cpu mais baixa que a da arquitetura amd64,o que indica uma otimização em relação a isso do ponto de vista dessa arquitetura,essa diferença causou uma maior demora de processamento na arquitetura armhf,isso levando em conta que a diferença é bem baixa se tora irrisória em relação as comparações de arquiteturas.
+como conclusão dos testes realizados foi descoberto que a arquitetura \myref{sig}{arm} é ,como esperado, a mais potente em relação a desempenho por watt de consumo,mas diferentemente do esperado os resultados de ambos foram bem proximos,quase iguais para cada banco de dados diferente,o que resultou numa eficiencia de cerca de 9 vezes para a arquitetura arm,visto que o computador \myref{sig}{arm} utilizado consome 10w de energia enquanto o computador amd64 utilizado concome 90w de energia,isso considerando que o consumo de ambos foi de 100\% de consumo energetico o tempo todo.\newline
+os testes realizados foram focados em manter ambos os servidores com a mesma exata característica de carga e desempenho,isso sempre visando o objetivo final de fazer com que a maior dos dados coletados pudessem ser diretamente comparáveis já que o mesmo numero de núcleos,ram,velocidade de disco e rede estavam disponiveis para ambas maquinas e o clock de ambas também foi limitado para exatos 1ghz para que as contas finais de comparação fossem mais simples,sendo assim pode-se considerar os testes como sendo testes 1 para 1 nas diferentes arquiteturas.\newline
+os dados coletados apontam que a arquitetura \myref{sig}{arm} possuiu uma porcentagem de uso de cpu mais baixa que a da arquitetura amd64,o que indica uma otimização em relação a isso do ponto de vista dessa arquitetura,essa diferença causou uma maior demora de processamento na arquitetura armhf,isso levando em conta que a diferença é bem baixa se tora irrisória em relação as comparações de arquiteturas.\newline
 enquanto a arquitetura amd64 apresentou umconsumo maior de ram,sendo assim é possivel se indicar que os programas de banco de dados utilizados tiveram suas otimizações focadas em coisas diferentes.
-os bancos de dados mariadb e postgres apresentam diferenças visiveis entre si em relação a uso de ram e cpu.
+os bancos de dados mariadb e postgres apresentam diferenças visiveis entre si em relação a uso de ram e cpu.\newline
 
 
 
