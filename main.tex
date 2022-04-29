@@ -689,99 +689,78 @@ Para o armazenamento do docker nas 2 máquinas ele foi movido para um pendrive s
 
 Além disso, os softwares utilizados nessas máquinas foram versões do sistema debian, no Orange pi foi o armbian e no notebook o próprio debian netinstall, ambos na versão Buster. A versão do docker usado em ambos, é a versão community edition 20.10.12. E a versão do docker-compose é a versão 2.2.3. Essas sendo as versões mais atuais no início da execução dos testes.Todos os outros softwares instalados diretamente na máquina, são irrelevantes para o propósito dos testes realizados. E os demais serão descritos em \myref{sec}{contêineres docker}.
 
+\begin{itemize}
+\item Um teste generalizado de funcionalidade com valores pequenos, onde  são testados uma quantidade x de elementos gerados e isso se repete um número y de vezes para cada valor para saber uma média de tempo.
+\item um segundo teste para comprovar a eficácia com valores variáveis onde são gerados n ciclos de testes. Sendo cada um deles com uma quantidade x+i de dados onde x é a quantidade de dados do ciclo anterior e i um valor aditivo constante. Isso para saber se existe um tempo constante por elemento gerado ou se existe um tempo fixo + um valor constante por elementos. Também são repetidas y vezes dentro de cada ciclo para se ter um valor de média de tempo e não apenas um valor único.
+\end{itemize}
 
 
 %\section{testes de tempo}
 %\label{sec:testes de tempo}
 \sec{testes de tempo}
-os algorítimos principais do código são a geração do sqlite e a inserção nos BDs finais,sendo assim ambos foram testados de formas diferentes e de métodos diferentes,que serão descritos a seguir.
-o algorítimo de geração de banco de dados é muito impactado pela quantidade de núcleos de cpu da maquina na qual foi rodada,mais do que a arquitetura ou clock dela,
-enquanto na inserção do banco de dados as especificações do computador não pareceram interferir tanto quanto a aleatoriedade da consistência do funcionamento das threads,
-essa inconsistência acabou fazendo com que os testes tivessem que ser realizados sob supervisão,sendo muitas vezes necessário interromper uma etapa e depois reiniciá-la ,
-também por isso varias das operações foram testadas de formas diferentes.\newline
-foram utilizadas sempre 2 etapas de testes ,primeiro um teste generalizado de funcionalidade com valores pequenos e outro para comprovar eficacia com valores variáveis,
-esses valores alteram varias coisas,mas principalmente quantidade de elementos gerados,isso para saber se a quantidade de elementos afeta a velocidade das operações.
+Os algoritmos principais do código são a geração do sqlite e a inserção nos BDs finais. Sendo assim, ambos foram testados de formas diferentes e por métodos diferentes, que serão descritos a seguir.\newline
+O algoritmo de geração de banco de dados é muito impactado pela quantidade de núcleos de cpu da máquina na qual foi rodada, mais do que a arquitetura ou clock dela. Enquanto na inserção do banco de dados, as especificações do computador não pareceram interferir tanto quanto a aleatoriedade da consistência do funcionamento das threads, essa inconsistência acabou fazendo com que os testes tivessem que ser realizados sob supervisão. Sendo muitas vezes necessário interromper uma etapa e depois reiniciá-la. também por isso, várias das operações foram testadas de formas diferentes. Foram utilizadas sempre 2 etapas de testes, sendo que pequenas modificações foram feitas em cada uma de acordo com o objetivo .\newline
+
 
 %\subsection{teste de tempo de criação do bd}
 %\label{subsec:teste de tempo de criação do bd}
 \subsec{teste de tempo de criação do BD}
-o teste dessa etapa foi feito para dentre outras coisas comprovar o funcionamento do algorítimo de geração de dados descrito em \myref{subsec}{geradorDeSql} a medida que o desenvolvimento dessa biblioteca acontecia testes de geração tiveram que ser feitos,
-esses testes dentre outros propósitos foram usados para saber a eficiência da geração de dados,isso por que os dados gerados levavam uma quantidade parcialmente aleatória para serem gerados,muito devido aos dados gerados serem semi-procedurais,
-isso pois eles seguiam uma regar para serem gerados de forma aleatória,isso fez com que fosse necessário essa etapa de testes para saber se os dados gerados no final geravam dados que funcionariam com o propósito esperado,ou seja,
-se eram funcionais em um banco de dados sql relacional,seja MariaDB ou postgres.\newline
-outra coisa que foi necessária durante o desenvolvimento que fez com que essa etapa de testes tivesse que ser mais bem feita foi a etapa de geração de dados de inserção,
-que foi desenvolvida para que apenas dados de inserção válidos fossem possíveis de serem gerados,diferente dos demais dados que apenas são queries de consulta aleatórias.\newline
-na etapa principal desse teste foi feito um teste aditivo que testou 30 ciclos com adição de 100 em 100 elementos em cada ciclo. Foram feitos um teste de 4 sub ciclos internos para cada um dos 30 ciclos,
-tendo como objetivo o quanto de tempo é gasto em média para casos com muitos ou poucos dados gerados ,
-podendo assim gerar um valor de base de valor mínimo gasto obrigatoriamente para cada interação além de gerar bases de dados viáveis para os testes descritos em \myref{subsec}{teste de tempo de operação de inserção no BD}.\newline
-Os testes desta etapa foram realizados em um PC arm64 e dois PCS amd64. Os dados resultaram em valores de tempo consistente em relação a diferença de frequências dos computadores.\newline
-Sendo assim, se existe um valor de perda entre as arquiteturas para esse teste é um valor irrisório,
-sendo que o PC amd64 mais potente apresentou testes cerca de 2 vezes mais rápidos e seu clock é aproximadamente o dobro do arm64.
-Esses valores foram dados em relação ao tempo gasto por elemento em cada iteração.
-com base nos resultados desses testes des e que o computador tenha vários núcleos o algorítimo será tão eficiente quanto,
-isso se deve ao fato que levando em conta o um PC com amd64 com 4 núcleos e 4 threads a um clock de 3.6GHz a 4.0GHz e um outro PC AMD64 de 2 núcleos e 4 threads a um clock de 2.7GHz a 3.5GHz os valores de tempo do PC amd64 mais fraco levou cerca de 97\% do tempo do amd mais potente,isso devido tecnologia intel chamada "Tecnologia Intel® Turbo Boost frequência 2.0" que quando detecta que o coputador precisa de mais potencia aumenta o clock do cpu,em contra partida o processador amd64 mais potente não chegou a sentir tanto impacto deste teste e por isso usou da tecnologia amd chamada "Precision Boost 2" essa tecnologia permite que o processador varie seu clock de acordo com a necessidade tanto aumentando quanto diminuindo ele para economizar energia,dessa forma o clock do processador provavelmente foi diminuido já que apenas 1 dos nucleos do processador estava em carga alta e essa tecnologia leva em conta a porcentagem de todos os nucleos somados para funcionar,essa informação se baseia em testes descritos pela internet,visto que a amd não detalha muito esse processo da sua tecnologia.\newline
-também foi realizado um segundo teste referente a esse ,seguindo os mesmos parâmetros,mas utilizando o processamento paralelo
-o maior diferencial entre os testes da arquitetura \myref{sig}{arm} e x86 foi que na arquitetura \myref{sig}{arm} devido a limitações dos recursos disponíveis,
-foi necessário utilizar um HD ao invés de um ssd e como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados.\newline
+O teste dessa etapa foi feito para, dentre outros objetivos, comprovar o funcionamento do algoritmo de geração de dados descrito em \myref{subsec}{geradorDeSql}. À medida que o desenvolvimento dessa biblioteca acontecia, testes de geração tiveram que ser feitos. Esses testes, dentre outros propósitos, foram usados para saber a eficiência da geração de dados. Isso porque os dados gerados levavam uma quantidade parcialmente aleatória de tempo para serem gerados. Muito devido aos dados gerados serem semi-procedurais,descrito em \nyref{subsec}{sqlite} .\newline
+
+Além disso, esse teste foi necessário devido a etapa de geração de dados de inserção \myref{sec}{geração de dados}. Na etapa principal desse teste, foi feito um teste aditivo que testou 30 ciclos com adição de 100 em 100 elementos em cada ciclo. Foi feito um teste de 4 sub ciclos internos para quantidades diferentes de dados. Os testes desta etapa foram realizados em um PC arm64 e dois PCS amd64. Os dados resultaram em valores de tempo consistentes em relação a diferença de frequências dos computadores.\newline
+
+Sendo assim, se existe um valor de perda entre as arquiteturas para esse teste é um valor irrisório. Pois o PC amd64 mais potente apresentou testes cerca de 2 vezes mais rápidos, e seu clock é aproximadamente o dobro do arm64. Esses valores foram dados em relação ao tempo gasto por elemento em cada iteração. Com base nos resultados desses testes, desde que o computador tenha vários núcleos, o algoritmo será tão eficiente quanto. Isso se deve ao fato que levando em conta o PC com amd64 com 4 núcleos e 4 threads a um clock que varia entre 3.6GHz e 4.0GHz e um outro PC AMD64 de 2 núcleos e 4 threads a um clock que varia de 2.7GHz a 3.5GHz os valores de tempo do PC amd64 mais fraco levou cerca de 97\% do tempo do amd mais potente. Essa diferença ocorre devido a duas tecnologias desses processadores:\newline
+\begin{itemize}
+\item Tecnologia Intel® Turbo Boost frequency 2.0: Quando detecta que o computador precisa de mais potência aumenta o clock do cpu
+\item Precision Boost Overdrive: Essa tecnologia permite que o processador varie seu clock de acordo com a necessidade, tanto aumentando quanto diminuindo para economizar energia
+\end{itemize}
+
+Dessa forma, o clock do processador foi diminuído, já que apenas 1 dos núcleos do processador estava em carga alta e essa tecnologia aparentemente leva em conta a porcentagem de todos os núcleos somados para funcionar. Essa informação se baseia nos métodos de economia de energia existentes nos notebooks AMD da mesma geração, visto que a AMD não detalha muito esse processo da sua tecnologia.\newline
+Também foi realizado um segundo teste referente ao descrito acima, seguindo os mesmos parâmetros, mas utilizando o processamento paralelo. O maior diferencial entre os testes da arquitetura arm e x86 foi que na arquitetura arm devido a limitações dos recursos disponíveis, foi necessário utilizar um HD ao invés de um ssd. E como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados, resultando em valores piores que o teste anterior devido aos múltiplos acessos simultâneos do armazenamento.\newline
 
 
 \subsec{teste de tempo de operação de inserção no BD}
-este teste foi proposto para ser um teste de dois tipos,primeiro um teste de operações sem falha,segundo um teste de operações de inserção para bancos de dado mais utilizados para esse propósito:
+este teste foi proposto para ser um teste de dois tipos:
 \begin{itemize}
-\item os dados de inserção foram projetados para não dar erro e sempre retornarem o resultado de operação inserida com sucesso,isso quer dizer que,caso nada tenha dado errado,apenas operações sem erro foram realizadas.
-\item muitos bancos de dados são usados primariamente para inserção de dados,como bancos de dados de log e de analise de dados,como o próprio \myref{sec}{elasticsearch monitoring stack} utilizado durante os testes,onde operações de busca,listagem e filtragem não são a maioria,sendo assim é um comparativo para esse propósito de teste
+\item Os dados de inserção foram projetados para não apresentarem erro e sempre retornarem o resultado de operação inserida com sucesso. Isso quer dizer que caso nada tenha ocorrido um problema do algoritmo de geração, apenas operações foram realizadas sem erro.
+
+\item Muitos bancos de dados são usados primariamente para inserção de dados, como bancos de dados de log e de análise de dados. Como o próprio \myref{sec}{elasticsearch monitoring stack} utilizado durante os testes, onde operações de busca, listagem e filtragem não são a maioria. Sendo assim é um comparativo para esse propósito de teste. Para esse propósito foi utilizada uma variação do \myref{subsec}{teste de tempo de criação do BD} benchmark de criação de BD. Foi usada uma inserção fracionada dos dados, o que significa que foram realizadas as operações em grupos de 5000 até completar os 100.000. Diferente dos testes de criação, não foram valores aditivos, mas sim interações dos dados em grupos de tamanho fixo. Para que a máquina onde os testes finais não travassem foi definido um valor mais baixo de subprocessos, sendo 1 para cada thread do processador da máquina, onde 3 executavam os testes para o arm e 3 para o amd.
 \end{itemize}
 para esse propósito foi utilizada uma variação do benchmark de criação de BD,foi usada uma inserção fracionada dos dados,o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000.
 para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o \myref{sig}{arm} e 3 para o amd.
 
 
 \subsec{teste de tempo de operações variadas no BD}
-após a confirmação da funcionalidade de forma satisfatória da geração do sqlite foi iniciado o processo de interação com o banco de dados,
-esse processo foi dividido em algumas etapas,primeiramente para verificar se a operação funcionava corretamente,essa etapa foi feita seguindo os testes de funcionalidade já descritos,
-onde uma pequena quantidade de operações era gerada,usando a geração de sqlite,em ambos os bancos de dados ao mesmo tempo,após essa etapa de confirmação de funcionalidade não foi feito um teste de desempenho,
-pois foi deixado para a etapa de testes paralelos,a qual se mostrou mais importante,visto que após a confirmação de funcionalidade mais testes para essa etapa não eram necessárias.\newline
-apenas testes de realização de operações sem retorno,leitura de arquivos,criação de usuários e comunicação geral com o banco de dados foram feitos,
-todos esses testes tiveram resultados satisfatórios tornando possíveis as funcionalidades utilizadas da biblioteca \myref{subsec}{gerenciadorDeBD},
-os dados gerados foram gerados seguindo o seguinte processo:\newline
-foram gerados 50.000 operações de inserção,e posteriormente foram pedidos 5.000.000 operações randômicas,
-o que resultou em 50.000 operações de inserção seguidos de 4.950.000 operações randômicas gerados.\newline
-o principal propósito desse teste foi de que muitos bancos de dados principalmente de sites de comércio eletrônico e sistemas de gerencia de estoque utilizam muitos tipos variados de operações,como as que foram utilizadas nesse teste,isso faz com que os resultados sejam facilmente aplicáveis para essas situações de mundo real mais cotidianas.
-assim como no teste de inserção para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o \myref{sig}{arm} e 3 para o amd.
+Após a confirmação da funcionalidade de forma satisfatória da geração do sqlite, foi iniciado o processo de interação com o banco de dados. Esse processo foi dividido em algumas etapas, primeiramente para verificar se a operação funcionava corretamente. Essa etapa foi feita seguindo os testes de funcionalidade já descritos, onde uma pequena quantidade de operações era gerada, usando a geração de sqlite em ambos os bancos de dados ao mesmo tempo. Após essa etapa de confirmação de funcionalidade não foi feito um teste de desempenho, pois foi deixado para a etapa de testes paralelos. A qual se mostrou mais importante, visto que após a confirmação de funcionalidade mais testes para essa etapa não eram necessários.\newline
+
+Apenas testes de realização de operações sem retorno, leitura de arquivos, criação de usuários e comunicação geral com o banco de dados, foram feitos todos esses testes que tiveram resultados satisfatórios, tornando-se possível as funcionalidades utilizadas da biblioteca \myref{subsec}{gerenciadorDeBD}. Os dados foram gerados seguindo o seguinte processo:
+50.000 operações de inserção foram gerados e posteriormente foram pedidos 5.000.000 operações randômicas, o que resultou em 50.000 operações de inserção seguidas de 4.950.000 operações randômicas geradas.\newline
+
+O principal propósito deste teste foi mostrar que muitos bancos de dados, principalmente de sites de comércio eletrônico e sistemas de gerência de estoque utilizam muitos tipos variados de operações, como as que foram utilizadas nesse teste. Isso faz com que os resultados sejam facilmente aplicáveis para essas situações do mundo real. Para que a máquina onde os testes rodaram não travasse, foi utilizado o mesmo procedimento do \myref{subsec}{teste de tempo de operação de inserção no BD}.\newline
 
 %\subsection{teste de tempo de operações paralelas}
 %\label{subsec:teste de tempo de operações paralelas}
 \subsec{teste de tempo de operações paralelas}
-essa foi a parte que demandou mais testes,estudos e desenvolvimento dos testes implementados,visto que alem da programação paralela ser mais complexa que a programação linear,
-ela é bem mais difícil de se testar,ela apenas foi possível de testar após as outras classes principais,\myref{subsec}{gerenciadorDeBD} e \myref{subsec}{geradorDeSql}
+Essa foi a etapa que demandou maior quantidade de testes, estudos e desenvolvimento dos testes implementados. Visto que além da programação paralela ser mais complexa que a programação linear, ela é bem mais difícil de ser testada. Apenas foi possível após as outras classes principais,\myref{subsec}{gerenciadorDeBD} e \myref{subsec}{geradorDeSql}, serem finalizadas.\newline
+
+Basicamente para a execução desse teste foi feita a execução dos testes de tempo, porém com modificações no código para que ele funcionasse de forma paralela.\newline
+
 
 %\section{testes de eficiencia}
 %\label{sec:testes de eficiencia}
 \sec{testes de eficiência}
-esses testes não apenas levam em conta o tempo que foi gasto para concluir a operação,mas também a forma como elas foram concluídas,
-isso quer dizer que o tempo é um parâmetro para a sua avaliação,mas também a quantidade de falhas apresentadas,
-quantidade de cpu gasto e quantidade de interação do operador do algorítimo para que ele funcione como deveria
+Esses testes não apenas levam em conta o tempo que foi gasto para concluir a operação, mas também a forma como elas foram concluídas. Isso quer dizer que o tempo é um dos parâmetros para a sua avaliação, mas também a quantidade de falhas apresentadas, quantidade de cpu utilizada, e quantidade de interação do operador do algoritmo para que ele funcione como deveria.
 
 %\subsection{teste de eficiencia de operações paralelas}
 %\label{subsec:teste de eficiencia de operações paralelas}
 \subsec{teste de eficiência de operações paralelas}
-esse foi o teste que mais demandou tempo e esforço dentre os realizados,isso por que devido a complexidade da programação paralela,como já dito em \myref{subsec}{teste de tempo de operações paralelas},
-uma atenção e quantidade maior de testes foram demandadas.
-um dos grandes motivadores desse tipo de teste foi a etapa de testes descrita em \myref{subsec}{teste de tempo de inserção no BD} apesar de essa etapa não ter sido complicada por si só ela demandou muita atenção pois apresentava muitos erros,
-essas operações demandaram muitos testes manuais de modo de programação paralela,
-sendo usando threads ou subprocessos,quantidade de operadores paralelos,
-quantidade de elementos inseridos,forma dos elementos inseridos.
-Tudo isso pois em vários momentos foram apresentados erros randomicamente sem nenhum indicio de justificativa para eles,
-os erros apareciam em certos momentos quando era usado o processamento paralelo em threads e em outros utilizando o processamento paralelo de subprocessos,
-os mesmos erros eram corrigidos para que em sequencia ao se implementar a próxima funcionalidade necessária o mesmo erro se repetisse,isso gerou um loop do processo de desenvolvimento muito grande,
-onde muitos testes eram realizados e alternados com leitura de documentação das bibliotecas utilizadas ou mesmo leitura de exemplos de códigos de fórum e sites.
-essa etapa se misturou muito com o desenvolvimento do programa,pois a otimização do código era necessária para que certas partes dele funcionassem,mas também se misturou com as outras etapas de teste,
-isso muito por que as outras etapas de teste acabaram por servir como etapas desse mesmo teste.
-foi detectado que caso seja usado menos q 2 subprocessos pra cada servidor o algorítimo apresenta algum erro que foi deixado de lado devido a não necessidade do aprofundamento nessa opção de implementação,
-sendo assim ao invés de ser usado um subprocesso foi usada a implementação sequencial
-além disso foram detectados outros fatores interessantes,primeiro que o postgres apresenta uma demora maior na sua execução caso ocorram operações que não retornam nada,esse tipo de operação constitui a maioria das operações geradas para os testes,
-isso devido a única que é garantida de não dar problema é a operação de inserção,alem disso foi detectado que o quadro se inverte nas operações válidas,onde o postgres é bem mais rápido que o MariaDB.
-outro fator detectado é que caso seja feita uma implementação sequencial a inserção dos dados será feita mais rapidamente que uma implementação paralela,alem de apresentar menos erros,próximos a zero.
+Esse foi o teste que mais demandou tempo e esforço dentre os realizados. Isso porque devido a complexidade da programação paralela, como já dito em \myref{subsec}{teste de tempo de operações paralelas}, uma quantidade maior de testes foram demandados. Um dos grandes motivadores foi a etapa descrita em \myref{subsec}{teste de tempo de inserção no BD}. Apesar dessa etapa não ter sido complicada por si só ela demandou muita atenção pois apresentava muitos erros. Essas operações demandaram muitos testes manuais alternando o método de programação paralela, sendo usando threads ou subprocessos, quantidade de operadores paralelos, quantidade de elementos inseridos e forma dos elementos inseridos.\newline
 
+Tudo isso pois em vários momentos foram apresentados erros randomicamente sem nenhum indício de justificativa. Os erros apareciam em certos momentos quando era usado o processamento paralelo em threads e em outros utilizando o processamento paralelo de subprocessos. Os mesmos erros eram corrigidos para que em sequência ao se implementar a próxima funcionalidade necessária o mesmo erro se repetisse. Isso gerou um loop do processo de desenvolvimento , onde muitos testes eram realizados e alternados com leitura de documentação das bibliotecas utilizadas, ou mesmo leitura de exemplos de códigos de fóruns e sites.\newline
+
+Essa etapa se misturou muito com o desenvolvimento do programa, pois a otimização do código era necessária para que certas partes dele funcionassem corretamente. Também se misturou com as outras etapas de teste, isso muito por que as outras etapas acabaram por servir como etapas desse mesmo teste.\newline
+
+Durante estes testes foram detectados outros fatores interessantes: primeiro que o postgres apresenta uma demora maior na sua execução em comparação com o mariadb caso ocorram operações que não retornam nada. Esse tipo de operação constitui a maioria das operações geradas para os testes, isso devido a única que é garantida de não dar problema ser a operação de inserção. Além disso, foi detectado que o quadro se inverte nas operações válidas, onde o postgres é bem mais rápido que o MariaDB. Outro fator detectado é que caso seja feita uma implementação sequencial, a inserção dos dados será feita mais rapidamente que uma implementação paralela, além de apresentar menos erros próximos a zero.\newline
 
 
 
@@ -995,14 +974,14 @@ devido ao fato de durante os testes da etapa de desenvolvimento todos terem sido
 %\label{subsec:tipos de dados gerados}
 \subsec{tipos de dados gerados}
 Foram selecionadas para os teste apenas as operações mais utilizadas por um banco de dados:
-\begin{itemize}
+\begin{enumerate}
 \item inserção de um novo dado
 \item leitura completa de todos os dados de uma tabela
 \item busca de elementos filtrados em determinada tabela
 \item busca de apenas alguns dados de elementos filtrados em determinada tabela
 \item edição de elementos
 \item deleção de elementos filtrados
-\end{itemize}
+\end{enumerate}
 Antes de serem geradas, a operação de inserção passa por vários processos de tratamento de erro para se certificar que não houve dependência alguma que não foi gerada como,
 por exemplo, gerar uma cidade sem existir um país cadastrado. Esse foi um dos motivos de ter sido utilizado um arquivo sqlite ao invés de outro método de armazenamento.
 Dessa forma pode-se executar essa consulta de dependência de forma rápida e apenas retornar índices válidos para associações de tabela.
