@@ -767,36 +767,17 @@ Durante estes testes foram detectados outros fatores interessantes: primeiro que
 %\chapter{Metodologia}
 %\label{ch: materiais e métodos}
 \ch{Metodologia}
-O desenvolvimento do software foi feito utilizando vários métodos de análise de log com o objetivo de agilizar a depuração,
-possibilitando que os dados gerados pudessem ser facilmente conferidos durante o desenvolvimento.\newline
+O desenvolvimento do software foi feito utilizando vários métodos de análise de log com o objetivo de agilizar a depuração. Possibilitando que os dados gerados pudessem ser facilmente conferidos durante o desenvolvimento.\newline
 Durante esse capítulo, serão descritos os procedimentos mais importantes das etapas de desenvolvimento e funcionamento do software, com o intuito de proporcionar um entendimento simples.\newline
 
 %\section{bibliotecas criadas}
 %\label{sec:bibliotecas criadas}
 \sec{bibliotecas criadas}
-algumas bibliotecas foram criadas para facilitar o desenvolvimento,delas algumas valem a pena serem mencionadas mais detalhadamente,
-mas outras apenas vão ser citadas aqui.
-foi criada uma biblioteca para gerenciar a interação com arquivos sqlite,
-essa biblioteca trabalha de forma simplificada para o acesso ser mais rápido de se implementar e lidar apenas com comunicação de parâmetros em formato json,
-dessa forma quando se é feita uma query o input deve ser um dictionary com as keys sendo os nomes das colunas e os conteúdos os valores buscados,
-isso só é válido pois ele só busca valores iguais,
-não se preocupa com valores aproximados ou limiares,
-isso poderia ter sido implementado,mas não foi visto como necessário para o propósito dos testes propostos.
-A outra vantagem é que os retornos das consultas é dado em formato dictionary e quando valores são inseridos apenas são necessários os dictionaries compatíveis com o sqlite.
-uma outra dessas bibliotecas foi uma para o tratamento de erros,
-essa classe é uma derivação da classe padrão do Python de exceção,
-essa biblioteca é composta de 3 classes cada uma para um tipo de mensagem e tratamento de erro,
-apenas para simplificar e facilitar o debug do codigo durante a manipulação dele,
-ela não faz real diferença em relação ao funcionamento em si,
-exceto no fator de poderem ser chamadas correções especificas dos erros quando um try-catch é usado numa função.
-ainda foi criada uma biblioteca de timer,usada nos testes de tempo do projeto,
-essa biblioteca apenas é uma contração de forma simples e com tratamento de erro do uso da biblioteca time do Python,
-essa técnica de medida de tempo é amplamente utilizada,
-mas apenas para fins de simplificação no momento do uso foi criada essa biblioteca.
+Algumas bibliotecas foram criadas para facilitar o desenvolvimento delas, algumas valem a pena ser mencionadas mais detalhadamente, mas outras apenas serão citadas aqui, uma dessas bibliotecas foi uma para o tratamento de erros. Essa classe é uma derivação da classe padrão do Python de exceção. Essa biblioteca é composta de 3 classes, cada uma para um tipo de mensagem e tratamento de erro, apenas para simplificar e facilitar o debug do código durante a manipulação dele. Ela não faz real diferença em relação ao funcionamento em si, exceto no fator de poderem ser chamadas correções específicas dos erros, quando um try-catch é usado numa função. ainda foi criada uma biblioteca de timer, usada nos testes de tempo do projeto, essa biblioteca apenas é uma contração de forma simples e com tratamento de erro do uso da biblioteca time do Python. Essa técnica de medida de tempo é amplamente utilizada, mas apenas para fins de simplificação no momento do uso foi criada essa biblioteca.
 
 %\subsection{loggingSystem}
 %\label{subsec:loggingSystem}
-\subsec{loggingSystem}
+\subsec{loggingSystem} %%sob revisão ainda
 essa biblioteca é a responsável por toda a gerencia e logs e por todo o monitoramento do \myref{subsec}{monitorContainer},
 essa biblioteca basicamente é um complemento da biblioteca padrão de logs do Python \cite{logging},
 que tem uma implementação de comunicação com os servidores Logstash,a biblioteca de forma inteligente verifica se os parâmetros de comunicação com o Logstash estão funcionais,
@@ -814,79 +795,32 @@ sendo assim permitindo que um tratamento de erro mais complexo seja possível se
 %\subsection{paralelLib}
 %\label{subsec:paralelLib}
 \subsec{paralelLib}
-essa biblioteca possui 2 implementações diferentes de paralelização,utilizando a classe threading \cite{threading} e a classe multiprocessing \cite{multiprocessing},
-a classe threading utiliza threads para a paralelização de execuções,
-esse método foi inicialmente utilizado por ser de mais simples implementação e mais simples monitoramento da execução,entretanto devido as limitações de segurança dessa classe foi escolhida uma implementação utilizando a classe multiprocessing,
-onde essa classe cria um grupo de subprocessos para o codigo que irão ser responsáveis pela execução do algorítimo selecionado.
-ambas as classes implementadas,a derivada de threading e a derivada de multiprocessing foram feitas de formas análogas e de simples substituição em codigo de uma para a outra de acordo com a necessidade,sendo assim funcionam muito parecidas.
-ambas funcionam com uma classe de gerencia chamada paralel,no caso de threading sendo paralel_thread e no caso de multiprocessing sendo paralel_subprocess,assim como classes worker com nomes semelhantes,worker_thread e worker_subprocess.
-as classes de gerencia funcionam gerando um array de objetos da classe worker,
-sendo cada um equivalente a um subprocesso/thread da execução paralela,também existe um array ,que pode ser apenas um elemento,
-com as funções que serão executadas no processamento paralelo,
-alem disso gera um objeto que contem os elementos que serão processados durante o processamento paralelo,
-esses objetos são passados como kwargs das funções que serão executadas,
-podem ser aceitas varias funções des de que sigam apenas uma regra,essas funções devem ser exatamente iguais,
-mas de objetos instanciados diferentes,como no caso utilizado no algorítimo,onde cada função é de um objeto com uma credencial diferente para a comunicação com o banco de dados,
-de forma que não seja executada mais de uma comunicação com uma credencial por vez.
-os workers vão ciclando as funções a medida que vão iterando pelo array dos parâmetros.
-durante a execução dessas funções vão sendo removidas do objeto contendo os kwargs um por um o kwarg logo antes de ser usado,
-dessa forma garantido que uma operação não será feita 2 vezes ,isso é importante visto o propósito desse algorítimo,que é simular a mesma quantidade e operações em bancos de dados diferentes,
-se um elemento fosse utilizado mais de uma vez esses valores se alterariam.caso um dos elementos já tenha sido usado e acabe sendo pelo pelo worker,um erro vai ocorrer,
-o worker vai ignorar esse elemento e tentará o próximo disponível,caso o numero de elementos seja menor que 1 ele irá então terminar o loop e parar a execução
-após o fim da execução de todos os processos paralelos o objeto de gerencia ,se for requisitado,irá retornar os resultados das operações onde o processamento paralelo foi pedido,
-para os propósitos deste algorítimo isso não foi necessário nenhuma vez,sendo assim essa funcionalidade está incompleta.
-essa biblioteca demandou muito tempo do desenvolvimento devido aos diversos problemas possíveis de acontecerem durante o manuseio de aplicações paralelas,
-para lidar com isso foram utilizadas algumas adaptações do funcionamento normal da classe de processamento paralelo nativa do Python,
-a principal diferença foi a utilização de varias funções diferentes que ficam ciclando até que as operações desejadas sejam concluídas,
-isso acontece pois antes da execução dos subprocessos são inseridos entre dois tipos diferentes de funções,uma função simples ou um array contendo referencias a varias funções diferentes,
-entretanto,todas essas funções precisam ser iguais,a única diferença entre elas é o objeto que a contem,pois eles sim podem ser diferentes,
-isso foi usado nos testes para que cada função chamada fosse associada a um usuário e senha diferentes para acessar o banco de dados,
-isso foi usado pois os bancos de dados usados não aceitam mais de uma operação simultânea para cada usuário,isso faz com que o processamento paralelo fosse impossível,
-mas com essa adaptação varias contas diferentes possam ser usadas sem ter que necessariamente recriar o objeto de gerencia do banco de dados a todo momento,
-o que demandaria mais tempo e faria com que a velocidade do benchmark fosse impactada.
-a outra modificação foi a implementação de um time out para a execução dessas funções,
-de forma que as operações mesmo que travem não apresentem problema no benchmark,
-isso foi um problema percebido que impactava muito na velocidade do benchmark gerando subprocessos zumbis,
-já que uma operação do banco de dados acabava levando mais tempo que o necessário e em algum momento os subprocessos acabavam gerando um problema de travar um ao outro devido a essa demora
+Essa biblioteca possui 2 implementações diferentes de paralelização, utilizando a classe threading \cite{threading}, e a classe multiprocessing \cite{multiprocessing}. A classe threading utiliza threads para a paralelização de execuções, esse método foi inicialmente utilizado por ser de simples implementação e simples monitoramento da execução. Entretanto devido às limitações de segurança[referenciar seção do erro de segurança de thread] dessa classe foi escolhida uma implementação utilizando a classe multiprocessing, onde essa classe cria um grupo de subprocessos para o código que irão ser responsáveis pela execução do algoritmo selecionado. Ambas as classes implementadas, a derivada de threading e a derivada de multiprocessing, foram feitas de formas análogas e de simples substituição em código de uma para a outra de acordo com a necessidade, sendo assim funcionam de forma parecida. Ambas funcionam com uma classe de gerência chamada paralel, no caso de threading sendo paralel_thread e no caso de multiprocessing sendo paralel_subprocess, assim como classes worker com nomes semelhantes, worker_thread e worker_subprocess.\newline
+
+As classes de gerência funcionam gerando um array de objetos da classe worker, sendo cada um equivalente a uma thread ou subprocesso da execução paralela respectivamente. Também existe um elemento, que pode ser apenas um elemento ou array, com as funções que serão executadas no processamento paralelo, além disso gera um objeto que contém os elementos que serão processados durante o processamento paralelo. Esses objetos são passados como kwargs das funções que serão executadas, podem ser aceitas várias funções desde que sigam apenas uma regra. Essas funções devem ter exatamente as mesmas entradas de dados, no caso utilizado no algoritmo, cada função é a referência de uma função associada a um objeto com uma credencial diferente para a comunicação com o banco de dados, de forma que não seja executada mais de uma comunicação com uma credencial por vez.\newline
+
+Os workers vão ciclando as funções a medida que vão inteirando pelo array dos parâmetros. Durante a execução dessas funções vão sendo removidas do objeto contendo os kwargs um por um logo antes de ser usado. Dessa forma garantido que uma operação não será feita 2 vezes, isso é importante visto o propósito desse algoritmo, que é simular a mesma quantidade de operações em bancos de dados diferentes. Se um elemento fosse utilizado mais de uma vez esses valores se alterariam, caso um dos elementos já tenha sido usado e o worker tente usá-lo de novo, um erro vai ocorrer, o worker vai ignorar esse elemento e tentará o próximo disponível, caso o número de elementos seja menor que 1 ele irá então terminar o loop e parar a execução desse worker. Após o fim da execução de todos os processos paralelos a classe parallel terminará sua execução e retornará os dados pedidos.\newline
+
+O objeto de gerência, se for requisitado, irá retornar os resultados das operações onde o processamento paralelo foi pedido, para os propósitos deste algoritmo isso não foi necessário nenhuma vez. Sendo assim essa funcionalidade está incompleta, além disso ele pode retornar o tempo gasto por cada worker, essa função foi a usada para calcular o tempo gasto.\newline
+
+Essa biblioteca demandou muito tempo do desenvolvimento devido aos diversos problemas possíveis de acontecerem durante o manuseio de aplicações paralelas. Uma modificação em relação à classe nativa do Python foi a implementação de um time out para a execução dessas funções, de forma que as operações mesmo que travem não apresentam problema no benchmark, isso foi um problema percebido que impactava muito na velocidade do benchmark, gerando subprocessos zumbis, já que uma operação do banco de dados acabava levando mais tempo que o necessário e em algum momento os subprocessos acabavam gerando um problema de travar um ao outro devido a essa demora. Caso isso ocorra, o elemento utilizado voltará à lista de elementos a serem executados e será chamado pelo próximo worker livre.\newline
 
 %\subsection{monitorContainer}
 %\label{subsec:monitorContainer}
 \subsec{monitorContainer}
-essa biblioteca se baseia na biblioteca \myref{sec}{biblioteca psutil} essa biblioteca utiliza um método não muito seguro chamado eval,
-uma função nativa do Python que consegue executar uma função declarada como um string,
-sendo assim podendo muito facilmente serem alterados os parâmetros que seriam consultados do hardware onde o contêiner está sendo rodado.
-essa biblioteca faz a consulta a partir de um arquivo json que lista as funções da biblioteca psutil que devem ser executadas,
-acompanhadas dos parâmetros de entrada e o filtro de retorno que será aplicado,
-isso faz com que muito facilmente possam ser pesquisadas apenas as informações realmente necessárias,
-simplificando assim o trabalho da analise de logs.
-a biblioteca ainda implementa o uso da biblioteca de logs para poder enviar todos os logs de forma automática para o Logstash ou para um arquivo de log local,
-como descrito em \myref{subsec}{loggingSystem}
+Essa biblioteca se baseia na biblioteca \myref{sec}{biblioteca psutil} e utiliza um método não muito seguro chamado eval, uma função nativa do Python que consegue executar um comando de console Python declarado como um string. Sendo assim podendo facilmente serem alterados os parâmetros que seriam consultados do hardware onde o contêiner está sendo rodado. Essa biblioteca faz a consulta a partir de um arquivo json que lista as funções da biblioteca psutil que devem ser executadas acompanhadas dos parâmetros de entrada e o filtro de retorno que será aplicado. Isso faz com que muito facilmente possam ser pesquisadas apenas as informações realmente necessárias, simplificando assim o trabalho da análise de logs. a biblioteca ainda implementa o uso da biblioteca de logs para poder enviar todos eles de forma automática para o Logstash ou para um arquivo de log local, como descrito em \myref{subsec}{loggingSystem}.
 
 %\subsection{gerenciadosDeBD}
 %\label{subsec:gerenciadosDeBD}
 \subsec{gerenciadorDeBD}
-essa biblioteca é feita para que a gerencia das conexões do banco de dados seja mais fácil,
-visto que tem as funções adaptadas para serem iguais para o MariaDB e para o postgres,
-alem disso existem tratamentos de erro customizados para todos os erros que foram observados durante a etapa de desenvolvimento,
-dessa forma todos os erros q acontecem são tratados de forma similar,
-mas como as bibliotecas são diferentes e desenvolvidas por entidades diferentes,
-varias das correções de erros e funcionamentos são diferentes,
-um exemplo simples disso é q para a biblioteca do postgres para executar um arquivo sql só precisa do arquivo ser aberto e executada a função read,
-que retorna o string contido nele,mas na biblioteca do MariaDB tem que ser lido linha a linha e executada linha a linha,
-na biblioteca criada foram feitas as adaptações para que independente do banco de dados usado a função de executar um arquivo sql apenas precisa do caminho do arquivo no sistema,ela já abre o arquivo e o executa.
-algumas outras coisas são feitas,no postgres por exemplo existe uma função de rollback,
-que é usada para desfazer alguma operação quando ela é identificada como acontecendo com erro numa comunicação com o banco de dados,
-não existe algo equivalente para o MariaDB,sendo assim a classe criada trata esse erro tentando executar mais 5 vezes a operação,para garantir que não foi algum erro de conexão aberta,
-após essas 5 vezes o algorítimo considera q a operação inserida está com problema e a ignora.
-essa biblioteca serve principalmente para essa generalização,alem de controlar a inserção,
-execução de sql,ainda gerencia consulta,criação de usuário,
-ler diretamente o sqlite para realizar as operações escritas lá,dessa forma essa biblioteca simplifica muito a interação com o banco de dados,
-essa simplificação chega num ponto que tornou possível a paralelização ,visto que uma adaptação para isso é bastante complexa caso o código não tenha sido pensado nisso des de o começo,
-sendo assim o algorítimo sendo modularizado acabou fazendo possível a implementação de forma paralela.
-a biblioteca ainda faz com que seja possível consultar o sqlite dos dados gerados diretamente na comunicação com o banco de dados final,
-isso faz também com que seja mais econômico de memória RAM o algorítimo,mas faz também com que ele consuma por mais tempo disco e cpu,
-mas não necessariamente em maior quantidade,isso faz com que tenha sido necessário um controle mais preciso da quantidade de threads na execução do benchmark,
-pois como o cpu é usado por mais tempo isso poderia causar um travamento da maquina que está gerando os testes e uma subsequente inconsistência dos dados de benchmark gerados.
+Essa biblioteca é feita para que a gerência das conexões do banco de dados seja feita mais facilmente, visto que tem as funções adaptadas para serem iguais para o MariaDB e para o postgres, além disso existem tratamentos de erro customizados para todos os erros que foram observados durante a etapa de desenvolvimento. Dessa forma todos os erros que acontecem são tratados de forma similar, mas como as bibliotecas são diferentes e desenvolvidas por entidades diferentes, várias das correções de erros e funcionamentos também são diferentes. Um exemplo simples disso é que para a biblioteca do postgres para executar um arquivo sql só precisa do string contido nele, mas na biblioteca do MariaDB precisa ser lido e executado linha a linha. Na biblioteca criada foram feitas as adaptações para que independente do banco de dados usado, a função de executar um arquivo sql apenas precisa do caminho do arquivo no sistema ,ela já abre o arquivo e o executa.\newline
+
+Algumas outras coisas são feitas, no postgres por exemplo existe uma função de rollback, que é usada para desfazer alguma operação quando ela é identificada como erro numa comunicação com o banco de dados. Não existe algo equivalente para o MariaDB, sendo assim a classe criada trata esse erro tentando executar mais 5 vezes a operação, para garantir que não foi algum erro de conexão aberta, após essas 5 vezes o algoritmo considera que a operação inserida está com problema e a ignora.\newline
+
+     Essa biblioteca serve principalmente para essa generalização, além de controlar a inserção, execução de sql, ainda gerenciar consulta, criação de usuário e ler diretamente o sqlite para realizar as operações escritas Dessa forma essa biblioteca simplifica muito a interação com o banco de dados, essa simplificação chega num ponto em que se tornou possível a paralelização, visto que uma adaptação para isso é bastante complexa caso o código não tenha sido pensado para este fim desde o começo, sendo assim o algoritmo sendo modularizado acabou fazendo possível a implementação de forma paralela.\newline
+     
+      A biblioteca ainda faz com que seja possível consultar o sqlite dos dados gerados diretamente na comunicação com o banco de dados final, isso faz com que seja mais econômico de memória RAM o algoritmo, mas faz também com que ele consuma por mais tempo disco e cpu, mas não necessariamente em maior quantidade. Isso faz com que tenha sido necessário um controle mais preciso da quantidade de threads na execução do benchmark, pois como o cpu é usado por mais tempo, isso poderia causar um travamento da máquina que está gerando os testes e uma subsequente inconsistência dos dados de benchmark gerados, como apresentado em \myref{imagem}{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}.
+
 
 %\subsection{geradorDeSql}
 %\label{subsec:geradorDeSql}
@@ -896,102 +830,85 @@ essa é a classe referida na seção \myref{sec}{geração de dados},todas as in
 %\section{software de benchmark}
 %\label{sec:software de benchmark}
 \sec{software de benchmark}
-o benchmark foi feito utilizando um software desenvolvido para o propósito deste teste,
-o software de benchmark está mais para um software para gerar estresse na maquina na qual está rodando o banco de dados por meio de varias execuções de comandos direto no banco de dados.
-o software de benchmark funciona carregando e construindo os dados a partir das inserções no arquivo sqlite,os testes de estresse foram tentados de algumas formas:\newline
+O benchmark foi feito utilizando um software desenvolvido para o propósito deste teste, o software de benchmark está mais para um software para gerar estresse na máquina na qual está rodando o banco de dados por meio de várias execuções de comandos direto no banco de dados. O software de benchmark funciona carregando e construindo os dados a partir das inserções no arquivo sqlite, os testes de estresse foram tentados de algumas formas:\newline
 \begin{itemize}
-\item primeiramente o algorítimo inicia o contêiner que contém o banco de dados que está sendo analisado
-\item após isso é inserindo uma quantidade definida de operações que é lida de forma sequencial do banco de dados inicial
-\item após isso são executadas essas operações até que terminem,depois disso o mesmo procedimento é feito para a outra maquina
-\item após isso o contêiner com o banco de dados é desligado e o próximo tipo de banco de dados é iniciado nas duas maquinas,e o processo se repete\newline
-a outra forma é um pouco mais rápida e eficiente em relação a execução das múltiplas maquinas.
+\item Primeiramente o algoritmo inicia o contêiner que contém o banco de dados que está sendo analisado;
+\item Após isso é inserindo uma quantidade definida de operações que é lida de forma sequencial do banco de dados inicial;
+\item Após isso são executadas essas operações até que terminem,depois disso o mesmo procedimento é feito para a outra máquina;
+\item Após isso o contêiner com o banco de dados é desligado e o próximo tipo de banco de dados é iniciado nas duas máquinas, e o processo se repete;
 \end{itemize}
-Isso se dá pelo fato que o processo de inserção é feito de forma paralela,de forma que as inserções de cada banco de dados em todas as maquinas é feito simultaneamente,
-mas também de forma sequencial,o funcionamento é muito parecido com o da anterior,primeiro é criada uma thread para cada maquina,
-em cada thread é lido de forma sequencial as operações que serão inseridas,
-assim que as operações acabam em qualquer uma das threads o contêiner do banco de dados é parado e aguara a outra thread acabar para poder começar o mesmo procedimento para o outro tipo de banco de dados\newline
-a terceira forma é parecida com a segunda,diferente apenas na forma como as operações são executadas,a partir desse método as operações são inseridas de forma paralela,
-sendo assim cada thread de cada maquina possui uma quantidade definida de threads filhas,
-essas threads filhas executam as operações a partir do que existe numa queue de elementos que quer dizer que uma operação não necessariamente será executada ,
-visto que pode depender de uma operação que ainda não foi executada,isso é possível em alguns casos raros,
-assim como num ambiente real,onde um funcionário de uma empresa pode editar um elemento ao mesmo tempo que outro edita o mesmo elemento,
-em ambientes reais existem tratamentos para que isso não ocorra,
-mas no ambiente desses testes,nenhum tratamento para impedir isso foi feito,
-exatamente para simbolizar o pior cenário possível para uma aplicação com comunicação com bancos de dados\newline
-a ultima forma é uma variante da segunda e terceira formas de operação,
-onde são feitos os testes para cada maquina de forma sequencial, mas a execução das operações é paralela,
-essa ultima foi pensada para que possam ser testadas alguns ambientes a procura de erros,
-não foi pensada necessariamente para o uso no benchmark final\newline
-o software de benchmark por si só não é o bastante para analisar o desempenho das arquiteturas,
-ele depende do contêiner docker descrito em \myref{sec}{contêineres docker},
-esse contêiner modificado possui um método de monitorar de dentro para fora tudo que acontece dentro dele por meio do \myref{sec}{daemon de monitoramento} \newline
+A outra forma é um pouco mais rápida e eficiente em relação a execução das múltiplas
+máquinas.\newline
+
+Isso se dá pelo fato que o processo de inserção é feito de forma paralela,sendo assim as inserções dos bancos de dados em todas as máquinas é feito simultaneamente, mas também de forma sequencial e o funcionamento é muito parecido com o da anterior:\newline
+\begin{itemize}
+\item Primeiro é criada uma thread para cada máquina;
+\item Em cada thread é lido de forma sequencial as operações que serão inseridas;
+\item O container de banco de dados escolhido é iniciado na máquina associada a thread;
+\item As operações são executadas seguindo a lista de operações;
+\item Assim que as operações acabam em todas as threads o contêiner do banco de dados é parado; 
+\item O algoritmo aguarda a outra thread iniciar para poder começar o mesmo procedimento para o outro tipo de banco de dados;
+\end{itemize}
+
+A terceira forma é parecida com a segunda, diferente apenas na forma como as operações são executadas, a partir desse método as operações são inseridas de forma paralela;\newline
+\begin{itemize}
+\item Sendo assim cada thread de cada máquina possui uma quantidade definida de threads filhas;
+\item Essas threads filhas executam as operações a partir do que existe numa queue de elementos;
+\item Após esse ponto o procedimento é igual ao teste descrito anteriormente, do 3 ponto em diante, com a diferença de a queue não ser tratada como uma lista sequencial e seus elementos podem ser readicionados caso de erro;
+\end{itemize}
+
+A queue de elementos não garante que uma operação será executada, visto que pode depender de uma operação que ainda não foi executada, isso é possível em alguns casos raros, assim como num ambiente real, onde um funcionário de uma empresa pode editar um elemento ao mesmo tempo que outro edita o mesmo elemento, em ambientes reais existem tratamentos para que isso não ocorra.\newline
+
+Mas no ambiente desses testes, nenhum tratamento para impedir isso foi feito, exatamente para simbolizar o pior cenário possível para uma aplicação com comunicação com bancos de dados.\newline
+
+os containers utilizados foram desenvolvidos para os propósitos desta pesquisa, e estão descritos em \myref{sec}{contêineres docker}\newline
 
 
 %\section{geração de dados}
 %\label{sec:geração de dados}
 \sec{geração de dados}
-os dados foram todos gerados para um sqlite projetado para ser simples de aceitar qualquer formato de dados que pudesse ser gerado para qualquer tabela
-Essas etapas funcionam da seguinte forma:\newline
-No início, os dados foram gerados em sqlite pelo fato que, caso haja algum problema e o computador, que estava gerando os dados, seja abruptamente desligado,
-não se perdem as informações que já foram criadas e salvas no banco de dados. Desta forma, economiza tempo uma vez que esta etapa é a mais demorada da geração de dados,para mais informações sobre o sqlite consulte o \myref{subsec}{sqlite}.\newline
-o codigo consegue gerar os dados de 3 formas,apenas a ultima é realmente utilizada.
-As outras duas foram feitas para propósito de testes
-
+Os dados foram todos gerados para um sqlite projetado para ser simples de aceitar qualquer formato de dados que pudesse ser gerado para qualquer tabela. Essas etapas funcionam da seguinte forma: \newline
+No início, os dados foram gerados em sqlite pelo fato que, caso houvesse algum problema e o computador, que estava gerando os dados, fosse abruptamente desligado, não se perdesse as informações que já haviam sido criadas e salvas no banco de dados. Desta forma, economiza  memória ram, já que não é necessário carregar o arquivo todo quando fosse necessária uma consulta de dados, e tempo uma vez que esta etapa é a mais demorada da geração de dados, como descrito em\myref{subsec}{sqlite}.\newline
+O código consegue gerar os dados de 3 formas,mas apenas a última é realmente utilizada. As outras duas foram feitas para propósito de testes:
 \begin{itemize}
-\item gerar uma quantidade x de dados de uma tabela específica
-\item gerar uma quantidade x de cada tipo de dado para cada tabela do banco de dados final
-\item gerar uma quantidade aleatória de cada tipo de dado para cada tabela do banco de dados final até atingir o total de operações informadas
+\item Gerar uma quantidade x de dados de uma tabela específica;
+\item Gerar uma quantidade x de cada tipo de dado para cada tabela do banco de dados final;
+\item Gerar uma quantidade aleatória de cada tipo de dado para as tabela do banco de dados final até atingir o total de operações informadas;
 \end{itemize}
 
-Todos esses tipos de geração são feitos pela mesma função que são alterados pelos parâmetros passados a ela.
-Assim a função prioriza os parâmetros referentes aos três tipos de geração.\newline
-Além dos parâmetros relacionados aos tipos de geração informados, existem os parâmetros relacionados a \myref{sec}{biblioteca faker} e uma lista que define quais tipos de operação,
-descritos em \myref{subsec}{tipos de dados gerados}, que define, caso não esteja vazia,
-quais os tipos de dados que serão gerados.
-Isso foi útil pois utilizou-se o tipo de criação de dados de inserção na primeira etapa de testes,como descrito em \myref{subsec}{teste de tempo de operação de inserção no BD}, antes de gerar os dados dos outros tipos.\newline
-Devido a limitações intencionais, o valor total de operações inseridos em cada operação deve considerar a quantidade da operação anterior.
-Isso se faz necessário pois o algorítimo verifica apenas a quantidade total de elementos cadastrados no sqlite,
-ou seja, caso sejam requisitadas 3 tipos de geração diferentes teriam que ser passadas da seguinte forma:
-\begin{itemize}
-\item uma geração da quantidade X de dados,resultando em X dados gerados
-\item uma geração de Y dados,sendo que Y é igual a X+A,resultando em Y dados gerados
-\item uma geração de Z dados,sendo que Z é igual a X+A+B,resultando em Z dados gerados
-\end{itemize}
-sendo assim,os dados gerados teriam que ser algo como X=5,Y=10 e Z=15,onde cada etapa apenas teriam 5 dados adicionados ao sqlite
+Todos esses tipos de geração são feitos pela mesma função que são alterados pelos parâmetros passados a ela. Assim, a função prioriza os parâmetros referentes aos três tipos de geração.\newline
 
-a geração de dados inicialmente foi pensada para rodar em um servidor de forma sequencial,
-isso simplesmente por que não teria processamento paralelo inicialmente no software,
-entretanto quando isso se tornou necessário também foi possível utilizar o codigo previamente existente da geração de dados para a geração de forma paralela,
-isso se mostrou uma grande vantagem para a etapa de desenvolvimento onde vários bancos de dados de testes foram gerados para que fosse garantido que todas as partes desenvolvidas do software estivessem funcionando corretamente,
-devido a forma como isso foi pensado,o grande limitador da velocidade de geração de dados é o fator randômico,
-devido a toda a recurção que ocorre em consequência aos tratamentos de erros,
-além disso o outro maior limitador é a velocidade de disco,
-visto que a aplicação do sqlite3 aceita apenas uma inserção por vez no banco de dados de forma paralela,
-isso faz com que quanto mais rápido fosse possível a escrita em disco mais rapidamente esse fator limitador era deixado de lado,
-devido ao fato de durante os testes da etapa de desenvolvimento todos terem sido usando um ssd para o salvamento desses dados isso não impactou em quase nada na velocidade de geração dos dados,mas na etapa de execução de testes isso se mostrou um problema,já que no dispositivo usado para executar o algoritmo dos testes o HD mecânico fez com que uma imensa diminuição da velocidade de leitura e escrita,sendo assim mesmo na operação de leitura,onde podem ser feitas varias leituras concorrentemente isso impactasse na performance e gerassem alguns erros como descrito em \myref{subsec}{erro de leitura pela falta de velocidade de disco}
+Além dos parâmetros relacionados aos tipos de geração informados, existem os parâmetros relacionados a biblioteca faker e uma lista que define quais tipos de operação, descritos em \myref{subsec}{tipos de dados gerados}, que define, caso não esteja vazia, quais os tipos de dados que serão gerados. Isso foi útil pois utilizou-se o tipo de criação de dados de inserção na primeira etapa de testes, como descrito em teste de tempo de operação de inserção no BD[referenciar], antes de gerar os dados dos outros tipos.\newline
+
+Devido a limitações intencionais, o valor total de operações inseridas em cada execução deve considerar a quantidade da execução anterior. Isso se faz necessário pois o algoritmo verifica apenas a quantidade total de elementos cadastrados no sqlite, ou seja, caso sejam requisitadas 3 tipos de geração diferentes teriam que ser passadas da seguinte forma:
+\begin{itemize}
+\item Uma geração da quantidade X de dados, resultando em X dados gerados;
+\item Uma geração de Y dados, sendo que Y é igual a X+A, resultando em Y dados gerados;
+\item Uma geração de Z dados, sendo que Z é igual a X+A+B, resultando em Z dados gerados;
+\end{itemize}
+Sendo assim,os dados gerados teriam que ser algo como X=5, Y=10 e Z=15, onde cada etapa apenas teriam 5 dados adicionados ao sqlite.\newline
+
+A geração de dados inicialmente foi pensada para rodar em um servidor de forma sequencial, isso simplesmente por que não teria processamento paralelo inicialmente no software, entretanto quando isso se tornou necessário também foi possível utilizar o código previamente existente da geração de dados para a geração de forma paralela. Isso se mostrou uma grande vantagem para a etapa de desenvolvimento, onde vários bancos de dados de testes foram gerados para que fosse garantido que todas as partes desenvolvidas do software estivessem funcionando corretamente, devido a forma como isso foi pensado.\newline
+
+O grande limitador da velocidade de geração de dados é o fator randômico, devido a toda a recursão que ocorre em consequência aos tratamentos de erros, além disso o outro maior limitador é a velocidade da mídia de armazenamento, visto que a aplicação sqlite3 aceita apenas uma inserção por vez no banco de dados de forma paralela, isso faz com que quanto mais rápido fosse possível a escrita em disco, mais rapidamente esse fator limitador era deixado de lado. Devido ao fato de durante os testes da etapa de desenvolvimento todos terem sido usando um SSD para o salvamento desses dados isso não impactou em quase nada na velocidade de geração dos dados,mas na etapa de execução de testes isso se mostrou um problema, já que no dispositivo usado para executar o algoritmo dos testes o HD mecânico fez com que ocorresse diminuição da velocidade de leitura e escrita, sendo assim mesmo na operação de leitura, onde podem ser feitas várias leituras concorrentemente isso impactasse na performance e gerassem alguns erros como descrito em erro de leitura pela falta de velocidade de disco. Como descrito em \myref{subsec}{erro de leitura pela falta de velocidade de disco}.
 
 %\subsection{tipos de dados gerados}
 %\label{subsec:tipos de dados gerados}
 \subsec{tipos de dados gerados}
 Foram selecionadas para os teste apenas as operações mais utilizadas por um banco de dados:
 \begin{enumerate}
-\item inserção de um novo dado
-\item leitura completa de todos os dados de uma tabela
-\item busca de elementos filtrados em determinada tabela
-\item busca de apenas alguns dados de elementos filtrados em determinada tabela
-\item edição de elementos
-\item deleção de elementos filtrados
+\item Inserção de um novo dado;
+\item Leitura completa de todos os dados de uma tabela;
+\item Busca de elementos filtrados em determinada tabela;
+\item Busca de apenas alguns dados de elementos filtrados em determinada tabela;
+\item Edição de elementos;
+\item Deleção de elementos filtrados;
 \end{enumerate}
-Antes de serem geradas, a operação de inserção passa por vários processos de tratamento de erro para se certificar que não houve dependência alguma que não foi gerada como,
-por exemplo, gerar uma cidade sem existir um país cadastrado. Esse foi um dos motivos de ter sido utilizado um arquivo sqlite ao invés de outro método de armazenamento.
-Dessa forma pode-se executar essa consulta de dependência de forma rápida e apenas retornar índices válidos para associações de tabela.
-os vários dados gerados pelo programa de geração de dados são usados parcialmente para a geração dos dados novos,
-mas todos os dados gerados são gerados da forma mais simplificada e sendo assim,poucas coisas que já existiam dentro do banco de dados dos dados já cadastrados,
-apensas os ids cadastrados são usados,apenas para que as associações de dados sejam possíveis,os outros dados são ignorados,
-sendo assim não são consultados os dados para as queries e nem nenhum outro dado como update,sendo assim,
-a maioria dos dados gerados não conseguem retornar algum valor,como updates ou deleções,isso foi feito dessa forma apenas para simplificar o algorítimo,
-e seria totalmente possível a modificação para que esses dados sejam levados em conta no futuro.
+Antes de ser gerada, a operação de inserção passa por vários processos de tratamento de erro para se certificar que não houve dependência alguma que não foi gerada, como por exemplo, gerar uma cidade sem existir um país cadastrado.\newline
 
+Esse foi um dos motivos de ter sido utilizado um arquivo sqlite ao invés de outro método de armazenamento. Dessa forma, pode-se executar essa consulta de dependência de forma rápida e apenas retornar índices válidos para associações de tabela.\newline
+
+Os vários dados gerados por esse programa são usados parcialmente para a geração dos dados novos, mas todos os dados gerados são gerados de forma simplificada e sendo assim, poucas coisas que já haviam sido cadastrados, apenas os ids cadastrados são usados, isso porque  para a associação de dados é levado em conta os dados realmente existentes, ou seja, não são consultados os dados para as queries e nem nenhum outro dado como update. A maioria dos dados gerados não conseguem retornar algum valor, como updates ou deleções, isso foi feito dessa forma para simplificar o algoritmo, e seria totalmente possível a modificação para que esses dados sejam levados em conta no futuro.\newline
 
 %\subsection{alimentação do algoritmo}
 %\label{subsec:alimentação do algoritmo}
