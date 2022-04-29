@@ -470,34 +470,20 @@ brasil,				% o último idioma é o principal do documento
 
 \sig{IDE}
 
-\sig{x64}
+\sig{x64} evolução da arquitetura \myref{sig}{x86} evoluida para 64 bit
 
-\sig{x86}
+\sig{x86} arquitetura 32 bit comum nos computadores domésticos atuais
 
-\sig{aarch64}
-
-\sig{RAM}
-
-\sig{GPU}
-
-\sig{TPU}
-
-\sig{CPU}
+\sig{aarch64} evolução 64bit da arquitetura \myref{sig}{arm}
 
 \sig{JVM} JVM (Java Virtual Machine) é uma máquina abstrata. É uma especificação que fornece um ambiente de tempo de execução no qual o bytecode do java pode ser executado.
 As JVMs estão disponíveis para muitas plataformas de hardware e software (ou seja, a JVM depende da plataforma).
 
-\sig{IOT}
+\sig{IOT} internet das coisas,
 
-\sig{SBC}
+\sig{SBC} single board computer,ou computador de placa unica,é um tipo de computador utilizado hoje em dia em que no mesmo chipset você encontra todas as estruturas principais do computador estão juntas obrigatóriamente os SBC possuem CPU e memória RAM e podem conter outras estruturas de um computador
 
-\sig{BIOS}
-
-\sig{TTL}
-
-\sig{UART}
-
-\sig{WINE}
+\sig{WINE} O Wine é uma camada de tradução capaz de executar aplicações Windows em Linux e em outros sistemas operacionais compatíveis com POSIX
 
 \end{siglas}
 
@@ -513,40 +499,24 @@ As JVMs estão disponíveis para muitas plataformas de hardware e software (ou s
 \addcontentsline{toc}{chapter}{\textbf{Introdução}}
 \markright{Introdução}
 \label{ch:introducao}
-Esta pesquisa foi baseada na crescente adoção de processadores \myref{sig}{arm}, que conseguem entregar uma eficiência energética muito superior a comumente utilizada nos computadores e servidores (de arquitetura \myref{sig}{x86}).
-Esta arquitetura possui uma versão 64 bit, que hoje em dia é praticamente a única variante utilizada a \myref{sig}{x64}. Essa arquitetura é, no geral,
-apenas uma variante aditiva da \myref{sig}{x86} na qual são adicionadas varias instruções e vários suportes, sendo o principal deles o suporte a comandos 64 bits.
+Com a  crescente adoção de processadores \myref{sig}{arm}, que entregam eficiência energética superior a comumente utilizada nos computadores e servidores (arquitetura \myref{sig}{x86}),
+que possui também uma versão 64 bits (\myref{sig}{x64}), que é praticamente a única variante utilizada atualmente. Essa arquitetura é, no geral, apenas uma variante aditiva da \myref{sig}{x86} , na qual são adicionadas instruções e suportes, sendo o principal deles comandos 64 bits. Esta pesquisa foi desenvolvida considerando o uso de servidores arm presentes no mundo corporativo. Dessa forma, foi feita uma comparação na utilização desses processadores para a simulação de uma aplicação de banco de dados. Essa aplicação simula, de forma realística, a utilização de uma base de dados de uma locadora.\newline
 %O mesmo pode ser dito para a arquitetura \myref{sig}{aarch64} ou arm64 que é uma variante aditiva da \myref{sig}{arm},essa não é ,como a \myref{sig}{x64} uma versão única,
 %mas sim uma "denominação" das variantes e evoluções da arquitetura \myref{sig}{arm} com suporte a 64bit.As arquiteturas passaram a ser denominadas dessa forma a partir da armv8,
 %entretanto existem versões do \myref{sig}{arm},como o armv7l, que consegue trabalhar com instruções de 64bit,apesar de ser uma arquitetura 32 bits.\newline
-O foco da pesquisa foi feito em cima do uso de servidores \myref{sig}{arm}, que existente no mundo corporativo. Desta forma foi feita uma comparação na utilização desses processadores para a simulação de uma aplicação de banco de dados.
-Essa aplicação simula a utilização de forma realística de uma base de dados de uma locadora. \newline
-O cenário foi escolhido a partir de um esquema de banco de dados genérico da internet e foram utilizados os bancos de dados PostgreSQL e MariaDB, visto que são os bancos de dados de propósito geral mais utilizados atualmente com suporte a arquitetura \myref{sig}{arm}.
-Foi preferido o MariaDB sobre o MySQL visto que não existe uma versão dele para a arquitetura \myref{sig}{arm} e ambos são basicamente o mesmo sistema.\newline
-Foi criado um programa para a geração de dados realísticos baseados na biblioteca faker implementada na linguagem Python. Estes dados são gerados para cada país específico em idiomas e caracteres compatíveis com a região escolhida.
-Desta forma é plausível que estes dados, como nome, telefone, endereço e até mesmo usuário e senha sejam possíveis de existirem.
-Foi escolhido essa forma de inserção pois um preenchimento de dados totalmente randômico e de tamanho fixo podem apresentar discrepâncias com o desempenho num ambiente real de uso,
-afetando tanto o tempo, quanto carga dos processadores de forma negativa. Os dados utilizados em cada ciclo de teste são exatamente os mesmos,
-simbolizando o uso em um ambiente real. Desta forma o benchmark se torna mais aplicável a realidade e de mais fácil comparação de desempenho que outros algorítimos encontrados.\newline
-
+Foi criado um programa para a geração de dados baseado na biblioteca faker implementada na linguagem Python. Estes dados são gerados para cada país, em idiomas e caracteres compatíveis com a região escolhida. O que permite que estes dados como, nome, telefone, endereço e até mesmo usuário e senha sejam possíveis. Essa forma de inserção foi escolhida, pois um preenchimento de dados totalmente randômico, e de tamanho fixo, pode apresentar discrepância em relação ao desempenho num ambiente real de uso, afetando tanto o tempo, quanto a carga dos processadores de forma negativa. Os dados utilizados em cada ciclo de teste foram exatamente os mesmos, simulando o uso em ambiente real. Desta forma o benchmark se torna melhor aplicável à realidade e de fácil comparação de desempenho que outros algoritmos encontrados.\newline
 
 \ch{fundamentação teórica}
 
 \sec{virtualização}
-virtualização é uma técnica usada para simular um computador dentro de outro,dependendo do método utilizado ele pode simular apenas uma camada ou mais de uma das camadas de hardware e software de um computador.
-Um computador virtualizado pode receber vários nomes dependendo do método utilizado para virtualizar,os mais utilizados hoje em dia são maquinas virtuais e contêineres docker.
-A principal diferença deles é a camada de hardware na qual ele executa.
+Virtualização é uma técnica usada para simular um computador dentro de outro. Dependendo do método utilizado, ele pode simular apenas uma camada, ou mais de uma das camadas de hardware e software de um computador. Um sistema virtualizado pode receber vários nomes de acordo com o método utilizado para virtualizar. Alguns dos mais utilizados atualmente são máquinas virtuais e containers docker. A principal diferença deles é a camada de hardware na qual ele é executado.
 
 \sec{maquina virtual}
-uma maquina virtual é rodada por um programa dentro de um sistema operacional,maquinas virtuais possuem varias limitações,
-dentre elas um menor desempenho de processamento e não pode ter acesso a outros hardwares do computador.
-Na maioria desse tipo de virtualização é permitido o acesso direto à memória principal, dispositivos de armazenamento de dados e hardwares plug’n’play como dispositivos de entrada e saída USB,entretanto não é possível de se utilizar placas de video ou outros hardwares PCI.
+Uma máquina virtual é rodada por um programa dentro de um sistema operacional. Máquinas virtuais possuem várias limitações, dentre elas, um menor desempenho de processamento, além de não permitir acesso a outros hardwares do computador. Majoritariamente neste tipo de virtualização é permitido o acesso direto à memória principal, dispositivos de armazenamento de dados e hardwares plug’n’play como dispositivos de entrada e saída USB. Entretanto, não é possível utilizar placas de vídeo ou outros hardwares PCI de forma eficiente.
+
 
 \sec{arquiteturas}
-Por definição arquitetura de computador é um conjunto de circuitos eletrônicos padronizado associado a um conjunto de instruções de forma a simplificar a programação deles para que funcionem comandos diferentes do binário.
-Os compiladores utilizam esses conjuntos de instrução para que seja convertido o código de uma linguagem de programação de alto nivel para uma de baixo nível.
-A arquitetura também define/limita várias propriedades do hardware, como quantidade máxima de \myref{sig}{RAM},
-de disco, suporte ou não de saída de video, capacidades de rede e vários outros.\newline
+Por definição, arquitetura de computador é um conjunto de circuitos eletrônicos padronizados, associados a um conjunto de instruções, de forma a simplificar a programação para que executem comandos diferentes do binário. Os compiladores utilizam esses conjuntos de instrução para que o código de uma linguagem de programação de alto nível seja convertido para uma de baixo nível. A arquitetura também define e limita várias propriedades do hardware, como quantidade máxima de RAM, de armazenamento, suporte de saída de vídeo, capacidades de rede, etc.\newline
 
 %Uma micro arquitetura é quando adiciona-se tanto um circuito eletrônico novo ao circuito original da arquitetura quanto apenas uma simplificação ou reorganização dos comandos originais de uma arquitetura,
 %entretanto, em uma micro arquitetura essas modificações são muito pequenas de forma a serem mais similares a arquitetura original do que uma nova arquitetura.
@@ -554,47 +524,37 @@ de disco, suporte ou não de saída de video, capacidades de rede e vários outr
 %como foi o caso da arquitetura \myref{sig}{x86} para a arquitetura \myref{sig}{x64}, onde nesta última foi um upgrade grande o bastante da \myref{sig}{x86} a ponto de ser considerado uma nova arquitetura.
 %A principal e mais visível diferença entre esses dois é a mudança de 32bit(na \myref{sig}{x86}) para 64bit(no \myref{sig}{x64}).\newline
 
-As arquiteturas também podem ser definidas sobre características fora da \myref{sig}{CPU}. Elas podem ser definidas em \myref{sig}{GPU},
-\myref{sig}{TPU} e vários outros módulos de hardware de um computador, inclusive existindo arquiteturas especiais que são aplicadas em nível de software.
-Estas não são necessariamente arquiteturas de computador mas sim um tipo diferente de arquitetura,
-onde existem máquinas abstratas que simplificam a programação de uma linguagem para que ela funcione de forma mais compatível com várias máquinas de arquiteturas de hardware diferentes.
-Sendo assim, se faz necessário otimizações na parte do código e da máquina virtual, como o caso da \myref{sig}{JVM} do java,
-em que a máquina virtual de cada arquitetura pode sofrer otimizações e isso faz com que ela funcione de forma melhor dependendo da máquina virtual em uma arquitetura e pior em outra e vice-versa, mas sem alterar o código.\newline
+As arquiteturas também podem ser definidas além da CPU. O que inclui a GPU, TPU e vários outros módulos de hardware de um computador. Inclusive existem arquiteturas especiais que são aplicadas em nível de software. Estas não são necessariamente arquiteturas de computador, mas sim um tipo diferente de arquitetura, que existe em máquinas abstratas que simplificam a programação de uma linguagem para que ela funcione com maior compatibilidade em várias máquinas de arquiteturas de hardware diferentes. Portanto, se faz necessário otimizações na parte do código, e da máquina virtual, como o caso da \myref{sig}{JVM} da linguagem Java.\newline
 
-As arquiteturas não são limitadas apenas a esses previamente citados, mas as arquiteturas podem estar presentes em todos os tipos de circuitos integrados.
-Como exemplo os processadores de roteadores e aparelhos \myref{sig}{IOT} tais como lâmpadas e tomadas inteligentes.
-Isso quer dizer que uma arquitetura não necessariamente é algo que precise de um hardware potente ou que só funcione ou exista em computadores,
-mas são a forma como os algoritmos são interpretados no hardware, o que quer dizer que ,desde que exista um software e um hardware que se comuniquem,
-existe uma arquitetura e provavelmente houve uma conversão da linguagem de programação para a linguagem de máquina dessa arquitetura deste dispositivo\newline
+As arquiteturas não são limitadas apenas a esses previamente citados, elas também podem estar presentes em todos os tipos de circuitos integrados.
+Como por exemplo os processadores de roteadores e aparelhos \myref{sig}{IOT}, tais como lâmpadas e tomadas inteligentes.
+Isso quer dizer que uma arquitetura não necessariamente é algo que precise de um hardware potente ou que só funcione ou exista em computadores, mas sim a forma como os algoritmos são interpretados no hardware,sendo eles algoritmos como softwares de computador ou como sequências de instruções realizadas por alguém.
+Sendo assim, desde que exista um software e um hardware que se comuniquem, existe uma arquitetura e provavelmente houve uma conversão da linguagem de programação para a linguagem de máquina dessa arquitetura neste dispositivo.\newline
 
-As arquiteturas de computador são definidas para hardwares específicos, mas os softwares não necessariamente precisam de ser funcionais apenas em uma única arquitetura, por mais que ela seja diferente da arquitetura de outro computador.
-Isso é devido pelo fato dos conjuntos de instruções poderem ser diferentes mas suas funcionalidades gerais podem ser iguais. Mesmo que uma arquitetura seja totalmente diferente da outra, os softwares de uma podem funcionar na outra,
-por mais que sejam necessárias algumas adaptações. Algumas dessas adaptações podem ser tão grandes que às vezes é muito complexo essa adaptação de código. Para esses casos, ou mesmo para testar o código de uma arquitetura em outra,
+
+--verificar--
+As arquiteturas de computador são por si só hardwares específicos para rodar algorítimos, mas os softwares não necessariamente precisam de ser funcionais apenas em uma única arquitetura, por mais que ela seja diferente de outra.
+Isso é devido pelo fato dos conjuntos de instruções poderem ser diferentes mas suas funcionalidades gerais podem ser iguais. Mesmo que uma arquitetura seja totalmente diferente entre si, as instruções chamadas para a execução de uma funcionalidade podem existir em outra arquitetura,sendo assim o software de uma arquitetura pode rodar em outra por mais que sejam necessárias algumas adaptações.
+Algumas dessas adaptações podem ser tão grandes que às vezes é muito complexo essa adaptação de código. Para esses casos, ou mesmo para testar o código de uma arquitetura em outra,
 sem a necessidade dessa adaptação são usados programas chamados de emuladores ou simuladores.
 Estes programas funcionam como uma camada de compatibilidade entre a arquitetura real da máquina que está rodando e a arquitetura na qual o programa foi projetado para funcionar.
 Entretanto esse processo pode acarretar em uma perda considerável de desempenho, podendo resultar em casos onde máquinas com  516 gigaflops sejam necessárias para se emular máquinas com 230 gigaflops,
-como no caso de um emulador do sistema de console Playstation 3 utilizando o emulador rpcs3, e mesmo com essa ineficiência, esse emulador não tem 100\% de compatibilidade com os softwares existentes na plataforma,
-de forma que nem todos os softwares dessa plataforma funcionam exatamente como deveriam, ou mesmo funcionam. Por mais que ambas as máquinas executem o mesmo kernel de sistema ainda sim haverá perda de desempenho muito grande pois apesar de,
-em teoria, serem o mesmo sistema operacional a diferença de arquiteturas possui um peso muito maior do que o sistema operacional utilizado.\newline
+como no caso de um emulador do sistema de console Playstation 3 utilizando o emulador rpcs3, e mesmo com essa ineficiência, esse emulador não tem 100\% de compatibilidade com os softwares existentes na plataforma,isso pois a arquitetura do playstation 3 é muito diferente e complexa de se adaptar para a arquitetura amd64.
+isso resulta em nem todos os softwares dessa plataforma funcionam exatamente como deveriam, ou mesmo impedindo que funcionem. Por mais que ambas as máquinas executem o mesmo kernel de sistema,visto que é possivel rodar o rpcs3 em sistemas linux e o sistema operacional do playstation 3 é basedo em kernel linux , ainda sim haverá perda de desempenho muito grande pois apesar de,em teoria, serem o mesmo kernel,que deveria facilitar essa comunicação, a diferença de arquiteturas possui um peso muito maior do que o kernel utilizado.\newline
 
-Esse é um exemplo de como mesmo com tudo para ser um cenário igual de utilização ou mesmo um cenário melhor ao se trocar uma arquitetura de um computador inúmeras adaptações devem ser feitas ou,
-como no caso do macos,criadas camadas de compatibilidade.Após o lançamento dos macbooks de 2020 com processador M1 ,que funcionam com a arquitetura \myref{sig}{aarch64},
+Esse é um exemplo de como mesmo com tudo para ser um cenário igual de utilização ou mesmo um cenário melhor ao se trocar uma arquitetura de um computador inúmeras adaptações devem ser feitas ou,como no caso do macos,
+criadas camadas de compatibilidade.Após o lançamento dos macbooks de 2020 com processador M1 ,que funcionam com a arquitetura \myref{sig}{aarch64},
 a apple lançou uma camada de compatibilidade dos softwares com arquitetura \myref{sig}{x64} para \myref{sig}{aarch64} chamado de rosetta2 esse software funciona parcialmente como um emulador,
 exceto que ele faz as adaptações num nível mais próximo do da máquina real e do sistema operacional nativo da máquina,resultando num desempenho muito superior a qualquer emulador existente,
 o rosetta2 funciona de forma análoga ao projeto \myref{sig}{WINE} do Linux que reinterpreta os programas windows para funcionarem no Linux,você tem uma pequena perda de desempenho por esse processo de reinterpretação em alguns casos,
-mas em outros essa perda é bem mais visível\newline
+mas em outros essa perda é bem mais visível,e até mesmo,em raros casos,pode até mesmo ocorrer um ganho de desempenho.\newline
 
 As arquiteturas de computador podem variar em diversos fatores de uma para outra de forma que existam varias funcionalidades que não foram pensadas para uma arquitetura que existem em outras.
 existem também propósitos diferentes para diferentes arquiteturas,como o caso dos processadores \myref{sig}{arm} que foram pensados para entregar uma grande eficiência energética,
-enquanto os processadores \myref{sig}{x86} foram pensados para apresentarem grande poder de processamento\newline
+enquanto os processadores \myref{sig}{x86} foram pensados para apresentarem grande poder de processamento.\newline
 
-Existem alguns computadores com processador \myref{sig}{arm} que não são \myref{sig}{SBC} fazendo com que eles possuam várias possibilidades de upgrade, que não são possíveis nos computadores \myref{sig}{SBC}.
-Sendo assim, existem algumas pequenas variações no funcionamento dos computadores mesmo dentro de uma mesma arquitetura que tenderia a seguir padrões mais uniformes.
-Entretanto, uma peculiaridade tende a ser comum nos processadores \myref{sig}{arm},
-eles costumam apresentar uma \myref{sig}{GPU} integrada e algumas outras unidades de processamento especializadas nas quais os processadores \myref{sig}{x86} costumam ter que ser adicionadas com chips externos.
-Uma dessas unidades é o \myref{sig}{TPU} que ficou mais conhecida com o lançamento do Windows 11 que exige em sua instalação por propósitos de segurança.
 O principal propósito da arquitetura \myref{sig}{arm} entretanto não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes,
-tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{arm} mais potente atualmente da marca e mais popular,
+tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{arm} mais potente atualmente da marca mais popular dentre os SBC,
 consome em torno de 15w hora. É uma grande diferença, principalmente levando em conta que ambos tem a capacidade de utilizar os mesmos programas de trabalho,
 se considerarmos sistema operacional Linux e programas open source, tanto editores de texto, navegadores de internet quanto \myref{sig}{IDE}s de programação que estão disponíveis para ambos e para um uso comum funcionam tão bem quanto em um cenário real.\newline
 
@@ -602,246 +562,133 @@ Como os processadores \myref{sig}{arm} começaram a ficar mais comuns, visto que
 faz com que seja cada vez mais fácil de se utilizar tal arquitetura por existirem mais consumidores e consequentemente uma oferta maior de programas feitos para serem executados nessa arquitetura.
 Visto o quanto um computador com processador \myref{sig}{arm} economiza energia para entregar o mesmo poder de processamento de um outro com processador \myref{sig}{x86},
 essa diferença pode ser muito benéfica para os vários tipos de empresas que utilizam servidores, já que isso pode significar um impacto considerável no consumo energético da empresa dependendo do quanto ele é utilizado a nível de processamento.\newline
+--verificar--
 
 
 \sec{bancos de dados}
-Banco de dados é um método de armazenamento de dados de forma estruturada para que as informações sejam fáceis de serem associadas e filtradas.
-Podem, também, ser armazenadas de forma a economizar espaço de armazenamento, dependendo da otimização do banco de dados além da possibilidade de realizar redundâncias de segurança dos dados.
-Através dessas características, justifica-se a escolha dos bancos de dados como alvo do benchmark realizado para essa comparação de arquiteturas.
-
-Sistemas de computadores, dos mais diversos tipos, utilizam banco de dados para armazenamento de suas informações. Dessa forma, as informações ficam estruturadas em um formato padrão permitindo um acesso rápido a elas.
-os tipos de bancos de dados analisados são os bancos de dados sql relacional que são os mais genéricos,de forma que podem ser utilizados no máximo de aplicações diferentes possíveis,
-isso faz com que os bancos de dado sql sejam os melhores para serem simulados,um dos que foi analisado para ser testado foi o mongodb e o oracle,mas o mongodb não é relacional e o da oracle não existe uma versão para \myref{sig}{arm} até o momento que o projeto foi pensado.
+Banco de dados é um método de armazenamento de dados de forma estruturada para que as informações sejam associadas e consultadas com mais rapidez. Podem também, ser armazenadas de forma a economizar espaço de armazenamento, dependendo da otimização do banco de dados, além da possibilidade de realizar redundâncias de segurança dos dados.\newline
+A partir dessas características, justifica-se a escolha dos bancos de dados como alvo do benchmark realizado para essa comparação de arquiteturas.\newline
+Sistemas de computadores, dos mais diversos tipos, utilizam banco de dados para armazenamento de suas informações. Dessa forma, as informações ficam estruturadas em um formato padrão, o que permite acesso rápido a elas. Os tipos de bancos de dados analisados são sistemas SQL relacional (os mais genéricos), de forma que podem ser utilizados no máximo de aplicações diferentes possíveis. Isso faz com que esses tipos de sistema sejam os melhores para ser simulados.\newline
 
 
 \sec{docker}
-docker é um sistema de virtualização de maquinas que busca ser mais simples de ser gerenciado e entregar mais desempenho do hardware real da maquina que está sendo usada.
-o docker busca executar as chamadas de seus ambientes virtualizados ,chamados de contêineres,ao nível do sistema operacional,logo a cima do kernel do sistema,
-isso faz com que seja possível dedicar parte dos hardwares da maquina real para um contêiner,sendo possível dentre outras coisas dividir de forma fixa porções do hardware ,
-como definir limite de RAM usado ou quantidade de núcleos de cpu usados,isso foi aplicado nos testes realizados,para padronizar as especificações técnicas dos contêiner usados nos testes,como descrito em \myref{sec}{contêineres docker},
-outra das funcionalidades do docker é a implementação de volumes,que é a fora de isolar as pastas do contêiner e manter elas mesmo caso o contêiner seja reinstalado para realizar atualização,
-essas atualizações são feitas por meio do método de instalação dos contêineres docker,as imagens,as imagens são feitas seguindo o modelo de snapshot,
-onde cada imagem não tem nenhum programa ou biblioteca atualizada a menos que seja deliberadamente feito pelo próprio programa ou pelo administrador do contêiner durante sua execução,
-mas esse segundo geralmente não é feito,visto que os contêineres quando precisam ser atualizados é preferível usar a atualização por imagem do que executando comandos por dentro dos contêineres rodando,
-um grande motivo disso é o docker-compose,como é descrito no \myref{sec}{docker-compose}.
-o docker foi desenvolvido a pedido da google usando a linguagem go,também desenvolvida por ela,ele foi desenvolvido visando a simplificação da gerencia dos clusters de processamento da google,
-que utilizam dezenas de computadores mais fracos para fazer o processamento ,
-de forma que é mais barato para compor o ambiente para o processamento tão potente quanto se comprasse varias maquinas muito mais caras,
-alem disso o docker também facilita a manutenção devido a fácil reimplementação de um contêiner caso a maquina tenha algum problema,
-como visto em situações que ocorreram durante o período do desenvolvimento da aplicação,para se reinstalar o setácea de aplicações de monitoramento de dados do ELK \myref{sec}{elasticsearch monitoring stack} foi necessário apenas em torno de 2 horas,
-incluindo completa formatação do servidor onde o stack estava rodando,instalação do stack e completa configuração do mesmo,isso caso não fosse feito com docker facilmente levaria 1 dia para a completa reinstalação e reconfiguração do stack,
-isso porque o stack foi instalado facilmente com o docker-compose e todos os volumes contendo os arquivos de configuração possuíam backup,e a restauração de backups de volumes é extremamente simplificada,
-ainda mais utilizando a ferramenta portainer \myref{sec}{portainer} com o docker-sock,o docker-sock é um método de controle remoto do docker,
-utilizando o socket todas as configurações e gerenciamentos são feitos da mesma forma como se que se tivesse sendo feito diretamente na maquina que o docker está rodando,
-isso faz com que o docker seja muito simples de unificar e replicar o mesmo comando em diversas maquinas diferentes.
-\cite{dockerdoc}
+Docker é um sistema de virtualização de máquinas que busca simplicidade no gerenciamento e entrega de desempenho do hardware real da máquina que está sendo usada. O docker executa as chamadas de seus ambientes virtualizados, nomeados de contêineres, no mesmo nível do sistema operacional, logo acima do kernel do sistema. Isso possibilita dedicar parte do hardware da máquina real para um contêiner. E permite, dentre outras possibilidades, reservar de forma fixa porções do hardware, como por exemplo, definir limite de memória RAM ou quantidade de núcleos de cpu usados.\newline
+Outra das funcionalidades do docker é a implementação de volumes. Que é a forma de isolar as pastas do contêiner, e mantê-las mesmo havendo a necessidade do contêiner ser reinstalado para realizar atualização.\newline
+O docker foi desenvolvido a pedido da Google utilizando a linguagem Go, desenvolvida pela própria empresa. Ele foi criado visando a simplificação da gerência dos clusters de processamento da Google, que utilizam dezenas de computadores mais fracos para fazer o processamento. Portanto tem custo menor para compor um ambiente de processamento tão potente quanto fosse adquirida várias máquinas de maior valor. O docker também facilita a manutenção devido à fácil reimplementação de um contêiner caso a máquina tenha algum problema.\cite{dockerdoc}
 
 \subsec{contêiner docker}
-um contêiner docker roda a nível de kernel, o que quer dizer que qualquer dispositivo ou dado disponível na maquina real do usuário pode ser acessível por um contêiner docker,
-alem disso ele possui maior eficiência de uso de ram e de cpu em comparação a maquinas virtuais ou outros métodos de virtualização,
-entretanto este método faz com que seja mais complicado de se utilizar de se acessar interface gráfica de um contêiner do que em uma maquina virtual,apesar de ainda ser possível.
-uma das maiores utilizações dos contêineres docker é em ambientes de servidor,os contêineres docker são imaginados para isolar programas do sistema operacional da maquina real,
-de forma a caso algum problema ocorra com o programa,isso não afete a maquina real do usuário, em muitas situações são utilizados também como sistemas de desenvolvimento virtualizados ,
-de forma a sempre ser fácil de se replicar e de corrigir problemas durante a criação de um programa.
-contêineres docker também costumam ser mais fáceis e rápidos de se implementar do que maquinas virtuais,visto que contêineres utilizam imagens docker para sua criação,
-que são geradas a partir de arquivos dockerfile ou a partir de um repositório
+Um container docker executa em um nível logo acima do kernel. O que permite que qualquer dispositivo, ou dado disponível na máquina real do usuário, possa ser acessível por um container docker. Além disso, ele possui maior eficiência de uso de memória RAM e de CPU em comparação às máquinas virtuais ou outros métodos de virtualização.\newline
+Os containers docker são imaginados para isolar programas do sistema operacional da máquina real. Isso evita que algum problema ocorra com o programa e afete a máquina real do usuário. Em muitas situações são utilizados como sistemas de desenvolvimento virtualizados, facilitando a replicação, e correção dos problemas durante a criação de um programa.\newline
+Containers docker também costumam ter implementação mais simples e rápida do que máquinas virtuais. Visto que eles utilizam imagens docker para sua criação, que são geradas, ou a partir de arquivos dockerfile ou a partir de um repositório.\newline
 
 
 \subsec{dockerfile}
-os arquivos dockerfile são mais leves de se transportar,mas demoram mais pra serem instaladas,visto que uma imagem instalada dessa forma segue todos os parâmetros de criação de um script de instalação,
-o que quer dizer que caso algum programa tenha sido especificado como para ser compilado para se instalar uma imagem esse programa sera compilado todas as vezes que esta imagem for instalada,
-caso seja o caso o programa compilado sempre terá o desempenho de um programa de compilação especifica,que geralmente é maior do que um programa de compilação genérica.
-os arquivos dockerfile também facilitam a modificação de uma imagem caso seja necessário
-
+Os arquivos dockerfile são mais leves de transportar, mas demoram mais para serem instalados. Uma imagem instalada dessa forma segue todos os parâmetros de criação de um script de instalação. Sendo assim, caso algum programa tenha sido especificado para ser compilado durante a instalação de  uma imagem, o mesmo será compilado todas as vezes que esta imagem for instalada. Os arquivos dockerfile também facilitam a modificação de uma imagem caso seja necessário.\newline
 
 \subsec{imagem docker}
-uma imagem docker é gerada a partir de um arquivo dockerfile,a diferença principal é que: uma imagem docker é simplesmente baixada e extraída na maquina onde o contêiner docker será executado,
-de forma que é muito mais facilmente replicada em varias maquinas diferentes do que um arquivo dockerfile.
-sempre os arquivos dockerfile são baseados em uma imagem docker,as imagens chamadas de imagens base,são implementações de sistemas operacionais Linux ou windows para rodar em docker,
-na grande maioria dos contêineres docker oficiais são baseados no sistema operacional alpine Linux ou no debian,nessa ordem de importância,ambos sistemas operacionais costumam ser mais leves,
-entretanto o sistema alpine Linux é pensado para ser otimizado para o docker,sendo mais leve e mais simples que outros sistemas operacionais,o que faz ser muito importante o conhecimento desse sistema aos que criam arquivos dockerfile.
-as imagens docker são distribuídas de 2 formas,a partir de repositórios como os dos sistemas Linux ou a partir de arquivos compactados ,
-sendo os repositórios o método mais utilizado de se distribuir essas imagens,o principal repositório é o dockerhub,que é o repositório oficial do docker.
+Uma imagem docker é gerada a partir de um arquivo dockerfile. E a principal diferença é que uma imagem docker,  após feito o download, é extraída na máquina onde o contêiner docker será executado. Uma imagem é composta de snapshots que correspondem às etapas de execução de uma dockerfile. Sendo assim, quando o download é realizado, apenas as partes diferentes de uma dockerfile previamente adquirida é baixada. O que facilita a atualização de contêineres.\newline
+As imagens docker são distribuídas de duas formas: a partir de repositórios semelhantes aos dos sistemas Linux ou a partir de arquivos compactados. Os repositórios são o método mais utilizado para se distribuir essas imagens. O principal repositório é o Dockerhub, que é o repositório oficial do docker.\newline
 
 
 
 \sec{docker-compose}
-\cite{dockercomposedoc}
-e um métodos de implementação de contêineres docker,nesse método de implementação um arquivo de deploy é criado de forma que seja facilmente replicado,
-ele é utilizado muitas vezes juntamente com um arquivo de variáveis ambientais .env,
-esse arquivo contem variáveis para serem utilizadas no deploy do stack de contêineres,
-esse arquivo faz com que o mesmo arquivo docker-compose possa ser usado em mais de um ambiente/maquina diferente.
-o docker-compose é implementado num programa a parte que utiliza do framework do docker padrão,
-sendo assim é basicamente um programa oficial que simplifica o deploy por inserir sempre os comandos pre definidos neles de forma modificada pelo conteúdo do arquivo .env .
-o docker-compose foi implementado originalmente junto da versão 0.7.0 do docker,essa foi a primeira versão do docker a permitir a linkagem de contêineres entre si,
-sem precisar de exposição das portas para processos
+É um método de implementação de contêineres docker, que utiliza um arquivo de deploy para facilitar sua replicação,comumente utilizado junto de um arquivo de variáveis de ambiente .env. Esse arquivo contém variáveis para serem utilizadas no deploy do stack de contêineres. Fazendo com que o mesmo arquivo docker-compose possa ser utilizado em mais de um ambiente ou em máquinas diferentes.\cite{dockercomposedoc}\newline
 
 
 \sec{elasticsearch monitoring stack}
-esse é um conhecido método open-source de monitoramento de logs,esse sistema se baseia em 3 programas Elasticsearch,
-um indexador e processador de logs,Logstash um receptor e monitorador de logs e Kibana uma interface web para se monitorar e trabalhar esses dados,
-por isso é comumente conhecido como ELK,esses programas são baseados em java e sendo assim consomem uma quantidade considerável de memória ram,
-por isso foram colocados em uma maquina dedicada a isso,essa maquina recebe os logs de todas as etapas da aplicação.
-o ELK foi utilizado sem nenhum dos seus vários plugins de processamento de informações sendo utilizado apenas o Kibana para filtrar os resultados encontrados e gerar os gráficos exibidos nesse texto.
-todos os dados inseridos foram inseridos de uma dessas duas formas:
-\cite{elk}
-\begin{itemize}
-\item inseridos via interface web usando arquivos json diretamente no Kibana
-\item inseridos utilizando a \myref{subsec}{loggingSystem}
-\end{itemize}
-os dados inseridos pela biblioteca \myref{subsec}{loggingSystem} foram inseridos de forma separada,
-onde as informações do \myref{sec}{daemon de monitoramento} foram inseridas em uma porta especifica e os dados filtrados,
-para melhor tratar a exibição das informações,e o restante dos logs,sejam de informações e exceção ou outros,
-inseridos em uma outra porta onde eram aceitos quaisquer tipos de dados que não foram filtrados para a primeira porta
-
+É um conhecido método open-source de monitoramento de logs. Ele se baseia em três programas: Elasticsearch (indexador e processador de logs), Logstash (receptor e monitorador de logs) e Kibana (interface web para monitorar e trabalhar a exibição dos dados coletados). Por isso é conhecido como ELK. Esses programas são baseados em Java e consomem uma quantidade considerável de memória RAM. Motivo pelo qual o programa foi executado em uma máquina dedicada, para não influenciar na análise de desempenho das arquiteturas monitoradas.\newline
+O ELK foi utilizado sem qualquer um dos seus plugins de processamento de informações. Fazendo uso apenas do elasticsearch para filtrar os resultados encontrados, e gerar os gráficos exibidos neste trabalho a partir de uma aplicação que utiliza seus dados.\newline
 
 \sec{portainer}
-portainer é um painel de administração do docker no qual simplifica muito a administração e configuração de varias coisas mais complexas do docker,
-inclusive facilitando muito a definição de uso de hardware que será usado por cada contêiner e facilitando o backup dos volumes,
-possibilitando inclusive o download de backups dos volumes diretamente do navegador em formato de arquivo tar.gz,
-facilitando também a recriação dos contêineres para atualização deles para versões mais novas,
-essa ferramenta alem de tudo é muito simples de ser instalada,
-visto que roda diretamente de dentro de um contêiner docker multi arquitetura,
-sendo assim o mesmo comando de instalação funciona em qualquer arquitetura disponível para o contêiner.
+Portainer é um painel de administração do docker, com o objetivo de simplificar a administração e configuração de várias opções mais complexas do docker. Inclusive facilitando a definição de uso do hardware que será usado por cada contêiner, e facilitando o backup e download dos volumes e imagens criados. Assim como a atualização dos mesmos para versões mais novas.\newline
+O portainer permite controlar, a partir de diversos métodos, múltiplas máquinas executando docker, com um controle unificado e simples. Além disso, a interface web permite também a execução de comandos shell e a atualização dos contêineres de forma simplificada.\newline
+Outra característica interessante é a possibilidade de unificar a administração dos diversos servidores utilizados durante o desenvolvimento e testes, sendo necessário apenas instalar o portainer em um deles, e nas outras máquinas apenas a ativação da conexão remota pelo docker socket. Desta forma o monitoramento de logs, uso de hardware e outros podem ser feitos diretamente pelo navegador.\cite{portainer}\newline
 
-o portainer consegue controlar a partir de diversos métodos múltiplas maquinas rodando docker, dessa forma conseguindo uma forma de controle unificada e simples de múltiplas maquinas.
-alem disso através de sua interface web podemos executar a função exec como uma espécie de ssh pelo navegador web alem de uma forma simplificada de se atualizar os contêineres,
-alem disso é uma forma simples de se gerenciar um swarm docker e todas as replicações de contêineres existentes nele.
-
-o portainer também consegue unificar a administração dos diversos servidores utilizados durante o desenvolvimento e testes,
-sendo necessário apenas instalar o portainer em apenas um dos servidores,
-todas as outras maquinas só foram necessárias ativar a conexão remota pelo docker socket,
-isso faz com que o monitoramento de logs,uso de hardware e outros possa ser feito por alto diretamente pelo navegador,
-mas esse monitoramento não pode ser logado por isso foi preferido seguir o método descrito no \myref{sec}{contêineres docker}.
-
-\cite{portainer}
 
 %\section{biblioteca faker}
 %\label{sec:biblioteca faker}
 \sec{biblioteca faker}
-A biblioteca faker é uma biblioteca conhecida para a geração de mock data,
-que são dados gerados randomicamente para testar a capacidade de um algoritmo em lidar com dados.
-Essa biblioteca é comumente utilizada na etapa de testes de um algoritmo, seja para testes de segurança,
-para proteger de bots de criação de contas ou algo semelhante. É também utilizado para testes de estresse,
-quanto para qualquer tipo de teste que dependa de dados "realísticos".\newline
-Essa biblioteca foi selecionada pois é de fácil utilização,
-possui documentação abrangente e de fácil compreensão e suporte para múltiplos idiomas.
-Apesar da biblioteca apenas suportar todos os seus tipos de geração mais completos na localização dos EUA,
-dentre esses está um tipo que corresponde a todo um perfil de usuário, contendo desde endereço até a senha fraca ou forte.
-Para propósitos de testes, foram gerados apenas dados na localização do Brasil.\newline
-
-\cite{faker}
+A biblioteca faker é conhecida para a geração de mock data, que são dados gerados aleatoriamente para testar a capacidade de um algoritmo em lidar com dados. Comumente utilizada na etapa de testes de um algoritmo, (seja para testes de segurança, para se proteger de bots de criação de contas ou algo semelhante). É também utilizado para testes de estresse, quanto para qualquer tipo de teste que dependa de dados reais.\newline
+Essa biblioteca foi selecionada, pois é de fácil utilização e compreensão, e possui documentação abrangente e suporte para múltiplos idiomas.\newline
+Apesar da biblioteca suportar todos os tipos de geração mais completos na localização dos EUA, possui um tipo que corresponde a todo um perfil de usuário, contendo desde endereço até força de senha.\newline
+Para propósitos de testes, foram gerados apenas dados na localização do Brasil.\cite{faker}\newline
 
 %\section{biblioteca psutil}
 %\label{sec:biblioteca psutil}
 \sec{biblioteca psutil}
-a biblioteca psutil é compilada em c,uma biblioteca para monitoramento de hardware,ela consegue monitorar diversos tipos de informações do hardware,como informações detalhadas de uso de cpu,ram,processos,
-disco e vários outros dados completos.a biblioteca consegue listar vários dados das formas mais completas possíveis.a biblioteca é a mais utilizada e mais importante das bibliotecas de monitoramento de hardware da linguagem Python.a psutil é de muito simples utilização e documentação muito bem feita
-\cite{psutil}
+O PSutil (Python System and Process Utilities) é uma biblioteca multiplataforma para recuperação de informações na execução de processos, e utilização do sistema (CPU, memória, discos, redes, sensores). É muito útil para sistemas de monitoramento, limitação de recursos de processamento, perfil e gerenciamento de processos em execução. Implementa também, funcionalidades oferecidas por linhas de comando, e de sistemas baseados em UNIX tais como: ps, top, lsof, netstat, ifconfig, who, df, kill, free, dentre outros.\cite{psutil}\newline
 
 %\chapter{Trabalhos Relacionados}
 %\label{ch: trabalhos relacionados}
 \ch{Trabalhos Relacionados}
 
 \sec{A Comparison of Database Performance of MariaDB and MySQL with OLTP Workload}
-foram usados vários tipos de bancos de dados alem do Postgres e do MariaDB,para a comparação de performance,mas o foco foi na comparação entre mariadb e mysql, foram monitorados cpu e memoria ram
-durante os testes foi usado um hypervisor chamado xen que é open-source
-as maquinas usadas foram amd64 com processadores xen e 4 GB de ram
-foi usada exatamente a mesma estrutura de BD em todos,e ela esta representada no artigo
-existe um gráfico do uso de hardware do MariaDB e MySQL,mas não de outros BD.
-MariaDB e MySQL foram muitos próximos em relação ao desempenho no 1 teste
-no 2 teste MariaDB foi ligeiramente mais pesado em relação a cpu que MySQL\cite{MariaDBMySQLOLTP}
+Foram utilizados vários tipos de bancos de dados além do Postgres e do MariaDB para a comparação de performance, sendo o foco principal entre MariaDB e MySQL. Foram monitorados CPU e memória RAM, e durante os testes foi usado um hypervisor chamado XEN nas máquinas com plataforma amd64 XEN, e 4 GB de memória RAM. A mesma estrutura de BD foi utilizada em todos os servidores.\newline
+MariaDB e MySQL foram muito próximos em relação ao desempenho no 1º teste, e no 2º teste MariaDB foi ligeiramente mais pesado em relação a CPU que MySQL, conforme mostrado nos gráficos abaixo.\cite{MariaDBMySQLOLTP}\newline
 \imagempng{valores encontrados oltp mariadb}{artigos relacionados/oltp mariadb.png}{valores encontrados para o container mariadb para o 1 teste no artigo citado}
 \imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
+\newline\newline
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-%\newline\newline\newline\newline
 \sec{Automatisation de Docker Swarm sur SoCs ARM avec support MPI et Analyse des Performances}
-é uma analise de desempenho de docker swarm em soc arm
-foi usado MPI como base para os aplicativos usados,o sistema base dos contêineres é alpine Linux .
-foi usado um ambiente onde uma ferramenta externa configura o ambiente MPI para processamento.isso foi usado para automatizar a implantação e monitoramento do docker swarm
-uma das ferramentas é um processo de escaneamento das conexões ativas usando o netstat para simular o monitoramento do swarm de forma externa ao docker
-o método usado para experimentar a plataforma virtualizada foi o wrf,que é um método de previsão do tempo
-foram usados o rasp 2 e 3 , nano pi neo,ntc chip e banana pi
-o ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas maquinas,a porcentagem de ganho entre usar todos os núcleos do rasp é de 71\%,mas ao se usar processamento dentro do swarm a aceleração é de 17\% de 1 a 2 maquinas e de 2\% de 2 a 3 maquinas, de acordo com o autor isso provavelmente se deve a baixa velocidade de comunicação entre os raspberry pi 3,isso devido ao próprio soc dele.\newline
-levando em conta o custo,para essa aplicação o uso de soc é viável,já que o wrf consegue apresentar resultados básicos diariamente ou até de hora em hora.\newline
-o desempenho multi-core de apenas uma maquina é quase o mesmo que o de 2 maquinas com multi-core em paralelo\cite{DockerSwarmsocmpi}
+O artigo aborda uma análise de desempenho de docker swarm em soc arm onde foi usado MPI como base para os aplicativos. O sistema base dos contêineres é o Alpine Linux e foi utilizado em um ambiente onde uma ferramenta externa configura o ambiente MPI para processamento. Dessa forma foi possível automatizar a implementação e monitoramento do docker swarm.\newline
+Uma das ferramentas utilizadas é o processo de escaneamento das conexões ativas, usando o netstat para simular o monitoramento do swarm de forma externa ao docker. O método usado para experimentar a plataforma virtualizada foi o WRF, que é um método de previsão do tempo.\newline
+Para o ambiente de testes foram utilizados mini computadores Raspberry Pi versões 2 e 3, Nano Pi Neo, NTCP chip e Banana Pi. O ganho de desempenho de execução entre múltiplos núcleos é maior que o ganho de desempenho de múltiplas máquinas, segundo os autores do artigo. A porcentagem de ganho entre usar todos os núcleos do Raspberry é de 71\%. Mas ao usar processamento dentro do swarm, a aceleração é de 17\% de 1 a 2 máquinas e de 2\% de 2 a 3 máquinas. De acordo com o autor, isso ocorre devido a baixa velocidade de comunicação entre os Raspberry Pi 3. Isto é, devido ao próprio soc dele.\newline
+Levando em conta o custo, para essa aplicação o uso de soc é viável, já que o WRF consegue apresentar resultados básicos diariamente ou até mesmo em intervalos de uma hora.\newline
+O desempenho multi-core de apenas uma máquina é quase o mesmo que o de duas máquinas com multi-core em paralelo\cite{DockerSwarmsocmpi}
 
 
 \sec{a comparative study of the effects of parallelization  on arm and intel based platforms}
-este artigo utiliza a mesma proposta abordada neste trabalho,cada vez mais maquinas \myref{sig}{arm} são utilizadas ao redor do mundo.\newline
-o artigo explica múltiplos métodos de paralelização que são utilizados por ele para realizar os testes,assim como as diferenças das implementações deles entre intel e arm
-no processador \myref{sig}{arm} é impossível usar a GPU para os testes,devido ao sistema operacional usado não ter drivers que disponibilizassem esse uso.\newline
-como métricas de monitoramento utiliza-se o total de frames por segundo(fps),visto que os algoritimos utilizados são algoritimos de processamento de imagem, e potencia em joule utilizada pelas maquinas analizadas,o monitoramento de fps era feito por um monitor interno ao cpu e não um sistema externo.
-varias das aplicações foram otimizadas para que funcionassem da melhor forma possível em cada cpu,de forma que ma otimização interferisse o minimo possível nos resultados dos testes,essas otimizações form feitas em forma de kernels compilados diferentemente para o algoritimo.\newline
-a partir das metricas coletadas ele consegue calcular aproximadamente o total de energia gasta para processar cada frame,sendo assim ele consegue saber o total de energia gasto pela função do código
-no método serial,que é o único exatamente igual em ambos, existe uma diferença bem sutil,mas com maior eficiência energética por parte do processador arm,visto que após ser levado em conta o consumo e a quantidade de frames gerados é aplicada uma fórmula para comprovar a eficiencia energetica dos dispositivos usados.\newline
-usando um dos vários kernels diferentes,existe uma velocidade de processamento exponencialmente maior por parte da intel que por parte do \myref{sig}{arm} no melhor caso,no pior caso a velocidade por parte da intel é de 10 vezes maior que do arm.\newline
-o resultado é que o fps/joule é maior no intel que no \myref{sig}{arm} nos melhores casos de cada kernel,mas essa diferença é bem pouca em um dos kernels,e absurdamente alta em outro,chegando a cerca de 8.5 vezes mais eficiente no amd em relação ao \myref{sig}{arm} no mesmo teste no pior caso de cada,chegando a conclusão que para um dos testes,teste SRAD,o ultrabook amd utilizado é claramente superior,enquanto no outro teste,o ultrabook é superior,mas o consumo energético do \myref{sig}{arm} é 20\% menor no pior caso e no melhor caso é 60\% melhor,o consumo de energia médio do \myref{sig}{arm} é 50\% do amd.\cite{armvsintel}\newline
-como conclusão sobre os valores apresentados deste trabalho,foi possivel também comprovar que hoje em dia,8 anos depois,as placas \myref{sig}{arm} existentes consomem o mesmo tanto de energia,mas possuem muito mais poder computacional,enquanto os computadores amd portateis,como o ultrabook utilizado,apesar de tembém consumir uma quantidade equivalente de energia,não teve um ganho de performance tão grande quanto os computadores arm.
+Este artigo utiliza a mesma proposta abordada nesta pesquisa, cada vez mais máquinas arm são utilizadas ao redor do mundo,tendo em vista que hoje em dia todos celulares utilizam processadores \myref{sig}{arm} e os computadores estão começando a adotar essa arquitetura. O artigo aborda os múltiplos métodos de paralelização que são utilizados pelo autor  para realizar os testes, assim como as diferenças das implementações entre intel e arm. No processador arm é impossível usar a GPU para os testes, devido ao sistema operacional usado não ter drivers que possibilitasse esse uso.\newline
+Como métricas de monitoramento, utiliza-se o total de frames por segundo(fps), visto que os algoritmos utilizados, são algoritmos de processamento de imagem e potência em joule (J) utilizada pelas máquinas analisadas. O monitoramento de fps era feito por um monitor interno ao cpu e não um sistema externo, e várias das aplicações foram otimizadas para que funcionassem da melhor forma possível em cada cpu, de forma que na otimização interferisse o mínimo possível nos resultados dos testes. Essas otimizações foram feitas em forma de kernels compilados diferentemente para o algoritmo.\newline
+A partir das métricas coletadas, o autor calculou aproximadamente o total de energia gasta para processar cada frame, ou seja, o total de energia gasto pela função do código no método serial, que é o único exatamente igual em ambos. Existe uma diferença sutil, mas com maior eficiência energética por parte do processador \myref{sig}{arm}, visto que após ser levado em conta o consumo e a quantidade de frames gerados, é aplicada uma fórmula para comprovar a eficiência energética dos dispositivos utilizados.\newline
+Usando um dos vários kernels diferentes, existe uma velocidade de processamento exponencialmente maior por parte da Intel que por parte do \myref{sig}{arm} no melhor cenário. No pior, a velocidade por parte da intel é 10 vezes maior que do \myref{sig}{arm}.\newline
+O resultado é que o fps/J é maior no intel que no arm nos melhores casos de cada kernel. Mas essa diferença sutil em um dos kernels, e  alta em outro, chegando a cerca de 8.5 vezes mais eficiência no amd em relação ao arm no mesmo teste (no pior caso de cada). Portanto concluímos que para um dos testes, (teste SRAD), o ultrabook amd utilizado é claramente superior, enquanto que no outro teste, o ultrabook se mostrou superior. \newline
+Entretanto o consumo energético do arm é 20\% menor no pior cenário, e no melhor é 60\% superior. O consumo de energia médio do \myref{sig}{arm} é 50\% do consumo do \myref{sig}{amd64}.\cite{armvsintel}\newline
+Como conclusão sobre os valores apresentados, foi possível comprovar que no tempo presente, 8 anos depois, as placas \myref{sig}{arm} existentes consomem o mesmo tanto de energia, mas possuem muito mais poder computacional. Enquanto que os computadores \myref{sig}{amd64} portáteis, como o ultrabook utilizado, apesar de também consumirem uma quantidade equivalente de energia, não teve um ganho de performance tão grande quanto os computadores arm.\newline
 
 
 \sec{KVM, Xen and Docker: a performance analysis for ARM based NFV and Cloud computing }
-os testes de desempenho são feitos em com softwares que simulam uso de servidor,são algorítimos de benchmark\newline
-é um estudo comparativo utilizando benchmarks sintéticos para encontrar um sistema de virtualização com melhor performance para a virtualização de funções de rede para a arquitetura arm.\newline
-neste estudo foram utilizados kvm,xen e docker,todos métodos de virtualização conceituados nos servidores comerciais com o propósito de provar qual deles funciona melhor para entregar mais poder bruto de performance enquanto mantém os aspectos de segurança necessários de um ambiente de mundo real.\newline
-este estudo explica muito bem as diferenças entre conatiners e hypervisors,que se basiam principalmente em que oscontainers utilizam os recursos,kernel e na maioria,o sistema operacional da maquina fisica,enquanto os hypervisors buscam virtualizar tudo e simular um hardware em cada aplicação virtualizada,cada uma tem suas vantagens e são abordadas neste artigo,sendo as principais delas que no container o acesso a poder computacional bruto é maior e que nos hypervisors as camadas de segurança são maiores.\newline
-dos dados encontrados vale resaltar que o docker apresentou em média um resultado pior quando comparada a velocidade de leitura e escrita em comparação com todos os outros métodos de virtualização,apesar dessa diferença ser bem pequena numa aplicação de mundo real onde a diferença real não chega a 100bps na maioria dos casos.\newline
-outro ponto a se destacar é que na velocidade de transferencia de rede o docker apresentou em testes de transferencia de rede valores mais lentos quando utilizados pacotes de poucos bytes ,onde para pacotes de até 4 pytes por pacote os valores eram em média iguais,mas para pacotes de 8 a 32 bytes as diferenças de velocidade eram consideravelmente maiores,onde o docker chega a ser cerca de 20mbps mais lento que os outros metodos,mas para pacotes maiores que isso todos os metodos utilizaram ao máximo a capacidade de transferencia de rede do hardware utilizado,100mbps.\newline
-em conclusão a autora disse que o kvm é mais simples de se portar para o \myref{sig}{arm} em comparação ao xen,já que o QEMU,no qual o kvm se baseia,existe em todas as arquiteturas e que o docker ja existe nativamente para o arm,que as leituras de disco e rede funcionam melhor nos hypervisors devido aos metodos de cache que eles possuem e o docker não,demonstrou também que para pacotes grandes as velocidades de todos os metodos comparados são iguais ou maiores q a implementação nativa,em todos os testes de performance a diferença entre eles é bem pequena e varia de acordo com o teste,sendo assim o ideal seria uma solução mista onde seria utilizado um dentro do outro para melhorar a escalabilidade e segurança alem de outros fatores dos ambientes reais.
-\cite{KVMXenDocker}
+Os testes de desempenho são feitos com softwares que simulam o uso de servidor, e são algoritmos de benchmark.\newline
+Trata-se de um estudo comparativo utilizando benchmarks sintéticos para encontrar um sistema de virtualização, com melhor performance para a virtualização de funções de rede para a arquitetura arm.\newline
+Neste estudo foram utilizados KVM, xen e Docker. Todos métodos de virtualização conceituados nos servidores comerciais com o propósito de provar qual deles funciona melhor para entregar maior poder bruto de performance, enquanto mantém os aspectos de segurança necessários de um ambiente de mundo real.\newline
+Este estudo aborda as diferenças entre containers e hypervisors, que se baseiam principalmente em os containers utilizarem os recursos diretamente do kernel da máquina física, enquanto os hypervisors buscam virtualizar tudo e simular um hardware em cada aplicação virtualizada. Cada uma tem suas vantagens que são abordadas neste artigo. As principais vantagens são que no container o acesso a poder computacional bruto é maior, e  nos hypervisors as camadas de segurança são maiores.\newline
+Dentre os dados encontrados, vale ressaltar que o docker apresentou em média um resultado inferior quando comparado a velocidade de leitura e escrita em relação aos  outros métodos de virtualização. Apesar dessa diferença ser bem pequena numa aplicação de mundo real onde a diferença não chega a 100 bps na maioria dos casos.\newline
+Outro ponto a se destacar é que na velocidade de transferência de rede, o docker apresentou em testes de transferência de rede valores mais lentos quando utilizados pacotes de poucos bytes ,onde para pacotes de até 4 bytes por pacote os valores eram em média iguais, mas para pacotes de 8 a 32 bytes as diferenças de velocidade eram consideravelmente maiores, onde o docker chega a ser cerca de 20 mbps mais lento que os outros métodos. Para pacotes maiores que isso, todos os métodos utilizam ao máximo a capacidade de transferência de rede do hardware utilizado,(100 mbps).\newline
+Em conclusão, a autora disse que o kvm é mais simples de se portar para o arm em comparação ao xen, já que o QEMU no qual o kvm se baseia, existe em todas as arquiteturas, e o docker também já existe nativamente para o arm.  As leituras de disco e rede funcionam melhor nos hypervisors devido aos métodos de cache que ele possui e o docker não. Foi possível perceber também que para pacotes grandes, as velocidades de todos os métodos comparados são iguais ou maiores que a implementação nativa em todos os testes de performance. A diferença entre eles é bem pequena, e varia de acordo com o teste, sendo assim o ideal seria uma solução mista onde seria utilizado um dentro do outro para melhorar a escalabilidade e segurança, além de outros fatores dos ambientes reais.\cite{KVMXenDocker}
 
 \sec{The Raspberry Pi: A Platform for Replicable Performance Benchmarks?}
-mostra as vantagens do uso do raspberry pi para benchmark,que é fácil de replicar usando ssh e raspibian
-mostra as diferenças de resultados entre os diferentes rasp usados nos testes,os dados mostram que os resultados são bem aproximados ,mas não são os mesmos resultados.\newline
-os raspberry pi usaram foram o modelo 3,eles foram comprados do mesmo vendedor com um intervalo de 2 semanas,para se provar que o dispositivo poderia ser de facil replicação,adicionalmente foi comprado mais um terceiro raspberry pi de outro vendedor com um intervalo de diferença de alguns meses entre este e os 2 anteriores,isso para comprovar que lotes de fabricação diferentes não influenciariam a replicabilidade do dispositivo,foi utilizada uma imagem de instalação padronizada modificada pelos autores usando como base o sistema operacional oficial da epica,o raspibian,isso para manter uma diferença zero em relação a softwares usados e a unica existente sendo apenas no hardware usado,os cartões de memória utilizados nos computadores também possuiam o mesmo tamanho,mas não foram dadas maiores detalhes sobre eles.
-um dos testes demandava bastante uso de espaço de disco,sendo assim,foi necessário adicionar mais memória externa por meio de um hd externo.\newline
-em conclusão o autor chegou a conclusão que o raspberry pi é sim uma boa plataforma para replicabilidade,principalmente se utilizado o docker para padronizar mais o ambiente de replicação,o autor ainda concluiu dizendo que versões posteriores do raspberry pi poderia melhorar ainda mais esse cenário devido as melhorias de hardware que ocorreriam
+As vantagens do uso do raspberry pi para benchmark, incluem sua facilidade de replicação usando ssh e raspbian. E mostra as diferenças de resultados entre os diferentes Raspberry pis usados nos testes. Os dados mostram que os resultados são bem aproximados, mas não são os mesmos resultados.\newline
+Os raspberry pi usados foram o modelo 3. Eles foram comprados do mesmo vendedor com um intervalo de 2 semanas, para se provar que o dispositivo poderia ser de fácil replicação. Adicionalmente, foi comprado um terceiro raspberry pi de outro vendedor com um intervalo de diferença de alguns meses entre este e os 2 anteriores. Isso para comprovar que lotes de fabricação diferentes não influenciam a replicabilidade do dispositivo. Foi utilizada uma imagem de instalação padronizada, modificada pelos autores, usando como base o sistema operacional oficial da época: o Raspbian Isso para manter uma diferença zero em relação aos softwares usados, e a única existente sendo apenas no hardware usado. Os cartões de memória utilizados nos computadores, também possuíam o mesmo tamanho, mas não foram dados maiores detalhes sobre eles.\newline
+Um dos testes demandava bastante uso de espaço de disco, sendo assim, foi necessário adicionar mais memória externa por meio de um HD externo.
+O autor chegou à conclusão que o raspberry pi é uma boa plataforma para replicabilidade, principalmente se utilizado o docker para padronizar o ambiente de replicação. O autor concluiu ainda que versões posteriores do raspberry pi poderiam melhorar ainda mais esse cenário, devido às melhorias de hardware que ocorreriam.
 \cite{rpiplatformreplicable}\newline
-hoje em dia,após cerca de 4 anos após a conclusão deste trabalho,foi lançada uma versão nova e exponencialmente mais util em termos de testes replicaveis,pois não somos mais limitados apenas a placas de 1 gb de ram e a baixas velocidades de transferencia,tanto de disco quanto de rede,assim sendo as conclusões do autor algum tempo antes de ser lançada essa versão se comprovaram reais,e provavelmente isso cotinuará se comprovando cada vez mais,visto que após lançarem versões com 2 e 4gb de ram a raspberry pi foundation lançou mais uma versão de 8gb de ram e posteriormente uma versão oficial do seu sistema operacional oficial,agora chamado de raspberry pi os,com suporte a instruções 64bit,e essas melhorias ocorreram apenas em uma nova revisão da placa,as futuras evoluções podem ser ainda maiores.
+Cerca de 4 anos após a conclusão deste trabalho, foi lançada uma versão nova e exponencialmente mais útil, em termos de testes replicáveis, pois não há limitação às placas de 1 gb de RAM . E a baixas velocidades de transferência, tanto de disco quanto de rede.  A partir disso, as conclusões do autor  se comprovaram pouco tempo antes dessa versão ser lançada. E a tendência é de que continue lançando versões superiores,visto que após lançarem versões com 2gb e 4gb de ram a Raspberry pi foundation lançou mais uma versão de 8gb de ram, e posteriormente uma versão oficial do seu sistema operacional oficial, agora chamado de Raspberry pi OS,com suporte a instruções 64 bits. Essas melhorias ocorreram apenas em uma nova revisão da placa, as futuras evoluções tendem a ser ainda maiores levando em conta as evoluções que têm ocorrido nas revisões da arquitetura \myref{sig}{arm}.\newline
 
 \sec{HS06 Benchmark for an ARM Server}
-se resume em um benchmark e analise de um servidor de arquitetura arm,esse servidor possui 12 slots para encaixes das placas de soc,cada placa de soc possui 4 cpu ,com 4 núcleos, um pente de RAM ,
-4 portas sata e um conector de porta 10 GBE para cada cpu,resultando em 16 nucleos,4 pentes e 16 portas sata por placa soc,cada servidor consome cerca de 300w de energia,entretanto apenas um soc foi utilizado para os testes.\newline
-foram utilizados também para essa comparação mais 5 servidores amd64,sendo 1 hp,3 ibm e 1 dell.
-o consumo energético desse servidor entre os analisados é o menor , o mais potente em relação ao consumo energético,visto que de acordo com a tabela de resultados apresentada no texto o unico que conseguiu mais que 1 ponto por watt gasto foi o computador arm.
-\cite{hs06}\newline
-importante ressaltar que os resultados encontrados na maquina \myref{sig}{arm} são bem baixos em pontuação em compraração com todos os outros servidores utilizados,mas ao mesmo tempo o consumo energético desse processador é exponencialmente menor que os outros servidores,principalmente ao se levar em conta que ele consome cerca de 5w de energia,enquanto os outros consomem entre 150 e 600w de energia.
+Se resume em um benchmark e análise de um servidor de arquitetura arm. Esse servidor possui 12 slots para encaixes das placas de soc, cada placa de soc possui 4 cpus com 4 núcleos, um pente de RAM,4 portas sata e um conector de porta 10 GBE para cada cpu. Resultando em 16 núcleos, 4 pentes e 16 portas sata por placa soc. Cada servidor consome cerca de 300w de energia, entretanto apenas um \myref{sig}{SOC} foi utilizado para os testes. \newline
+Foram utilizados para essa comparação mais 5 servidores AMD64, sendo 1 hp, 3 IBM e 1 dell.\newline
+O consumo energético desse servidor entre os analisados é o menor , o mais potente em relação ao consumo energético,visto que de acordo com a tabela de resultados apresentada no texto o único que conseguiu mais que 1 ponto por watt gasto foi o computador arm.\cite{hs06}\newline
+Importante ressaltar que os resultados encontrados na máquina arm são inferiores em pontuação, em comparação com todos os outros servidores utilizados, mas ao mesmo tempo o consumo energético desse processador é exponencialmente menor que os outros servidores. Principalmente ao se levar em conta que ele consome cerca de 5w de energia, enquanto que os outros consomem entre 150w e 600w.\newline
 
 %\chapter{testes}
 %\label{ch: testes}
 \ch{testes}
-Os testes foram realizados utilizando um Orangepi PC+ \cite{opipc} e um notebook .
-O Orange Pi é um SBC ARM baseado no processador allwinner h3 \cite{h3} com 3 USB 2.0 ,
-1GB de memória RAM DDR3, uma porta de rede 10/100 e wi-fi bgn. Essa configuração é relativamente antiga e seu processador é um 4-core de 1.3GHz no clock máximo,
-é um processador relativamente bom mas o conjunto de especificações não é bom o bastante para substituir um computador atual,
-devido a sua limitação de memória RAM e de capacidade gráfica, mas consegue funcionar de forma satisfatória como servidor doméstico ,
-visto que seu processador é bom o bastante para operações simplificadas e poucos acessos,mas quando se tratam de muitos acessos ele pode não ser potente o bastante para aguentar.\newline
-O notebook é um Lenovo G405\cite{G405},com um processador AMD E1-2100 \cite{E1} APU,um dual-core com clock máximo de 1.0GHz com 2 GB de memória RAM DDR3, 1 USB 2.0,2 USB 3.0,
-porta de rede Gigabit e 2 portas sata3,entretanto essas portas sata não serão usadas já que o propósito é manter as 2 maquinas o mais próximas em relação a hardware possível,
-resultando assim na mais próxima velocidade e especificações possíveis,o sistema operacional por outro lado,
-no Orange pi ficou armazenada na sua memória interna emmc e no computador amd num HD 2.5`` samsung sata3 de 500GB,a memória onde o sistema operacional do Orange pi está armazenadas está longe de ser rápida,
-mas como apenas para inicializar o sistema isso interfere,foi considerado como equivalente.\newline
-Outros métodos que serão usados para manter as maquinas mais similares serão limitar o clock de ambos para que se mantivessem o mais próximos possível,
-no Orangepi foi definido para um clock máximo de 1GHz,esse sendo um valor redondo para facilitar os cálculos de equivalência apesar de o Orangepi poder se manter estável com clock de 1.2GHz,
-clock superior a isso pode causar problema com o fornecimento de energia,visto que não foi pensado para realmente ser utilizado dessa forma sem modificações na placa,
-que é o clock mais estável para o Orange pi ,a memória usada será limitada a 1024 MB para o stack do docker.\newline
-Para o armazenamento do docker serão salvos em o armazenamento do docker foi movido nas 2 maquinas para um pendrive sandisk cruzer blade 2.0 de 16GB,
-ambos comprados ao mesmo tempo e provavelmente provenientes do mesmo lote.\newline
-alem disso serão usadas versões do sistema debian,no Orangepi o armina e no PC o próprio debian padrão,ambos na versão buster,a versão do docker usado em ambos é a versão community edition 20.10.12,
-e a versão do docker-compose é a versão 2.2.3,essas são as versões mais atuais no momento da execução dos testes,todos os outros softwares instalados diretamente na maquina são irrelevantes para os propósitos dos testes realizados.
+Os testes foram realizados utilizando um Orange Pi PC + \cite{opipc} e um notebook lenovo. O Orange Pi é um \myref{sig}{SBC} \myref{sig}{arm} baseado no processador allwinner h3 \cite{h3} com 3 USB 2.0 ,1GB de memória RAM DDR3, uma porta de rede 10/100 e wi-fi 4. Essa configuração é relativamente datada e seu processador é um 4-core de 1.3GHz no clock máximo. É um processador que ainda possui desempenho positivo se considerar um uso básico, entretanto considerando todas suas especificações, este \myref{sig}{SBC} não é bom o bastante para substituir um computador atual,devido a sua limitação de memória RAM e de capacidade gráfica.\newline
+
+O notebook é um Lenovo G405 \cite{G405}, com um processador AMD E1-2100 \cite{E1}, (dual-core com clock máximo de 1.0GHz), 2 GB de memória RAM DDR3, 1 USB 2.0, 2 USB 3.0, porta de rede Gigabit e 2 portas sata3. Porém nem as portas sata nem as usb 3.0 serão usadas já que o propósito é manter as 2 máquinas o mais próximas em relação ao hardware possível. Para que haja proximidade em velocidade e especificações. Este computador também possui especificações técnicas obsoletas para os dias atuais, mas ainda é utilizável como um servidor doméstico.\newline
+
+Considerando as velocidades de armazenamento disponíveis para as máquinas utilizadas, o Orange Pi teve o seu SO armazenado na sua memória interna emmc. E no computador amd num HD 2.5“ sata 3 de 500GB. A memória onde o sistema operacional do Orange Pi está armazenada está longe de ser rápida, mas como a velocidade deste disco de armazenamento apenas afeta o tempo de inicialização do sistema operacional da máquina host e não dos containers,sendo assim foi considerado como equivalente.\newline
+
+Alguns métodos que serão utilizados para manter as máquinas com equivalência serão limitar o clock de ambos para que se mantenham o mais próximos possível. No Orange Pi foi definido para um clock máximo de 1GHz, esse sendo um valor para facilitar os cálculos de equivalência, (já que é o mesmo clock máximo do lenovo). Sendo assim é uma comparação direta e não uma comparação em escala. A memória usada será limitada a 1024 MB para o stack do docker, pois é a memória máxima do Orange Pi.\newline
+
+Considerando as velocidades de armazenamento disponíveis para as máquinas utilizadas, o Orange Pi teve o seu SO armazenado na sua memória interna emmc. E no computador amd num HD 2.5“ sata 3 de 500GB. A memória onde o sistema operacional do Orange Pi está armazenada está longe de ser rápida, mas como a velocidade deste disco de armazenamento apenas afeta o tempo de inicialização do sistema operacional da máquina host e não dos containers,sendo assim foi considerado como equivalente.\newline
+
+Alguns métodos que serão utilizados para manter as máquinas com equivalência serão limitar o clock de ambos para que se mantenham o mais próximos possível. No Orange Pi foi definido para um clock máximo de 1GHz, esse sendo um valor para facilitar os cálculos de equivalência, (já que é o mesmo clock máximo do lenovo). Sendo assim é uma comparação direta e não uma comparação em escala. A memória usada será limitada a 1024 MB para o stack do docker, pois é a memória máxima do Orange Pi.\newline
+
+Para o armazenamento do docker nas 2 máquinas ele foi movido para um pendrive sandisk cruzer blade 2.0 de 16GB, ambos comprados simultaneamente do mesmo vendedor.\newline
+
+Além disso, os softwares utilizados nessas máquinas foram versões do sistema debian, no Orange pi foi o armbian e no notebook o próprio debian netinstall, ambos na versão Buster. A versão do docker usado em ambos, é a versão community edition 20.10.12. E a versão do docker-compose é a versão 2.2.3. Essas sendo as versões mais atuais no início da execução dos testes.Todos os outros softwares instalados diretamente na máquina, são irrelevantes para o propósito dos testes realizados. E os demais serão descritos em \myref{sec}{contêineres docker}.
+
 
 
 %\section{testes de tempo}
