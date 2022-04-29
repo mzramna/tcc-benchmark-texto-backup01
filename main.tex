@@ -913,132 +913,108 @@ Os vários dados gerados por esse programa são usados parcialmente para a gera�
 %\subsection{alimentação do algoritmo}
 %\label{subsec:alimentação do algoritmo}
 \subsec{alimentação do algoritmo}
-O algoritmo de geração de dados funciona de forma que qualquer banco de dados possa ser utilizado para ter seus dados gerados.
-Basta utilizar um arquivo json e seguir um determinado padrão que é composto por:
-uma tag com o nome de uma tabela do banco de dados e dentro dela uma estrutura json com uma tag com o nome da coluna com seu conteúdo em um array de string contendo o primeiro tipo de dado e os outros valores adicionais para a geração.\newline
-Dentro do algorítimo existem vários tipos de dados aceitáveis, tais como id, nome, associação e timestamp,
-sendo que cada um deles possui um tipo bem definido pelo seu nome, mas o único que vale a pena citar seu funcionamento é o associação.
-Como descrito em \myref{subsec}{sqlite} existe uma tabela do sqlite contendo as quantidades de elementos associados a cada tabela do banco de dados final.
-O tipo de associação vai pegar esse valor e usar uma função de seleção randômica para que seja escolhido um elemento de id existente no intervalo descrito,
-caso não exista algum elemento dessa tabela, por um tratamento de erro é gerado um elemento para ela, permitindo o funcionamento da associação no novo elemento que foi criado.\newline
-Os únicos dados que não são passados para o algoritmo funcionar são o país que deve ser gerado os dados, de acordo com \myref{sec}{biblioteca faker},
-e a quantidade de dados que devem ser geradas, ambos sendo necessários de serem inseridos na chamada da função.
-Os outros dados relevantes referentes ao funcionamento da chamada da função estão em \myref{sec}{geração de dados}
+O algoritmo de geração de dados funciona de forma que qualquer banco de dados possa ser utilizado para ter seus dados gerados. Basta utilizar um arquivo json e seguir um determinado padrão que é composto por:\newline
+\begin{itemize}
+\item uma tag com o nome de uma tabela do banco de dados; 
+\item dentro dela uma estrutura json com:
+\begin{itemize}
+\item uma tag com o nome da coluna;  
+\item seu conteúdo em um array de string contendo;
+\begin{itemize}
+\item o primeiro tipo de dado;  
+\item outros valores adicionais para a geração;
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+Dentro do algoritmo existem vários tipos de dados aceitáveis, tais como id, nome, associação e timestamp, sendo que cada um deles possui um tipo bem definido pelo seu nome, mas o único que vale a pena citar seu funcionamento é a associação.\newline
+
+Como descrito em \myref{subsec}{sqlite} existe uma tabela do sqlite contendo as quantidades de elementos associados a cada tabela do banco de dados final. O tipo de associação vai pegar esse valor e usar uma função de seleção randômica para que seja escolhido um elemento de id existente no intervalo descrito. Caso não exista algum elemento dessa tabela, por um tratamento de erro é gerado um elemento para ela, permitindo o funcionamento da associação no novo elemento que foi criado.\newline
+
+Os únicos dados que não são passados para o algoritmo funcionar são: o país que deve ser gerado os dados de acordo com \myref{sec}{biblioteca faker} e a quantidade de dados que devem ser gerados. Ambos sendo necessários de serem inseridos na chamada da função. Os outros dados relevantes referentes ao funcionamento da chamada da função estão em \myref{sec}{geração de dados}\newline
 
 %\subsection{sqlite}
 %\label{subsec:sqlite}
 \subsec{sqlite}
-O banco de dados do sqlite foi projetado para ser totalmente maleável e modular,
-de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark.
-Foi pensado no seguinte método para se facilitar o desenvolvimento sendo uma tabela de índices e uma tabela de operações, a tabela de índices possui apenas 3 colunas,uma id,uma com o nome da tabela e uma com o total de elementos dessa tabela,a outra tabela é um pouco mais complexa e está descrita a seguir:
+O banco de dados do sqlite foi projetado para ser totalmente maleável e modular, de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark. Foi pensado no seguinte método para facilitar o desenvolvimento, sendo uma tabela de índices e uma tabela de operações. A tabela de índices possui apenas 3 colunas, uma id, uma com o nome da tabela e uma com o total de elementos dessa tabela. A outra tabela é um pouco mais complexa e está descrita a seguir:
 \begin{itemize}
-\item a tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com {subsec}{tipos de dados gerados}
-\item uma coluna é uma string contendo o nome do banco de dados que será executada a operação
-\item uma coluna inteira para, se for necessário, conter o id no banco de dados do elemento trabalhado na operação. No caso de uma inserção é o id do novo elemento por exemplo
-\item uma coluna text, nessa coluna serão inseridos valores adicionais necessários para a execução da operação, como os parâmetros de quais colunas devem ser atualizadas em um update.
-Aqui os dados inseridos são salvos em formato json para facilitar o trabalho com a linguagem Python, visto que existe uma conversão direta de string json para o tipo dictionary do Python.
-\item uma coluna text seguindo a mesma ideia da coluna anterior. Esses dados os dados obrigatórios de qualquer operação,onde dependendo da operação os dados contidos são diferentes.
+\itemA tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com \myref{subsec}{tipos de dados gerados};
+\item Uma coluna é uma string contendo o nome do banco de dados que será executada a operação;
+\item Uma coluna inteira para, se for necessário, conter o id no banco de dados do elemento trabalhado na operação. No caso de uma inserção é o id do novo elemento por exemplo;
+\item Uma coluna text, nessa coluna serão inseridos valores adicionais necessários para a execução da operação, como os parâmetros de quais colunas devem ser atualizadas em um update. Aqui os dados inseridos são salvos em formato json para facilitar o trabalho com a linguagem Python, visto que existe uma conversão direta de string json para o tipo dictionary do Python.
+\item Uma coluna text seguindo a mesma ideia da coluna anterior. Esses dados são os dados obrigatórios de qualquer operação, onde dependendo da operação os dados contidos são diferentes.
 \end{itemize}
-Dessa forma, independente se é apenas uma operação de listagem completa,
-que só necessita de ter preenchida a coluna com o nome do banco de dados e a coluna com o tipo de operação ou se for uma operação de update onde todos os campos podem estar preenchidos,
-o banco de dados sqlite consegue lidar de forma rápida e segura com qualquer uma das operações e dados gerados pelo algoritmo.
-foi cogitado o uso de outras estruturações da tabela de operações,mas essa foi a que foi mais simples de ser implementada,valida para todas as operações e a mais reaproveitável
+Dessa forma, independente se é apenas uma operação de listagem completa, que só necessita de ter preenchida a coluna com o nome do banco de dados e a coluna com o tipo de operação ou se for uma operação de update onde todos os campos podem estar preenchidos, o banco de dados sqlite consegue lidar de forma rápida e segura com qualquer uma das operações e dados gerados pelo algoritmo. Foi cogitado o uso de outras estruturações da tabela de operações, mas essa foi a mais simples de ser implementada, válida para todas as operações e a mais reaproveitável.
 
 
 %\section{containers docker}
 %\label{sec:containers docker}
 \sec{contêineres docker}
-os contêineres docker foram criados a partir do sistema alpine Linux,no qual foram feitos 2 contêineres diferentes,
-um deles para o MariaDB e outro para o postgres,os contêineres se certificam de criar o banco de dados de forma correta durante a inicialização dele,
-após isso o contêiner durante a sua inicialização se certifica que o Python está instalado e tudo necessário para que o daemon ,
-descrito em \myref{sec}{daemon de monitoramento},funcione,após isso o banco de dados do contêiner é finalmente iniciado.
-essa forma de instalação do Python se certifica que tanto o interpretador quanto as bibliotecas usadas estão sempre atualizadas todas as vezes que o contêiner é instanciado,
-apesar de esse método causar uma grande demora na primeira inicialização do contêiner,mas devido a forma como o script de inicialização funciona somente a primeira inicialização é impactada na sua velocidade de inicialização.
-os contêineres também possuem um healthcheck para verificar se o banco de dados está acessível por fora do contêiner,
-entretanto o contêiner não consegue exibir corretamente a saúde do contêiner devido a algum bug que não foi possível de corrigir
-o contêiner baseado no alpine possui uma especificidade,para a arquitetura armhf,presente no Orangepi PC +,
-ele só funciona até a versão 3.12 sem ter grandes modificações,isso devido a uma mudança no método como o sistema operacional manipula o relógio do sistema,
-o que quer dizer que não é possível utilizar o gerenciador de pacotes dele que ,para se conectar ao servidor online,utiliza o SSL que,dentre outras coisas,
-utiliza o horário do sistema para certificar que a conexão é segura.Sendo assim a versão utilizada foi a versão 3.12.
-outra especificidade do alpine é que ele é um dos poucos sistemas Linux que não possui o GCC incluso como pacote padrão do sistema,
-isso faz com que o Python tenha alguns problemas ao instalar algumas bibliotecas,dentre elas o psutil,que foi utilizado pelo \myref{sec}{daemon de monitoramento},
-para solucionar isso foi necessário instalar um programa chamado linux-headers que é um conjunto de programas e bibliotecas padrões das distribuições Linux,
-alem é claro do próprio GCC,após a adição desses programas o contêiner pôde funcionar corretamente.
+Os containers docker foram criados a partir do sistema Alpine Linux, no qual foram feitos 2 contêineres diferentes, um para o MariaDB e outro para o postgres. Os contêineres se certificam de criar o banco de dados de forma correta durante a inicialização dele, após isso o contêiner durante a sua inicialização se certifica que o Python está instalado e tudo necessário para que o daemon, descrito em \myref{sec}{daemon de monitoramento},funcione após isso. O banco de dados do contêiner é finalmente iniciado. Essa forma de instalação do daemon certifica que tanto o interpretador Python3 quanto as bibliotecas usadas estão sempre atualizadas todas as vezes que o contêiner é instanciado.\newline
+
+Apesar de esse método causar uma grande demora na primeira inicialização do contêiner, devido a forma como o script de inicialização funciona somente a primeira inicialização é impactada na sua velocidade de inicialização. Foi tentada a implementação de um heathcheck para saber se o contêiner já havia iniciado o banco de dados e se ele já estava acessível, entretanto além de ocorrer algum problema desconhecido que resultou numa falha nesse procedimento, sua necessidade se provou inexistente. Visto que seria verificada a saúde do contêiner antes da inicialização das execuções dos testes, mas apenas deixar um delay de alguns segundos bastou para que não ocorressem erros relacionados a isso.
+Containers baseados no alpine possui uma especificidade, para a arquitetura armhf, presente no Orangepi PC +, só funcionam corretamente sem grandes modificações do sistema até a versão 3.12, isso devido a uma mudança no método como o sistema operacional manipula o relógio interno, o que quer dizer que não é possível utilizar o gerenciador de pacotes dele uma vez que os repositórios utilizam SSL e ele necessita do relógio funcionar corretamente para completar uma conexão, sendo assim a versão utilizada foi a versão 3.12.\newline
+
+Outra especificidade do alpine é que ele é um dos poucos sistemas Linux que não possui o GCC incluso como pacote padrão do sistema, isso faz com que o Python tenha alguns problemas ao instalar algumas bibliotecas, dentre elas o psutil, que foi utilizado pelo \myref{sec}{daemon de monitoramento}, para solucionar isso foi necessário instalar um programa chamado linux-headers que é um conjunto de programas e bibliotecas padrões das distribuições Linux, além é claro do próprio GCC, após a adição desses programas o contêiner pôde funcionar corretamente.
 
 %\section{daemon de monitoramento}
 %\label{sec:daemon de monitoramento}
 \sec{daemon de monitoramento}
-o daemon de monitoramento monitora os status da maquina na qual está rodando,seja uma maquina física ou um contêiner docker,
-para esse fim é utilizada a \myref{sec}{biblioteca psutil} que é a principal biblioteca Python quando se trata de monitoramento de hardware.
-o daemon utiliza também uma biblioteca feita para simplificar o tratamento de log,uma das funcionalidades contidas nessa biblioteca é a comunicação com o aglutinador de logs Logstash do \myref{sec}{elasticsearch monitoring stack},isso feito em cima da biblioteca python-logstash.
-o arquivo de configuração do daemon é um json constituído de 2 partes,os parâmetros para se conectar ao Logstash e os dados que serão coletados da maquina local,
-esses dados coletados serão enviados para o servidor Logstash onde lá serão trabalhados
-o daemon envia esses dados com um intervalo de 0.1 segundos,que é apenas passado para que não sejam enviados dados errados de cpu para o servidor de log,
-mas poderia ser aumentado para diminuir o estresse na maquina que está rodando ele e diminuir um pouco o estresse do servidor de coleta de logs,que com as maquinas usadas não é necessário,alem é claro de diminuir a quantidade da dados processados no pós processamento de resultados descritos em \myref{sec}{processamento de resultados}
+O daemon de monitoramento monitora os status da máquina na qual está rodando, seja uma máquina física ou um container docker, para esse fim é utilizada a biblioteca \myref{sec}{biblioteca psutil} que é a principal biblioteca Python quando se trata de monitoramento de hardware. O daemon utiliza também uma biblioteca feita para simplificar o tratamento de log,uma das funcionalidades contidas nesta biblioteca é a comunicação com o aglutinador de logs Logstash do\myref{sec}{elasticsearch monitoring stack} ,isso feito em cima da biblioteca python-logstash.\newline
+
+O arquivo de configuração do daemon é um json constituído de 2 partes, os parâmetros para se conectar ao Logstash e os dados que serão coletados da máquina local, esses dados coletados serão enviados para o servidor Logstash onde lá serão trabalhados. O daemon envia esses dados com um intervalo de 0.1 segundos, que é apenas passado para que não sejam enviados dados errados de cpu para o servidor de log, uma vez que é comum o erro de se enviar 0\% de uso de cpu caso as consultas sejam feitas muito rapidamente, mas poderia ser aumentado para diminuir o estresse na máquina que está rodando ele e diminuir um pouco o estresse do servidor de coleta de logs, que com as máquinas usadas não se provou necessário. Além é claro de diminuir a quantidade de dados no pós processamento de resultados descritos em \myref{sec}{processamento de resultados}
 
 %\section{ambiente de desenvolvimento}
 %\label{sec:ambiente de desenvolvimento}
 \sec{ambiente de desenvolvimento}
-O ambiente utilizado foi dividido em duas partes, programação local e remota. Na programação remota as execuções foram feitas em um servidor baseado em Raspberry PI 4 e na programação local foram feitas em duas maquinas diferentes sendo computadores locais.
-A programação remota se provou bem útil quando houve a necessidade de troca de computador ou sistema operacional, facilitando ainda a implementação de um servidor unificado de análise de log pois era mais simples a comunicação entre o codigo executado e o servidor \myref{sec}{elasticsearch monitoring stack}.\newline
-Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da aplicação principal e ainda foi utilizada uma implementação do \myref{sec}{elasticsearch monitoring stack} de análise de log.
-Os dois primeiros foram escolhidos dentre outros motivos por serem open-source e estarem disponíveis tanto para Linux quanto Windows,
-visto que ambos sistemas operacionais foram utilizados para o desenvolvimento de acordo com a necessidade no momento.\newline
-Para o controle de versão foi utilizado o Gita, deixando registrado todo o histórico de alterações do programa,
-o que se mostrou bem útil para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código.\newline
-Para os testes iniciais do código foram utilizados contêineres docker não limitados durante a etapa de implementação dos scripts do DBbench,
-que demandam a existência dos servidores dos bancos de dados sendo executados,
-ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados.\newline
-A geração do banco de dados inicial,descrito em \myref{subsec}{sqlite}, foi feito completamente em um Raspberry Pi 4 com um pequeno overclock,
-essa geração foi feita durante alguns dias, visto que o SBC, de acordo com testes de velocidade feitos \myref{sec}{testes de tempo},
-consome menos energia e ,devido a sua configuração,possui um acesso headless mais simplificado que as outras maquinas utilizadas.
+O ambiente utilizado foi dividido em duas partes, programação local e remota. Na programação remota as execuções foram feitas em um servidor baseado em Raspberry PI 4 e na programação local foram feitas em duas máquinas diferentes, sendo computadores locais. A programação remota se provou bem útil quando houve a necessidade de troca de computador ou sistema operacional, facilitando ainda a implementação de um servidor unificado de análise de log pois era mais simples a comunicação entre o código executado e o servidor\myref{sec}{elasticsearch monitoring stack}.\newline
+
+Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da \myref{sec}{software de benchmark} , e ainda foi utilizada uma implementação de um algoritmo de processamento para  \myref{sec}{elasticsearch monitoring stack} com finalidade de gerar os gráficos e tabelas apresentadas neste trabalho. Os dois primeiros foram escolhidos dentre outros motivos por serem open-source e estarem disponíveis tanto para Linux quanto Windows, visto que ambos sistemas operacionais foram utilizados para o desenvolvimento de acordo com a necessidade.\newline
+
+Para o controle de versão foi utilizado o Git, deixando registrado todo o histórico de alterações do programa, o que se mostrou bem útil para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código. Para os testes iniciais do código foram utilizados containers docker não limitados durante a etapa de implementação dos scripts do DBbench, que demandam a existência dos servidores dos bancos de dados sendo executados, ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados. A geração do banco de dados inicial, descrito em \myref{subsec}{sqlite}, foi feita completamente em um Raspberry Pi 4 com um pequeno overclock, essa geração foi feita durante alguns dias, visto que o SBC, de acordo com \myref{sec}{testes de tempo}, consome menos energia e devido a sua configuração pré existente, possui um acesso headless mais simplificado que as outras máquinas utilizadas.
+
 
 \sec{processamento de resultados}
-os dados coletados pelo \myref{sec}{elasticsearch monitoring stack} são extraídos para CSV,processados para eliminação de dados irrelevantes,mesmo que durante o processo de \myref{sec}{daemon de monitoramento} apenas os dados selecionados sejam coletados,ainda existem dados irrelevantes na composição desses dados,após esse processamento inicial é usado um segundo processamento para eliminar duplicatas e para separar em 4 arquivos diferentes os resultados,um para cada banco de dados em cada maquina,a ultima etapa é a plotagem dos gráficos utilizando a biblioteca altair que gera gráficos interativos em HTML que facilitam a pesquisa dos dados e exploração do gráfico,ainda tem uma verificação manual para se certificar que os dados coletados estão corretamente associados ao servidor correto,isso resulta na certificação de que os dados antes de serem processados estejam corretamente identificados,o que é importante devido a forma como os dados são coletados e armazenados,principalmente os dados de tempo,que decidem semi-aleatoriamente qual a ordem que serão armazenados no array de tempos do arquivo json de resultados,isso por que caso o índice 1 seja o amd ele se manterá o mesmo até o final da execução,o que ocorreu na maioria dos testes realizados,mas não em todos.
-os gráficos gerados pelo altair são arquivos HTML,mas devido ao massivo numero de dados gerados pelos logs o arquivo se torna muito grande e consome uma imensa quantidade de ram,inclusive em um dos computadores utilizados para a analise não sequer possível abrir o arquivo HTML para a analise,e foi necessário abrir em outra maquina,existem otimizações possíveis para esse problema,mas nenhuma das soluções propostas foi capaz de corrigir o problema.
-foi gerado também um arquivo HTML que exibe todos os resultados de todas as maquinas ao mesmo tempo,ele é tão massivo que só foi possível abrir o gerado pelo  \myref{subsec}{teste de tempo de operação de inserção no BD},o \myref{subsec}{teste de tempo de operações variadas no BD} resultou num HTML que o próprio navegador não consegue terminar o processo de carregar o arquivo.
+Os dados coletados pelo \myref{sec}{elasticsearch monitoring stack} foram extraídos para CSV, processados para eliminação de dados irrelevantes, mesmo que durante o processo de \myref{sec}{daemon de monitoramento}, apenas os dados selecionados fossem coletados, ainda existiam dados que posteriormente se provaram irrelevantes para os resultados deste trabalho.Após esse processamento inicial é usado um segundo processamento para eliminar duplicatas, e para separar em quatro arquivos diferentes os resultados, um para cada banco de dados em cada máquina. A última etapa é a plotagem dos gráficos utilizando a biblioteca altair que gera gráficos SVG que devido a sua natureza vetorial se mostraram de melhor manuseio já que mesmo aumentando o zoom ela não se distorcia,o que provou ser de grande valia, estas imagens são as inclusas dentro deste trabalho.\newline
+
+Ainda tem uma verificação manual para se certificar que os dados coletados estão corretamente associados ao servidor relativo a elas, isso resulta na certificação de que os dados antes de serem processados estejam corretamente identificados, o que é importante devido a forma como os dados são coletados e armazenados, principalmente os dados de tempo, que decidem semi-aleatoriamente qual a ordem que serão armazenados no array de tempos do arquivo json de resultados. Isso porque caso o índice 1 seja o amd ele se manterá o mesmo até o final da execução, o que ocorreu na maioria dos testes realizados, mas não em todos.\newline
+
+Uma última etapa de processamento foi feita para a geração de vários arquivos pequenos ao invés de um único arquivo grande, foi detectado que todas as vezes que o container reiniciava, os dados de tráfego de rede retornavam a zero. Sendo assim, todas as vezes que o algoritmo identificou que o valor de rede era menor que o valor anterior do mesmo container ele dividia a seção anterior para um arquivo novo, resultando em mais de 600 arquivos csv diferentes para o teste descrito em \myref{subsec}{teste de tempo de operações paralelas}.\newline
+
+Cada um sendo correspondente a uma interação. Após isso o algoritmo de processamento juntava uma quantidade máxima definida de testes por arquivo svg, resultando nas 12 imagens de cada container apresentadas nos anexos deste trabalho.
+
 
 %\chapter{problemas e erros}
 %\label{ch:problemas e erros}
 \ch{problemas e erros}
-aqui foram descritos os erros mais marcantes durante os processos necessários para a obtenção dos resultados deste texto
+aqui foram descritos os erros mais marcantes durante os processos necessários para a obtenção dos resultados.
+
 \sec{desenvolvimento do algorítimo}
-durante o desenvolvimento vários tipos de erros aconteceram,em praticamente todas as etapas de desenvolvimento do algorítimo erros marcantes ocorreram,
-os principais ocorreram durante a etapa de criação do sqlite,no processamento paralelo e na inserção dentro do banco de dados finais\newline
-os dados relevantes das maquinas usadas para o desenvolvimento foram um ryzen 3200g com 16GB de RAM e ssd de 480GB e um i7 7500u com 8GB de RAM e ssd de 240GB.
+Durante o desenvolvimento, vários tipos de erros aconteceram. Em praticamente todas as etapas de desenvolvimento do algoritmo erros marcantes ocorreram, os principais ocorreram durante a etapa de criação do sqlite, no processamento paralelo e na inserção dentro do banco de dados finais. Os dados relevantes das máquinas usadas para o desenvolvimento foram um ryzen 3200g com 16GB de RAM e ssd de 480GB e um i7 7500u com 8GB de RAM e ssd de 240GB.
+
 \subsec{erros da geração do sqlite}
-durante a geração do sqlite vários problemas relacionados a geração ocorreram,
-um deles fez com que a funcionalidade de seleção de múltiplos países na geração de dados tivesse q ser travada apenas para o brasil,
-isso principalmente por que dos vários dados gerados,alguns causam problemas ao ser trocado o pais,
-pois como foi dito em \myref{sec}{biblioteca faker} existem vários parâmetros diferentes dependendo do pais selecionado,o mais marcante desses dados no entanto é a geração de números de celular,
-visto que o brasil é um dos poucos países que possuem essa opção dentre os existentes na biblioteca,apesar de não ser o único problema encontrado,
-existem também problemas com os parâmetros de geração de endereço e alguns poucos dados de informações pessoais.\newline
+Durante a geração do sqlite vários problemas relacionados a geração ocorreram. Um deles fez com que a funcionalidade de seleção de múltiplos países na geração de dados tivesse que ser travada apenas para o Brasil, isso principalmente por que dos vários dados gerados, alguns causam problemas ao ser trocado o país. Como foi dito em \myref{sec}{biblioteca faker} existem vários parâmetros diferentes dependendo do país selecionado, o mais marcante desses dados no entanto é a geração de números de celular, visto que o brasil é um dos poucos países que possuem essa opção dentre os existentes na biblioteca. Apesar de não ser o único problema encontrado, existem também problemas com os parâmetros de geração de endereço e alguns poucos dados de informações pessoais. Todos esses erros podem facilmente ser corrigidos com tratamentos de erro internos em cada tipo, mas para os propósitos deste trabalho não se provaram proveitosos o bastante.\newline
 
 \subsec{erro do processamento paralelo de threads}
-já durante a etapa de processamento paralelo,seus problemas de desenvolvimento e erros se misturam com a etapa de inserção de dados no banco de dados final,
-pois ambos foram desenvolvidos simultaneamente,apesar de o processamento paralelo tenha sido iniciado primeiro.\newline
-o processamento paralelo teve vários tipos de problemas,o primeiro problema marcante foi a implementação original dele,
-originalmente foi pensado em utilizar a implementação de threads ao invés de subprocessos,isso porque as threads são mais fáceis de serem lidadas caso ocorra um erro,
-isso por que os dados são comunicados diretamente pela classe queue,que é utilizada para se compartilhar dados em tempo real entre varias instancias de processamento durante a execução de um programa Python.
-As palavras chave aqui são compartilhamento entre varias instancias,isso quer dizer que ela não faz distinção se as threads foram ou não iniciadas pela mesma classe,des de que existam threads elas compartilham as mesmas informações e espaço de memória\newline
-isso foi identificado devido a arvore de processos necessária para que os testes fossem feitos de forma simultânea,já que ao se iniciar uma thread de um processo,
-essa thread não pode iniciar uma outra thread hierarquicamente inferior a ela,isso resulta num problema da implementação da linguagem C sobre a qual a classe de processamento paralelo queue foi construída.\newline
-Esse erro de acordo com as documentações encontradas é devido ao compartilhamento de endereços de memória na linguagem c chamada "double free or corruption (out)" esse erro ocorre quando se remove ou adiciona alguma variável ou índice de vetor de um processamento paralelo,
-devido a forma como a biblioteca de processamento paralelo lida com valores das operações para evitar execução dupla de algum valor isso é necessário,
-entretanto quando se utiliza a biblioteca Manager ao invés da queue isso não ocorre,entretanto essa biblioteca está associada ao processamento paralelo de subprocessos,
-por isso a migração de threads para subprocessos foi necessária\newline
+Durante a etapa de processamento paralelo, seus problemas de desenvolvimento e erros se misturam com a etapa de inserção de dados no banco de dados final, pois ambos foram desenvolvidos simultaneamente, apesar de o processamento paralelo ter sido iniciado primeiro.\newline
+
+O processamento paralelo teve vários tipos de problemas,o primeiro problema marcante foi a implementação original dele. Originalmente foi pensado em utilizar a implementação de threads ao invés de subprocessos, isso porque as threads são mais fáceis de serem lidas caso ocorra um erro, isso por que os dados são comunicados diretamente pela classe queue, que é utilizada para se compartilhar dados em tempo real entre várias instâncias de processamento durante a execução de um programa Python.\newline
+
+As palavras chave aqui são compartilhamento entre várias instâncias, isso quer dizer que ela não faz distinção se as threads foram ou não iniciadas pela mesma classe, desde que existam threads elas compartilham as mesmas informações e espaço de memória .Isso foi identificado devido a árvore de processos necessária para que os testes fossem feitos de forma simultânea, já que ao se iniciar uma thread de um processo, essa thread não pode iniciar uma outra thread hierarquicamente inferior a ela. Isso resulta num problema da implementação da linguagem C sobre a qual a classe de processamento paralelo Queue foi construída.\newline
+
+Esse erro de acordo com as documentações encontradas é devido ao compartilhamento de endereços de memória na linguagem c chamada "double free or corruption (out)". Esse erro ocorre quando se remove ou adiciona alguma variável ou índice de vetor de um processamento paralelo, devido a forma como a biblioteca de processamento paralelo lida com valores das operações para evitar execução dupla de algum valor isso é necessário. Essa situação não ocorre quando se utiliza a biblioteca Manager ao invés da Queue, porém essa biblioteca está associada ao processamento paralelo de subprocessos, por isso a migração de threads para subprocessos foi escolhida.\newline
+
 \subsec{erro do processamento paralelo de subprocessos daemon}
-um dos problemas encontrados foi uma mensagem de erro chamada de "AssertionError: daemonic processes are not allowed to have children" esse erro impede que processos daemon tenham processos filhos,
-isso fez com que o processo de sub-processamento tivesse q ser convertido de daemon para um processo convencional,isso pode ser problemático quando se quer fazer um monitoramento do tempo de forma mais direta , isso pois no modo daemon é possível rodar um codigo enquanto aguarda a execução dos processos daemon serem terminadas,esse foi o método escolhido no final do desenvolvimento,devido a modificação na forma como o processo que possui daemon foi implementado,sendo que apenas as threads filhas eram deamons,as threads principais,que são as onde o tempo é monitorado,foi utilizado o método de se esperar a execução de todos subprocessos terminarem e medir o tempo gasto pelo conjunto,onde essa thread retornava o tempo para a função que a chamou,o processo foi um pouco mais complexo de se implementar que o previamente proposto,mas terminou com o mesmo resultado.\newline
+Um dos problemas encontrados foi uma mensagem de erro chamada de "AssertionError: daemonic processes are not allowed to have children" esse erro impede que processos daemon tenham processos filhos, o que fez com que o processo de sub-processamento tivesse q ser convertido de daemon para um processo convencional, isso pode ser problemático quando se quer fazer um monitoramento do tempo de forma mais direta, isso pois no modo daemon é possível rodar um código enquanto aguarda a execução dos processos daemon serem terminadas, esse foi o método escolhido no final do desenvolvimento devido a modificação na forma como o processo que possui daemon foi implementado, sendo que apenas as threads filhas eram daemons, as threads principais, que são as onde o tempo é monitorado, foi utilizado o método de se esperar a execução de todos subprocessos terminarem e medir o tempo gasto pelo conjunto, onde essa thread retornava o tempo para a função que a chamou, o processo foi um pouco mais complexo de implementar que o previamente proposto, mas terminou com o mesmo resultado.\newline
+
 \subsec{rollback de dados no postgres}
-outro erro marcante foi o de tratamento de rollback nas operações do postgres,devido a forma como as operações dos bancos de dados foram geradas,
-nenhuma das operações ,além é claro da inserção, é realmente válida ,o que quer dizer que de acordo com os métodos de segurança e otimização do postgres é necessário executar um rollback após a sua execução para evitar problemas,
-isso resulta entre outras coisas numa maior demora da execução do postgres quando dados considerados inválidos são executados e também numa maior necessidade de tratamento de erros na parte relacionada ao postgres da biblioteca \myref{subsec}{gerenciadorDeBD},devido ao rollback necessário,durante a etapa de desenvolvimento foi necessário se reformular os tratamentos de erro de varias formas para que apenas os erros que realmente necessitavam de rollback tivessem a operação executada,já que devido a hierarquia do tratamento de erro da biblioteca psycopg2,alguns erros que ocorriam eram entendidos como necessários de serem executados os rollback em vez do tratamento correto,principalmente o erro de time-out da conexão ou de conexão fechada.
+Outro erro marcante foi o de tratamento de rollback nas operações do postgres, devido a forma como as operações dos bancos de dados foram geradas, nenhuma das operações além da inserção, é realmente válida, o que quer dizer que de acordo com os métodos de segurança e otimização do postgres é necessário executar um rollback após a sua execução para evitar problemas. Isso resulta entre outras coisas numa maior demora da execução do postgres quando dados considerados inválidos são executados e também numa maior necessidade de tratamento de erros na parte relacionada ao postgres da biblioteca \myref{subsec}{gerenciadorDeBD}, devido ao rollback necessário, durante a etapa de desenvolvimento foi necessário reformular os tratamentos de erro de várias formas para que apenas os erros que realmente necessitavam de rollback tivessem a operação executada, já que devido a hierarquia do tratamento de erro da biblioteca psycopg2, alguns erros que ocorriam eram entendidos como necessários de serem executados os rollback em vez do tratamento correto, principalmente o erro de timeout da conexão ou de conexão fechada. 
+
 \sec{erros dos testes finais}
-durante a etapa de testes finais,ou seja,pós a etapa de testes de desenvolvimento,foi utilizado um servidor baseado no FX-6300,utilizando 4GB de RAM e um HD mecânico de 160GB
+Durante a etapa de testes finais,ou seja,após a etapa de testes de desenvolvimento,foi utilizado um servidor baseado no FX-6300, utilizando 4GB de RAM e um HD mecânico de 160GB.
+
 \subsec{erro de leitura pela falta de velocidade de disco}
-o HD mecânico da maquina dos testes finais possui velocidades limitadas pela sua tecnologia ,SATA2,isso impactou de forma considerável a execução dos testes,isso pois mesmo com a possibilidade de serem feitos diversas leituras simultâneas no sqlite,mesmo sendo possível varias leituras simultâneas ao mesmo tempo nesse método de armazenamento de dados,isso pois a latência entre a requisição da consulta e todo o processo logico e físico da leitura causasse um time out ocasional na biblioteca sqlite.
-uma solução para isso foi a substituição da mídia de armazenamento do arquivo sqlite,foi utilizado um pendrive Kingston 3.0 de 16GB,com velocidades de leitura superiores,de quase o dobro da velocidade, e latência muito inferior que a tecnologia SATA2,após essa substituição não foi mais visto nenhum erro de time-out durante os testes.
+O HD mecânico da máquina dos testes finais possui velocidades limitadas pela sua tecnologia, SATA 2. Isso impactou de forma considerável a execução dos testes, pois mesmo com a possibilidade de serem feitos diversas leituras simultâneas no sqlite, mesmo sendo possível várias leituras simultâneas nesse método de armazenamento de dados, isso pois a latência entre a requisição da consulta e todo o processo lógico e físico da leitura causasse um time out ocasional na biblioteca sqlite. Uma solução para isso foi a substituição da mídia de armazenamento do arquivo sqlite, foi utilizado um pendrive Kingston 3.0 de 16GB, com velocidades de leitura superiores, de quase o dobro da velocidade, e latência muito inferior que a tecnologia SATA 2, após essa substituição não foi mais visto nenhum erro de timeout durante os testes.
 
 
 %\chapter{Resultados}
@@ -1046,15 +1022,11 @@ uma solução para isso foi a substituição da mídia de armazenamento do arqui
 \ch{Resultados}
 
 \sec{resultados de inserção fracionada}
-o resultado encontrado do primeiro teste de manipulação de bancos de dados,que é o teste de inserção continua,onde foram inseridos de acordo com \myref{subsec}{teste de tempo de operação de inserção no BD},
-esses dados são comprovadamente sem ocorrência de erros de acordo com o codigo descrito em \myref{sec}{geração de dados},
-de acordo com os dados coletados pelo \myref{sec}{contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso,como o descrito nos arquivos de logs anexos e na tabela \myref{tab}{resultados insercao fracionada} essa variação ocorre,entretanto o computador \myref{sig}{arm} por ter mais núcleos físicos,é mais complicado de ser avaliada a porcentagem de uso devido a forma como o docker distribui a carga de uso de cpu.\newline
-Em relação ao uso de ram,ele se manteve mais constante,na arquitetura armhf o uso de RAM é bem menor que no amd64,
-nas duas arquiteturas diferença do uso de RAM é de cerca de 5\% ,onde no MariaDB a variação faça com que o uso de RAM seja ligeiramente maior no amd64.
-para o postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{arm} e 3Mbps para o amd,já para o MariaDB é de 3.5Mbps para o \myref{sig}{arm} e 9.5Mbps para o amd.\newline
-levando em conta a descrição de hardware de \myref{ch}{testes}, essas variações das velocidades são provavelmente devido a otimizações das arquiteturas para cada banco de dados.
-já a velocidade de leitura de disco é praticamente 0\% o tempo todo,isso provavelmente se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algorítimo de benchmark.\newline
-a principal diferença identificada em relação aos testes alem do previamente informado é o tempo,em 60\% das vezes o postgres \myref{sig}{arm} é mais rápido que o amd,enquanto isso em 85\% das vezes do MariaDB o amd é mais rápido.\newline
+O resultado encontrado do primeiro teste de manipulação de bancos de dados, que é o teste de inserção contínua, onde foram inseridos de acordo com \myref{subsec}{teste de tempo de operação de inserção no BD}, esses dados são comprovadamente sem ocorrência de erros de acordo com o código descrito em \myref{sec}{geração de dados}, de acordo com os dados coletados pelo \myref{sec}{contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso, como descrito nos arquivos de logs anexos e na tabela \myref{tab}{resultados insercao fracionada}. Essa variação ocorre, no computador \myref{sig}{arm} por ter mais núcleos físicos, portanto é mais complicado de ser avaliada a porcentagem de uso devido a forma como o docker distribui a carga de uso de cpu. Em relação ao uso de RAM, ele se manteve mais constante na arquitetura \myref{sig}{arm}. O uso de RAM é bem menor que no \myref{sig}{amd64}, nas duas arquiteturas a diferença do uso de RAM é de cerca de 5\%, onde no MariaDB a variação faz com que o uso de RAM seja ligeiramente maior no\myref{sig}{amd64}. Para o postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{arm} e 3Mbps para o amd. Já para o MariaDB é de 3.5Mbps para o \myref{sig}{arm} e 9.5Mbps para o \myref{sig}{amd64}.\newline
+
+levando em conta a descrição de \myref{ch}{testes}, essas variações das velocidades são provavelmente devido a otimizações das arquiteturas para cada banco de dados. já a velocidade de leitura de disco é praticamente 0\% o tempo todo, isso se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algoritmo de benchmark. \newline
+
+A principal diferença identificada em relação aos testes além do previamente informado é o tempo, em 60\% das vezes o postgres \myref{sig}{arm} é mais rápido que o \myref{sig}{amd64}, enquanto isso em 85\% das vezes do MariaDB o \myref{sig}{amd64} é mais rápido.
 
 \imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada}
 \begin{easyTableAuto}{dados encontrados de uso de hardware teste inserção}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
