@@ -444,6 +444,7 @@ brasil,				% o último idioma é o principal do documento
 \label{imagem:#1}
 \end{figure}
 }
+
 \DeclareRobustCommand{\apendicesvg}[2]{
 %lable
 %arquivo
@@ -455,18 +456,13 @@ brasil,				% o último idioma é o principal do documento
 \label{imagem:#1}
 \end{figure}
 }
-%\begin{figure}
-%\includegraphics{artigos relacionados/oltp mysql.png}
-%\caption{valores encontrados para o container mysql no artigo citado}
-%\label{fig:valores encontrados oltp mysql}
-%\end{figure}
 
 \begin{siglas}
 \sig{DACC} Departamento Acadêmico de Ciência da Computação
 
 \sig{UFJF} Universidade Federal de Juiz de Fora
 
-\sig{arm} ARM, originalmente Acorn RISC Machine, e depois Advanced RISC Machine, é uma família de arquiteturas RISC desenvolvida pela empresa britânica ARM Holdings
+\sig{ARM} ARM, originalmente Acorn RISC Machine, e depois Advanced RISC Machine, é uma família de arquiteturas RISC desenvolvida pela empresa britânica ARM Holdings
 
 \sig{IDE}
 
@@ -905,7 +901,7 @@ Os únicos dados que não são passados para o algoritmo funcionar são: o país
 \subsec{sqlite}
 O banco de dados do sqlite foi projetado para ser totalmente maleável e modular, de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark. Foi pensado no seguinte método para facilitar o desenvolvimento, sendo uma tabela de índices e uma tabela de operações. A tabela de índices possui apenas 3 colunas, uma id, uma com o nome da tabela e uma com o total de elementos dessa tabela. A outra tabela é um pouco mais complexa e está descrita a seguir:
 \begin{itemize}
-\itemA tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com \myref{subsec}{tipos de dados gerados};
+\item A tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com \myref{subsec}{tipos de dados gerados};
 \item Uma coluna é uma string contendo o nome do banco de dados que será executada a operação;
 \item Uma coluna inteira para, se for necessário, conter o id no banco de dados do elemento trabalhado na operação. No caso de uma inserção é o id do novo elemento por exemplo;
 \item Uma coluna text, nessa coluna serão inseridos valores adicionais necessários para a execução da operação, como os parâmetros de quais colunas devem ser atualizadas em um update. Aqui os dados inseridos são salvos em formato json para facilitar o trabalho com a linguagem Python, visto que existe uma conversão direta de string json para o tipo dictionary do Python.
@@ -1068,95 +1064,108 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 % ---------------------------------------------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
 % ---------------------------------------------------------------------------------------------
+\appendix
+\ch{apendices relacionados ao teste completo}
+\sec{imagens}
+\subsec{todos tempos}
+\apendicesvg{todos fracionada/todos tempos}{todos fracionada/todos tempos.svg}
+\pagebreak\newline
 
-%\ch{anexos}
-apendices relacionados ao teste completo\newline
-imagens
-\textbf{todos tempos}\label{anexo:todos tempos}\newline%
-\apendicesvg{todos fracionada/todos tempos.svg}{todos fracionada/todos tempos.svg}
-\textbf{resultados todos parte 0}\label{anexo:resultados todos parte 0}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0.svg}{todos fracionada/uso do container container_postgres_amd_limpo0.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}%
+\subsec{resultados todos parte 0}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0}{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0}{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0}{todos fracionada/uso do container container_postgres_amd_limpo0.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0}{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 1}\label{anexo:resultados todos parte 1}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1.svg}{todos fracionada/uso do container container_postgres_amd_limpo1.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}%
+
+\subsec{resultados todos parte 1}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1}{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1}{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1}{todos fracionada/uso do container container_postgres_amd_limpo1.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1}{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 2}\label{anexo:resultados todos parte 2}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2.svg}{todos fracionada/uso do container container_postgres_amd_limpo2.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}%
+
+\subsec{resultados todos parte 2}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2}{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2}{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2}{todos fracionada/uso do container container_postgres_amd_limpo2.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2}{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 3}\label{anexo:resultados todos parte 3}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3.svg}{todos fracionada/uso do container container_postgres_amd_limpo3.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}%
+
+\subsec{resultados todos parte 3}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3}{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3}{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3}{todos fracionada/uso do container container_postgres_amd_limpo3.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3}{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 4}\label{anexo:resultados todos parte 4}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4.svg}{todos fracionada/uso do container container_postgres_amd_limpo4.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}%
+
+\subsec{resultados todos parte 4}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4}{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4}{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4}{todos fracionada/uso do container container_postgres_amd_limpo4.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4}{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 5}\label{anexo:resultados todos parte 5}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5.svg}{todos fracionada/uso do container container_postgres_amd_limpo5.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}%
+
+\subsec{resultados todos parte 5}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5}{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5}{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5}{todos fracionada/uso do container container_postgres_amd_limpo5.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5}{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 6}\label{anexo:resultados todos parte 6}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6.svg}{todos fracionada/uso do container container_postgres_amd_limpo6.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}%
+
+\subsec{resultados todos parte 6}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6}{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6}{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6}{todos fracionada/uso do container container_postgres_amd_limpo6.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6}{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 7}\label{anexo:resultados todos parte 7}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7.svg}{todos fracionada/uso do container container_postgres_amd_limpo7.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}%
+
+\subsec{resultados todos parte 7}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7}{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7}{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7}{todos fracionada/uso do container container_postgres_amd_limpo7.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7}{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 8}\label{anexo:resultados todos parte 8}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8.svg}{todos fracionada/uso do container container_postgres_amd_limpo8.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}%
+
+\subsec{resultados todos parte 8}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8}{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8}{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8}{todos fracionada/uso do container container_postgres_amd_limpo8.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8}{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 9}\label{anexo:resultados todos parte 9}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9.svg}{todos fracionada/uso do container container_postgres_amd_limpo9.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}%
+
+\subsec{resultados todos parte 9}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9}{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9}{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9}{todos fracionada/uso do container container_postgres_amd_limpo9.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9}{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 10}\label{anexo:resultados todos parte 10}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10.svg}{todos fracionada/uso do container container_postgres_amd_limpo10.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}%
+
+\subsec{resultados todos parte 10}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10}{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10}{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10}{todos fracionada/uso do container container_postgres_amd_limpo10.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10}{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 11}\label{anexo:resultados todos parte 11}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11.svg}{todos fracionada/uso do container container_postgres_amd_limpo11.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}%
+
+\subsec{resultados todos parte 11}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11}{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11}{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11}{todos fracionada/uso do container container_postgres_amd_limpo11.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11}{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}%
 \pagebreak\newline
-\textbf{resultados todos parte 12}\label{anexo:resultados todos parte 12}\newline%
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}%
+
+\subsec{resultados todos parte 12}
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12}{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo12}{todos fracionada/uso do container container_mariadb_armhf_limpo12.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo12}{todos fracionada/uso do container container_postgres_amd_limpo12.svg}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12}{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12}{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}%
 \pagebreak\newline
-\pagebreak
-arquivos\newline
+
+\sec{arquivos}
 %\fbox{\begin{minipage}{\textwidth}
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs todos mariadb_amd_processados}\label{anexo:logs todos mariadb_amd_processados.log}\newline
+\subsec{logs todos mariadb_amd_processados}
 uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
@@ -1191,7 +1200,7 @@ o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
 
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs todos mariadb_armhf_processados}\label{anexo:logs todos mariadb_armhf_processados.log}\newline
+\subsec{logs todos mariadb_armhf_processados}
 uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 5, 16, 8]\newline
@@ -1226,7 +1235,7 @@ o valor com mais ocorrencias de uso de cpu é 16\newline
 \end{minipage}}
 
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs todos postgres_amd_processados}\label{anexo:logs todos postgres_amd_processados.log}\newline
+\subsec{logs todos postgres_amd_processados}
  uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
@@ -1261,7 +1270,7 @@ o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
 
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs todos postgres_armhf_processados}\label{anexo:logs todos postgres_armhf_processados.log}\newline
+\subsec{logs todos postgres_armhf_processados}
  uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 255, 7152, 16283]\newline
@@ -1296,18 +1305,18 @@ o valor com mais ocorrencias de uso de cpu é 16\newline
 \end{minipage}}
 %\end{minipage}}
 
-apendices relacionados ao teste insercao\newline
-\textbf{tempo insercao}\label{anexo:tempo insercao}\newline%
+\ch{apendices relacionados ao teste insercao}
+\sec{imagens}
 \apendicesvg{insercao fracionada/insercao tempos.svg}{insercao fracionada/insercao tempos.svg}
-\textbf{resultados insercao parte 0}\label{anexo:resultados insercao parte 0}\newline%
+\subsec{resultados insercao parte 0}
 \apendicesvg{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}
 \apendicesvg{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}
 \apendicesvg{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}
 \apendicesvg{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}
 
-arquivos\newline
+\sec{arquivos}
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs insercao mariadb_amd_processados}\label{anexo:logs insercao mariadb_amd_processados.log}\newline
+\subsec{logs insercao mariadb_amd_processados}
 uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
@@ -1341,7 +1350,7 @@ a faixa com mais ocorrencias de uso de cpu é de 10\newline
 o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs insercao mariadb_armhf_processados}\label{anexo:logs insercao mariadb_armhf_processados.log}\newline
+\subsec{logs insercao mariadb_armhf_processados}
 uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 5, 16, 8]\newline
@@ -1375,7 +1384,7 @@ a faixa com mais ocorrencias de uso de cpu é de 20\newline
 o valor com mais ocorrencias de uso de cpu é 16\newline
 \end{minipage}}
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs insercao postgres_amd_processados}\label{anexo:logs insercao postgres_amd_processados.log}\newline
+\subsec{logs insercao postgres_amd_processados}
 uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
@@ -1409,7 +1418,7 @@ a faixa com mais ocorrencias de uso de cpu é de 10\newline
 o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
 \fbox{\begin{minipage}{\textwidth}
-\textbf{logs insercao postgres_armhf_processados}\label{anexo:logs insercao postgres_armhf_processados.log}\newline
+\subsec{logs insercao postgres_armhf_processados}
 uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 255, 7152, 16283]\newline
