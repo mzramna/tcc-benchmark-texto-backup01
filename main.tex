@@ -97,9 +97,9 @@ brasil,				% o último idioma é o principal do documento
 
 \autor{Miguel Magalhães Lopes}
 \local{Rio Pomba}
-\data{20XX}
+\data{2022}
 \orientador{Gustavo Henrique da Rocha Reis}
-\coorientador{CICLANO}
+%\coorientador{CICLANO}
 %\instituicao{}
 \tipotrabalho{Trabalho de Conclusão de Curso}
 % O preambulo deve conter o tipo do trabalho, o objetivo,
@@ -286,7 +286,7 @@ brasil,				% o último idioma é o principal do documento
 			\vspace*{\fill}
 		\end{center}
 
-		Trabalho aprovado. \imprimirlocal, 00 de dezembro de 20XX.
+		Trabalho aprovado. \imprimirlocal, 00 de maio de 2022.
 
 		\assinatura{\textbf{\imprimirorientador}, Orientador, IF Sudeste MG - Rio Pomba}
 		\assinatura{\textbf{CICLANO}, Coorientador, IF Sudeste MG - Rio Pomba}
@@ -330,11 +330,11 @@ brasil,				% o último idioma é o principal do documento
 	% resumo em português
 	\begin{resumo}
 		\noindent
-
+    Este trabalho busca trazer um comparativo entre as capacidades reais de um servidor AMD64 e um servidor ARM em ambiente de banco de dados.Foi desenvolvida uma metodologia e um algoritimo para que a comparação pudesse ser a mais direta possível e mais simples de se aplicar uma escalabilidade de desempenho comparado.Foram utilizados os bancos de dados mais comumente utilizados na época do trabalho que suportavam ambas as arquiteturas.
 		\vspace{\onelineskip}
 
 		\noindent
-		\textbf{Palavras-chaves:} palavra1. palavra2. palavra3. palavra4.
+		\textbf{Palavras-chaves:} ARM. AMD64. benchmark. servidor. MariaDB. Postgres. comparativo.
 	\end{resumo}
 
 	% resumo em inglês
@@ -342,10 +342,10 @@ brasil,				% o último idioma é o principal do documento
 		\begin{otherlanguage*}{english}
 			\vspace{\onelineskip}
 			\noindent
-
+    This work seeks to bring a comparison between the real capabilities of an AMD64 server and an ARM server in a database environment. A methodology and an algorithm were developed so that the comparison could be as direct as possible and simpler to apply a scalability of performance compared.The most commonly used databases at the time of the work that supported both architectures were used.
 			\vspace{\onelineskip}
 
-			\noindent  \textbf{Key-words}:  word1. word2. word3. word4. word5.
+			\noindent  \textbf{Key-words}:  ARM. AMD64. benchmark. server. MariaDB. Postgres. comparative.
 		\end{otherlanguage*}
 	\end{resumo}
 	\urlstyle{same}
@@ -464,9 +464,9 @@ brasil,				% o último idioma é o principal do documento
 
 \sig{ARM} ARM, originalmente Acorn RISC Machine, e depois Advanced RISC Machine, é uma família de arquiteturas RISC desenvolvida pela empresa britânica ARM Holdings
 
-\sig{IDE}
-
 \sig{x64} evolução da arquitetura \myref{sig}{x86} evoluida para 64 bit
+
+\sig{AMD64} outra nomeclatura para \myref{sig}{x64}
 
 \sig{x86} arquitetura 32 bit comum nos computadores domésticos atuais
 
@@ -478,6 +478,8 @@ As JVMs estão disponíveis para muitas plataformas de hardware e software (ou s
 \sig{IOT} internet das coisas,
 
 \sig{SBC} single board computer,ou computador de placa unica,é um tipo de computador utilizado hoje em dia em que no mesmo chipset você encontra todas as estruturas principais do computador estão juntas obrigatóriamente os SBC possuem CPU e memória RAM e podem conter outras estruturas de um computador
+
+\sig{SoC} System on a chip,outra nomeclatura para \myref{sig}{SBC}
 
 \sig{WINE} O Wine é uma camada de tradução capaz de executar aplicações Windows em Linux e em outros sistemas operacionais compatíveis com POSIX
 
@@ -527,9 +529,9 @@ Como por exemplo os processadores de roteadores e aparelhos \myref{sig}{IOT}, ta
 Isso quer dizer que uma arquitetura não necessariamente é algo que precise de um hardware potente ou que só funcione ou exista em computadores, mas sim a forma como os algoritmos são interpretados no hardware,sendo eles algoritmos como softwares de computador ou como sequências de instruções realizadas por alguém.
 Sendo assim, desde que exista um software e um hardware que se comuniquem, existe uma arquitetura e provavelmente houve uma conversão da linguagem de programação para a linguagem de máquina dessa arquitetura neste dispositivo.\newline
 
-Após o lançamento dos macbooks de 2020 com processador M1, que funcionam com a arquitetura \myref{sig}{aarch64},a apple lançou uma camada de compatibilidade dos softwares com arquitetura \myref{sig}{amd64} para \myref{sig}{aarch64} chamado de rosetta2 esse software funciona parcialmente como um emulador, exceto que ele faz as adaptações num nível mais próximo do da máquina real e do sistema operacional nativo da máquina,resultando num desempenho muito superior a qualquer emulador existente,o rosetta2 funciona de forma análoga ao projeto \myref{sig}{WINE} do Linux que reinterpreta os programas windows para funcionarem no Linux,você tem uma pequena perda de desempenho por esse processo de reinterpretação em alguns casos,mas em outros essa perda é bem mais visível,e até mesmo,em raros casos,pode até mesmo ocorrer um ganho de desempenho em comparação com o sistema original.\newline
+Após o lançamento dos macbooks de 2020 com processador M1, que funcionam com a arquitetura \myref{sig}{aarch64},a apple lançou uma camada de compatibilidade dos softwares com arquitetura \myref{sig}{AMD64} para \myref{sig}{aarch64} chamado de rosetta2 esse software funciona parcialmente como um emulador, exceto que ele faz as adaptações num nível mais próximo do da máquina real e do sistema operacional nativo da máquina,resultando num desempenho muito superior a qualquer emulador existente,o rosetta2 funciona de forma análoga ao projeto \myref{sig}{WINE} do Linux que reinterpreta os programas windows para funcionarem no Linux,você tem uma pequena perda de desempenho por esse processo de reinterpretação em alguns casos,mas em outros essa perda é bem mais visível,e até mesmo,em raros casos,pode até mesmo ocorrer um ganho de desempenho em comparação com o sistema original.\newline
 
-Existem arquiteturas com propósitos diferentes,como o caso dos processadores \myref{sig}{ARM} que foram pensados para entregar uma grande eficiência energética,enquanto os processadores \myref{sig}{x86} foram pensados para apresentarem grande poder de processamento independente do consumo energético. O principal propósito da arquitetura \myref{sig}{ARM} entretanto não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes,tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{ARM} mais potente da marca mais popular dentre os \myref{sig}{SBC} atualmente,consome em torno de 15w hora. É uma grande diferença, principalmente levando em conta que ambos têm a possibilidade de rodar os mesmos programas open source de Linux, tanto editores de texto, navegadores de internet quanto \myref{sig}{IDE} de programação que estão disponíveis para ambos.Para um usuário médio não existe limitação ao se migrar de um para o outro.\newline
+Existem arquiteturas com propósitos diferentes,como o caso dos processadores \myref{sig}{ARM} que foram pensados para entregar uma grande eficiência energética,enquanto os processadores \myref{sig}{x86} foram pensados para apresentarem grande poder de processamento independente do consumo energético. O principal propósito da arquitetura \myref{sig}{ARM} entretanto não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes,tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{ARM} mais potente da marca mais popular dentre os \myref{sig}{SBC} atualmente,consome em torno de 15w hora. É uma grande diferença, principalmente levando em conta que ambos têm a possibilidade de rodar os mesmos programas open source de Linux, tanto editores de texto, navegadores de internet quanto IDEs de programação que estão disponíveis para ambos.Para um usuário médio não existe limitação ao se migrar de um para o outro.\newline
 
 
 \sec{bancos de dados}
@@ -590,7 +592,7 @@ O PSutil (Python System and Process Utilities) é uma biblioteca multiplataforma
 \ch{Trabalhos Relacionados}
 
 \sec{A Comparison of Database Performance of MariaDB and MySQL with OLTP Workload}
-Foram utilizados vários tipos de bancos de dados além do Postgres e do MariaDB para a comparação de performance, sendo o foco principal entre MariaDB e MySQL. Foram monitorados CPU e memória RAM, e durante os testes foi usado um hypervisor chamado XEN nas máquinas com plataforma amd64 XEN, e 4 GB de memória RAM. A mesma estrutura de BD foi utilizada em todos os servidores.\newline
+Foram utilizados vários tipos de bancos de dados além do Postgres e do MariaDB para a comparação de performance, sendo o foco principal entre MariaDB e MySQL. Foram monitorados CPU e memória RAM, e durante os testes foi usado um hypervisor chamado XEN nas máquinas com plataforma \myref{sig}{AMD64} XEN, e 4 GB de memória RAM. A mesma estrutura de BD foi utilizada em todos os servidores.\newline
 MariaDB e MySQL foram muito próximos em relação ao desempenho no 1º teste, e no 2º teste MariaDB foi ligeiramente mais pesado em relação a CPU que MySQL, conforme mostrado nos gráficos abaixo.\cite{MariaDBMySQLOLTP}\newline
 \imagempng{valores encontrados oltp mariadb}{artigos relacionados/oltp mariadb.png}{valores encontrados para o container mariadb para o 1 teste no artigo citado}
 \imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
@@ -610,8 +612,8 @@ Como métricas de monitoramento, utiliza-se o total de frames por segundo(fps), 
 A partir das métricas coletadas, o autor calculou aproximadamente o total de energia gasta para processar cada frame, ou seja, o total de energia gasto pela função do código no método serial, que é o único exatamente igual em ambos. Existe uma diferença sutil, mas com maior eficiência energética por parte do processador \myref{sig}{ARM}, visto que após ser levado em conta o consumo e a quantidade de frames gerados, é aplicada uma fórmula para comprovar a eficiência energética dos dispositivos utilizados.\newline
 Usando um dos vários kernels diferentes, existe uma velocidade de processamento exponencialmente maior por parte da Intel que por parte do \myref{sig}{ARM} no melhor cenário. No pior, a velocidade por parte da intel é 10 vezes maior que do \myref{sig}{ARM}.\newline
 O resultado é que o fps/J é maior no intel que no arm nos melhores casos de cada kernel. Mas essa diferença sutil em um dos kernels, e  alta em outro, chegando a cerca de 8.5 vezes mais eficiência no amd em relação ao arm no mesmo teste (no pior caso de cada). Portanto concluímos que para um dos testes, (teste SRAD), o ultrabook amd utilizado é claramente superior, enquanto que no outro teste, o ultrabook se mostrou superior. \newline
-Entretanto o consumo energético do arm é 20\% menor no pior cenário, e no melhor é 60\% superior. O consumo de energia médio do \myref{sig}{ARM} é 50\% do consumo do \myref{sig}{amd64}.\cite{armvsintel}\newline
-Como conclusão sobre os valores apresentados, foi possível comprovar que no tempo presente, 8 anos depois, as placas \myref{sig}{ARM} existentes consomem o mesmo tanto de energia, mas possuem muito mais poder computacional. Enquanto que os computadores \myref{sig}{amd64} portáteis, como o ultrabook utilizado, apesar de também consumirem uma quantidade equivalente de energia, não teve um ganho de performance tão grande quanto os computadores arm.\newline
+Entretanto o consumo energético do arm é 20\% menor no pior cenário, e no melhor é 60\% superior. O consumo de energia médio do \myref{sig}{ARM} é 50\% do consumo do \myref{sig}{AMD64}.\cite{armvsintel}\newline
+Como conclusão sobre os valores apresentados, foi possível comprovar que no tempo presente, 8 anos depois, as placas \myref{sig}{ARM} existentes consomem o mesmo tanto de energia, mas possuem muito mais poder computacional. Enquanto que os computadores \myref{sig}{AMD64} portáteis, como o ultrabook utilizado, apesar de também consumirem uma quantidade equivalente de energia, não teve um ganho de performance tão grande quanto os computadores arm.\newline
 
 
 \sec{KVM, Xen and Docker: a performance analysis for ARM based NFV and Cloud computing }
@@ -632,8 +634,8 @@ O autor chegou à conclusão que o raspberry pi é uma boa plataforma para repli
 Cerca de 4 anos após a conclusão deste trabalho, foi lançada uma versão nova e exponencialmente mais útil, em termos de testes replicáveis, pois não há limitação às placas de 1 gb de RAM . E a baixas velocidades de transferência, tanto de disco quanto de rede.  A partir disso, as conclusões do autor  se comprovaram pouco tempo antes dessa versão ser lançada. E a tendência é de que continue lançando versões superiores,visto que após lançarem versões com 2gb e 4gb de ram a Raspberry pi foundation lançou mais uma versão de 8gb de ram, e posteriormente uma versão oficial do seu sistema operacional oficial, agora chamado de Raspberry pi OS,com suporte a instruções 64 bits. Essas melhorias ocorreram apenas em uma nova revisão da placa, as futuras evoluções tendem a ser ainda maiores levando em conta as evoluções que têm ocorrido nas revisões da arquitetura \myref{sig}{ARM}.\newline
 
 \sec{HS06 Benchmark for an ARM Server}
-Se resume em um benchmark e análise de um servidor de arquitetura arm. Esse servidor possui 12 slots para encaixes das placas de soc, cada placa de soc possui 4 cpus com 4 núcleos, um pente de RAM,4 portas sata e um conector de porta 10 GBE para cada cpu. Resultando em 16 núcleos, 4 pentes e 16 portas sata por placa soc. Cada servidor consome cerca de 300w de energia, entretanto apenas um \myref{sig}{SOC} foi utilizado para os testes. \newline
-Foram utilizados para essa comparação mais 5 servidores AMD64, sendo 1 hp, 3 IBM e 1 dell.\newline
+Se resume em um benchmark e análise de um servidor de arquitetura arm. Esse servidor possui 12 slots para encaixes das placas de soc, cada placa de soc possui 4 cpus com 4 núcleos, um pente de RAM,4 portas sata e um conector de porta 10 GBE para cada cpu. Resultando em 16 núcleos, 4 pentes e 16 portas sata por placa soc. Cada servidor consome cerca de 300w de energia, entretanto apenas um \myref{sig}{SoC} foi utilizado para os testes. \newline
+Foram utilizados para essa comparação mais 5 servidores \myref{sig}{AMD64}, sendo 1 hp, 3 IBM e 1 dell.\newline
 O consumo energético desse servidor entre os analisados é o menor , o mais potente em relação ao consumo energético,visto que de acordo com a tabela de resultados apresentada no texto o único que conseguiu mais que 1 ponto por watt gasto foi o computador arm.\cite{hs06}\newline
 Importante ressaltar que os resultados encontrados na máquina arm são inferiores em pontuação, em comparação com todos os outros servidores utilizados, mas ao mesmo tempo o consumo energético desse processador é exponencialmente menor que os outros servidores. Principalmente ao se levar em conta que ele consome cerca de 5w de energia, enquanto que os outros consomem entre 150w e 600w.\newline
 
@@ -674,9 +676,9 @@ O algoritmo de geração de banco de dados é muito impactado pela quantidade de
 \subsec{teste de tempo de criação do BD}
 O teste dessa etapa foi feito para, dentre outros objetivos, comprovar o funcionamento do algoritmo de geração de dados descrito em \myref{subsec}{geradorDeSql}. À medida que o desenvolvimento dessa biblioteca acontecia, testes de geração tiveram que ser feitos. Esses testes, dentre outros propósitos, foram usados para saber a eficiência da geração de dados. Isso porque os dados gerados levavam uma quantidade parcialmente aleatória de tempo para serem gerados. Muito devido aos dados gerados serem semi-procedurais,descrito em \nyref{subsec}{sqlite} .\newline
 
-Além disso, esse teste foi necessário devido a etapa de geração de dados de inserção \myref{sec}{geração de dados}. Na etapa principal desse teste, foi feito um teste aditivo que testou 30 ciclos com adição de 100 em 100 elementos em cada ciclo. Foi feito um teste de 4 sub ciclos internos para quantidades diferentes de dados. Os testes desta etapa foram realizados em um PC arm64 e dois PCS amd64. Os dados resultaram em valores de tempo consistentes em relação a diferença de frequências dos computadores.\newline
+Além disso, esse teste foi necessário devido a etapa de geração de dados de inserção \myref{sec}{geração de dados}. Na etapa principal desse teste, foi feito um teste aditivo que testou 30 ciclos com adição de 100 em 100 elementos em cada ciclo. Foi feito um teste de 4 sub ciclos internos para quantidades diferentes de dados. Os testes desta etapa foram realizados em um PC arm64 e dois PCS \myref{sig}{AMD64}. Os dados resultaram em valores de tempo consistentes em relação a diferença de frequências dos computadores.\newline
 
-Sendo assim, se existe um valor de perda entre as arquiteturas para esse teste é um valor irrisório. Pois o PC amd64 mais potente apresentou testes cerca de 2 vezes mais rápidos, e seu clock é aproximadamente o dobro do arm64. Esses valores foram dados em relação ao tempo gasto por elemento em cada iteração. Com base nos resultados desses testes, desde que o computador tenha vários núcleos, o algoritmo será tão eficiente quanto. Isso se deve ao fato que levando em conta o PC com amd64 com 4 núcleos e 4 threads a um clock que varia entre 3.6GHz e 4.0GHz e um outro PC AMD64 de 2 núcleos e 4 threads a um clock que varia de 2.7GHz a 3.5GHz os valores de tempo do PC amd64 mais fraco levou cerca de 97\% do tempo do amd mais potente. Essa diferença ocorre devido a duas tecnologias desses processadores:\newline
+Sendo assim, se existe um valor de perda entre as arquiteturas para esse teste é um valor irrisório. Pois o PC \myref{sig}{AMD64} mais potente apresentou testes cerca de 2 vezes mais rápidos, e seu clock é aproximadamente o dobro do arm64. Esses valores foram dados em relação ao tempo gasto por elemento em cada iteração. Com base nos resultados desses testes, desde que o computador tenha vários núcleos, o algoritmo será tão eficiente quanto. Isso se deve ao fato que levando em conta o PC com \myref{sig}{AMD64} com 4 núcleos e 4 threads a um clock que varia entre 3.6GHz e 4.0GHz e um outro PC \myref{sig}{AMD64} de 2 núcleos e 4 threads a um clock que varia de 2.7GHz a 3.5GHz os valores de tempo do PC \myref{sig}{AMD64} mais fraco levou cerca de 97\% do tempo do amd mais potente. Essa diferença ocorre devido a duas tecnologias desses processadores:\newline
 \begin{itemize}
 \item Tecnologia Intel® Turbo Boost frequency 2.0: Quando detecta que o computador precisa de mais potência aumenta o clock do cpu
 \item Precision Boost Overdrive: Essa tecnologia permite que o processador varie seu clock de acordo com a necessidade, tanto aumentando quanto diminuindo para economizar energia
@@ -782,7 +784,7 @@ Algumas outras coisas são feitas, no postgres por exemplo existe uma função d
 
      Essa biblioteca serve principalmente para essa generalização, além de controlar a inserção, execução de sql, ainda gerenciar consulta, criação de usuário e ler diretamente o sqlite para realizar as operações escritas Dessa forma essa biblioteca simplifica muito a interação com o banco de dados, essa simplificação chega num ponto em que se tornou possível a paralelização, visto que uma adaptação para isso é bastante complexa caso o código não tenha sido pensado para este fim desde o começo, sendo assim o algoritmo sendo modularizado acabou fazendo possível a implementação de forma paralela.\newline
      
-      A biblioteca ainda faz com que seja possível consultar o sqlite dos dados gerados diretamente na comunicação com o banco de dados final, isso faz com que seja mais econômico de memória RAM o algoritmo, mas faz também com que ele consuma por mais tempo disco e cpu, mas não necessariamente em maior quantidade. Isso faz com que tenha sido necessário um controle mais preciso da quantidade de threads na execução do benchmark, pois como o cpu é usado por mais tempo, isso poderia causar um travamento da máquina que está gerando os testes e uma subsequente inconsistência dos dados de benchmark gerados, como apresentado em \myref{anexo}{resultados todos parte 9}.
+      A biblioteca ainda faz com que seja possível consultar o sqlite dos dados gerados diretamente na comunicação com o banco de dados final, isso faz com que seja mais econômico de memória RAM o algoritmo, mas faz também com que ele consuma por mais tempo disco e cpu, mas não necessariamente em maior quantidade. Isso faz com que tenha sido necessário um controle mais preciso da quantidade de threads na execução do benchmark, pois como o cpu é usado por mais tempo, isso poderia causar um travamento da máquina que está gerando os testes e uma subsequente inconsistência dos dados de benchmark gerados, como apresentado em \myref{subsec}{resultados todos parte 9}.
 
 
 %\subsection{geradorDeSql}
@@ -934,7 +936,7 @@ O ambiente utilizado foi dividido em duas partes, programação local e remota. 
 
 Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da \myref{sec}{software de benchmark} , e ainda foi utilizada uma implementação de um algoritmo de processamento para  \myref{sec}{elasticsearch monitoring stack} com finalidade de gerar os gráficos e tabelas apresentadas neste trabalho. Os dois primeiros foram escolhidos dentre outros motivos por serem open-source e estarem disponíveis tanto para Linux quanto Windows, visto que ambos sistemas operacionais foram utilizados para o desenvolvimento de acordo com a necessidade.\newline
 
-Para o controle de versão foi utilizado o Git, deixando registrado todo o histórico de alterações do programa, o que se mostrou bem útil para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código. Para os testes iniciais do código foram utilizados containers docker não limitados durante a etapa de implementação dos scripts do DBbench, que demandam a existência dos servidores dos bancos de dados sendo executados, ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados. A geração do banco de dados inicial, descrito em \myref{subsec}{sqlite}, foi feita completamente em um Raspberry Pi 4 com um pequeno overclock, essa geração foi feita durante alguns dias, visto que o SBC, de acordo com \myref{sec}{testes de tempo}, consome menos energia e devido a sua configuração pré existente, possui um acesso headless mais simplificado que as outras máquinas utilizadas.
+Para o controle de versão foi utilizado o Git, deixando registrado todo o histórico de alterações do programa, o que se mostrou bem útil para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código. Para os testes iniciais do código foram utilizados containers docker não limitados durante a etapa de implementação dos scripts do DBbench, que demandam a existência dos servidores dos bancos de dados sendo executados, ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados. A geração do banco de dados inicial, descrito em \myref{subsec}{sqlite}, foi feita completamente em um Raspberry Pi 4 com um pequeno overclock, essa geração foi feita durante alguns dias, visto que o \myref{sig}{SBC}, de acordo com \myref{sec}{testes de tempo}, consome menos energia e devido a sua configuração pré existente, possui um acesso headless mais simplificado que as outras máquinas utilizadas.
 
 
 \sec{processamento de resultados}
@@ -985,11 +987,11 @@ O HD mecânico da máquina dos testes finais possui velocidades limitadas pela s
 \ch{Resultados}
 
 \sec{resultados de inserção fracionada}
-O resultado encontrado do primeiro teste de manipulação de bancos de dados, que é o teste de inserção contínua, onde foram inseridos de acordo com \myref{subsec}{teste de tempo de operação de inserção no BD}, esses dados são comprovadamente sem ocorrência de erros de acordo com o código descrito em \myref{sec}{geração de dados}, de acordo com os dados coletados pelo \myref{sec}{contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso, como descrito nos arquivos de logs anexos e na tabela \myref{tab}{resultados insercao fracionada}. Essa variação ocorre, no computador \myref{sig}{ARM} por ter mais núcleos físicos, portanto é mais complicado de ser avaliada a porcentagem de uso devido a forma como o docker distribui a carga de uso de cpu. Em relação ao uso de RAM, ele se manteve mais constante na arquitetura \myref{sig}{ARM}. O uso de RAM é bem menor que no \myref{sig}{amd64}, nas duas arquiteturas a diferença do uso de RAM é de cerca de 5\%, onde no MariaDB a variação faz com que o uso de RAM seja ligeiramente maior no\myref{sig}{amd64}. Para o postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{ARM} e 3Mbps para o amd. Já para o MariaDB é de 3.5Mbps para o \myref{sig}{ARM} e 9.5Mbps para o \myref{sig}{amd64}.\newline
+O resultado encontrado do primeiro teste de manipulação de bancos de dados, que é o teste de inserção contínua, onde foram inseridos de acordo com \myref{subsec}{teste de tempo de operação de inserção no BD}, esses dados são comprovadamente sem ocorrência de erros de acordo com o código descrito em \myref{sec}{geração de dados}, de acordo com os dados coletados pelo \myref{sec}{contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso, como descrito nos arquivos de logs anexos e na tabela \myref{tab}{resultados insercao fracionada}. Essa variação ocorre, no computador \myref{sig}{ARM} por ter mais núcleos físicos, portanto é mais complicado de ser avaliada a porcentagem de uso devido a forma como o docker distribui a carga de uso de cpu. Em relação ao uso de RAM, ele se manteve mais constante na arquitetura \myref{sig}{ARM}. O uso de RAM é bem menor que no \myref{sig}{AMD64}, nas duas arquiteturas a diferença do uso de RAM é de cerca de 5\%, onde no MariaDB a variação faz com que o uso de RAM seja ligeiramente maior no\myref{sig}{AMD64}. Para o postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{ARM} e 3Mbps para o amd. Já para o MariaDB é de 3.5Mbps para o \myref{sig}{ARM} e 9.5Mbps para o \myref{sig}{AMD64}.\newline
 
 levando em conta a descrição de \myref{ch}{testes}, essas variações das velocidades são provavelmente devido a otimizações das arquiteturas para cada banco de dados. já a velocidade de leitura de disco é praticamente 0\% o tempo todo, isso se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algoritmo de benchmark. \newline
 
-A principal diferença identificada em relação aos testes além do previamente informado é o tempo, em 60\% das vezes o postgres \myref{sig}{ARM} é mais rápido que o \myref{sig}{amd64}, enquanto isso em 85\% das vezes do MariaDB o \myref{sig}{amd64} é mais rápido.
+A principal diferença identificada em relação aos testes além do previamente informado é o tempo, em 60\% das vezes o postgres \myref{sig}{ARM} é mais rápido que o \myref{sig}{AMD64}, enquanto isso em 85\% das vezes do MariaDB o \myref{sig}{AMD64} é mais rápido.
 
 \imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada}
 \begin{easyTableAuto}{dados encontrados de uso de hardware teste inserção}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
@@ -1010,14 +1012,15 @@ A principal diferença identificada em relação aos testes além do previamente
 Ao contrário do que era esperado, os valores gerados pelo \myref{sec}{software de benchmark} geraram de forma igualmente distribuída, ou seja,os dados foram gerados com uma distribuição de aproximadamente 20\% para cada tipo de operação. Isso por que por algum motivo desconhecido as operações de tipo 5, como descrito em \myref{subsec}{tipos de dados gerados}, não foram gerados nenhuma vez durante os testes, fora isso todos os outros dados gerados ocorreram como o esperado, onde são feitas queries de seleção, pesquisa e inserção da forma como era esperada e as operações ocorreram como o esperado.\newline
 
 Um fator interessante a se destacar é que, apesar da distribuição de operações ter sido homogênea, o custo de uso de hardware não foi. Em certos momentos houve um grande uso de cpu, mas nunca fugindo muito dos valores apresentados em \myref{sec}{resultados de inserção fracionada}, e na maioria dos casos houve um maior uso de ram que o apresentado no dito teste, um fator a se destacar é o de que os primeiros ciclos de teste funciona da seguinte forma:
+\pagebreak
 \begin{itemize}
 \item A maior parte, cerca de 60\% dos dados, foi de inserção e o restante de operações variadas, diferente do esperado, isso provavelmente se deve a algum problema durante a gerência dos arquivos salvos na máquina, não no algoritmo em si, isso se comprova nos próximos nove ciclos.
-\item A partir do 11° ciclo, no postgres, houve um aumento significativo de RAM, os valores que variam entre 18 a 30\% começaram a variar de 18 a 53\% no \myref{sig}{amd64} e no \myref{sig}{ARM} a variação saiu de 20\% a 34\% para de 20 a 52\%.
+\item A partir do 11° ciclo, no postgres, houve um aumento significativo de RAM, os valores que variam entre 18 a 30\% começaram a variar de 18 a 53\% no \myref{sig}{AMD64} e no \myref{sig}{ARM} a variação saiu de 20\% a 34\% para de 20 a 52\%.
 \end{itemize}
-Os tempos apresentados por esse teste estão descritos em \autoref{fig:resultados todos fracionada}
+Os tempos apresentados por esse teste estão descritos em \autoref{imagem:resultados todos fracionada}
 \imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark todas operações fracionadas}
 
-Uma coisa interessante ocorreu em uma etapa do teste, onde aparentemente a máquina que estava executando o teste travou e voltou a funcionar em seguida, isso visto que como as imagens do \myref{anexo}{resultados todos parte 9} demonstram, durante um intervalo de tempo nenhum dos containers estavam ativos,e sendo assim,nenhuma operação estava sendo realizada neles.\newline
+Uma coisa interessante ocorreu em uma etapa do teste, onde aparentemente a máquina que estava executando o teste travou e voltou a funcionar em seguida, isso visto que como as imagens do \myref{subsec}{resultados todos parte 9} demonstram, durante um intervalo de tempo nenhum dos containers estavam ativos,e sendo assim,nenhuma operação estava sendo realizada neles.\newline
 %lable
 %arquivo
 %caption
@@ -1037,11 +1040,11 @@ Uma coisa interessante ocorreu em uma etapa do teste, onde aparentemente a máqu
 %                      Capítulo 6                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ch{Conclusão}
-Como conclusão dos testes realizados, foi confirmado que a arquitetura a \myref{sig}{ARM} é a mais eficiente em relação ao desempenho por watt consumido. Mas os resultados de ambos foram bem próximos, quase iguais para cada banco de dados diferente. O que resultou numa eficiência de cerca de 9 vezes para a arquitetura arm, visto que o computador \myref{sig}{ARM} utilizado consome 10w de energia enquanto o computador \myref{sig}{amd64} utilizado consome 90w de energia, isso considerando que o consumo de ambos foi de 100\% da capacidade das respectivas fontes o tempo todo.\newline
+Como conclusão dos testes realizados, foi confirmado que a arquitetura a \myref{sig}{ARM} é a mais eficiente em relação ao desempenho por watt consumido. Mas os resultados de ambos foram bem próximos, quase iguais para cada banco de dados diferente. O que resultou numa eficiência de cerca de 9 vezes para a arquitetura arm, visto que o computador \myref{sig}{ARM} utilizado consome 10w de energia enquanto o computador \myref{sig}{AMD64} utilizado consome 90w de energia, isso considerando que o consumo de ambos foi de 100\% da capacidade das respectivas fontes o tempo todo.\newline
 
 Os testes realizados foram focados em manter ambos os servidores com a mesma exata característica de carga e desempenho, isso sempre visando o objetivo final de fazer com que a maior parte dos dados coletados pudesse ser diretamente comparáveis, já que o mesmo número de núcleos, ram, velocidade de disco e rede estavam disponíveis para ambas máquinas e o clock de ambas também foi limitado para exatos 1ghz para que as contas finais de comparação fossem mais simples. Sendo assim pode-se considerar os testes como sendo testes 1 para 1 nas diferentes arquiteturas.\newline
 
-Os dados coletados apontam que a arquitetura \myref{sig}{ARM} possui uma porcentagem de uso de cpu mais baixa que a da arquitetura \myref{sig}{amd64}, o que indica uma otimização em relação a isso do ponto de vista dessa arquitetura. Essa diferença causou uma maior demora de processamento na arquitetura \myref{sig}{ARM}, isso levando em conta que a diferença é bem baixa se torna irrisória em relação às comparações de arquiteturas. Enquanto a arquitetura \myref{sig}{amd64} apresentou um consumo maior de ram, sendo assim é possível indicar que os programas de banco de dados utilizados tiveram suas otimizações focadas em coisas diferentes. Os bancos de dados Mariadb e postgres apresentam diferenças visíveis entre si em relação a uso de RAM e CPU.\newline
+Os dados coletados apontam que a arquitetura \myref{sig}{ARM} possui uma porcentagem de uso de cpu mais baixa que a da arquitetura \myref{sig}{AMD64}, o que indica uma otimização em relação a isso do ponto de vista dessa arquitetura. Essa diferença causou uma maior demora de processamento na arquitetura \myref{sig}{ARM}, isso levando em conta que a diferença é bem baixa se torna irrisória em relação às comparações de arquiteturas. Enquanto a arquitetura \myref{sig}{AMD64} apresentou um consumo maior de ram, sendo assim é possível indicar que os programas de banco de dados utilizados tiveram suas otimizações focadas em coisas diferentes. Os bancos de dados Mariadb e postgres apresentam diferenças visíveis entre si em relação a uso de RAM e CPU.\newline
 
 Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benchmark resultou em dados estatisticamente iguais em ambas as maquinas utilizadas, resultando apenas numa diferença final apenas em relação ao consumo energético entre as maquinas que, levando em conta que ambas maquinas estão bem ultrapassadas em quesitos de eficiência energética para suas respectivas arquiteturas, torna a arquitetura \myref{sig}{ARM} a mais indicada para ambientes de servidor de bancos de dados visto que pode resultar numa visível diferença de custos para a empresa que hospedar essas maquinas.
 
@@ -1069,98 +1072,98 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 \sec{imagens}
 \subsec{todos tempos}
 \apendicesvg{todos fracionada/todos tempos}{todos fracionada/todos tempos.svg}
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 0}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0}{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0}{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0}{todos fracionada/uso do container container_postgres_amd_limpo0.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0}{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 1}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1}{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1}{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1}{todos fracionada/uso do container container_postgres_amd_limpo1.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1}{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 2}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2}{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2}{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2}{todos fracionada/uso do container container_postgres_amd_limpo2.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2}{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 3}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3}{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3}{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3}{todos fracionada/uso do container container_postgres_amd_limpo3.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3}{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 4}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4}{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4}{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4}{todos fracionada/uso do container container_postgres_amd_limpo4.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4}{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 5}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5}{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5}{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5}{todos fracionada/uso do container container_postgres_amd_limpo5.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5}{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 6}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6}{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6}{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6}{todos fracionada/uso do container container_postgres_amd_limpo6.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6}{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 7}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7}{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7}{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7}{todos fracionada/uso do container container_postgres_amd_limpo7.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7}{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 8}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8}{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8}{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8}{todos fracionada/uso do container container_postgres_amd_limpo8.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8}{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 9}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9}{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9}{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9}{todos fracionada/uso do container container_postgres_amd_limpo9.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9}{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 10}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10}{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10}{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10}{todos fracionada/uso do container container_postgres_amd_limpo10.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10}{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 11}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11}{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11}{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11}{todos fracionada/uso do container container_postgres_amd_limpo11.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11}{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}%
-\pagebreak\newline
+\pagebreak
 
 \subsec{resultados todos parte 12}
 \apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12}{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}%
 \apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo12}{todos fracionada/uso do container container_mariadb_armhf_limpo12.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo12}{todos fracionada/uso do container container_postgres_amd_limpo12.svg}%
 \apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12}{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}%
-\pagebreak\newline
+\pagebreak
 
 \sec{arquivos}
 %\fbox{\begin{minipage}{\textwidth}
@@ -1307,6 +1310,7 @@ o valor com mais ocorrencias de uso de cpu é 16\newline
 
 \ch{apendices relacionados ao teste insercao}
 \sec{imagens}
+\subsec{todos tempos}
 \apendicesvg{insercao fracionada/insercao tempos.svg}{insercao fracionada/insercao tempos.svg}
 \subsec{resultados insercao parte 0}
 \apendicesvg{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}
