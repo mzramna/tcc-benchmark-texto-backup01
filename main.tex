@@ -289,9 +289,9 @@ brasil,				% o último idioma é o principal do documento
 		Trabalho aprovado. \imprimirlocal, 00 de maio de 2022.
 
 		\assinatura{\textbf{\imprimirorientador}, Orientador, IF Sudeste MG - Rio Pomba}
-		\assinatura{\textbf{CICLANO}, Coorientador, IF Sudeste MG - Rio Pomba}
-		\assinatura{\textbf{Dr. BELTRANO} \\ IF Sudeste MG - Rio Pomba}
-		\assinatura{\textbf{Me. XXXXXXXXXXXXX} \\ IF Sudeste MG - Rio Pomba }
+%		\assinatura{\textbf{CICLANO}, Coorientador, IF Sudeste MG - Rio Pomba}
+		\assinatura{\textbf{Msc. Bianca Portes de Castro} \\ IF Sudeste MG - Rio Pomba }
+		\assinatura{\textbf{Msc. Sérgio Muinhos Barroso Lima} \\ IF Sudeste MG - Rio Pomba }
 		%\assinatura{\textbf{Professor W} \\ IF Sudeste MG - Rio Pomba}
 
 		\begin{center}
@@ -330,7 +330,7 @@ brasil,				% o último idioma é o principal do documento
 	% resumo em português
 	\begin{resumo}
 		\noindent
-    Este trabalho busca trazer um comparativo entre as capacidades reais de um servidor AMD64 e um servidor ARM em ambiente de banco de dados.Foi desenvolvida uma metodologia e um algoritimo para que a comparação pudesse ser a mais direta possível e mais simples de se aplicar uma escalabilidade de desempenho comparado.Foram utilizados os bancos de dados mais comumente utilizados na época do trabalho que suportavam ambas as arquiteturas.
+    Este trabalho busca trazer um comparativo entre as capacidades reais de um servidor AMD64 e um servidor ARM em ambiente de banco de dados.Foi desenvolvida uma metodologia e um algoritmo para que a comparação pudesse ser a mais direta possível e mais simples de se aplicar uma escalabilidade de desempenho comparado.Foram utilizados os bancos de dados MariaDB e Postgres.
 		\vspace{\onelineskip}
 
 		\noindent
@@ -342,7 +342,7 @@ brasil,				% o último idioma é o principal do documento
 		\begin{otherlanguage*}{english}
 			\vspace{\onelineskip}
 			\noindent
-    This work seeks to bring a comparison between the real capabilities of an AMD64 server and an ARM server in a database environment. A methodology and an algorithm were developed so that the comparison could be as direct as possible and simpler to apply a scalability of performance compared.The most commonly used databases at the time of the work that supported both architectures were used.
+    This work seeks to bring a comparison between the real capabilities of an AMD64 server and an ARM server in a database environment. A methodology and an algorithm were developed so that the comparison could be as direct as possible and simpler to apply a scalability of performance compared.MariaDB and Postgres databases were used..
 			\vspace{\onelineskip}
 
 			\noindent  \textbf{Key-words}:  ARM. AMD64. benchmark. server. MariaDB. Postgres. comparative.
@@ -504,16 +504,16 @@ que possui também uma versão 64 bits (\myref{sig}{x64}), que é praticamente a
 %entretanto existem versões do \myref{sig}{ARM},como o armv7l, que consegue trabalhar com instruções de 64bit,apesar de ser uma arquitetura 32 bits.\newline
 Foi criado um programa para a geração de dados baseado na biblioteca faker implementada na linguagem Python. Estes dados são gerados para cada país, em idiomas e caracteres compatíveis com a região escolhida. O que permite que estes dados como, nome, telefone, endereço e até mesmo usuário e senha sejam possíveis. Essa forma de inserção foi escolhida, pois um preenchimento de dados totalmente randômico, e de tamanho fixo, pode apresentar discrepância em relação ao desempenho num ambiente real de uso, afetando tanto o tempo, quanto a carga dos processadores de forma negativa. Os dados utilizados em cada ciclo de teste foram exatamente os mesmos, simulando o uso em ambiente real. Desta forma o benchmark se torna melhor aplicável à realidade e de fácil comparação de desempenho que outros algoritmos encontrados.\newline
 
-\ch{fundamentação teórica}
+\ch{Fundamentação teórica}
 
-\sec{virtualização}
+\sec{Virtualização}
 Virtualização é uma técnica usada para simular um computador dentro de outro. Dependendo do método utilizado, ele pode simular apenas uma camada, ou mais de uma das camadas de hardware e software de um computador. Um sistema virtualizado pode receber vários nomes de acordo com o método utilizado para virtualizar. Alguns dos mais utilizados atualmente são máquinas virtuais e containers docker. A principal diferença deles é a camada de hardware na qual ele é executado.
 
-\sec{maquina virtual}
+\sec{Maquina virtual}
 Uma máquina virtual é rodada por um programa dentro de um sistema operacional. Máquinas virtuais possuem várias limitações, dentre elas, um menor desempenho de processamento, além de não permitir acesso a outros hardwares do computador. Majoritariamente neste tipo de virtualização é permitido o acesso direto à memória principal, dispositivos de armazenamento de dados e hardwares plug’n’play como dispositivos de entrada e saída USB. Entretanto, não é possível utilizar placas de vídeo ou outros hardwares PCI de forma eficiente.
 
 
-\sec{arquiteturas}
+\sec{Arquiteturas}
 Por definição, arquitetura de computador é um conjunto de circuitos eletrônicos padronizados, associados a um conjunto de instruções, de forma a simplificar a programação para que executem comandos diferentes do binário. Os compiladores utilizam esses conjuntos de instrução para que o código de uma linguagem de programação de alto nível seja convertido para uma de baixo nível. A arquitetura também define e limita várias propriedades do hardware, como quantidade máxima de RAM, de armazenamento, suporte de saída de vídeo, capacidades de rede, etc.\newline
 
 %Uma micro arquitetura é quando adiciona-se tanto um circuito eletrônico novo ao circuito original da arquitetura quanto apenas uma simplificação ou reorganização dos comandos originais de uma arquitetura,
@@ -534,41 +534,41 @@ Após o lançamento dos macbooks de 2020 com processador M1, que funcionam com a
 Existem arquiteturas com propósitos diferentes,como o caso dos processadores \myref{sig}{ARM} que foram pensados para entregar uma grande eficiência energética,enquanto os processadores \myref{sig}{x86} foram pensados para apresentarem grande poder de processamento independente do consumo energético. O principal propósito da arquitetura \myref{sig}{ARM} entretanto não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes,tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{ARM} mais potente da marca mais popular dentre os \myref{sig}{SBC} atualmente,consome em torno de 15w hora. É uma grande diferença, principalmente levando em conta que ambos têm a possibilidade de rodar os mesmos programas open source de Linux, tanto editores de texto, navegadores de internet quanto IDEs de programação que estão disponíveis para ambos.Para um usuário médio não existe limitação ao se migrar de um para o outro.\newline
 
 
-\sec{bancos de dados}
+\sec{Bancos de dados}
 Banco de dados é um método de armazenamento de dados de forma estruturada para que as informações sejam associadas e consultadas com mais rapidez. Podem também, ser armazenadas de forma a economizar espaço de armazenamento, dependendo da otimização do banco de dados, além da possibilidade de realizar redundâncias de segurança dos dados.\newline
 A partir dessas características, justifica-se a escolha dos bancos de dados como alvo do benchmark realizado para essa comparação de arquiteturas.\newline
 Sistemas de computadores, dos mais diversos tipos, utilizam banco de dados para armazenamento de suas informações. Dessa forma, as informações ficam estruturadas em um formato padrão, o que permite acesso rápido a elas. Os tipos de bancos de dados analisados são sistemas SQL relacional (os mais genéricos), de forma que podem ser utilizados no máximo de aplicações diferentes possíveis. Isso faz com que esses tipos de sistema sejam os melhores para ser simulados.\newline
 
 
-\sec{docker}
+\sec{Docker}
 Docker é um sistema de virtualização de máquinas que busca simplicidade no gerenciamento e entrega de desempenho do hardware real da máquina que está sendo usada. O docker executa as chamadas de seus ambientes virtualizados, nomeados de contêineres, no mesmo nível do sistema operacional, logo acima do kernel do sistema. Isso possibilita dedicar parte do hardware da máquina real para um contêiner. E permite, dentre outras possibilidades, reservar de forma fixa porções do hardware, como por exemplo, definir limite de memória RAM ou quantidade de núcleos de cpu usados.\newline
 Outra das funcionalidades do docker é a implementação de volumes. Que é a forma de isolar as pastas do contêiner, e mantê-las mesmo havendo a necessidade do contêiner ser reinstalado para realizar atualização.\newline
 O docker foi desenvolvido a pedido da Google utilizando a linguagem Go, desenvolvida pela própria empresa. Ele foi criado visando a simplificação da gerência dos clusters de processamento da Google, que utilizam dezenas de computadores mais fracos para fazer o processamento. Portanto tem custo menor para compor um ambiente de processamento tão potente quanto fosse adquirida várias máquinas de maior valor. O docker também facilita a manutenção devido à fácil reimplementação de um contêiner caso a máquina tenha algum problema.\cite{dockerdoc}
 
-\subsec{contêiner docker}
+\subsec{Contêiner docker}
 Um container docker executa em um nível logo acima do kernel. O que permite que qualquer dispositivo, ou dado disponível na máquina real do usuário, possa ser acessível por um container docker. Além disso, ele possui maior eficiência de uso de memória RAM e de CPU em comparação às máquinas virtuais ou outros métodos de virtualização.\newline
 Os containers docker são imaginados para isolar programas do sistema operacional da máquina real. Isso evita que algum problema ocorra com o programa e afete a máquina real do usuário. Em muitas situações são utilizados como sistemas de desenvolvimento virtualizados, facilitando a replicação, e correção dos problemas durante a criação de um programa.\newline
 Containers docker também costumam ter implementação mais simples e rápida do que máquinas virtuais. Visto que eles utilizam imagens docker para sua criação, que são geradas, ou a partir de arquivos dockerfile ou a partir de um repositório.\newline
 
 
-\subsec{dockerfile}
+\subsec{Dockerfile}
 Os arquivos dockerfile são mais leves de transportar, mas demoram mais para serem instalados. Uma imagem instalada dessa forma segue todos os parâmetros de criação de um script de instalação. Sendo assim, caso algum programa tenha sido especificado para ser compilado durante a instalação de  uma imagem, o mesmo será compilado todas as vezes que esta imagem for instalada. Os arquivos dockerfile também facilitam a modificação de uma imagem caso seja necessário.\newline
 
-\subsec{imagem docker}
+\subsec{Imagem docker}
 Uma imagem docker é gerada a partir de um arquivo dockerfile. E a principal diferença é que uma imagem docker,  após feito o download, é extraída na máquina onde o contêiner docker será executado. Uma imagem é composta de snapshots que correspondem às etapas de execução de uma dockerfile. Sendo assim, quando o download é realizado, apenas as partes diferentes de uma dockerfile previamente adquirida é baixada. O que facilita a atualização de contêineres.\newline
 As imagens docker são distribuídas de duas formas: a partir de repositórios semelhantes aos dos sistemas Linux ou a partir de arquivos compactados. Os repositórios são o método mais utilizado para se distribuir essas imagens. O principal repositório é o Dockerhub, que é o repositório oficial do docker.\newline
 
 
 
-\sec{docker-compose}
+\sec{Docker-compose}
 É um método de implementação de contêineres docker, que utiliza um arquivo de deploy para facilitar sua replicação,comumente utilizado junto de um arquivo de variáveis de ambiente .env. Esse arquivo contém variáveis para serem utilizadas no deploy do stack de contêineres. Fazendo com que o mesmo arquivo docker-compose possa ser utilizado em mais de um ambiente ou em máquinas diferentes.\cite{dockercomposedoc}\newline
 
 
-\sec{elasticsearch monitoring stack}
+\sec{Elasticsearch monitoring stack}
 É um conhecido método open-source de monitoramento de logs. Ele se baseia em três programas: Elasticsearch (indexador e processador de logs), Logstash (receptor e monitorador de logs) e Kibana (interface web para monitorar e trabalhar a exibição dos dados coletados). Por isso é conhecido como ELK. Esses programas são baseados em Java e consomem uma quantidade considerável de memória RAM. Motivo pelo qual o programa foi executado em uma máquina dedicada, para não influenciar na análise de desempenho das arquiteturas monitoradas.\newline
 O ELK foi utilizado sem qualquer um dos seus plugins de processamento de informações. Fazendo uso apenas do elasticsearch para filtrar os resultados encontrados, e gerar os gráficos exibidos neste trabalho a partir de uma aplicação que utiliza seus dados.\newline
 
-\sec{portainer}
+\sec{Portainer}
 Portainer é um painel de administração do docker, com o objetivo de simplificar a administração e configuração de várias opções mais complexas do docker. Inclusive facilitando a definição de uso do hardware que será usado por cada contêiner, e facilitando o backup e download dos volumes e imagens criados. Assim como a atualização dos mesmos para versões mais novas.\newline
 O portainer permite controlar, a partir de diversos métodos, múltiplas máquinas executando docker, com um controle unificado e simples. Além disso, a interface web permite também a execução de comandos shell e a atualização dos contêineres de forma simplificada.\newline
 Outra característica interessante é a possibilidade de unificar a administração dos diversos servidores utilizados durante o desenvolvimento e testes, sendo necessário apenas instalar o portainer em um deles, e nas outras máquinas apenas a ativação da conexão remota pelo docker socket. Desta forma o monitoramento de logs, uso de hardware e outros podem ser feitos diretamente pelo navegador.\cite{portainer}\newline
@@ -576,7 +576,7 @@ Outra característica interessante é a possibilidade de unificar a administraç
 
 %\section{biblioteca faker}
 %\label{sec:biblioteca faker}
-\sec{biblioteca faker}
+\sec{Biblioteca Faker}
 A biblioteca faker é conhecida para a geração de mock data, que são dados gerados aleatoriamente para testar a capacidade de um algoritmo em lidar com dados. Comumente utilizada na etapa de testes de um algoritmo, (seja para testes de segurança, para se proteger de bots de criação de contas ou algo semelhante). É também utilizado para testes de estresse, quanto para qualquer tipo de teste que dependa de dados reais.\newline
 Essa biblioteca foi selecionada, pois é de fácil utilização e compreensão, e possui documentação abrangente e suporte para múltiplos idiomas.\newline
 Apesar da biblioteca suportar todos os tipos de geração mais completos na localização dos EUA, possui um tipo que corresponde a todo um perfil de usuário, contendo desde endereço até força de senha.\newline
@@ -584,7 +584,7 @@ Para propósitos de testes, foram gerados apenas dados na localização do Brasi
 
 %\section{biblioteca psutil}
 %\label{sec:biblioteca psutil}
-\sec{biblioteca psutil}
+\sec{Biblioteca PSutil}
 O PSutil (Python System and Process Utilities) é uma biblioteca multiplataforma para recuperação de informações na execução de processos, e utilização do sistema (CPU, memória, discos, redes, sensores). É muito útil para sistemas de monitoramento, limitação de recursos de processamento, perfil e gerenciamento de processos em execução. Implementa também, funcionalidades oferecidas por linhas de comando, e de sistemas baseados em UNIX tais como: ps, top, lsof, netstat, ifconfig, who, df, kill, free, dentre outros.\cite{psutil}\newline
 
 %\chapter{Trabalhos Relacionados}
@@ -606,7 +606,7 @@ Levando em conta o custo, para essa aplicação o uso de soc é viável, já que
 O desempenho multi-core de apenas uma máquina é quase o mesmo que o de duas máquinas com multi-core em paralelo\cite{DockerSwarmsocmpi}
 
 
-\sec{a comparative study of the effects of parallelization  on arm and intel based platforms}
+\sec{A comparative study of the effects of parallelization  on arm and intel based platforms}
 Este artigo utiliza a mesma proposta abordada nesta pesquisa, cada vez mais máquinas arm são utilizadas ao redor do mundo,tendo em vista que hoje em dia todos celulares utilizam processadores \myref{sig}{ARM} e os computadores estão começando a adotar essa arquitetura. O artigo aborda os múltiplos métodos de paralelização que são utilizados pelo autor  para realizar os testes, assim como as diferenças das implementações entre intel e arm. No processador arm é impossível usar a GPU para os testes, devido ao sistema operacional usado não ter drivers que possibilitasse esse uso.\newline
 Como métricas de monitoramento, utiliza-se o total de frames por segundo(fps), visto que os algoritmos utilizados, são algoritmos de processamento de imagem e potência em joule (J) utilizada pelas máquinas analisadas. O monitoramento de fps era feito por um monitor interno ao cpu e não um sistema externo, e várias das aplicações foram otimizadas para que funcionassem da melhor forma possível em cada cpu, de forma que na otimização interferisse o mínimo possível nos resultados dos testes. Essas otimizações foram feitas em forma de kernels compilados diferentemente para o algoritmo.\newline
 A partir das métricas coletadas, o autor calculou aproximadamente o total de energia gasta para processar cada frame, ou seja, o total de energia gasto pela função do código no método serial, que é o único exatamente igual em ambos. Existe uma diferença sutil, mas com maior eficiência energética por parte do processador \myref{sig}{ARM}, visto que após ser levado em conta o consumo e a quantidade de frames gerados, é aplicada uma fórmula para comprovar a eficiência energética dos dispositivos utilizados.\newline
@@ -641,7 +641,7 @@ Importante ressaltar que os resultados encontrados na máquina arm são inferior
 
 %\chapter{testes}
 %\label{ch: testes}
-\ch{testes}
+\ch{Testes}
 Os testes foram realizados utilizando um Orange Pi PC + \cite{opipc} e um notebook lenovo. O Orange Pi é um \myref{sig}{SBC} \myref{sig}{ARM} baseado no processador allwinner h3 \cite{h3} com 3 USB 2.0 ,1GB de memória RAM DDR3, uma porta de rede 10/100 e wi-fi 4. Essa configuração é relativamente datada e seu processador é um 4-core de 1.3GHz no clock máximo. É um processador que ainda possui desempenho positivo se considerar um uso básico, entretanto considerando todas suas especificações, este \myref{sig}{SBC} não é bom o bastante para substituir um computador atual,devido a sua limitação de memória RAM e de capacidade gráfica.\newline
 
 O notebook é um Lenovo G405 \cite{G405}, com um processador AMD E1-2100 \cite{E1}, (dual-core com clock máximo de 1.0GHz), 2 GB de memória RAM DDR3, 1 USB 2.0, 2 USB 3.0, porta de rede Gigabit e 2 portas sata3. Porém nem as portas sata nem as usb 3.0 serão usadas já que o propósito é manter as 2 máquinas o mais próximas em relação ao hardware possível. Para que haja proximidade em velocidade e especificações. Este computador também possui especificações técnicas obsoletas para os dias atuais, mas ainda é utilizável como um servidor doméstico.\newline
@@ -666,14 +666,14 @@ Além disso, os softwares utilizados nessas máquinas foram versões do sistema 
 
 %\section{testes de tempo}
 %\label{sec:testes de tempo}
-\sec{testes de tempo}
+\sec{Testes de tempo}
 Os algoritmos principais do código são a geração do sqlite e a inserção nos BDs finais. Sendo assim, ambos foram testados de formas diferentes e por métodos diferentes, que serão descritos a seguir.\newline
 O algoritmo de geração de banco de dados é muito impactado pela quantidade de núcleos de cpu da máquina na qual foi rodada, mais do que a arquitetura ou clock dela. Enquanto na inserção do banco de dados, as especificações do computador não pareceram interferir tanto quanto a aleatoriedade da consistência do funcionamento das threads, essa inconsistência acabou fazendo com que os testes tivessem que ser realizados sob supervisão. Sendo muitas vezes necessário interromper uma etapa e depois reiniciá-la. também por isso, várias das operações foram testadas de formas diferentes. Foram utilizadas sempre 2 etapas de testes, sendo que pequenas modificações foram feitas em cada uma de acordo com o objetivo .\newline
 
 
 %\subsection{teste de tempo de criação do bd}
 %\label{subsec:teste de tempo de criação do bd}
-\subsec{teste de tempo de criação do BD}
+\subsec{Teste de tempo de criação do BD}
 O teste dessa etapa foi feito para, dentre outros objetivos, comprovar o funcionamento do algoritmo de geração de dados descrito em \myref{subsec}{geradorDeSql}. À medida que o desenvolvimento dessa biblioteca acontecia, testes de geração tiveram que ser feitos. Esses testes, dentre outros propósitos, foram usados para saber a eficiência da geração de dados. Isso porque os dados gerados levavam uma quantidade parcialmente aleatória de tempo para serem gerados. Muito devido aos dados gerados serem semi-procedurais,descrito em \nyref{subsec}{sqlite} .\newline
 
 Além disso, esse teste foi necessário devido a etapa de geração de dados de inserção \myref{sec}{geração de dados}. Na etapa principal desse teste, foi feito um teste aditivo que testou 30 ciclos com adição de 100 em 100 elementos em cada ciclo. Foi feito um teste de 4 sub ciclos internos para quantidades diferentes de dados. Os testes desta etapa foram realizados em um PC arm64 e dois PCS \myref{sig}{AMD64}. Os dados resultaram em valores de tempo consistentes em relação a diferença de frequências dos computadores.\newline
@@ -688,7 +688,7 @@ Dessa forma, o clock do processador foi diminuído, já que apenas 1 dos núcleo
 Também foi realizado um segundo teste referente ao descrito acima, seguindo os mesmos parâmetros, mas utilizando o processamento paralelo. O maior diferencial entre os testes da arquitetura arm e x86 foi que na arquitetura arm devido a limitações dos recursos disponíveis, foi necessário utilizar um HD ao invés de um ssd. E como dito em \myref{sec}{geração de dados} isso impacta consideravelmente na velocidade da geração dos dados, resultando em valores piores que o teste anterior devido aos múltiplos acessos simultâneos do armazenamento.\newline
 
 
-\subsec{teste de tempo de operação de inserção no BD}
+\subsec{Teste de tempo de operação de inserção no BD}
 este teste foi proposto para ser um teste de dois tipos:
 \begin{itemize}
 \item Os dados de inserção foram projetados para não apresentarem erro e sempre retornarem o resultado de operação inserida com sucesso. Isso quer dizer que caso nada tenha ocorrido um problema do algoritmo de geração, apenas operações foram realizadas sem erro.
@@ -699,7 +699,7 @@ para esse propósito foi utilizada uma variação do benchmark de criação de B
 para que a maquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da maquina,onde 3 executavam os testes para o \myref{sig}{ARM} e 3 para o amd.
 
 
-\subsec{teste de tempo de operações variadas no BD}
+\subsec{Teste de tempo de operações variadas no BD}
 Após a confirmação da funcionalidade de forma satisfatória da geração do sqlite, foi iniciado o processo de interação com o banco de dados. Esse processo foi dividido em algumas etapas, primeiramente para verificar se a operação funcionava corretamente. Essa etapa foi feita seguindo os testes de funcionalidade já descritos, onde uma pequena quantidade de operações era gerada, usando a geração de sqlite em ambos os bancos de dados ao mesmo tempo. Após essa etapa de confirmação de funcionalidade não foi feito um teste de desempenho, pois foi deixado para a etapa de testes paralelos. A qual se mostrou mais importante, visto que após a confirmação de funcionalidade mais testes para essa etapa não eram necessários.\newline
 
 Apenas testes de realização de operações sem retorno, leitura de arquivos, criação de usuários e comunicação geral com o banco de dados, foram feitos todos esses testes que tiveram resultados satisfatórios, tornando-se possível as funcionalidades utilizadas da biblioteca \myref{subsec}{gerenciadorDeBD}. Os dados foram gerados seguindo o seguinte processo:
@@ -709,7 +709,7 @@ O principal propósito deste teste foi mostrar que muitos bancos de dados, princ
 
 %\subsection{teste de tempo de operações paralelas}
 %\label{subsec:teste de tempo de operações paralelas}
-\subsec{teste de tempo de operações paralelas}
+\subsec{Teste de tempo de operações paralelas}
 Essa foi a etapa que demandou maior quantidade de testes, estudos e desenvolvimento dos testes implementados. Visto que além da programação paralela ser mais complexa que a programação linear, ela é bem mais difícil de ser testada. Apenas foi possível após as outras classes principais,\myref{subsec}{gerenciadorDeBD} e \myref{subsec}{geradorDeSql}, serem finalizadas.\newline
 
 Basicamente para a execução desse teste foi feita a execução dos testes de tempo, porém com modificações no código para que ele funcionasse de forma paralela.\newline
@@ -717,12 +717,12 @@ Basicamente para a execução desse teste foi feita a execução dos testes de t
 
 %\section{testes de eficiencia}
 %\label{sec:testes de eficiencia}
-\sec{testes de eficiência}
+\sec{Testes de eficiência}
 Esses testes não apenas levam em conta o tempo que foi gasto para concluir a operação, mas também a forma como elas foram concluídas. Isso quer dizer que o tempo é um dos parâmetros para a sua avaliação, mas também a quantidade de falhas apresentadas, quantidade de cpu utilizada, e quantidade de interação do operador do algoritmo para que ele funcione como deveria.
 
 %\subsection{teste de eficiencia de operações paralelas}
 %\label{subsec:teste de eficiencia de operações paralelas}
-\subsec{teste de eficiência de operações paralelas}
+\subsec{Teste de eficiência de operações paralelas}
 Esse foi o teste que mais demandou tempo e esforço dentre os realizados. Isso porque devido a complexidade da programação paralela, como já dito em \myref{subsec}{teste de tempo de operações paralelas}, uma quantidade maior de testes foram demandados. Um dos grandes motivadores foi a etapa descrita em \myref{subsec}{teste de tempo de inserção no BD}. Apesar dessa etapa não ter sido complicada por si só ela demandou muita atenção pois apresentava muitos erros. Essas operações demandaram muitos testes manuais alternando o método de programação paralela, sendo usando threads ou subprocessos, quantidade de operadores paralelos, quantidade de elementos inseridos e forma dos elementos inseridos.\newline
 
 Tudo isso pois em vários momentos foram apresentados erros randomicamente sem nenhum indício de justificativa. Os erros apareciam em certos momentos quando era usado o processamento paralelo em threads e em outros utilizando o processamento paralelo de subprocessos. Os mesmos erros eram corrigidos para que em sequência ao se implementar a próxima funcionalidade necessária o mesmo erro se repetisse. Isso gerou um loop do processo de desenvolvimento , onde muitos testes eram realizados e alternados com leitura de documentação das bibliotecas utilizadas, ou mesmo leitura de exemplos de códigos de fóruns e sites.\newline
@@ -741,7 +741,7 @@ Durante esse capítulo, serão descritos os procedimentos mais importantes das e
 
 %\section{bibliotecas criadas}
 %\label{sec:bibliotecas criadas}
-\sec{bibliotecas criadas}
+\sec{Bibliotecas criadas}
 Algumas bibliotecas foram criadas para facilitar o desenvolvimento delas, algumas valem a pena ser mencionadas mais detalhadamente, mas outras apenas serão citadas aqui, uma dessas bibliotecas foi uma para o tratamento de erros. Essa classe é uma derivação da classe padrão do Python de exceção. Essa biblioteca é composta de 3 classes, cada uma para um tipo de mensagem e tratamento de erro, apenas para simplificar e facilitar o debug do código durante a manipulação dele. Ela não faz real diferença em relação ao funcionamento em si, exceto no fator de poderem ser chamadas correções específicas dos erros, quando um try-catch é usado numa função. ainda foi criada uma biblioteca de timer, usada nos testes de tempo do projeto, essa biblioteca apenas é uma contração de forma simples e com tratamento de erro do uso da biblioteca time do Python. Essa técnica de medida de tempo é amplamente utilizada, mas apenas para fins de simplificação no momento do uso foi criada essa biblioteca.
 
 %\subsection{loggingSystem}
@@ -794,7 +794,7 @@ essa é a classe referida na seção \myref{sec}{geração de dados},todas as in
 
 %\section{software de benchmark}
 %\label{sec:software de benchmark}
-\sec{software de benchmark}
+\sec{Software de benchmark}
 O benchmark foi feito utilizando um software desenvolvido para o propósito deste teste, o software de benchmark está mais para um software para gerar estresse na máquina na qual está rodando o banco de dados por meio de várias execuções de comandos direto no banco de dados. O software de benchmark funciona carregando e construindo os dados a partir das inserções no arquivo sqlite, os testes de estresse foram tentados de algumas formas:\newline
 \begin{itemize}
 \item Primeiramente o algoritmo inicia o contêiner que contém o banco de dados que está sendo analisado;
@@ -831,7 +831,7 @@ os containers utilizados foram desenvolvidos para os propósitos desta pesquisa,
 
 %\section{geração de dados}
 %\label{sec:geração de dados}
-\sec{geração de dados}
+\sec{Geração de dados}
 Os dados foram todos gerados para um sqlite projetado para ser simples de aceitar qualquer formato de dados que pudesse ser gerado para qualquer tabela. Essas etapas funcionam da seguinte forma: \newline
 No início, os dados foram gerados em sqlite pelo fato que, caso houvesse algum problema e o computador, que estava gerando os dados, fosse abruptamente desligado, não se perdesse as informações que já haviam sido criadas e salvas no banco de dados. Desta forma, economiza  memória ram, já que não é necessário carregar o arquivo todo quando fosse necessária uma consulta de dados, e tempo uma vez que esta etapa é a mais demorada da geração de dados, como descrito em\myref{subsec}{sqlite}.\newline
 O código consegue gerar os dados de 3 formas,mas apenas a última é realmente utilizada. As outras duas foram feitas para propósito de testes:
@@ -859,7 +859,7 @@ O grande limitador da velocidade de geração de dados é o fator randômico, de
 
 %\subsection{tipos de dados gerados}
 %\label{subsec:tipos de dados gerados}
-\subsec{tipos de dados gerados}
+\subsec{Tipos de dados gerados}
 Foram selecionadas para os teste apenas as operações mais utilizadas por um banco de dados:
 \begin{enumerate}
 \item Inserção de um novo dado;
@@ -877,7 +877,7 @@ Os vários dados gerados por esse programa são usados parcialmente para a gera�
 
 %\subsection{alimentação do algoritmo}
 %\label{subsec:alimentação do algoritmo}
-\subsec{alimentação do algoritmo}
+\subsec{Alimentação do algoritmo}
 O algoritmo de geração de dados funciona de forma que qualquer banco de dados possa ser utilizado para ter seus dados gerados. Basta utilizar um arquivo json e seguir um determinado padrão que é composto por:\newline
 \begin{itemize}
 \item uma tag com o nome de uma tabela do banco de dados; 
@@ -900,7 +900,7 @@ Os únicos dados que não são passados para o algoritmo funcionar são: o país
 
 %\subsection{sqlite}
 %\label{subsec:sqlite}
-\subsec{sqlite}
+\subsec{Sqlite}
 O banco de dados do sqlite foi projetado para ser totalmente maleável e modular, de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark. Foi pensado no seguinte método para facilitar o desenvolvimento, sendo uma tabela de índices e uma tabela de operações. A tabela de índices possui apenas 3 colunas, uma id, uma com o nome da tabela e uma com o total de elementos dessa tabela. A outra tabela é um pouco mais complexa e está descrita a seguir:
 \begin{itemize}
 \item A tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com \myref{subsec}{tipos de dados gerados};
@@ -914,7 +914,7 @@ Dessa forma, independente se é apenas uma operação de listagem completa, que 
 
 %\section{containers docker}
 %\label{sec:containers docker}
-\sec{contêineres docker}
+\sec{Contêineres docker}
 Os containers docker foram criados a partir do sistema Alpine Linux, no qual foram feitos 2 contêineres diferentes, um para o MariaDB e outro para o postgres. Os contêineres se certificam de criar o banco de dados de forma correta durante a inicialização dele, após isso o contêiner durante a sua inicialização se certifica que o Python está instalado e tudo necessário para que o daemon, descrito em \myref{sec}{daemon de monitoramento},funcione após isso. O banco de dados do contêiner é finalmente iniciado. Essa forma de instalação do daemon certifica que tanto o interpretador Python3 quanto as bibliotecas usadas estão sempre atualizadas todas as vezes que o contêiner é instanciado.\newline
 
 Apesar de esse método causar uma grande demora na primeira inicialização do contêiner, devido a forma como o script de inicialização funciona somente a primeira inicialização é impactada na sua velocidade de inicialização. Foi tentada a implementação de um heathcheck para saber se o contêiner já havia iniciado o banco de dados e se ele já estava acessível, entretanto além de ocorrer algum problema desconhecido que resultou numa falha nesse procedimento, sua necessidade se provou inexistente. Visto que seria verificada a saúde do contêiner antes da inicialização das execuções dos testes, mas apenas deixar um delay de alguns segundos bastou para que não ocorressem erros relacionados a isso.
@@ -924,14 +924,14 @@ Outra especificidade do alpine é que ele é um dos poucos sistemas Linux que n�
 
 %\section{daemon de monitoramento}
 %\label{sec:daemon de monitoramento}
-\sec{daemon de monitoramento}
+\sec{Daemon de monitoramento}
 O daemon de monitoramento monitora os status da máquina na qual está rodando, seja uma máquina física ou um container docker, para esse fim é utilizada a biblioteca \myref{sec}{biblioteca psutil} que é a principal biblioteca Python quando se trata de monitoramento de hardware. O daemon utiliza também uma biblioteca feita para simplificar o tratamento de log,uma das funcionalidades contidas nesta biblioteca é a comunicação com o aglutinador de logs Logstash do\myref{sec}{elasticsearch monitoring stack} ,isso feito em cima da biblioteca python-logstash.\newline
 
 O arquivo de configuração do daemon é um json constituído de 2 partes, os parâmetros para se conectar ao Logstash e os dados que serão coletados da máquina local, esses dados coletados serão enviados para o servidor Logstash onde lá serão trabalhados. O daemon envia esses dados com um intervalo de 0.1 segundos, que é apenas passado para que não sejam enviados dados errados de cpu para o servidor de log, uma vez que é comum o erro de se enviar 0\% de uso de cpu caso as consultas sejam feitas muito rapidamente, mas poderia ser aumentado para diminuir o estresse na máquina que está rodando ele e diminuir um pouco o estresse do servidor de coleta de logs, que com as máquinas usadas não se provou necessário. Além é claro de diminuir a quantidade de dados no pós processamento de resultados descritos em \myref{sec}{processamento de resultados}
 
 %\section{ambiente de desenvolvimento}
 %\label{sec:ambiente de desenvolvimento}
-\sec{ambiente de desenvolvimento}
+\sec{Ambiente de desenvolvimento}
 O ambiente utilizado foi dividido em duas partes, programação local e remota. Na programação remota as execuções foram feitas em um servidor baseado em Raspberry PI 4 e na programação local foram feitas em duas máquinas diferentes, sendo computadores locais. A programação remota se provou bem útil quando houve a necessidade de troca de computador ou sistema operacional, facilitando ainda a implementação de um servidor unificado de análise de log pois era mais simples a comunicação entre o código executado e o servidor\myref{sec}{elasticsearch monitoring stack}.\newline
 
 Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da \myref{sec}{software de benchmark} , e ainda foi utilizada uma implementação de um algoritmo de processamento para  \myref{sec}{elasticsearch monitoring stack} com finalidade de gerar os gráficos e tabelas apresentadas neste trabalho. Os dois primeiros foram escolhidos dentre outros motivos por serem open-source e estarem disponíveis tanto para Linux quanto Windows, visto que ambos sistemas operacionais foram utilizados para o desenvolvimento de acordo com a necessidade.\newline
@@ -939,7 +939,7 @@ Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da \myref{s
 Para o controle de versão foi utilizado o Git, deixando registrado todo o histórico de alterações do programa, o que se mostrou bem útil para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código. Para os testes iniciais do código foram utilizados containers docker não limitados durante a etapa de implementação dos scripts do DBbench, que demandam a existência dos servidores dos bancos de dados sendo executados, ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados. A geração do banco de dados inicial, descrito em \myref{subsec}{sqlite}, foi feita completamente em um Raspberry Pi 4 com um pequeno overclock, essa geração foi feita durante alguns dias, visto que o \myref{sig}{SBC}, de acordo com \myref{sec}{testes de tempo}, consome menos energia e devido a sua configuração pré existente, possui um acesso headless mais simplificado que as outras máquinas utilizadas.
 
 
-\sec{processamento de resultados}
+\sec{Processamento de resultados}
 Os dados coletados pelo \myref{sec}{elasticsearch monitoring stack} foram extraídos para CSV, processados para eliminação de dados irrelevantes, mesmo que durante o processo de \myref{sec}{daemon de monitoramento}, apenas os dados selecionados fossem coletados, ainda existiam dados que posteriormente se provaram irrelevantes para os resultados deste trabalho.Após esse processamento inicial é usado um segundo processamento para eliminar duplicatas, e para separar em quatro arquivos diferentes os resultados, um para cada banco de dados em cada máquina. A última etapa é a plotagem dos gráficos utilizando a biblioteca altair que gera gráficos SVG que devido a sua natureza vetorial se mostraram de melhor manuseio já que mesmo aumentando o zoom ela não se distorcia,o que provou ser de grande valia, estas imagens são as inclusas dentro deste trabalho.\newline
 
 Ainda tem uma verificação manual para se certificar que os dados coletados estão corretamente associados ao servidor relativo a elas, isso resulta na certificação de que os dados antes de serem processados estejam corretamente identificados, o que é importante devido a forma como os dados são coletados e armazenados, principalmente os dados de tempo, que decidem semi-aleatoriamente qual a ordem que serão armazenados no array de tempos do arquivo json de resultados. Isso porque caso o índice 1 seja o amd ele se manterá o mesmo até o final da execução, o que ocorreu na maioria dos testes realizados, mas não em todos.\newline
@@ -951,16 +951,16 @@ Cada um sendo correspondente a uma interação. Após isso o algoritmo de proces
 
 %\chapter{problemas e erros}
 %\label{ch:problemas e erros}
-\ch{problemas e erros}
+\ch{Problemas e erros}
 aqui foram descritos os erros mais marcantes durante os processos necessários para a obtenção dos resultados.
 
-\sec{desenvolvimento do algorítimo}
+\sec{Desenvolvimento do algorítimo}
 Durante o desenvolvimento, vários tipos de erros aconteceram. Em praticamente todas as etapas de desenvolvimento do algoritmo erros marcantes ocorreram, os principais ocorreram durante a etapa de criação do sqlite, no processamento paralelo e na inserção dentro do banco de dados finais. Os dados relevantes das máquinas usadas para o desenvolvimento foram um ryzen 3200g com 16GB de RAM e ssd de 480GB e um i7 7500u com 8GB de RAM e ssd de 240GB.
 
-\subsec{erros da geração do sqlite}
+\subsec{Erros da geração do Sqlite}
 Durante a geração do sqlite vários problemas relacionados a geração ocorreram. Um deles fez com que a funcionalidade de seleção de múltiplos países na geração de dados tivesse que ser travada apenas para o Brasil, isso principalmente por que dos vários dados gerados, alguns causam problemas ao ser trocado o país. Como foi dito em \myref{sec}{biblioteca faker} existem vários parâmetros diferentes dependendo do país selecionado, o mais marcante desses dados no entanto é a geração de números de celular, visto que o brasil é um dos poucos países que possuem essa opção dentre os existentes na biblioteca. Apesar de não ser o único problema encontrado, existem também problemas com os parâmetros de geração de endereço e alguns poucos dados de informações pessoais. Todos esses erros podem facilmente ser corrigidos com tratamentos de erro internos em cada tipo, mas para os propósitos deste trabalho não se provaram proveitosos o bastante.\newline
 
-\subsec{erro do processamento paralelo de threads}
+\subsec{Erro do processamento paralelo de threads}
 Durante a etapa de processamento paralelo, seus problemas de desenvolvimento e erros se misturam com a etapa de inserção de dados no banco de dados final, pois ambos foram desenvolvidos simultaneamente, apesar de o processamento paralelo ter sido iniciado primeiro.\newline
 
 O processamento paralelo teve vários tipos de problemas,o primeiro problema marcante foi a implementação original dele. Originalmente foi pensado em utilizar a implementação de threads ao invés de subprocessos, isso porque as threads são mais fáceis de serem lidas caso ocorra um erro, isso por que os dados são comunicados diretamente pela classe queue, que é utilizada para se compartilhar dados em tempo real entre várias instâncias de processamento durante a execução de um programa Python.\newline
@@ -969,16 +969,16 @@ As palavras chave aqui são compartilhamento entre várias instâncias, isso que
 
 Esse erro de acordo com as documentações encontradas é devido ao compartilhamento de endereços de memória na linguagem c chamada "double free or corruption (out)". Esse erro ocorre quando se remove ou adiciona alguma variável ou índice de vetor de um processamento paralelo, devido a forma como a biblioteca de processamento paralelo lida com valores das operações para evitar execução dupla de algum valor isso é necessário. Essa situação não ocorre quando se utiliza a biblioteca Manager ao invés da Queue, porém essa biblioteca está associada ao processamento paralelo de subprocessos, por isso a migração de threads para subprocessos foi escolhida.\newline
 
-\subsec{erro do processamento paralelo de subprocessos daemon}
+\subsec{Erro do processamento paralelo de subprocessos daemon}
 Um dos problemas encontrados foi uma mensagem de erro chamada de "AssertionError: daemonic processes are not allowed to have children" esse erro impede que processos daemon tenham processos filhos, o que fez com que o processo de sub-processamento tivesse q ser convertido de daemon para um processo convencional, isso pode ser problemático quando se quer fazer um monitoramento do tempo de forma mais direta, isso pois no modo daemon é possível rodar um código enquanto aguarda a execução dos processos daemon serem terminadas, esse foi o método escolhido no final do desenvolvimento devido a modificação na forma como o processo que possui daemon foi implementado, sendo que apenas as threads filhas eram daemons, as threads principais, que são as onde o tempo é monitorado, foi utilizado o método de se esperar a execução de todos subprocessos terminarem e medir o tempo gasto pelo conjunto, onde essa thread retornava o tempo para a função que a chamou, o processo foi um pouco mais complexo de implementar que o previamente proposto, mas terminou com o mesmo resultado.\newline
 
-\subsec{rollback de dados no postgres}
+\subsec{Rollback de dados no postgres}
 Outro erro marcante foi o de tratamento de rollback nas operações do postgres, devido a forma como as operações dos bancos de dados foram geradas, nenhuma das operações além da inserção, é realmente válida, o que quer dizer que de acordo com os métodos de segurança e otimização do postgres é necessário executar um rollback após a sua execução para evitar problemas. Isso resulta entre outras coisas numa maior demora da execução do postgres quando dados considerados inválidos são executados e também numa maior necessidade de tratamento de erros na parte relacionada ao postgres da biblioteca \myref{subsec}{gerenciadorDeBD}, devido ao rollback necessário, durante a etapa de desenvolvimento foi necessário reformular os tratamentos de erro de várias formas para que apenas os erros que realmente necessitavam de rollback tivessem a operação executada, já que devido a hierarquia do tratamento de erro da biblioteca psycopg2, alguns erros que ocorriam eram entendidos como necessários de serem executados os rollback em vez do tratamento correto, principalmente o erro de timeout da conexão ou de conexão fechada. 
 
-\sec{erros dos testes finais}
+\sec{Erros dos testes finais}
 Durante a etapa de testes finais,ou seja,após a etapa de testes de desenvolvimento,foi utilizado um servidor baseado no FX-6300, utilizando 4GB de RAM e um HD mecânico de 160GB.
 
-\subsec{erro de leitura pela falta de velocidade de disco}
+\subsec{Erro de leitura pela falta de velocidade de disco}
 O HD mecânico da máquina dos testes finais possui velocidades limitadas pela sua tecnologia, SATA 2. Isso impactou de forma considerável a execução dos testes, pois mesmo com a possibilidade de serem feitos diversas leituras simultâneas no sqlite, mesmo sendo possível várias leituras simultâneas nesse método de armazenamento de dados, isso pois a latência entre a requisição da consulta e todo o processo lógico e físico da leitura causasse um time out ocasional na biblioteca sqlite. Uma solução para isso foi a substituição da mídia de armazenamento do arquivo sqlite, foi utilizado um pendrive Kingston 3.0 de 16GB, com velocidades de leitura superiores, de quase o dobro da velocidade, e latência muito inferior que a tecnologia SATA 2, após essa substituição não foi mais visto nenhum erro de timeout durante os testes.
 
 
@@ -986,7 +986,7 @@ O HD mecânico da máquina dos testes finais possui velocidades limitadas pela s
 %\label{ch: resultados}
 \ch{Resultados}
 
-\sec{resultados de inserção fracionada}
+\sec{Resultados de inserção fracionada}
 O resultado encontrado do primeiro teste de manipulação de bancos de dados, que é o teste de inserção contínua, onde foram inseridos de acordo com \myref{subsec}{teste de tempo de operação de inserção no BD}, esses dados são comprovadamente sem ocorrência de erros de acordo com o código descrito em \myref{sec}{geração de dados}, de acordo com os dados coletados pelo \myref{sec}{contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso, como descrito nos arquivos de logs anexos e na tabela \myref{tab}{resultados insercao fracionada}. Essa variação ocorre, no computador \myref{sig}{ARM} por ter mais núcleos físicos, portanto é mais complicado de ser avaliada a porcentagem de uso devido a forma como o docker distribui a carga de uso de cpu. Em relação ao uso de RAM, ele se manteve mais constante na arquitetura \myref{sig}{ARM}. O uso de RAM é bem menor que no \myref{sig}{AMD64}, nas duas arquiteturas a diferença do uso de RAM é de cerca de 5\%, onde no MariaDB a variação faz com que o uso de RAM seja ligeiramente maior no\myref{sig}{AMD64}. Para o postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{ARM} e 3Mbps para o amd. Já para o MariaDB é de 3.5Mbps para o \myref{sig}{ARM} e 9.5Mbps para o \myref{sig}{AMD64}.\newline
 
 levando em conta a descrição de \myref{ch}{testes}, essas variações das velocidades são provavelmente devido a otimizações das arquiteturas para cada banco de dados. já a velocidade de leitura de disco é praticamente 0\% o tempo todo, isso se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algoritmo de benchmark. \newline
@@ -1008,7 +1008,7 @@ A principal diferença identificada em relação aos testes além do previamente
 %lable
 %arquivo
 %caption
-\sec{resultados de operação completa fracionada}
+\sec{Resultados de operação completa fracionada}
 Ao contrário do que era esperado, os valores gerados pelo \myref{sec}{software de benchmark} geraram de forma igualmente distribuída, ou seja,os dados foram gerados com uma distribuição de aproximadamente 20\% para cada tipo de operação. Isso por que por algum motivo desconhecido as operações de tipo 5, como descrito em \myref{subsec}{tipos de dados gerados}, não foram gerados nenhuma vez durante os testes, fora isso todos os outros dados gerados ocorreram como o esperado, onde são feitas queries de seleção, pesquisa e inserção da forma como era esperada e as operações ocorreram como o esperado.\newline
 
 Um fator interessante a se destacar é que, apesar da distribuição de operações ter sido homogênea, o custo de uso de hardware não foi. Em certos momentos houve um grande uso de cpu, mas nunca fugindo muito dos valores apresentados em \myref{sec}{resultados de inserção fracionada}, e na maioria dos casos houve um maior uso de ram que o apresentado no dito teste, um fator a se destacar é o de que os primeiros ciclos de teste funciona da seguinte forma:
@@ -1057,6 +1057,7 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      REFERÊNCIAS                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{abntex2-modelo-references}
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -1067,9 +1068,10 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 % ---------------------------------------------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
 % ---------------------------------------------------------------------------------------------
-\appendix
+\apendices
 \ch{apendices relacionados ao teste completo}
 \sec{imagens}
+primeira linha dos resultados mostra o uso decpu,na segunda mostra o uso de ram e na terceira mostra o uso de disco
 \subsec{todos tempos}
 \apendicesvg{todos fracionada/todos tempos}{todos fracionada/todos tempos.svg}
 \pagebreak
@@ -1166,7 +1168,6 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 \pagebreak
 
 \sec{arquivos}
-%\fbox{\begin{minipage}{\textwidth}
 \fbox{\begin{minipage}{\textwidth}
 \subsec{logs todos mariadb_amd_processados}
 uso de ram\newline
@@ -1201,6 +1202,7 @@ uso de cpu\newline
 a faixa com mais ocorrencias de uso de cpu é de 10\newline
 o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
+\pagebreak
 
 \fbox{\begin{minipage}{\textwidth}
 \subsec{logs todos mariadb_armhf_processados}
@@ -1236,6 +1238,7 @@ uso de cpu\newline
 a faixa com mais ocorrencias de uso de cpu é de 20\newline
 o valor com mais ocorrencias de uso de cpu é 16\newline
 \end{minipage}}
+\pagebreak
 
 \fbox{\begin{minipage}{\textwidth}
 \subsec{logs todos postgres_amd_processados}
@@ -1271,7 +1274,7 @@ uso de cpu\newline
 a faixa com mais ocorrencias de uso de cpu é de 10\newline
 o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
-
+\pagebreak
 \fbox{\begin{minipage}{\textwidth}
 \subsec{logs todos postgres_armhf_processados}
  uso de ram\newline
@@ -1306,10 +1309,11 @@ uso de cpu\newline
 a faixa com mais ocorrencias de uso de cpu é de 20\newline
 o valor com mais ocorrencias de uso de cpu é 16\newline
 \end{minipage}}
-%\end{minipage}}
+\pagebreak
 
 \ch{apendices relacionados ao teste insercao}
 \sec{imagens}
+primeira linha dos resultados mostra o uso decpu,na segunda mostra o uso de ram e na terceira mostra o uso de disco
 \subsec{todos tempos}
 \apendicesvg{insercao fracionada/insercao tempos.svg}{insercao fracionada/insercao tempos.svg}
 \subsec{resultados insercao parte 0}
@@ -1317,6 +1321,7 @@ o valor com mais ocorrencias de uso de cpu é 16\newline
 \apendicesvg{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}
 \apendicesvg{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}
 \apendicesvg{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}
+\pagebreak
 
 \sec{arquivos}
 \fbox{\begin{minipage}{\textwidth}
@@ -1353,6 +1358,8 @@ uso de cpu\newline
 a faixa com mais ocorrencias de uso de cpu é de 10\newline
 o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
+\pagebreak
+
 \fbox{\begin{minipage}{\textwidth}
 \subsec{logs insercao mariadb_armhf_processados}
 uso de ram\newline
@@ -1387,6 +1394,8 @@ uso de cpu\newline
 a faixa com mais ocorrencias de uso de cpu é de 20\newline
 o valor com mais ocorrencias de uso de cpu é 16\newline
 \end{minipage}}
+\pagebreak
+
 \fbox{\begin{minipage}{\textwidth}
 \subsec{logs insercao postgres_amd_processados}
 uso de ram\newline
@@ -1421,6 +1430,8 @@ uso de cpu\newline
 a faixa com mais ocorrencias de uso de cpu é de 10\newline
 o valor com mais ocorrencias de uso de cpu é 09\newline
 \end{minipage}}
+\pagebreak
+
 \fbox{\begin{minipage}{\textwidth}
 \subsec{logs insercao postgres_armhf_processados}
 uso de ram\newline
@@ -1461,7 +1472,6 @@ o valor com mais ocorrencias de uso de cpu é 16\newline
 % ---------------------------------------------------------------------------------------------
 % Referências bibliográficas
 % ---------------------------------------------------------------------------------------------
-\bibliography{abntex2-modelo-references}
 
 % ---------------------------------------------------------------------------------------------
 % Glossário
