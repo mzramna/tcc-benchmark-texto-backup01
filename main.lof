@@ -1,0 +1,72 @@
+\babel@toc {brazil}{}\relax 
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {1}{\ignorespaces valores encontrados para o container mariadb para o 1 teste no artigo citado}}{11}{figure.2.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces valores encontrados para o container mysql para o 1 teste no artigo citado}}{12}{figure.2.2}%
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3}{\ignorespaces valores tempo benchmark inserção fracionada}}{48}{figure.6.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces valores tempo benchmark todas operações fracionadas}}{49}{figure.6.4}%
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {5}{\ignorespaces todos fracionada/todos tempos}}{52}{figure.A.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo0}}{53}{figure.A.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo0}}{53}{figure.A.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo0}}{53}{figure.A.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo0}}{53}{figure.A.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo1}}{54}{figure.A.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo1}}{54}{figure.A.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo1}}{54}{figure.A.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo1}}{54}{figure.A.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo2}}{55}{figure.A.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo2}}{55}{figure.A.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo2}}{55}{figure.A.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo2}}{55}{figure.A.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo3}}{56}{figure.A.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo3}}{56}{figure.A.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo3}}{56}{figure.A.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo3}}{56}{figure.A.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo4}}{57}{figure.A.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo4}}{57}{figure.A.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo4}}{57}{figure.A.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo4}}{57}{figure.A.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo5}}{58}{figure.A.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo5}}{58}{figure.A.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo5}}{58}{figure.A.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo5}}{58}{figure.A.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo6}}{59}{figure.A.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo6}}{59}{figure.A.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo6}}{59}{figure.A.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo6}}{59}{figure.A.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo7}}{60}{figure.A.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo7}}{60}{figure.A.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo7}}{60}{figure.A.36}%
+\contentsline {figure}{\numberline {37}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo7}}{60}{figure.A.37}%
+\contentsline {figure}{\numberline {38}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo8}}{61}{figure.A.38}%
+\contentsline {figure}{\numberline {39}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo8}}{61}{figure.A.39}%
+\contentsline {figure}{\numberline {40}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo8}}{61}{figure.A.40}%
+\contentsline {figure}{\numberline {41}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo8}}{61}{figure.A.41}%
+\contentsline {figure}{\numberline {42}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo9}}{62}{figure.A.42}%
+\contentsline {figure}{\numberline {43}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo9}}{62}{figure.A.43}%
+\contentsline {figure}{\numberline {44}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo9}}{62}{figure.A.44}%
+\contentsline {figure}{\numberline {45}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo9}}{62}{figure.A.45}%
+\contentsline {figure}{\numberline {46}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo10}}{63}{figure.A.46}%
+\contentsline {figure}{\numberline {47}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo10}}{63}{figure.A.47}%
+\contentsline {figure}{\numberline {48}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo10}}{63}{figure.A.48}%
+\contentsline {figure}{\numberline {49}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo10}}{63}{figure.A.49}%
+\contentsline {figure}{\numberline {50}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo11}}{64}{figure.A.50}%
+\contentsline {figure}{\numberline {51}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo11}}{64}{figure.A.51}%
+\contentsline {figure}{\numberline {52}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo11}}{64}{figure.A.52}%
+\contentsline {figure}{\numberline {53}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo11}}{64}{figure.A.53}%
+\contentsline {figure}{\numberline {54}{\ignorespaces todos fracionada/uso do container container_mariadb_amd_limpo12}}{65}{figure.A.54}%
+\contentsline {figure}{\numberline {55}{\ignorespaces todos fracionada/uso do container container_mariadb_armhf_limpo12}}{65}{figure.A.55}%
+\contentsline {figure}{\numberline {56}{\ignorespaces todos fracionada/uso do container container_postgres_amd_limpo12}}{65}{figure.A.56}%
+\contentsline {figure}{\numberline {57}{\ignorespaces todos fracionada/uso do container container_postgres_armhf_limpo12}}{65}{figure.A.57}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {58}{\ignorespaces insercao fracionada/insercao tempos.svg}}{73}{figure.B.58}%
+\contentsline {figure}{\numberline {59}{\ignorespaces insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}}{73}{figure.B.59}%
+\contentsline {figure}{\numberline {60}{\ignorespaces insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}}{74}{figure.B.60}%
+\contentsline {figure}{\numberline {61}{\ignorespaces insercao fracionada/uso do container container_postgres_amd_limpo0.svg}}{74}{figure.B.61}%
+\contentsline {figure}{\numberline {62}{\ignorespaces insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}}{74}{figure.B.62}%

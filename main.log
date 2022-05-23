@@ -1,0 +1,3847 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.19)  23 MAY 2022 09:58
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex --shell-escape
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-05-04> (./abntex2.cls
+Document Class: abntex2 2013/06/01 v1.7 abnTeX2
+(c:/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/memoir/memoir.cls
+Document Class: memoir 2022/02/20 v3.7q configurable book, report, article docu
+ment class
+(c:/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count185
+)
+\onelineskip=\skip47
+\lxvchars=\skip48
+\xlvchars=\skip49
+\@memcnta=\count186
+\c@@memmarkcntra=\count187
+
+(c:/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\stockheight=\skip50
+\stockwidth=\skip51
+\trimtop=\skip52
+\trimedge=\skip53
+
+(c:/texlive/2022/texmf-dist/tex/latex/memoir/mem12.clo
+File: mem12.clo 2010/10/19 v0.4b memoir class 12pt size option
+)
+\binding=\skip54
+\spinemargin=\skip55
+\foremargin=\skip56
+\uppermargin=\skip57
+\lowermargin=\skip58
+\headdrop=\skip59
+\normalrulethickness=\skip60
+\mem@maxheadheight=\skip61
+\mem@maxfootheight=\skip62
+\headwidth=\skip63
+\c@storedpagenumber=\count188
+\memPD=\dimen138
+\m@mabparskip=\skip64
+\thanksmarkwidth=\skip65
+\thanksmarksep=\skip66
+\droptitle=\skip67
+\c@book=\count189
+\c@part=\count190
+\c@chapter=\count191
+\c@section=\count192
+\c@subsection=\count193
+\c@subsubsection=\count194
+\c@paragraph=\count195
+\c@subparagraph=\count196
+\beforechapskip=\skip68
+\midchapskip=\skip69
+\afterchapskip=\skip70
+\chapindent=\skip71
+\bottomsectionskip=\skip72
+\secindent=\skip73
+\beforesecskip=\skip74
+\aftersecskip=\skip75
+\subsecindent=\skip76
+\beforesubsecskip=\skip77
+\aftersubsecskip=\skip78
+\subsubsecindent=\skip79
+\beforesubsubsecskip=\skip80
+\aftersubsubsecskip=\skip81
+\paraindent=\skip82
+\beforeparaskip=\skip83
+\afterparaskip=\skip84
+\subparaindent=\skip85
+\beforesubparaskip=\skip86
+\aftersubparaskip=\skip87
+\pfbreakskip=\skip88
+\c@@ppsavesec=\count197
+\c@@ppsaveapp=\count198
+\ragrparindent=\dimen139
+\everylistparindent=\dimen140
+\parsepi=\skip89
+\topsepi=\skip90
+\itemsepi=\skip91
+\parsepii=\skip92
+\topsepii=\skip93
+\topsepiii=\skip94
+\itemsepii=\skip95
+\itemsepiii=\skip96
+\partopsepii=\skip97
+\partopsepiii=\skip98
+\m@msavetopsep=\skip99
+\m@msavepartopsep=\skip100
+\@enLab=\toks16
+\abstitleskip=\skip101
+\absleftindent=\skip102
+\abs@leftindent=\dimen141
+\absrightindent=\skip103
+\absparindent=\skip104
+\absparsep=\skip105
+\c@vslineno=\count199
+\c@poemline=\count266
+\c@modulo@vs=\count267
+\c@memfvsline=\count268
+\vleftskip=\skip106
+\vrightskip=\skip107
+\stanzaskip=\skip108
+\versewidth=\skip109
+\vgap=\skip110
+\vindent=\skip111
+\vleftmargin=\dimen142
+\c@verse=\count269
+\c@chrsinstr=\count270
+\beforepoemtitleskip=\skip112
+\afterpoemtitleskip=\skip113
+\c@poem=\count271
+\beforePoemTitleskip=\skip114
+\midPoemTitleskip=\skip115
+\afterPoemTitleskip=\skip116
+
+(c:/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen143
+\ar@mcellbox=\box50
+\extrarowheight=\dimen144
+\NC@list=\toks17
+\extratabsurround=\skip117
+\backup@length=\skip118
+\ar@cellbox=\box51
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/delarray.sty
+Package: delarray 2014/10/28 v1.01 array delimiter package (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen145
+\TX@old@table=\dimen146
+\TX@old@col=\dimen147
+\TX@target=\dimen148
+\TX@delta=\dimen149
+\TX@cols=\count272
+\TX@ftn=\toks18
+)
+\heavyrulewidth=\dimen150
+\lightrulewidth=\dimen151
+\cmidrulewidth=\dimen152
+\belowrulesep=\dimen153
+\belowbottomsep=\dimen154
+\aboverulesep=\dimen155
+\abovetopsep=\dimen156
+\cmidrulesep=\dimen157
+\cmidrulekern=\dimen158
+\defaultaddspace=\dimen159
+\@cmidla=\count273
+\@cmidlb=\count274
+\@aboverulesep=\dimen160
+\@belowrulesep=\dimen161
+\@thisruleclass=\count275
+\@lastruleclass=\count276
+\@thisrulewidth=\dimen162
+\ctableftskip=\skip119
+\ctabrightskip=\skip120
+\abovecolumnspenalty=\count277
+\@linestogo=\count278
+\@cellstogo=\count279
+\@cellsincolumn=\count280
+\crtok=\toks19
+\@mincolumnwidth=\dimen163
+\c@newflo@tctr=\count281
+\mem@margin@floatbox=\box52
+\@contcwidth=\skip121
+\@contindw=\skip122
+\abovecaptionskip=\skip123
+\belowcaptionskip=\skip124
+\subfloattopskip=\skip125
+\subfloatcapskip=\skip126
+\subfloatcaptopadj=\skip127
+\subfloatbottomskip=\skip128
+\subfloatlabelskip=\skip129
+\subfloatcapmargin=\dimen164
+\c@@contsubnum=\count282
+\m@mscap@capbox=\box53
+\m@mscap@fbox=\box54
+\sidecapsep=\dimen165
+\sidecapwidth=\dimen166
+\m@m@tempdima=\dimen167
+\m@mscapraise=\dimen168
+\sidecapraise=\dimen169
+\m@mscapmainwidth=\dimen170
+\m@mscaplkern=\dimen171
+\beforeepigraphskip=\skip130
+\afterepigraphskip=\skip131
+\epigraphwidth=\skip132
+\epigraphrule=\skip133
+LaTeX Info: Redefining \em on input line 7655.
+LaTeX Info: Redefining \emph on input line 7663.
+\tocentryskip=\skip134
+\tocbaseline=\skip135
+\cftparskip=\skip136
+\cftbeforebookskip=\skip137
+\cftbookindent=\dimen172
+\cftbooknumwidth=\dimen173
+\cftbeforepartskip=\skip138
+\cftpartindent=\skip139
+\cftpartnumwidth=\skip140
+\cftbeforechapterskip=\skip141
+\cftchapterindent=\skip142
+\cftchapternumwidth=\skip143
+\cftbeforesectionskip=\skip144
+\cftsectionindent=\skip145
+\cftsectionnumwidth=\skip146
+\cftbeforesubsectionskip=\skip147
+\cftsubsectionindent=\skip148
+\cftsubsectionnumwidth=\skip149
+\cftbeforesubsubsectionskip=\skip150
+\cftsubsubsectionindent=\skip151
+\cftsubsubsectionnumwidth=\skip152
+\cftbeforeparagraphskip=\skip153
+\cftparagraphindent=\skip154
+\cftparagraphnumwidth=\skip155
+\cftbeforesubparagraphskip=\skip156
+\cftsubparagraphindent=\skip157
+\cftsubparagraphnumwidth=\skip158
+\prechapterprecisshift=\dimen174
+\c@maxsecnumdepth=\count283
+\bibindent=\dimen175
+\bibitemsep=\skip159
+\indexcolsep=\skip160
+\indexrule=\skip161
+\indexmarkstyle=\toks20
+\@indexbox=\insert252
+\glossarycolsep=\dimen176
+\glossaryrule=\dimen177
+\sideparvshift=\skip162
+\sideins=\insert251
+\sidebartopsep=\skip163
+\sidebarhsep=\skip164
+\sidebarvsep=\skip165
+\sidebarwidth=\skip166
+\footmarkwidth=\skip167
+\footmarksep=\skip168
+\footparindent=\skip169
+\footinsdim=\skip170
+\footinsv@r=\insert250
+\@mpfootinsv@r=\insert249
+\m@m@k=\count284
+\m@m@h=\dimen178
+\m@mipn@skip=\skip171
+\sidefootins=\insert248
+\sidefootadjust=\skip172
+\sidefootheight=\skip173
+\sidefoothsep=\skip174
+\sidefootvsep=\skip175
+\sidefootwidth=\skip176
+\m@mdownsf=\skip177
+\c@sidefootnote=\count285
+\sidefootmarkwidth=\skip178
+\sidefootmarksep=\skip179
+\sidefootparindent=\skip180
+\c@pagenote=\count286
+\c@pagenoteshadow=\count287
+\mem@pn@lastkern=\skip181
+\every@verbatim=\toks21
+\afterevery@verbatim=\toks22
+\verbatim@line=\toks23
+\tab@position=\count288
+\verbatim@in@stream=\read2
+\verbatimindent=\skip182
+\verbatim@out=\write3
+\bvboxsep=\skip183
+\c@memfbvline=\count289
+\c@bvlinectr=\count290
+\bvnumlength=\skip184
+\fb@frw=\dimen179
+\fb@frh=\dimen180
+\FrameRule=\dimen181
+\FrameSep=\dimen182
+\c@cp@cntr=\count291
+\c@ism@mctr=\count292
+\c@xsm@mctr=\count293
+\c@csm@mctr=\count294
+\c@ksm@mctr=\count295
+\c@xksm@mctr=\count296
+\c@cksm@mctr=\count297
+\c@msm@mctr=\count298
+\c@xmsm@mctr=\count299
+\c@cmsm@mctr=\count300
+\c@bsm@mctr=\count301
+\c@workm@mctr=\count302
+\c@sheetsequence=\count303
+\c@lastsheet=\count304
+\c@lastpage=\count305
+
+(c:/texlive/2022/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
+)
+\c@figure=\count306
+\c@lofdepth=\count307
+\cftbeforefigureskip=\skip185
+\cftfigureindent=\skip186
+\cftfigurenumwidth=\skip187
+\c@table=\count308
+\c@lotdepth=\count309
+\cftbeforetableskip=\skip188
+\cfttableindent=\skip189
+\cfttablenumwidth=\skip190
+Package abstract [2008/07/23] emulated by memoir.
+Package appendix [2008/07/23] emulated by memoir.
+Package booktabs [2016/05/16] emulated by memoir.
+Package ccaption [2008/07/23] emulated by memoir.
+Package changepage [2008/07/23] emulated by memoir.
+Package chngcntr [2008/07/23] emulated by memoir.
+Package chngpage [2008/07/23] emulated by memoir.
+Package crop emulated by memoir.
+Package enumerate [2008/07/23] emulated by memoir.
+Package epigraph [2008/07/23] emulated by memoir.
+Package ifmtarg [2008/07/23] emulated by memoir.
+Package index [2008/07/23] emulated by memoir.
+Package makeidx [2008/07/23] emulated by memoir.
+Package moreverb [2008/07/23] emulated by memoir.
+Package needspace [2008/07/23] emulated by memoir.
+Package newfile [2008/07/23] emulated by memoir.
+Package nextpage [2008/07/23] emulated by memoir.
+Package pagenote [2008/07/23] emulated by memoir.
+Package parskip [2008/07/23] emulated by memoir.
+Package patchcmd [2008/07/23] emulated by memoir.
+Package setspace [2008/07/23] emulated by memoir.
+Package shortvrb [2008/07/23] emulated by memoir.
+Package showidx [2008/07/23] emulated by memoir.
+Package titleref [2008/07/23] emulated by memoir.
+Package titling [2008/07/23] emulated by memoir.
+Package tocbibind [2008/07/23] emulated by memoir.
+Package tocloft [2008/07/23] emulated by memoir.
+Package tocvsec2 [2008/07/23] emulated by memoir.
+Package verbatim [2008/07/23] emulated by memoir.
+Package verse [2008/07/23] emulated by memoir.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2022-05-17 v7.00q Hypertext links for LaTeX
+
+(c:/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+(c:/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(c:/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(c:/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+))
+\c@section@level=\count310
+)
+\@linkdim=\dimen183
+\Hy@linkcounter=\count311
+\Hy@pagecounter=\count312
+
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2022-05-17 v7.00q Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(c:/texlive/2022/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count313
+
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2022-05-17 v7.00q Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4139.
+Package hyperref Info: Link nesting OFF on input line 4144.
+Package hyperref Info: Hyper index ON on input line 4147.
+Package hyperref Info: Plain pages OFF on input line 4154.
+Package hyperref Info: Backreferencing OFF on input line 4159.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4385.
+\c@Hy@tempcnt=\count314
+
+(c:/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4723.
+\XeTeXLinkMargin=\dimen184
+
+(c:/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(c:/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count315
+\Field@Width=\dimen185
+\Fld@charsize=\dimen186
+Package hyperref Info: Hyper figures OFF on input line 6001.
+Package hyperref Info: Link nesting OFF on input line 6006.
+Package hyperref Info: Hyper index ON on input line 6009.
+Package hyperref Info: backreferencing OFF on input line 6016.
+Package hyperref Info: Link coloring OFF on input line 6021.
+Package hyperref Info: Link coloring with OCG OFF on input line 6026.
+Package hyperref Info: PDF/A mode OFF on input line 6031.
+LaTeX Info: Redefining \ref on input line 6078.
+LaTeX Info: Redefining \pageref on input line 6078.
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count316
+\c@Item=\count317
+\c@Hfootnote=\count318
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2022-05-17 v7.00q Hyperref driver for pdfTeX
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count319
+\c@bookmark@seq@number=\count320
+
+(c:/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(c:/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip191
+)
+(c:/texlive/2022/texmf-dist/tex/latex/memoir/memhfixc.sty
+Package: memhfixc 2021/06/16 v1.19 nameref/hyperref package fixes for memoir cl
+ass
+
+Redoing nameref's sectioning
+Redoing nameref's label
+LaTeX Info: Redefining \nameref on input line 102.
+\c@memhycontfloat=\count321
+\c@Hpagenote=\count322
+) (c:/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+
+(c:/texlive/2022/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count323
+))
+(c:/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/04/30 3.74 The Babel package
+\babel@savecnt=\count324
+\U@D=\dimen187
+\l@unhyphenated=\language3
+
+(c:/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read3
+\bbl@dirlevel=\count325
+
+(c:/texlive/2022/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+)
+(c:/texlive/2022/texmf-dist/tex/generic/babel-portuges/brazil.ldf
+Language: portuges 2021/07/09 v1.2t Portuguese support from the babel system
+
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language 'Portuguese' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 53.
+
+Package babel Info: Hyphen rules for 'portuges' set to \l@english
+(babel)             (\language0). Reported on input line 54.
+Package babel Info: Hyphen rules for 'brazil' set to \l@english
+(babel)             (\language0). Reported on input line 111.
+Package babel Info: Making " an active character on input line 143.
+)) (c:/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip192
+\enit@outerparindent=\dimen188
+\enit@toks=\toks25
+\enit@inbox=\box55
+\enit@count@id=\count326
+\enitdp@description=\count327
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count328
+\calc@Bcount=\count329
+\calc@Adimen=\dimen189
+\calc@Bdimen=\dimen190
+\calc@Askip=\skip193
+\calc@Bskip=\skip194
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count330
+\calc@Cskip=\skip195
+)
+
+******************************************************
+Stock height and width: 845.04684pt by 597.50787pt
+Top and edge trims: 0pt and 0pt
+Page height and width: 845.04684pt by 597.50787pt
+Text height and width: 708pt by 455pt
+Spine and edge margins: 85.35826pt and 56.9055pt
+Upper and lower margins: 85.35826pt and 51.68858pt
+Headheight and headsep: 14.5pt and 19.8738pt
+Footskip: 30pt
+Columnsep and columnseprule: 10pt and 0pt
+Marginparsep and marginparwidth: 7pt and 42.9055pt
+Sidecapsep and sidecapwidth: 7pt and 42pt
+Sidebarhsep and sidebarwidth: 7pt and 42pt
+Sidebarvsep and sidebartopsep: 14.5pt and 0pt
+Sidebarheight: 590.14995pt
+Sidefoothsep and sidefootwidth: 7pt and 42pt
+Sidefootvsep and sidefootheight: 14.5pt and 590.14995pt
+******************************************************
+
+\c@abntex@bookmarkcounter=\count331
+\chapternamenumlength=\skip196
+\ABNTEXcitacaorecuo=\skip197
+\c@alineasi=\count332
+\c@alineasii=\count333
+\enitdp@alineas=\count334
+\c@subalineasi=\count335
+\enitdp@subalineas=\count336
+\c@incisosi=\count337
+\enitdp@incisos=\count338
+\ABNTEXsignwidth=\skip198
+\ABNTEXsignthickness=\skip199
+\ABNTEXsignskip=\skip256
+) (c:/texlive/2022/texmf-dist/tex/latex/cmap/cmap.sty
+Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
+)
+(c:/texlive/2022/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+(c:/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+<<t1.cmap>>)
+(c:/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks26
+\inpenc@posthook=\toks27
+)
+(c:/texlive/2022/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen191
+\Gin@req@width=\dimen192
+)
+(c:/texlive/2022/texmf-dist/tex/latex/underscore/underscore.sty
+Package: underscore 2006/09/13
+LaTeX Info: Redefining \_ on input line 42.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks28
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count339
+\lst@gtempboxa=\box56
+\lst@token=\toks29
+\lst@length=\count340
+\lst@currlwidth=\dimen193
+\lst@column=\count341
+\lst@pos=\count342
+\lst@lostspace=\dimen194
+\lst@width=\dimen195
+\lst@newlines=\count343
+\lst@lineno=\count344
+\lst@maxwidth=\dimen196
+
+(c:/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count345
+\lst@skipnumbers=\count346
+\lst@framebox=\box57
+)
+(c:/texlive/2022/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(c:/texlive/2022/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count347
+\mult@box=\box58
+\multicol@leftmargin=\dimen197
+\c@unbalance=\count348
+\c@collectmore=\count349
+\doublecol@number=\count350
+\multicoltolerance=\count351
+\multicolpretolerance=\count352
+\full@width=\dimen198
+\page@free=\dimen199
+\premulticols=\dimen256
+\postmulticols=\dimen257
+\multicolsep=\skip257
+\multicolbaselineskip=\skip258
+\partial@page=\box59
+\last@line=\box60
+\maxbalancingoverflow=\dimen258
+\mult@rightbox=\box61
+\mult@grightbox=\box62
+\mult@firstbox=\box63
+\mult@gfirstbox=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\c@minrows=\count353
+\c@columnbadness=\count354
+\c@finalcolumnbadness=\count355
+\last@try=\dimen259
+\multicolovershoot=\dimen260
+\multicolundershoot=\dimen261
+\mult@nat@firstbox=\box101
+\colbreak@box=\box102
+\mc@col@check@num=\count356
+)
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip259
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks30
+\ex@=\dimen262
+))
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen263
+)
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count357
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count358
+\leftroot@=\count359
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count360
+\DOTSCASE@=\count361
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box103
+\strutbox@=\box104
+\big@size=\dimen264
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count362
+\c@MaxMatrixCols=\count363
+\dotsspace@=\muskip17
+\c@parentequation=\count364
+\dspbrk@lvl=\count365
+\tag@help=\toks31
+\row@=\count366
+\column@=\count367
+\maxfields@=\count368
+\andhelp@=\toks32
+\eqnshift@=\dimen265
+\alignsep@=\dimen266
+\tagshift@=\dimen267
+\tagwidth@=\dimen268
+\totwidth@=\dimen269
+\lineht@=\dimen270
+\@envbody=\toks33
+\multlinegap=\skip260
+\multlinetaggap=\skip261
+\mathdisplay@stack=\toks34
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count369
+\float@exts=\toks35
+\float@box=\box105
+\@float@everytoks=\toks36
+\@floatcapt=\box106
+)
+(c:/texlive/2022/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2022/05/01 v3.36 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2022/05/01 v3.36 KOMA-Script package (file load hooks)
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2022/05/01 v3.36 KOMA-Script package (using LaTeX hooks)
+
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2022/05/01 v3.36 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\c@svg@param@lastpage=\count370
+\svg@box=\box107
+\c@svg@param@currpage=\count371
+)
+(c:/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+LaTeX Info: Redefining \color on input line 711.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 2021/01/29 v2.0g defines alltt environment
+)
+(c:/texlive/2022/texmf-dist/tex/latex/filecontents/filecontents.sty
+Package: filecontents 2019/09/20 v1.5 Create an external file from within a LaT
+eX document
+
+
+Package filecontents Warning: This package is obsolete. Disabling it and
+(filecontents)                passing control to the filecontents environment
+(filecontents)                defined by the LaTeX kernel.
+
+) (c:/texlive/2022/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
+
+(c:/texlive/2022/texmf-dist/tex/latex/import/import.sty
+Package: import 2020/04/01  v 6.2
+))
+(c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty
+(c:/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-05-04 L3 programming layer (loader) 
+
+(c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count372
+\l__pdf_internal_box=\box108
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count373
+\l__lipsum_a_int=\count374
+\l__lipsum_b_int=\count375
+
+(c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/backref.sty
+Package: backref 2021/02/04 v1.41 Bibliographical back referencing
+) (./abntex2cite.sty
+(./abntex2abrev.sty)
+\minimumbiblabelwidth=\skip262
+\ABCIauxlen=\skip263
+\c@ABCIaux=\count376
+\c@ABCImax=\count377
+\biblabelsep=\skip264
+LaTeX Info: Redefining \newblock on input line 646.
+LaTeX Info: Redefining \cite on input line 673.
+\ABCItoken=\toks37
+) (c:/texlive/2022/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip265
+\LTright=\skip266
+\LTpre=\skip267
+\LTpost=\skip268
+\LTchunksize=\count378
+\LTcapwidth=\dimen271
+\LT@head=\box109
+\LT@firsthead=\box110
+\LT@foot=\box111
+\LT@lastfoot=\box112
+\LT@gbox=\box113
+\LT@cols=\count379
+\LT@rows=\count380
+\c@LT@tables=\count381
+\c@LT@chunks=\count382
+\LT@p@ftn=\toks38
+)
+Package hyperref Info: Option `colorlinks' set `false' on input line 66.
+Package hyperref Info: Option `final' set `true' on input line 67.
+\main@idxfile=\write4
+\openout4 = `main.idx'.
+
+
+Writing index file main.idx 
+
+LaTeX Warning: Unused global option(s):
+    [brasil].
+
+(./main.aux
+
+LaTeX Warning: Label `sec:imagens' multiply defined.
+
+
+LaTeX Warning: Label `subsec:todos tempos' multiply defined.
+
+
+LaTeX Warning: Label `sec:arquivos' multiply defined.
+
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+Package hyperref Info: Link coloring OFF on input line 155.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 155.
+ (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count383
+\scratchdimen=\dimen272
+\scratchbox=\box114
+\nofMPsegments=\count384
+\nofMParguments=\count385
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count386
+\MPscratchDim=\dimen273
+\MPnumerator=\count387
+\makeMPintoPDFobject=\count388
+\everyMPtoPDFconversion=\toks40
+) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count389
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 17
+3.
+
+(c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+) [1
+
+{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]<<ot1.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 182
+.
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 182
+.
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.182 
+       [1
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+
+Overfull \hbox (16.44804pt too wide) in paragraph at lines 212--215
+[]  [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--223
+
+ []
+
+[2] [3
+
+] [4
+
+] [5
+
+
+] [6
+
+] [7
+
+] (./main.lof [8
+
+]
+Overfull \hbox (9.57048pt too wide) in paragraph at lines 69--69
+ [][] [][]\T1/cmr/m/n/12 insercao fra-cionada/uso do con-tainer con-tainer_-mar
+i-adb_-amd_-limpo0.svg[] []  
+ []
+
+
+Overfull \hbox (17.72821pt too wide) in paragraph at lines 70--70
+ [][] [][]\T1/cmr/m/n/12 insercao fra-cionada/uso do con-tainer con-tainer_-mar
+i-adb_-armhf_-limpo0.svg[] []  
+ []
+
+[9]
+Overfull \hbox (9.37468pt too wide) in paragraph at lines 71--71
+ [][] [][]\T1/cmr/m/n/12 insercao fra-cionada/uso do con-tainer con-tainer_-pos
+t-gres_-amd_-limpo0.svg[] []  
+ []
+
+
+Overfull \hbox (17.53241pt too wide) in paragraph at lines 72--72
+ [][] [][]\T1/cmr/m/n/12 insercao fra-cionada/uso do con-tainer con-tainer_-pos
+t-gres_-armhf_-limpo0.svg[] []  
+ []
+
+) [10] (./main.lot) [11
+
+]
+\c@sig=\count390
+\c@ch=\count391
+\c@sec=\count392
+LaTeX Info: Redefining \sec on input line 403.
+\c@subsec=\count393
+\c@anexo=\count394
+\c@imagem=\count395
+ [12
+
+
+] (./main.toc [13
+
+] [14] [15])
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.495 \chapter
+              *{Introdução} [1]
+Underfull \hbox (badness 10000) in paragraph at lines 499--505
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.506 \ch{Fundamentação teórica}
+                                    [2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.525 
+       [3
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 526--530
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.534 
+       [4]
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.542  \item A
+              RMv8,que foi a primeira implementação oficial das instruçõ...
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 547--550
+
+ []
+
+
+LaTeX Warning: Citation `dockerdoc' on page 6 undefined on input line 554.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.555 
+       [6]
+Underfull \hbox (badness 10000) in paragraph at lines 557--560
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.562 \subsec{Dockerfile}
+                          [7]
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 566--568
+
+ []
+
+
+LaTeX Warning: Citation `dockercomposedoc' on page 8 undefined on input line 57
+2.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--578
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.578 
+       [8]
+
+LaTeX Warning: Citation `portainer' on page 9 undefined on input line 582.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--583
+
+ []
+
+
+LaTeX Warning: Citation `faker' on page 9 undefined on input line 591.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--592
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.592 
+       [9]
+
+LaTeX Warning: Citation `psutil' on page 10 undefined on input line 596.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.600 \ch{Trabalhos Relacionados}
+                                  [10]
+
+LaTeX Warning: Citation `MariaDBMySQLOLTP' on page 11 undefined on input line 6
+04.
+
+<./imagens/artigos relacionados/oltp mariadb.png, id=581, 715.92468pt x 304.889
+07pt>
+File: ./imagens/artigos relacionados/oltp mariadb.png Graphic file (type png)
+<use ./imagens/artigos relacionados/oltp mariadb.png>
+Package pdftex.def Info: ./imagens/artigos relacionados/oltp mariadb.png  used 
+on input line 605.
+(pdftex.def)             Requested size: 455.0pt x 193.76988pt.
+<./imagens/artigos relacionados/oltp mysql.png, id=583, 697.10437pt x 317.68687
+pt>
+File: ./imagens/artigos relacionados/oltp mysql.png Graphic file (type png)
+<use ./imagens/artigos relacionados/oltp mysql.png>
+Package pdftex.def Info: ./imagens/artigos relacionados/oltp mysql.png  used on
+ input line 606.
+(pdftex.def)             Requested size: 455.0pt x 207.35202pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--608
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--608
+
+ []
+
+
+LaTeX Warning: Citation `DockerSwarmsocmpi' on page 11 undefined on input line 
+614.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.615 
+       [11
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.615 
+       <./imagens/artigos relacionados/oltp mariadb.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.615 
+       [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.615 
+       <./imagens/artigos relacionados/oltp mysql.png>]
+
+LaTeX Warning: Citation `armvsintel' on page 13 undefined on input line 623.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--625
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.625 
+       [13]
+Overfull \hbox (3.7487pt too wide) in paragraph at lines 627--627
+[]\T1/phv/m/n/17.28 KVM, Xen and Docker: a per-for-mance anal-y-sis for ARM
+ []
+
+
+LaTeX Warning: Citation `KVMXenDocker' on page 14 undefined on input line 634.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.635 
+       [14]
+
+LaTeX Warning: Citation `rpiplatformreplicable' on page 15 undefined on input l
+ine 641.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--643
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.643 
+       [15]
+
+LaTeX Warning: Citation `hs06' on page 16 undefined on input line 647.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--649
+
+ []
+
+[16] [17]
+
+LaTeX Warning: Citation `opipc' on page 18 undefined on input line 653.
+
+
+LaTeX Warning: Citation `h3' on page 18 undefined on input line 653.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+
+ []
+
+
+LaTeX Warning: Citation `G405' on page 18 undefined on input line 655.
+
+
+LaTeX Warning: Citation `E1' on page 18 undefined on input line 655.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+
+ []
+
+[18
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 678--680
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 689--691
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--697
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 713--715
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
+
+ []
+
+
+LaTeX Warning: Reference `subsec:Teste de tempo de inserção no BD' on page 24
+ undefined on input line 734.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 747--749
+
+ []
+
+
+LaTeX Warning: Citation `logging' on page 26 undefined on input line 758.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 758--760
+
+ []
+
+[26
+
+]
+Overfull \hbox (13.49588pt too wide) in paragraph at lines 761--762
+[]\T1/cmr/m/n/12 As men-sagens de erro s�o geren-ci-adas de forma sim-pli-fi-ca
+da,onde ex-iste um par�metro
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 763--764
+
+ []
+
+
+LaTeX Warning: Citation `threading' on page 27 undefined on input line 771.
+
+
+LaTeX Warning: Citation `multiprocessing' on page 27 undefined on input line 77
+1.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 777--778
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
+
+ []
+
+
+LaTeX Warning: Reference `sec:Biblioteca psutil' on page 29 undefined on input 
+line 784.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 789--790
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 793--794
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 806--808
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--815
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 816--818
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 826--828
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 833--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 837--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 852--853
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 854--855
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 862--863
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 880--881
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 882--883
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 884--885
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 889--891
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--904
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 905--906
+
+ []
+
+[36]
+
+LaTeX Warning: Reference `sec:Biblioteca faker' on page 37 undefined on input l
+ine 907.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--908
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 926--927
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 928--930
+
+ []
+
+[38]
+
+LaTeX Warning: Reference `sec:Biblioteca psutil' on page 39 undefined on input 
+line 936.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 936--937
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 943--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--946
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 951--952
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 953--954
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 955--956
+
+ []
+
+[41] [42]
+
+LaTeX Warning: Reference `sec:Biblioteca faker' on page 43 undefined on input l
+ine 969.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 969--970
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--973
+
+ []
+
+[43
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 974--975
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 976--977
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 978--979
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--982
+
+ []
+
+[44] [45] [46]
+
+LaTeX Warning: Reference `tab:Resultados insercao fracionada' on page 47 undefi
+ned on input line 998.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 998--999
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1000--1001
+
+ []
+
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//insercao fracionada/insercao tempos.svg' o
+n input line 1004.
+
+Package svg Info: Last page of `./svg-inkscape/insercao tempos_svg-tex.pdf' is 
+1 on input line 1004.
+(./svg-inkscape/insercao tempos_svg-tex.pdf_tex
+<./svg-inkscape/insercao tempos_svg-tex.pdf, id=1130, page=1, 1445.4pt x 220.45
+8pt>
+File: ./svg-inkscape/insercao tempos_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/insercao tempos_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/insercao tempos_svg-tex.pdf , page1 use
+d on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 69.39754pt.
+) [47
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1021
+
+ []
+
+[48
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6.3}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1025 \item
+             A maior parte, cerca de 60\% dos dados, foi de inserção e o r...
+ <./svg-inkscape/insercao tempos_svg-tex.pdf>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/todos tempos.svg' on inpu
+t line 1029.
+
+Package svg Info: Last page of `./svg-inkscape/todos tempos_svg-tex.pdf' is 1 o
+n input line 1029.
+(./svg-inkscape/todos tempos_svg-tex.pdf_tex
+<./svg-inkscape/todos tempos_svg-tex.pdf, id=1182, page=1, 1445.4pt x 220.458pt
+>
+File: ./svg-inkscape/todos tempos_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/todos tempos_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/todos tempos_svg-tex.pdf , page1 used o
+n input line 56.
+(pdftex.def)             Requested size: 455.0pt x 69.39754pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 1031--1035
+
+ []
+
+[49
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6.4}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1050 \ch{Conclusão}
+                       <./svg-inkscape/todos tempos_svg-tex.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1051--1052
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1056
+
+ []
+
+[50
+
+]
+No file main.bbl.
+[51]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/todos tempos.svg' on inpu
+t line 1085.
+
+Package svg Info: Last page of `./svg-inkscape/todos tempos_svg-tex.pdf' is 1 o
+n input line 1085.
+(./svg-inkscape/todos tempos_svg-tex.pdf_tex
+File: ./svg-inkscape/todos tempos_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/todos tempos_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/todos tempos_svg-tex.pdf , page1 used o
+n input line 56.
+(pdftex.def)             Requested size: 455.0pt x 69.39754pt.
+) [52
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.5}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1087 
+       ]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo0.svg' on input line 1089.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo0_svg-tex.pdf' is 1 on input line 1089.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.pdf, id=1
+261, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo0.svg' on input line 1090.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo0_svg-tex.pdf' is 1 on input line 1090.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pdf, id
+=1263, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo0.svg' on input line 1091.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo0_svg-tex.pdf' is 1 on input line 1091.
+(./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf, id=
+1265, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo0.svg' on input line 1092.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo0_svg-tex.pdf' is 1 on input line 1092.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.pdf, i
+d=1267, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [53
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.6}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1094 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.7}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1094 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.8}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1094 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.9}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1094 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo0_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo0_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo0_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo1.svg' on input line 1096.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo1_svg-tex.pdf' is 1 on input line 1096.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo1_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo1_svg-tex.pdf, id=1
+842, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo1_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo1_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo1_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo1.svg' on input line 1097.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo1_svg-tex.pdf' is 1 on input line 1097.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo1_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo1_svg-tex.pdf, id
+=1844, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo1_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo1_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo1_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo1.svg' on input line 1098.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo1_svg-tex.pdf' is 1 on input line 1098.
+(./svg-inkscape/uso do container container_postgres_amd_limpo1_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo1_svg-tex.pdf, id=
+1846, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo1_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo1_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo1_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo1.svg' on input line 1099.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo1_svg-tex.pdf' is 1 on input line 1099.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo1_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo1_svg-tex.pdf, i
+d=1848, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo1_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo1_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo1_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [54
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.10})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1101 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.11})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1101 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.12})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1101 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.13})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1101 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo1_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo1_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo1_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo1_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo1_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo1_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo1_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo2.svg' on input line 1103.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo2_svg-tex.pdf' is 1 on input line 1103.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo2_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo2_svg-tex.pdf, id=2
+420, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo2_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo2_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo2.svg' on input line 1104.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo2_svg-tex.pdf' is 1 on input line 1104.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo2_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo2_svg-tex.pdf, id
+=2422, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo2_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo2_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo2.svg' on input line 1105.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo2_svg-tex.pdf' is 1 on input line 1105.
+(./svg-inkscape/uso do container container_postgres_amd_limpo2_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo2_svg-tex.pdf, id=
+2424, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo2_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo2_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo2.svg' on input line 1106.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo2_svg-tex.pdf' is 1 on input line 1106.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo2_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo2_svg-tex.pdf, i
+d=2426, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo2_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo2_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [55
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.14})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1108 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.15})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1108 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.16})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1108 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.17})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1108 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo2_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo2_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo2_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo2_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo3.svg' on input line 1110.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo3_svg-tex.pdf' is 1 on input line 1110.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo3_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo3_svg-tex.pdf, id=2
+995, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo3_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo3_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo3_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo3.svg' on input line 1111.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo3_svg-tex.pdf' is 1 on input line 1111.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo3_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo3_svg-tex.pdf, id
+=2997, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo3_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo3_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo3_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo3.svg' on input line 1112.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo3_svg-tex.pdf' is 1 on input line 1112.
+(./svg-inkscape/uso do container container_postgres_amd_limpo3_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo3_svg-tex.pdf, id=
+2999, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo3_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo3_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo3_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo3.svg' on input line 1113.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo3_svg-tex.pdf' is 1 on input line 1113.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo3_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo3_svg-tex.pdf, i
+d=3001, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo3_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo3_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo3_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [56
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.18})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1115 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.19})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1115 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.20})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1115 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.21})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1115 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo3_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo3_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo3_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo3_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo3_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo3_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo3_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo4.svg' on input line 1117.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo4_svg-tex.pdf' is 1 on input line 1117.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo4_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo4_svg-tex.pdf, id=3
+600, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo4_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo4_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo4_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo4.svg' on input line 1118.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo4_svg-tex.pdf' is 1 on input line 1118.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo4_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo4_svg-tex.pdf, id
+=3602, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo4_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo4_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo4_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo4.svg' on input line 1119.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo4_svg-tex.pdf' is 1 on input line 1119.
+(./svg-inkscape/uso do container container_postgres_amd_limpo4_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo4_svg-tex.pdf, id=
+3604, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo4_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo4_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo4_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo4.svg' on input line 1120.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo4_svg-tex.pdf' is 1 on input line 1120.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo4_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo4_svg-tex.pdf, i
+d=3606, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo4_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo4_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo4_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [57
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.22})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1122 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.23})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1122 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.24})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1122 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.25})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1122 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo4_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo4_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo4_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo4_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo4_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo4_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo4_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo5.svg' on input line 1124.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo5_svg-tex.pdf' is 1 on input line 1124.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo5_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo5_svg-tex.pdf, id=4
+218, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo5_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo5_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo5_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo5.svg' on input line 1125.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo5_svg-tex.pdf' is 1 on input line 1125.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo5_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo5_svg-tex.pdf, id
+=4220, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo5_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo5_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo5_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo5.svg' on input line 1126.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo5_svg-tex.pdf' is 1 on input line 1126.
+(./svg-inkscape/uso do container container_postgres_amd_limpo5_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo5_svg-tex.pdf, id=
+4222, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo5_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo5_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo5_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo5.svg' on input line 1127.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo5_svg-tex.pdf' is 1 on input line 1127.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo5_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo5_svg-tex.pdf, i
+d=4224, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo5_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo5_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo5_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [58
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.26})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1129 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.27})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1129 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.28})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1129 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.29})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1129 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo5_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo5_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo5_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo5_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo5_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo5_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo5_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo6.svg' on input line 1131.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo6_svg-tex.pdf' is 1 on input line 1131.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo6_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo6_svg-tex.pdf, id=4
+871, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo6_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo6_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo6_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo6.svg' on input line 1132.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo6_svg-tex.pdf' is 1 on input line 1132.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo6_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo6_svg-tex.pdf, id
+=4873, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo6_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo6_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo6_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo6.svg' on input line 1133.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo6_svg-tex.pdf' is 1 on input line 1133.
+(./svg-inkscape/uso do container container_postgres_amd_limpo6_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo6_svg-tex.pdf, id=
+4875, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo6_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo6_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo6_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo6.svg' on input line 1134.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo6_svg-tex.pdf' is 1 on input line 1134.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo6_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo6_svg-tex.pdf, i
+d=4877, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo6_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo6_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo6_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [59
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.30})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1136 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.31})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1136 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.32})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1136 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.33})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1136 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo6_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo6_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo6_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo6_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo6_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo6_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo6_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo7.svg' on input line 1138.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo7_svg-tex.pdf' is 1 on input line 1138.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo7_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo7_svg-tex.pdf, id=5
+488, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo7_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo7_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo7_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo7.svg' on input line 1139.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo7_svg-tex.pdf' is 1 on input line 1139.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo7_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo7_svg-tex.pdf, id
+=5490, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo7_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo7_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo7_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo7.svg' on input line 1140.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo7_svg-tex.pdf' is 1 on input line 1140.
+(./svg-inkscape/uso do container container_postgres_amd_limpo7_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo7_svg-tex.pdf, id=
+5492, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo7_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo7_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo7_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo7.svg' on input line 1141.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo7_svg-tex.pdf' is 1 on input line 1141.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo7_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo7_svg-tex.pdf, i
+d=5494, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo7_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo7_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo7_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [60
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.34})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1143 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.35})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1143 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.36})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1143 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.37})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1143 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo7_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo7_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo7_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo7_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo7_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo7_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo7_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo8.svg' on input line 1145.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo8_svg-tex.pdf' is 1 on input line 1145.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo8_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo8_svg-tex.pdf, id=6
+142, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo8_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo8_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo8_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo8.svg' on input line 1146.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo8_svg-tex.pdf' is 1 on input line 1146.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo8_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo8_svg-tex.pdf, id
+=6144, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo8_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo8_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo8_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo8.svg' on input line 1147.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo8_svg-tex.pdf' is 1 on input line 1147.
+(./svg-inkscape/uso do container container_postgres_amd_limpo8_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo8_svg-tex.pdf, id=
+6146, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo8_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo8_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo8_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo8.svg' on input line 1148.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo8_svg-tex.pdf' is 1 on input line 1148.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo8_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo8_svg-tex.pdf, i
+d=6148, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo8_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo8_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo8_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [61
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.38})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1150 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.39})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1150 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.40})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1150 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.41})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1150 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo8_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo8_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo8_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo8_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo8_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo8_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo8_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo9.svg' on input line 1152.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo9_svg-tex.pdf' is 1 on input line 1152.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo9_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo9_svg-tex.pdf, id=6
+834, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo9_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo9_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo9_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo9.svg' on input line 1153.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo9_svg-tex.pdf' is 1 on input line 1153.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo9_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo9_svg-tex.pdf, id
+=6836, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo9_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo9_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo9_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo9.svg' on input line 1154.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo9_svg-tex.pdf' is 1 on input line 1154.
+(./svg-inkscape/uso do container container_postgres_amd_limpo9_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo9_svg-tex.pdf, id=
+6838, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo9_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo9_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo9_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo9.svg' on input line 1155.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo9_svg-tex.pdf' is 1 on input line 1155.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo9_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_postgres_armhf_limpo9_svg-tex.pdf, i
+d=6840, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo9_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo9_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo9_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [62
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.42})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1157 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.43})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1157 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.44})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1157 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.45})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1157 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo9_svg-tex.p
+df> <./svg-inkscape/uso do container container_mariadb_armhf_limpo9_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo9_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo9_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo9_svg-tex.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo9_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo9_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo10.svg' on input line 1159.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo10_svg-tex.pdf' is 1 on input line 1159.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo10_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo10_svg-tex.pdf, id=
+7581, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo10_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo10_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo10_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo10.svg' on input line 1160.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo10_svg-tex.pdf' is 1 on input line 1160.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo10_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo10_svg-tex.pdf, i
+d=7583, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo10_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo10_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo10_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo10.svg' on input line 1161.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo10_svg-tex.pdf' is 1 on input line 1161.
+
+(./svg-inkscape/uso do container container_postgres_amd_limpo10_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo10_svg-tex.pdf, id
+=7585, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo10_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo10_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo10_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo10.svg' on input line 1162.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo10_svg-tex.pdf' is 1 on input line 1162.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo10_svg-tex.pdf_t
+ex
+<./svg-inkscape/uso do container container_postgres_armhf_limpo10_svg-tex.pdf, 
+id=7587, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo10_svg-tex.
+pdf Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo10_svg-tex.p
+df, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo10_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [63
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.46})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1164 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.47})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1164 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.48})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1164 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.49})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1164 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo10_svg-tex.
+pdf> <./svg-inkscape/uso do container container_mariadb_armhf_limpo10_svg-tex.p
+df
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo10_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo10_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo10_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo10_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo10_svg-tex.pdf): PDF inclusion: multiple pdfs with page group
+ included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo11.svg' on input line 1166.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo11_svg-tex.pdf' is 1 on input line 1166.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo11_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo11_svg-tex.pdf, id=
+8311, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo11_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo11_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo11_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo11.svg' on input line 1167.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo11_svg-tex.pdf' is 1 on input line 1167.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo11_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo11_svg-tex.pdf, i
+d=8313, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo11_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo11_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo11_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo11.svg' on input line 1168.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo11_svg-tex.pdf' is 1 on input line 1168.
+
+(./svg-inkscape/uso do container container_postgres_amd_limpo11_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo11_svg-tex.pdf, id
+=8315, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo11_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo11_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo11_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo11.svg' on input line 1169.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo11_svg-tex.pdf' is 1 on input line 1169.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo11_svg-tex.pdf_t
+ex
+<./svg-inkscape/uso do container container_postgres_armhf_limpo11_svg-tex.pdf, 
+id=8317, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo11_svg-tex.
+pdf Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo11_svg-tex.p
+df, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo11_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [64
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.50})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1171 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.51})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1171 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.52})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1171 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.53})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1171 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo11_svg-tex.
+pdf> <./svg-inkscape/uso do container container_mariadb_armhf_limpo11_svg-tex.p
+df
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo11_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo11_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo11_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo11_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo11_svg-tex.pdf): PDF inclusion: multiple pdfs with page group
+ included in a single page
+>]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_amd_limpo12.svg' on input line 1173.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo12_svg-tex.pdf' is 1 on input line 1173.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo12_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_mariadb_amd_limpo12_svg-tex.pdf, id=
+8998, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo12_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo12_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo12_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_mariadb_armhf_limpo12.svg' on input line 1174.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo12_svg-tex.pdf' is 1 on input line 1174.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo12_svg-tex.pdf_te
+x
+<./svg-inkscape/uso do container container_mariadb_armhf_limpo12_svg-tex.pdf, i
+d=9000, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo12_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo12_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo12_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_amd_limpo12.svg' on input line 1175.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo12_svg-tex.pdf' is 1 on input line 1175.
+
+(./svg-inkscape/uso do container container_postgres_amd_limpo12_svg-tex.pdf_tex
+<./svg-inkscape/uso do container container_postgres_amd_limpo12_svg-tex.pdf, id
+=9002, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo12_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo12_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo12_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//todos fracionada/uso do container containe
+r_postgres_armhf_limpo12.svg' on input line 1176.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo12_svg-tex.pdf' is 1 on input line 1176.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo12_svg-tex.pdf_t
+ex
+<./svg-inkscape/uso do container container_postgres_armhf_limpo12_svg-tex.pdf, 
+id=9004, page=1, 11563.2pt x 2312.64pt>
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo12_svg-tex.
+pdf Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo12_svg-tex.p
+df, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo12_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [65
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.54})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1178 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.55})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1178 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.56})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1178 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.A.57})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1178 
+        <./svg-inkscape/uso do container container_mariadb_amd_limpo12_svg-tex.
+pdf> <./svg-inkscape/uso do container container_mariadb_armhf_limpo12_svg-tex.p
+df
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_ma
+riadb_armhf_limpo12_svg-tex.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+> <./svg-inkscape/uso do container container_postgres_amd_limpo12_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_amd_limpo12_svg-tex.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+> <./svg-inkscape/uso do container container_postgres_armhf_limpo12_svg-tex.pdf
+
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/uso do container container_po
+stgres_armhf_limpo12_svg-tex.pdf): PDF inclusion: multiple pdfs with page group
+ included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1213
+
+ []
+
+
+Overfull \hbox (43.78865pt too wide) in paragraph at lines 1213--1215
+[][]
+ []
+
+[66]
+Overfull \vbox (42.64243pt too high) has occurred while \output is active []
+
+
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
+
+ []
+
+
+Overfull \hbox (43.78865pt too wide) in paragraph at lines 1249--1251
+[][]
+ []
+
+
+Overfull \vbox (7.14116pt too high) has occurred while \output is active []
+
+
+[68] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1320--1320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1320--1320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1320--1320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1320--1320
+
+ []
+
+
+Overfull \hbox (43.78865pt too wide) in paragraph at lines 1285--1322
+[][]
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1285--1322
+[]
+ []
+
+
+Overfull \vbox (6.80989pt too high) has occurred while \output is active []
+
+
+[70]
+Overfull \vbox (7.14116pt too high) has occurred while \output is active []
+
+
+[71] [72]
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//insercao fracionada/insercao tempos.svg' o
+n input line 1327.
+
+Package svg Info: Last page of `./svg-inkscape/insercao tempos_svg-tex.pdf' is 
+1 on input line 1327.
+(./svg-inkscape/insercao tempos_svg-tex.pdf_tex
+File: ./svg-inkscape/insercao tempos_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/insercao tempos_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/insercao tempos_svg-tex.pdf , page1 use
+d on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 69.39754pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//insercao fracionada/uso do container conta
+iner_mariadb_amd_limpo0.svg' on input line 1329.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_amd_limpo0_svg-tex.pdf' is 1 on input line 1329.
+(./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.pdf_tex
+File: ./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.pdf 
+Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_amd_limpo0_svg-tex.pdf, 
+page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_amd_
+limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//insercao fracionada/uso do container conta
+iner_mariadb_armhf_limpo0.svg' on input line 1330.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_maria
+db_armhf_limpo0_svg-tex.pdf' is 1 on input line 1330.
+
+(./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pdf_tex
+File: ./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pd
+f Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_mariadb_armhf_limpo0_svg-tex.pdf
+, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_mariadb_armh
+f_limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//insercao fracionada/uso do container conta
+iner_postgres_amd_limpo0.svg' on input line 1331.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_amd_limpo0_svg-tex.pdf' is 1 on input line 1331.
+(./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf_tex
+File: ./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf
+ Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_amd_limpo0_svg-tex.pdf,
+ page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_amd
+_limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+)
+
+Package svg Warning: You didn't enable `shell escape' (or `write18')
+(svg)                so it wasn't possible to launch the Inkscape export
+(svg)                for `./imagens//insercao fracionada/uso do container conta
+iner_postgres_armhf_limpo0.svg' on input line 1332.
+
+Package svg Info: Last page of `./svg-inkscape/uso do container container_postg
+res_armhf_limpo0_svg-tex.pdf' is 1 on input line 1332.
+
+(./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.pdf_te
+x
+File: ./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.p
+df Graphic file (type pdf)
+<use ./svg-inkscape/uso do container container_postgres_armhf_limpo0_svg-tex.pd
+f, page 1>
+Package pdftex.def Info: ./svg-inkscape/uso do container container_postgres_arm
+hf_limpo0_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.0pt x 90.97246pt.
+) [73
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.B.58})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1334 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.B.59})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1334 
+       ]
+Underfull \hbox (badness 10000) in paragraph at lines 1369--1369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1369--1369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1369--1369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1369--1369
+
+ []
+
+
+Overfull \hbox (43.78865pt too wide) in paragraph at lines 1369--1371
+[][]
+ []
+
+[74
+pdfTeX warning (ext4): destination with the same identifier (name{figure.B.60})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1371 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.B.61})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1371 
+       
+pdfTeX warning (ext4): destination with the same identifier (name{figure.B.62})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1371 
+       ]
+Overfull \vbox (42.64243pt too high) has occurred while \output is active []
+
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
+
+ []
+
+
+Overfull \hbox (43.78865pt too wide) in paragraph at lines 1405--1407
+[][]
+ []
+
+
+Overfull \vbox (7.14116pt too high) has occurred while \output is active []
+
+
+[76] [77]
+Underfull \hbox (badness 10000) in paragraph at lines 1441--1441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1441--1441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1441--1441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1441--1441
+
+ []
+
+
+Overfull \hbox (43.78865pt too wide) in paragraph at lines 1441--1443
+[][]
+ []
+
+
+Overfull \vbox (6.80989pt too high) has occurred while \output is active []
+
+
+[78] [79]
+Underfull \hbox (badness 10000) in paragraph at lines 1477--1477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1477--1477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1477--1477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1477--1477
+
+ []
+
+
+Overfull \hbox (43.78865pt too wide) in paragraph at lines 1477--1479
+[][] 
+ []
+
+No file main.ind.
+
+AED: lastpage setting LastPage
+
+Overfull \vbox (7.14116pt too high) has occurred while \output is active []
+
+
+[80]
+\tf@lof=\write5
+\openout5 = `main.lof'.
+
+\tf@lot=\write6
+\openout6 = `main.lot'.
+
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+ (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 20919 strings out of 480260
+ 386683 string characters out of 5894734
+ 786959 words of memory out of 5000000
+ 37837 multiletter control sequences out of 15000+600000
+ 503916 words of font info for 81 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 94i,12n,92p,1441b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0800.
+600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1
+200.600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cti1000.600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecrm0800.600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecti1200.600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1095.600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecrm1095.600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecrm1000.600pk> <c:/Users/migue/.texlive2022/texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecrm1200.600pk> <c:/Users/migue/.texlive2022/texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecrm1440.600pk>{c:/texlive/2022/texmf-dist/fonts/enc
+/dvips/base/8r.enc} <c:/Users/migue/.texlive2022/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecbx1200.600pk><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhv
+b8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on main.pdf (96 pages, 50252863 bytes).
+PDF statistics:
+ 10626 PDF objects out of 10688 (max. 8388607)
+ 6836 compressed objects within 69 object streams
+ 423 named destinations out of 1000 (max. 500000)
+ 1373 words of extra memory for PDF output out of 10000 (max. 10000000)
+

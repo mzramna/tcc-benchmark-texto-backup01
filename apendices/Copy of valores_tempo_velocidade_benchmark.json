@@ -1,0 +1,1230 @@
+{
+    "valores_execucao": {
+        "valor_inicial": 2000,
+        "valor_final": 45000,
+        "valor_max": 100000,
+        "quantidade_subprocessos": 5
+    },
+    "valor_final_10000_1": {
+        "valor_final": 10000,
+        "postgres": 50.266927,
+        "mariadb": 23.556286,
+        "subprocessos": 1
+    },
+    "valor_final_15000_1": {
+        "valor_final": 15000,
+        "postgres": 64.995663,
+        "mariadb": 25.339364,
+        "subprocessos": 1
+    },
+    "valor_final_20000_1": {
+        "valor_final": 20000,
+        "postgres": 94.128433,
+        "mariadb": 29.269327,
+        "subprocessos": 1
+    },
+    "valor_final_25000_1": {
+        "valor_final": 25000,
+        "postgres": 135.811946,
+        "mariadb": 32.221449,
+        "subprocessos": 1
+    },
+    "valor_final_30000_1": {
+        "valor_final": 30000,
+        "postgres": 190.165177,
+        "mariadb": 33.717594,
+        "subprocessos": 1
+    },
+    "valor_final_35000_1": {
+        "valor_final": 35000,
+        "postgres": 276.599455,
+        "mariadb": 37.682763,
+        "subprocessos": 1
+    },
+    "valor_final_40000_1": {
+        "valor_final": 40000,
+        "postgres": 346.535168,
+        "mariadb": 40.950785,
+        "subprocessos": 1
+    },
+    "valor_final_45000_1": {
+        "valor_final": 45000,
+        "postgres": 457.901161,
+        "mariadb": 44.553606,
+        "subprocessos": 1
+    },
+    "valor_final_50000_1": {
+        "valor_final": 50000,
+        "postgres": 209.674636,
+        "mariadb": 47.857157,
+        "subprocessos": 1
+    },
+    "valor_final_55000_1": {
+        "valor_final": 55000,
+        "postgres": 343.256534,
+        "mariadb": 49.6426,
+        "subprocessos": 1
+    },
+    "valor_final_60000_1": {
+        "valor_final": 60000,
+        "postgres": 501.795152,
+        "mariadb": 51.487262,
+        "subprocessos": 1
+    },
+    "valor_final_65000_1": {
+        "valor_final": 65000,
+        "postgres": 692.345905,
+        "mariadb": 55.047754,
+        "subprocessos": 1
+    },
+    "valor_final_70000_1": {
+        "valor_final": 70000,
+        "postgres": 918.372532,
+        "mariadb": 57.448588,
+        "subprocessos": 1
+    },
+    "valor_final_75000_1": {
+        "valor_final": 75000,
+        "postgres": 1191.857014,
+        "mariadb": 60.752425,
+        "subprocessos": 1
+    },
+    "valor_final_80000_1": {
+        "valor_final": 80000,
+        "postgres": 1495.667344,
+        "mariadb": 63.44327,
+        "subprocessos": 1
+    },
+    "valor_final_85000_1": {
+        "valor_final": 85000,
+        "postgres": 1836.058436,
+        "mariadb": 65.907168,
+        "subprocessos": 1
+    },
+    "valor_final_90000_1": {
+        "valor_final": 90000,
+        "postgres": 2209.747724,
+        "mariadb": 69.467964,
+        "subprocessos": 1
+    },
+    "valor_final_95000_1": {
+        "valor_final": 95000,
+        "postgres": 2653.255287,
+        "mariadb": 71.294884,
+        "subprocessos": 1
+    },
+    "valor_final_100000_1": {
+        "valor_final": 100000,
+        "postgres": 3133.772586,
+        "mariadb": 74.274243,
+        "subprocessos": 1
+    },
+    "valor_final_10000_2": {
+        "valor_final": 10000,
+        "postgres": 73.059193,
+        "mariadb": 39.139199,
+        "subprocessos": 2
+    },
+    "valor_final_15000_2": {
+        "valor_final": 15000,
+        "postgres": [
+            0,
+            85.957832,
+            83.947179
+        ],
+        "mariadb": [
+            0,
+            127.045555,
+            58.602575
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_20000_2": {
+        "valor_final": 20000,
+        "postgres": [
+            0,
+            124.993528,
+            125.014144
+        ],
+        "mariadb": [
+            0,
+            133.828884,
+            68.351198
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_25000_2": {
+        "valor_final": 25000,
+        "postgres": [
+            0,
+            160.906069,
+            153.843576
+        ],
+        "mariadb": [
+            0,
+            142.861131,
+            72.758819
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_30000_2": {
+        "valor_final": 30000,
+        "postgres": [
+            0,
+            203.938753,
+            224.352298
+        ],
+        "mariadb": [
+            0,
+            150.029307,
+            81.530832
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_35000_2": {
+        "valor_final": 35000,
+        "postgres": [
+            0,
+            278.266256,
+            300.584244
+        ],
+        "mariadb": [
+            0,
+            155.700589,
+            88.030242
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_40000_2": {
+        "valor_final": 40000,
+        "postgres": [
+            0,
+            367.583045,
+            394.4593
+        ],
+        "mariadb": [
+            0,
+            161.822951,
+            102.60896
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_45000_2": {
+        "valor_final": 45000,
+        "postgres": [
+            0,
+            489.10445,
+            519.839788
+        ],
+        "mariadb": [
+            0,
+            171.235776,
+            98.588249
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_50000_2": {
+        "valor_final": 50000,
+        "postgres": [
+            0,
+            624.536336,
+            665.770395
+        ],
+        "mariadb": [
+            0,
+            192.19724,
+            125.586721
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_55000_2": {
+        "valor_final": 55000,
+        "postgres": [
+            0,
+            801.184936,
+            846.54555
+        ],
+        "mariadb": [
+            0,
+            201.114109,
+            137.085727
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_60000_2": {
+        "valor_final": 60000,
+        "postgres": [
+            0,
+            1003.547983,
+            1034.39557
+        ],
+        "mariadb": [
+            0,
+            211.745829,
+            144.821569
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_65000_2": {
+        "valor_final": 65000,
+        "postgres": [
+            0,
+            1239.051621,
+            1278.127304
+        ],
+        "mariadb": [
+            0,
+            234.087952,
+            170.664931
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_70000_2": {
+        "valor_final": 70000,
+        "postgres": [
+            0,
+            1490.31703,
+            1535.272504
+        ],
+        "mariadb": [
+            0,
+            256.538205,
+            187.838864
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_75000_2": {
+        "valor_final": 75000,
+        "postgres": [
+            0,
+            1793.062618,
+            1838.996242
+        ],
+        "mariadb": [
+            0,
+            265.761595,
+            195.328586
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_80000_2": {
+        "valor_final": 80000,
+        "postgres": [
+            0,
+            2145.105278,
+            2173.986424
+        ],
+        "mariadb": [
+            0,
+            292.452513,
+            223.859942
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_85000_2": {
+        "valor_final": 85000,
+        "postgres": [
+            0,
+            2539.146961,
+            2534.692533
+        ],
+        "mariadb": [
+            0,
+            323.341365,
+            254.893522
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_90000_2": {
+        "valor_final": 90000,
+        "postgres": [
+            0,
+            2922.055679,
+            2969.781403
+        ],
+        "mariadb": [
+            0,
+            323.855671,
+            259.063056
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_95000_2": {
+        "valor_final": 95000,
+        "postgres": [
+            0,
+            3386.099289,
+            3415.219266
+        ],
+        "mariadb": [
+            0,
+            356.080922,
+            298.680312
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_100000_2": {
+        "valor_final": 100000,
+        "postgres": [
+            0,
+            492.197553,
+            529.812319
+        ],
+        "mariadb": [
+            0,
+            359.235269,
+            301.791884
+        ],
+        "subprocessos": 2
+    },
+    "valor_final_5000_3": {
+        "valor_final": 5000,
+        "postgres": 37.661812,
+        "mariadb": 31.94699,
+        "subprocessos": 3
+    },
+    "valor_final_10000_3": {
+        "valor_final": 10000,
+        "postgres": [
+            0,
+            366.032354,
+            489.094962
+        ],
+        "mariadb": [
+            0,
+            397.684553,
+            316.031818
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_15000_3": {
+        "valor_final": 15000,
+        "postgres": [
+            0,
+            762.051832,
+            809.085282
+        ],
+        "mariadb": [
+            0,
+            748.871783,
+            669.177639
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_20000_3": {
+        "valor_final": 20000,
+        "postgres": [
+            0,
+            243.843872,
+            381.236812
+        ],
+        "mariadb": [
+            0,
+            300.411005,
+            236.747398
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_25000_3": {
+        "valor_final": 25000,
+        "postgres": [
+            0,
+            272.287106,
+            1716.369799
+        ],
+        "mariadb": [
+            0,
+            396.919845,
+            405.128272
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_30000_3": {
+        "valor_final": 30000,
+        "postgres": [
+            0,
+            578.45702,
+            629.660805
+        ],
+        "mariadb": [
+            0,
+            433.893295,
+            364.741833
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_35000_3": {
+        "valor_final": 35000,
+        "postgres": [
+            0,
+            683.575676,
+            762.208853
+        ],
+        "mariadb": [
+            0,
+            549.042349,
+            475.782896
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_40000_3": {
+        "valor_final": 40000,
+        "postgres": [
+            0,
+            3292.40904,
+            3340.331186
+        ],
+        "mariadb": [
+            0,
+            603.946624,
+            610.777679
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_45000_3": {
+        "valor_final": 45000,
+        "postgres": [
+            0,
+            16.589482,
+            16.25295
+        ],
+        "mariadb": [
+            0,
+            18.106115,
+            17.730478
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_50000_3": {
+        "valor_final": 50000,
+        "postgres": [
+            0,
+            46.631563,
+            39.886696
+        ],
+        "mariadb": [
+            0,
+            102.060137,
+            36.517764
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_55000_3": {
+        "valor_final": 55000,
+        "postgres": [
+            0,
+            49.550543,
+            40.19573
+        ],
+        "mariadb": [
+            0,
+            101.988648,
+            38.92327
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_60000_3": {
+        "valor_final": 60000,
+        "postgres": [
+            0,
+            48.310394,
+            41.123681
+        ],
+        "mariadb": [
+            0,
+            100.875323,
+            38.044465
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_65000_3": {
+        "valor_final": 65000,
+        "postgres": [
+            0,
+            49.744845,
+            42.092946
+        ],
+        "mariadb": [
+            0,
+            100.821068,
+            36.245496
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_70000_3": {
+        "valor_final": 70000,
+        "postgres": [
+            0,
+            49.135604,
+            41.909562
+        ],
+        "mariadb": [
+            0,
+            102.181042,
+            37.927968
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_75000_3": {
+        "valor_final": 75000,
+        "postgres": [
+            0,
+            51.741224,
+            41.964442
+        ],
+        "mariadb": [
+            0,
+            101.891278,
+            35.944451
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_80000_3": {
+        "valor_final": 80000,
+        "postgres": [
+            0,
+            42.738052,
+            52.770919
+        ],
+        "mariadb": [
+            0,
+            102.050349,
+            37.281258
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_85000_3": {
+        "valor_final": 85000,
+        "postgres": [
+            0,
+            52.69571,
+            43.741518
+        ],
+        "mariadb": [
+            0,
+            103.695705,
+            39.43445
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_90000_3": {
+        "valor_final": 90000,
+        "postgres": [
+            0,
+            45.107916,
+            42.285811
+        ],
+        "mariadb": [
+            0,
+            106.230618,
+            39.695662
+        ],
+        "subprocessos": 3
+    },
+    "valor_final_95000_3": {
+        "valor_final": 95000,
+        "postgres": 268.237926,
+        "mariadb": 230.976183,
+        "subprocessos": 3
+    },
+    "valor_final_100000_3": {
+        "valor_final": 100000,
+        "postgres": 281.359719,
+        "mariadb": 245.074692,
+        "subprocessos": 3
+    },
+    "valor_final_5000_4": {
+        "valor_final": 5000,
+        "postgres": 37.339857,
+        "mariadb": 36.101521,
+        "subprocessos": 4
+    },
+    "valor_final_10000_4": {
+        "valor_final": 10000,
+        "postgres": 44.656577,
+        "mariadb": 43.508824,
+        "subprocessos": 4
+    },
+    "valor_final_15000_4": {
+        "valor_final": 15000,
+        "postgres": 53.230726,
+        "mariadb": 48.724793,
+        "subprocessos": 4
+    },
+    "valor_final_20000_4": {
+        "valor_final": 20000,
+        "postgres": 78.473956,
+        "mariadb": 58.910649,
+        "subprocessos": 4
+    },
+    "valor_final_25000_4": {
+        "valor_final": 25000,
+        "postgres": 77.231014,
+        "mariadb": 68.568903,
+        "subprocessos": 4
+    },
+    "valor_final_30000_4": {
+        "valor_final": 30000,
+        "postgres": 91.429,
+        "mariadb": 79.102493,
+        "subprocessos": 4
+    },
+    "valor_final_35000_4": {
+        "valor_final": 35000,
+        "postgres": 94.720141,
+        "mariadb": 89.003964,
+        "subprocessos": 4
+    },
+    "valor_final_40000_4": {
+        "valor_final": 40000,
+        "postgres": 162.256372,
+        "mariadb": 99.544218,
+        "subprocessos": 4
+    },
+    "valor_final_45000_4": {
+        "valor_final": 45000,
+        "postgres": 135.225481,
+        "mariadb": 112.427879,
+        "subprocessos": 4
+    },
+    "valor_final_50000_4": {
+        "valor_final": 50000,
+        "postgres": 127.408804,
+        "mariadb": 122.319204,
+        "subprocessos": 4
+    },
+    "valor_final_55000_4": {
+        "valor_final": 55000,
+        "postgres": 164.934966,
+        "mariadb": 134.286383,
+        "subprocessos": 4
+    },
+    "valor_final_60000_4": {
+        "valor_final": 60000,
+        "postgres": 170.934794,
+        "mariadb": 146.060156,
+        "subprocessos": 4
+    },
+    "valor_final_65000_4": {
+        "valor_final": 65000,
+        "postgres": 231.507088,
+        "mariadb": 161.373106,
+        "subprocessos": 4
+    },
+    "valor_final_70000_4": {
+        "valor_final": 70000,
+        "postgres": 255.369286,
+        "mariadb": 599.564834,
+        "subprocessos": 4
+    },
+    "valor_final_75000_4": {
+        "valor_final": 75000,
+        "postgres": 253.681413,
+        "mariadb": 199.4713,
+        "subprocessos": 4
+    },
+    "valor_final_80000_4": {
+        "valor_final": 80000,
+        "postgres": 231.553669,
+        "mariadb": 215.045222,
+        "subprocessos": 4
+    },
+    "valor_final_85000_4": {
+        "valor_final": 85000,
+        "postgres": 318.353322,
+        "mariadb": 229.192934,
+        "subprocessos": 4
+    },
+    "valor_final_90000_4": {
+        "valor_final": 90000,
+        "postgres": 266.376287,
+        "mariadb": 251.737184,
+        "subprocessos": 4
+    },
+    "valor_final_95000_4": {
+        "valor_final": 95000,
+        "postgres": 268.797935,
+        "mariadb": 266.411645,
+        "subprocessos": 4
+    },
+    "valor_final_100000_4": {
+        "valor_final": 100000,
+        "postgres": 287.078878,
+        "mariadb": 280.846427,
+        "subprocessos": 4
+    },
+    "valor_final_5000_5": {
+        "valor_final": 5000,
+        "postgres": 38.545474,
+        "mariadb": 30.152043,
+        "subprocessos": 5
+    },
+    "valor_final_10000_5": {
+        "valor_final": 10000,
+        "postgres": 45.805788,
+        "mariadb": 39.106008,
+        "subprocessos": 5
+    },
+    "valor_final_15000_5": {
+        "valor_final": 15000,
+        "postgres": 66.784119,
+        "mariadb": 48.129278,
+        "subprocessos": 5
+    },
+    "valor_final_20000_5": {
+        "valor_final": 20000,
+        "postgres": 95.63641,
+        "mariadb": 60.734161,
+        "subprocessos": 5
+    },
+    "valor_final_25000_5": {
+        "valor_final": 25000,
+        "postgres": 91.704281,
+        "mariadb": 70.688161,
+        "subprocessos": 5
+    },
+    "valor_final_30000_5": {
+        "valor_final": 30000,
+        "postgres": 104.013425,
+        "mariadb": 82.745244,
+        "subprocessos": 5
+    },
+    "valor_final_35000_5": {
+        "valor_final": 35000,
+        "postgres": 91.055843,
+        "mariadb": 93.55432,
+        "subprocessos": 5
+    },
+    "valor_final_40000_5": {
+        "valor_final": 40000,
+        "postgres": 111.203778,
+        "mariadb": 106.097718,
+        "subprocessos": 5
+    },
+    "valor_final_45000_5": {
+        "valor_final": 45000,
+        "postgres": 170.044335,
+        "mariadb": 116.632704,
+        "subprocessos": 5
+    },
+    "valor_final_50000_5": {
+        "valor_final": 50000,
+        "postgres": 118.430268,
+        "mariadb": 132.843953,
+        "subprocessos": 5
+    },
+    "valor_final_55000_5": {
+        "valor_final": 55000,
+        "postgres": 130.42261,
+        "mariadb": 149.023791,
+        "subprocessos": 5
+    },
+    "valor_final_60000_5": {
+        "valor_final": 60000,
+        "postgres": 154.381528,
+        "mariadb": 166.820968,
+        "subprocessos": 5
+    },
+    "valor_final_65000_5": {
+        "valor_final": 65000,
+        "postgres": 195.531511,
+        "mariadb": 180.234797,
+        "subprocessos": 5
+    },
+    "valor_final_70000_5": {
+        "valor_final": 70000,
+        "postgres": 194.295902,
+        "mariadb": 198.597745,
+        "subprocessos": 5
+    },
+    "valor_final_75000_5": {
+        "valor_final": 75000,
+        "postgres": 185.01736,
+        "mariadb": 219.862231,
+        "subprocessos": 5
+    },
+    "valor_final_80000_5": {
+        "valor_final": 80000,
+        "postgres": 237.892117,
+        "mariadb": 239.149648,
+        "subprocessos": 5
+    },
+    "valor_final_85000_5": {
+        "valor_final": 85000,
+        "postgres": 220.512185,
+        "mariadb": 261.344707,
+        "subprocessos": 5
+    },
+    "valor_final_90000_5": {
+        "valor_final": 90000,
+        "postgres": 342.612374,
+        "mariadb": 287.131666,
+        "subprocessos": 5
+    },
+    "valor_final_95000_5": {
+        "valor_final": 95000,
+        "postgres": 240.342832,
+        "mariadb": 317.484144,
+        "subprocessos": 5
+    },
+    "valor_final_100000_5": {
+        "valor_final": 100000,
+        "postgres": 294.190679,
+        "mariadb": 337.910693,
+        "subprocessos": 5
+    },
+    "valor_final_5000_6": {
+        "valor_final": 5000,
+        "postgres": 39.464171,
+        "mariadb": 32.203904,
+        "subprocessos": 6
+    },
+    "valor_final_10000_6": {
+        "valor_final": 10000,
+        "postgres": 47.840489,
+        "mariadb": 41.555264,
+        "subprocessos": 6
+    },
+    "valor_final_15000_6": {
+        "valor_final": 15000,
+        "postgres": 57.478957,
+        "mariadb": 52.713631,
+        "subprocessos": 6
+    },
+    "valor_final_20000_6": {
+        "valor_final": 20000,
+        "postgres": 63.785431,
+        "mariadb": 62.845188,
+        "subprocessos": 6
+    },
+    "valor_final_25000_6": {
+        "valor_final": 25000,
+        "postgres": 71.587788,
+        "mariadb": 72.845229,
+        "subprocessos": 6
+    },
+    "valor_final_30000_6": {
+        "valor_final": 30000,
+        "postgres": 100.100864,
+        "mariadb": 84.46747,
+        "subprocessos": 6
+    },
+    "valor_final_35000_6": {
+        "valor_final": 35000,
+        "postgres": 96.516213,
+        "mariadb": 94.40301,
+        "subprocessos": 6
+    },
+    "valor_final_40000_6": {
+        "valor_final": 40000,
+        "postgres": 109.091377,
+        "mariadb": 107.600246,
+        "subprocessos": 6
+    },
+    "valor_final_45000_6": {
+        "valor_final": 45000,
+        "postgres": 149.927689,
+        "mariadb": 128.364494,
+        "subprocessos": 6
+    },
+    "valor_final_50000_6": {
+        "valor_final": 50000,
+        "postgres": 135.552784,
+        "mariadb": 147.850271,
+        "subprocessos": 6
+    },
+    "valor_final_55000_6": {
+        "valor_final": 55000,
+        "postgres": 143.361357,
+        "mariadb": 170.378223,
+        "subprocessos": 6
+    },
+    "valor_final_60000_6": {
+        "valor_final": 60000,
+        "postgres": 158.656794,
+        "mariadb": 192.019625,
+        "subprocessos": 6
+    },
+    "valor_final_65000_6": {
+        "valor_final": 65000,
+        "postgres": 171.581842,
+        "mariadb": 216.020094,
+        "subprocessos": 6
+    },
+    "valor_final_70000_6": {
+        "valor_final": 70000,
+        "postgres": 219.850168,
+        "mariadb": 238.907106,
+        "subprocessos": 6
+    },
+    "valor_final_75000_6": {
+        "valor_final": 75000,
+        "postgres": 194.408948,
+        "mariadb": 267.968152,
+        "subprocessos": 6
+    },
+    "valor_final_80000_6": {
+        "valor_final": 80000,
+        "postgres": 239.370997,
+        "mariadb": 297.671437,
+        "subprocessos": 6
+    },
+    "valor_final_85000_6": {
+        "valor_final": 85000,
+        "postgres": 230.086896,
+        "mariadb": 325.310653,
+        "subprocessos": 6
+    },
+    "valor_final_90000_6": {
+        "valor_final": 90000,
+        "postgres": 226.837681,
+        "mariadb": 355.926466,
+        "subprocessos": 6
+    },
+    "valor_final_95000_6": {
+        "valor_final": 95000,
+        "postgres": 240.941767,
+        "mariadb": 397.233834,
+        "subprocessos": 6
+    },
+    "valor_final_100000_6": {
+        "valor_final": 100000,
+        "postgres": 510.397914,
+        "mariadb": 483.439728,
+        "subprocessos": 6
+    },
+    "valor_final_5000_7": {
+        "valor_final": 5000,
+        "postgres": 46.343054,
+        "mariadb": 39.757791,
+        "subprocessos": 7
+    },
+    "valor_final_10000_7": {
+        "valor_final": 10000,
+        "postgres": 69.201182,
+        "mariadb": 53.313881,
+        "subprocessos": 7
+    },
+    "valor_final_15000_7": {
+        "valor_final": 15000,
+        "postgres": 85.879247,
+        "mariadb": 76.801063,
+        "subprocessos": 7
+    },
+    "valor_final_20000_7": {
+        "valor_final": 20000,
+        "postgres": 129.375881,
+        "mariadb": 91.850651,
+        "subprocessos": 7
+    },
+    "valor_final_25000_7": {
+        "valor_final": 25000,
+        "postgres": 166.198904,
+        "mariadb": 81.218599,
+        "subprocessos": 7
+    },
+    "valor_final_30000_7": {
+        "valor_final": 30000,
+        "postgres": 89.588926,
+        "mariadb": 102.127246,
+        "subprocessos": 7
+    },
+    "valor_final_35000_7": {
+        "valor_final": 35000,
+        "postgres": 120.936845,
+        "mariadb": 115.788286,
+        "subprocessos": 7
+    },
+    "valor_final_40000_7": {
+        "valor_final": 40000,
+        "postgres": 191.134732,
+        "mariadb": 137.502301,
+        "subprocessos": 7
+    },
+    "valor_final_45000_7": {
+        "valor_final": 45000,
+        "postgres": 144.867533,
+        "mariadb": 177.104642,
+        "subprocessos": 7
+    },
+    "valor_final_50000_7": {
+        "valor_final": 50000,
+        "postgres": 224.296642,
+        "mariadb": 177.677055,
+        "subprocessos": 7
+    },
+    "valor_final_55000_7": {
+        "valor_final": 55000,
+        "postgres": 170.672964,
+        "mariadb": 226.407721,
+        "subprocessos": 7
+    },
+    "valor_final_60000_7": {
+        "valor_final": 60000,
+        "postgres": 329.489532,
+        "mariadb": 243.021181,
+        "subprocessos": 7
+    },
+    "valor_final_65000_7": {
+        "valor_final": 65000,
+        "postgres": 287.854575,
+        "mariadb": 293.308354,
+        "subprocessos": 7
+    },
+    "valor_final_70000_7": {
+        "valor_final": 70000,
+        "postgres": 269.166961,
+        "mariadb": 303.759059,
+        "subprocessos": 7
+    },
+    "valor_final_75000_7": {
+        "valor_final": 75000,
+        "postgres": 327.206862,
+        "mariadb": 330.703149,
+        "subprocessos": 7
+    },
+    "valor_final_80000_7": {
+        "valor_final": 80000,
+        "postgres": 383.248466,
+        "mariadb": 464.142153,
+        "subprocessos": 7
+    },
+    "valor_final_85000_7": {
+        "valor_final": 85000,
+        "postgres": 575.410494,
+        "mariadb": 386.310477,
+        "subprocessos": 7
+    },
+    "valor_final_90000_7": {
+        "valor_final": 90000,
+        "postgres": 267.34018,
+        "mariadb": 427.694333,
+        "subprocessos": 7
+    },
+    "valor_final_95000_7": {
+        "valor_final": 95000,
+        "postgres": 263.960486,
+        "mariadb": 474.743274,
+        "subprocessos": 7
+    },
+    "valor_final_100000_7": {
+        "valor_final": 100000,
+        "postgres": 270.317054,
+        "mariadb": 515.567613,
+        "subprocessos": 7
+    },
+    "valor_final_10000_8": {
+        "valor_final": 10000,
+        "postgres": 49.325689,
+        "mariadb": 43.392006,
+        "subprocessos": 8
+    },
+    "valor_final_15000_8": {
+        "valor_final": 15000,
+        "postgres": 68.255553,
+        "mariadb": 55.401074,
+        "subprocessos": 8
+    },
+    "valor_final_20000_8": {
+        "valor_final": 20000,
+        "postgres": 93.838352,
+        "mariadb": 65.564382,
+        "subprocessos": 8
+    },
+    "valor_final_25000_8": {
+        "valor_final": 25000,
+        "postgres": 79.406424,
+        "mariadb": 76.379118,
+        "subprocessos": 8
+    },
+    "valor_final_30000_8": {
+        "valor_final": 30000,
+        "postgres": 99.830636,
+        "mariadb": 96.822812,
+        "subprocessos": 8
+    },
+    "valor_final_35000_8": {
+        "valor_final": 35000,
+        "postgres": 116.611978,
+        "mariadb": 113.043178,
+        "subprocessos": 8
+    },
+    "valor_final_40000_8": {
+        "valor_final": 40000,
+        "postgres": 113.871377,
+        "mariadb": 141.618469,
+        "subprocessos": 8
+    },
+    "valor_final_45000_8": {
+        "valor_final": 45000,
+        "postgres": 146.701972,
+        "mariadb": 162.877878,
+        "subprocessos": 8
+    },
+    "valor_final_50000_8": {
+        "valor_final": 50000,
+        "postgres": 231.707602,
+        "mariadb": 181.509054,
+        "subprocessos": 8
+    },
+    "valor_final_55000_8": {
+        "valor_final": 55000,
+        "postgres": 213.905352,
+        "mariadb": 214.369161,
+        "subprocessos": 8
+    },
+    "valor_final_60000_8": {
+        "valor_final": 60000,
+        "postgres": 254.302905,
+        "mariadb": 212.37992,
+        "subprocessos": 8
+    },
+    "valor_final_65000_8": {
+        "valor_final": 65000,
+        "postgres": 238.713267,
+        "mariadb": 293.156879,
+        "subprocessos": 8
+    },
+    "valor_final_70000_8": {
+        "valor_final": 70000,
+        "postgres": 197.706377,
+        "mariadb": 330.661453,
+        "subprocessos": 8
+    },
+    "valor_final_75000_8": {
+        "valor_final": 75000,
+        "postgres": 257.067131,
+        "mariadb": 368.789144,
+        "subprocessos": 8
+    },
+    "valor_final_80000_8": {
+        "valor_final": 80000,
+        "postgres": 240.282897,
+        "mariadb": 412.949239,
+        "subprocessos": 8
+    },
+    "valor_final_85000_8": {
+        "valor_final": 85000,
+        "postgres": 230.65349,
+        "mariadb": 452.840824,
+        "subprocessos": 8
+    },
+    "valor_final_90000_8": {
+        "valor_final": 90000,
+        "postgres": 283.364752,
+        "mariadb": 499.654014,
+        "subprocessos": 8
+    },
+    "valor_final_95000_8": {
+        "valor_final": 95000,
+        "postgres": 375.04605,
+        "mariadb": 550.717619,
+        "subprocessos": 8
+    },
+    "valor_final_100000_8": {
+        "valor_final": 100000,
+        "postgres": 310.580974,
+        "mariadb": 601.395438,
+        "subprocessos": 8
+    }
+}
