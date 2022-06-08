@@ -222,9 +222,8 @@ brasil,				% o último idioma é o principal do documento
 		\vspace*{\fill}
 		\begin{flushright}
 			Este trabalho é dedicado a todos\\
-			aqueles que me inspiraram, em especial\\
-			XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \\
-			XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+			aqueles que me inspiraram e me ajudaram durante essa caminhada, em especial\\
+			minha família e amigos.
 		\end{flushright}
 	\end{dedicatoria}
 	% ---
@@ -233,13 +232,14 @@ brasil,				% o último idioma é o principal do documento
 	% Agradecimentos
 	% ---
 	\begin{agradecimentos}
-
+    
 	\end{agradecimentos}
 
 	% resumo em português
 	\begin{resumo}
 		\noindent
-    Este trabalho busca trazer um comparativo entre as capacidades reais de um servidor AMD64 e um servidor ARM em ambiente de banco de dados.Foi desenvolvida uma metodologia e um algoritmo para que a comparação pudesse ser a mais direta possível e mais simples de se aplicar uma escalabilidade de desempenho comparado.Foram utilizados os bancos de dados MariaDB e Postgres.
+    Este trabalho busca trazer um comparativo entre as capacidades reais de um servidor AMD64 e um servidor ARM em ambiente de banco de dados.Foi desenvolvida uma metodologia e um algoritmo para que a comparação pudesse ser a mais direta possível e mais simples de se aplicar uma escalabilidade de desempenho comparado.Foram utilizados os bancos de dados MariaDB e Postgres para simular os mais diversos tipos de operações basicas em bancos de dados como seleção ,inserção e edição de dados.
+    durante os testes foram utilizados docker e limitações generalizadas no sistema operacional para que ambas as maquinas fossem o mais parecidas a nivel de hardware,sendo assim podendo ser consideradas iguais apenas com diferença em suas arquiteturas,ao final dos testes os resultados foram tão próximos que apenas no consumo energético ficaram realmente evidentes.
 		\vspace{\onelineskip}
 
 		\noindent
@@ -251,7 +251,7 @@ brasil,				% o último idioma é o principal do documento
 		\begin{otherlanguage*}{english}
 			\vspace{\onelineskip}
 			\noindent
-    This work seeks to bring a comparison between the real capabilities of an AMD64 server and an ARM server in a database environment. A methodology and an algorithm were developed so that the comparison could be as direct as possible and simpler to apply a scalability of performance compared.MariaDB and Postgres databases were used..
+    This work seeks to bring a comparison between the real capabilities of an AMD64 server and an ARM server in a database environment. A methodology and an algorithm were developed so that the comparison could be as direct as possible and simpler to apply a scalability of performance compared.MariaDB and Postgres databases were used.
 			\vspace{\onelineskip}
 
 			\noindent  \textbf{Key-words}:  ARM. AMD64. benchmark. server. MariaDB. Postgres. comparative.
@@ -337,7 +337,7 @@ brasil,				% o último idioma é o principal do documento
 %caption
 \refstepcounter{imagem}
 \begin{figure}[htbp]
-\includesvg[width=\textwidth]{#2}
+\includesvg[draft,width=\textwidth]{#2}
 \caption{#3}
 \label{imagem:#1}
 \end{figure}
@@ -360,8 +360,8 @@ brasil,				% o último idioma é o principal do documento
 %caption
 \refstepcounter{imagem}
 \begin{figure}[htbp]
-\includesvg[width=\textwidth]{{\detokenize{#2}}}
-\caption{#1}
+\includesvg[draft=false,width=\textwidth]{{\detokenize{#1}}}
+\caption{#2}
 \label{imagem:#1}
 \end{figure}
 }
@@ -391,6 +391,8 @@ As JVMs estão disponíveis para muitas plataformas de hardware e software (ou s
 \sig{SoC} System on a chip,outra nomeclatura para \myref{sig}{SBC}
 
 \sig{WINE} O Wine é uma camada de tradução capaz de executar aplicações Windows em Linux e em outros sistemas operacionais compatíveis com POSIX
+
+\sig{die} cirquito eletronico gravado a laser que contem as trilhas eletronicas dentro de um processador de computador
 
 \end{siglas}
 
@@ -443,10 +445,10 @@ Após o lançamento dos macbooks de 2020 com processador M1, que funcionam com a
 Existem arquiteturas com propósitos diferentes,como o caso dos processadores \myref{sig}{ARM} que foram pensados para entregar uma grande eficiência energética,enquanto os processadores \myref{sig}{x86} foram pensados para apresentarem grande poder de processamento independente do consumo energético. O principal propósito da arquitetura \myref{sig}{ARM} entretanto não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes,tanto que um computador doméstico comum utiliza de 200 a 300w por hora enquanto um computador raspberry pi 4, que é o computador \myref{sig}{ARM} mais potente da marca mais popular dentre os \myref{sig}{SBC} atualmente,consome em torno de 15w hora. É uma grande diferença, principalmente levando em conta que ambos têm a possibilidade de rodar os mesmos programas open source de Linux, tanto editores de texto, navegadores de internet quanto IDEs de programação que estão disponíveis para ambos.Para um usuário médio não existe limitação ao se migrar de um para o outro.\newline
 
 \subsec{ARM}
-A arquitetura \myref{sig}{ARM} é baseada na arquitetura Risc,uma arquitetura de processadores concorrente da Cisc que veio a se tornar a \myref{sig}{AMD64}, a primeira revisão da arquitetura \myref{sig}{ARM},chamada de ARM-1,foi lançada em 1985,no mesmo ano foi lançada a segunda revisão ARM-2,que apresentava mais funcionalidades e desempenho no mesmo tamanho de die,cirquito integrado composto de material semi condutor,já em 1989 foi lançada a terceira revisão,chamada ARM3 operando a 25MHz.
+A arquitetura \myref{sig}{ARM} é baseada na arquitetura Risc,uma arquitetura de processadores concorrente da Cisc que veio a se tornar a \myref{sig}{AMD64}, a primeira revisão da arquitetura \myref{sig}{ARM},chamada de ARM-1,foi lançada em 1985,no mesmo ano foi lançada a segunda revisão ARM-2,que apresentava mais funcionalidades e desempenho no mesmo tamanho de \myref{sig}{die},cirquito integrado composto de material semi condutor,já em 1989 foi lançada a terceira revisão,chamada ARM3 operando a 25MHz.
 de forma geral a arquitetura ARM sempre apresentou dies menor e mais eficiente em comparação com a arquitetura x86 e suas variantes,o principal foco de mercado das primeiras revisões da arquitetura ARM foram sistemas embarcados que não dependiam de tantas operações por segundo em comparação com computadores convencionais como servidores ,desktops e notebooks.\newline
-com o tempo a arquitetura ARM alterou o ARM3 até que chegou a arquitetura ARMv6 que é onde ela começou a ficar comparativamente mais potente ao ponto de ser mais amplamente utilizada,após essa revisão ,lançada por volta de 2007,a arquitetura arm começou a ser amplamente utilizada para computação com o advento dos smartphones como conhecemos hoje em dia.
-a arquitetura arm passou por mais 3 grandes revisões após o ARMv6,chamadas:
+com o tempo a arquitetura ARM alterou o ARM3 até que chegou a arquitetura ARMv6\cite{ARMv6Manual} que é onde ela começou a ficar comparativamente mais potente ao ponto de ser mais amplamente utilizada,após essa revisão ,lançada por volta de 2007,a arquitetura arm começou a ser amplamente utilizada para computação com o advento dos smartphones como conhecemos hoje em dia.\cite{histARMEmbarcados}
+a arquitetura arm passou por mais 3 grandes revisões após o ARMv6,chamadas:\cite{ARMhist}
 \begin{itemize}
  \item ARMv7,que foi a arquitetura mais amplamente utilizadas em smartphones no principio do android ,ios e windows phone. Isso devido aos seus ganhos em economia energética e processamento em relação ao espaço necessário para o processador funcionar corretamente em relação as outras existentes no mercado.
  \item ARMv8,que foi a primeira implementação oficial das instruções 64bit,também conhecida como aarch64.Essa foi a revisão que possibilitou a criação dos tablets e notebooks com processador arm que existem atualmente.
@@ -512,8 +514,8 @@ O PSutil (Python System and Process Utilities) é uma biblioteca multiplataforma
 \sec{A Comparison of Database Performance of MariaDB and MySQL with OLTP Workload}
 Foram utilizados vários tipos de bancos de dados além do Postgres e do MariaDB para a comparação de performance, sendo o foco principal entre MariaDB e MySQL. Foram monitorados CPU e memória RAM, e durante os testes foi usado um hypervisor chamado XEN nas máquinas com plataforma \myref{sig}{AMD64} XEN, e 4 GB de memória RAM. A mesma estrutura de BD foi utilizada em todos os servidores.\newline
 MariaDB e MySQL foram muito próximos em relação ao desempenho no 1º teste, e no 2º teste MariaDB foi ligeiramente mais pesado em relação a CPU que MySQL, conforme mostrado nos gráficos abaixo.\cite{MariaDBMySQLOLTP}\newline
-\imagempng{valores encontrados oltp mariadb}{artigos relacionados/oltp mariadb.png}{valores encontrados para o container mariadb para o 1 teste no artigo citado}
-\imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
+% \imagempng{valores encontrados oltp mariadb}{artigos relacionados/oltp mariadb.png}{valores encontrados para o container mariadb para o 1 teste no artigo citado}
+% \imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
 \newline\newline
 
 \sec{Automatisation de Docker Swarm sur SoCs ARM avec support MPI et Analyse des Performances}
@@ -678,7 +680,7 @@ Além de saber qual a função que a chamou esse método existe uma outra implem
 %\subsection{paralelLib}
 %\label{subsec:paralelLib}
 \subsec{paralelLib}
-Essa biblioteca possui 2 implementações diferentes de paralelização, utilizando a classe threading \cite{threading}, e a classe multiprocessing \cite{multiprocessing}. A classe threading utiliza threads para a paralelização de execuções, esse método foi inicialmente utilizado por ser de simples implementação e simples monitoramento da execução. Entretanto devido às limitações de segurança[referenciar seção do erro de segurança de thread] dessa classe foi escolhida uma implementação utilizando a classe multiprocessing, onde essa classe cria um grupo de subprocessos para o código que irão ser responsáveis pela execução do algoritmo selecionado. Ambas as classes implementadas, a derivada de threading e a derivada de multiprocessing, foram feitas de formas análogas e de simples substituição em código de uma para a outra de acordo com a necessidade, sendo assim funcionam de forma parecida. Ambas funcionam com uma classe de gerência chamada paralel, no caso de threading sendo paralel_thread e no caso de multiprocessing sendo paralel_subprocess, assim como classes worker com nomes semelhantes, worker_thread e worker_subprocess.\newline
+Essa biblioteca possui 2 implementações diferentes de paralelização, utilizando a classe threading \cite{threading}, e a classe multiprocessing \cite{multiprocessing}. A classe threading utiliza threads para a paralelização de execuções, esse método foi inicialmente utilizado por ser de simples implementação e simples monitoramento da execução. Entretanto devido às limitações de segurança[referenciar seção do erro de segurança de thread] dessa classe foi escolhida uma implementação utilizando a classe multiprocessing, onde essa classe cria um grupo de subprocessos para o código que irão ser responsáveis pela execução do algoritmo selecionado. Ambas as classes implementadas, a derivada de threading e a derivada de multiprocessing, foram feitas de formas análogas e de simples substituição em código de uma para a outra de acordo com a necessidade, sendo assim funcionam de forma parecida. Ambas funcionam com uma classe de gerência chamada paralel, no caso de threading sendo paralel\_thread e no caso de multiprocessing sendo paralel\_subprocess, assim como classes worker com nomes semelhantes, worker\_thread e worker\_subprocess.\newline
 
 As classes de gerência funcionam gerando um array de objetos da classe worker, sendo cada um equivalente a uma thread ou subprocesso da execução paralela respectivamente. Também existe um elemento, que pode ser apenas um elemento ou array, com as funções que serão executadas no processamento paralelo, além disso gera um objeto que contém os elementos que serão processados durante o processamento paralelo. Esses objetos são passados como kwargs das funções que serão executadas, podem ser aceitas várias funções desde que sigam apenas uma regra. Essas funções devem ter exatamente as mesmas entradas de dados, no caso utilizado no algoritmo, cada função é a referência de uma função associada a um objeto com uma credencial diferente para a comunicação com o banco de dados, de forma que não seja executada mais de uma comunicação com uma credencial por vez.\newline
 
@@ -911,7 +913,9 @@ levando em conta a descrição de \myref{ch}{Testes}, essas variações das velo
 
 A principal diferença identificada em relação aos testes além do previamente informado é o tempo, em 60\% das vezes o postgres \myref{sig}{ARM} é mais rápido que o \myref{sig}{AMD64}, enquanto isso em 85\% das vezes do MariaDB o \myref{sig}{AMD64} é mais rápido.
 
-\imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada}
+\imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada,o eixo x corresponde a quantidade de elementos totais inseridos e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
+
+
 \begin{easyTableAuto}{dados encontrados de uso de hardware teste inserção}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
 %nome da tabela e label
 %cabeçalho
@@ -936,7 +940,7 @@ Um fator interessante a se destacar é que, apesar da distribuição de operaç�
 \item A partir do 11° ciclo, no postgres, houve um aumento significativo de RAM, os valores que variam entre 18 a 30\% começaram a variar de 18 a 53\% no \myref{sig}{AMD64} e no \myref{sig}{ARM} a variação saiu de 20\% a 34\% para de 20 a 52\%.
 \end{itemize}
 Os tempos apresentados por esse teste estão descritos em \autoref{imagem:resultados todos fracionada}
-\imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark todas operações fracionadas}
+\imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark de operações mistas fracionadas,o eixo x corresponde a quantidade de elementos totais inseridos em função de 10e6  e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
 
 Uma coisa interessante ocorreu em uma etapa do teste, onde aparentemente a máquina que estava executando o teste travou e voltou a funcionar em seguida, isso visto que como as imagens do \myref{subsec}{Resultados todos parte 9} demonstram, durante um intervalo de tempo nenhum dos containers estavam ativos,e sendo assim,nenhuma operação estava sendo realizada neles.\newline
 %lable
@@ -1015,100 +1019,100 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 \apendices
 \ch{apendices relacionados ao teste completo}
 \sec{imagens}
-primeira linha dos resultados mostra o uso decpu,na segunda mostra o uso de ram e na terceira mostra o uso de disco
+o eixo x em todos os graficos é o tempo decorrido,no grafico de cima o eixo y é o uso de cpu,onde cada cor é um nucleo diferente,no grafico do meio o eixo y é o uso de ram em porcentagem e no grafico de baixo o eixo y corresponde ao uso de disco em megabytes,ou bytes em escala de 10e6,onde em azul é a leitura de disco e em laranja é a leitura de disco
 \subsec{todos tempos}
-\apendicesvg{todos fracionada/todos tempos}{todos fracionada/todos tempos.svg}
+\apendicesvg{todos fracionada/todos tempos.svg}{valores tempo benchmark de operações mistas fracionadas,o eixo x corresponde a quantidade de elementos totais inseridos em função de 10e6  e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
 \pagebreak
 
 \subsec{Resultados todos parte 0}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0}{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0}{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0}{todos fracionada/uso do container container_postgres_amd_limpo0.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0}{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}{intervalo 0 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}{intervalo 0 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0.svg}{intervalo 0 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}{intervalo 0 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 1}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1}{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1}{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1}{todos fracionada/uso do container container_postgres_amd_limpo1.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1}{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}{intervalo 1 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}{intervalo 1 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1.svg}{intervalo 1 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}{intervalo 1 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 2}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2}{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2}{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2}{todos fracionada/uso do container container_postgres_amd_limpo2.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2}{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}{intervalo 2 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}{intervalo 2 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2.svg}{intervalo 2 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}{intervalo 2 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 3}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3}{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3}{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3}{todos fracionada/uso do container container_postgres_amd_limpo3.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3}{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}{intervalo 3 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}{intervalo 3 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3.svg}{intervalo 3 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}{intervalo 3 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 4}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4}{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4}{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4}{todos fracionada/uso do container container_postgres_amd_limpo4.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4}{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}{intervalo 4 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}{intervalo 4 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4.svg}{intervalo 4 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}{intervalo 4 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 5}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5}{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5}{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5}{todos fracionada/uso do container container_postgres_amd_limpo5.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5}{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}{intervalo 5 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}{intervalo 5 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5.svg}{intervalo 5 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}{intervalo 5 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 6}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6}{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6}{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6}{todos fracionada/uso do container container_postgres_amd_limpo6.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6}{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}{intervalo 6 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}{intervalo 6 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6.svg}{intervalo 6 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}{intervalo 6 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 7}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7}{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7}{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7}{todos fracionada/uso do container container_postgres_amd_limpo7.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7}{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}{intervalo 7 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}{intervalo 7 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7.svg}{intervalo 7 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}{intervalo 7 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 8}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8}{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8}{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8}{todos fracionada/uso do container container_postgres_amd_limpo8.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8}{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}{intervalo 8 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}{intervalo 8 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8.svg}{intervalo 8 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}{intervalo 8 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 9}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9}{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9}{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9}{todos fracionada/uso do container container_postgres_amd_limpo9.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9}{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}{intervalo 9 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}{intervalo 9 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9.svg}{intervalo 9 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}{intervalo 9 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 10}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10}{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10}{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10}{todos fracionada/uso do container container_postgres_amd_limpo10.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10}{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}{intervalo 10 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}{intervalo 10 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10.svg}{intervalo 10 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}{intervalo 10 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 11}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11}{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11}{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11}{todos fracionada/uso do container container_postgres_amd_limpo11.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11}{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}{intervalo 11 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}{intervalo 11 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11.svg}{intervalo 11 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}{intervalo 11 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \subsec{Resultados todos parte 12}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12}{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo12}{todos fracionada/uso do container container_mariadb_armhf_limpo12.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo12}{todos fracionada/uso do container container_postgres_amd_limpo12.svg}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12}{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}{intervalo 12 do uso de hardware do container mariadb na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo12.svg}{intervalo 12 do uso de hardware do container mariadb na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo12.svg}{intervalo 12 do uso de hardware do container postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}{intervalo 12 do uso de hardware do container postgres na arquitetura armhf}%
 \pagebreak
 
 \sec{arquivos}
@@ -1259,12 +1263,12 @@ o valor com mais ocorrencias de uso de cpu é 16\newline
 \sec{imagens}
 primeira linha dos resultados mostra o uso decpu,na segunda mostra o uso de ram e na terceira mostra o uso de disco
 \subsec{todos tempos}
-\apendicesvg{insercao fracionada/insercao tempos.svg}{insercao fracionada/insercao tempos.svg}
+\apendicesvg{insercao fracionada/insercao tempos.svg}{valores tempo benchmark de operação de inserção,o eixo x corresponde a quantidade de elementos totais inseridos em função de 10e6  e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
 \subsec{resultados insercao parte 0}
-\apendicesvg{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}
-\apendicesvg{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}
-\apendicesvg{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}
-\apendicesvg{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}
+\apendicesvg{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}{intervalo 0 do uso de hardware do container mariadb na arquitetura amd64}
+\apendicesvg{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}{intervalo 0 do uso de hardware do container mariadb na arquitetura armhf}
+\apendicesvg{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}{intervalo 0 do uso de hardware do container postgres na arquitetura amd64}
+\apendicesvg{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}{intervalo 0 do de hardware do container postgres na arquitetura amd64}
 \pagebreak
 
 \sec{arquivos}
