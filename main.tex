@@ -417,14 +417,14 @@ As JVMs estão disponíveis para muitas plataformas de hardware e software (ou s
 \addcontentsline{toc}{chapter}{\textbf{Introdução}}
 \markright{Introdução}
 \label{ch:introducao}
-Com a  crescente adoção de processadores com arquitetura \myref{sig}{ARM} que entregam eficiência energética superior a comumente utilizada nos computadores e servidores convencionais (arquitetura \myref{sig}{x86}), que também tem uma versão com arquitetura de 64 bits (\myref{sig}{x64}), se torna necessária uma reavaliação sobre a possível substituição dos computadores existentes pelos com processador \myref{sig}{ARM}.
+Com a  crescente adoção de processadores com arquitetura \myref{sig}{ARM} que entregam eficiência energética superior a comumente utilizada nos computadores e servidores convencionais (arquitetura \myref{sig}{x86}), que também tem uma versão com arquitetura de 64 bits (\myref{sig}{x64}), se faz necessária uma avaliação sobre a possível substituição dos computadores existentes pelos com processador \myref{sig}{ARM}.
 Esta pesquisa foi desenvolvida considerando o uso de servidores \myref{sig}{ARM} presentes no mundo corporativo, de tal forma que foi feita uma comparação na utilização deste tipo de processadores para a simulação de uma aplicação de banco de dados. Essa aplicação simula, de forma realística, a utilização de uma base de dados de uma locadora de filmes.\newline
 
-Para que pudessem ser comparadas as arquiteturas, foi escolhida a opção de se executar um benchmark para compará-las, o benchmark é um processo em que a máquina tem uma alta carga de uso aplicada sinteticamente para que possam ser registrados os dados de uso de hardware, e com isso encontrar valores numéricos para se utilizar de comparação com outros resultados desse benchmark em outras máquinas. Para que um benchmark seja válido é necessário que a mesma coisa seja testada em mais de uma máquina, neste caso foi selecionado o teste de operações de bancos de dados distintos de forma padronizada, já que os testes são feitos de forma padronizada, esses testes podem ser replicados em qualquer arquitetura de hardware e no final são comparáveis por conta disso.\newline
+Para que pudessem ser comparadas as arquiteturas, foi utilizado um cenário de benchmark de desempenho entre elas. O benchmark é um processo em que a máquina tem uma alta carga de uso aplicada sinteticamente para que possam ser registrados os dados de uso de hardware. Desta forma é possível encontrar valores numéricos para fazer uso de comparação com outros resultados desse benchmark em outras máquinas. Para que um benchmark seja válido é necessário que o cenário de teste feito em uma arquitetura seja feita, de forma idêntica, na outra arquitetura. Neste caso foi selecionado o teste de operações de bancos de dados distintos deforma padronizada, já que os testes são feitos de forma padronizada, esses testes podem ser replicados em qualquer arquitetura de hardware e no final são comparáveis por conta disso.\newline
 
-Para que pudesse ser testados os dados de uso de CPU, RAM e disco foi criado um programa para a geração de dados baseado na biblioteca Faker implementado na linguagem Python, os dados são gerados para cada país, em idiomas e caracteres compatíveis com a região escolhida, o que permite que estes dados como, nome, telefone, endereço e até mesmo usuário e senha sejam compatíveis com a região escolhida. Essa forma de inserção foi escolhida, já que um preenchimento de dados totalmente aleatórios e de tamanho fixo, poderia apresentar discrepância em relação ao desempenho em um ambiente real de uso, afetando tanto o tempo, quanto a carga dos processadores de forma negativa. Os dados utilizados em cada ciclo de teste foram exatamente os mesmos, simulando o uso em ambiente real, desta forma o benchmark se torna aplicável à realidade e de mais fácil comparação de desempenho que outros mecanismos de benchmark encontrados.\newline
+Para que pudesse ser testados o uso de CPU, RAM e disco foi criado um programa para a geração de dados baseado na biblioteca Faker implementado na linguagem Python. Os dados são gerados para cada país, em idiomas e caracteres compatíveis com a região escolhida, o que permite que estes dados como, nome, telefone,endereço e até mesmo usuário e senha sejam compatíveis com a região escolhida. Essa forma de inserção foi escolhida, já que um preenchimento de dados totalmente aleatórios e de tamanho fixo, poderia apresentar discrepância em relação ao desempenho em um ambiente real de uso, afetando tanto o tempo, quanto a carga dos processadores de forma negativa. Os dados utilizados em cada ciclo de teste foram exatamente os mesmos, simulando o uso em ambiente real, desta forma o benchmark se torna aplicável à realidade e de mais fácil comparação de desempenho que outros mecanismos de benchmark encontrados.\newline
 
-Com os resultados dos testes de benchmark obtidos foi esperado encontrar alguma prova se a arquitetura AMD64 é substituível pela arquitetura aarch64 em servidores, já que o maior custo de manutenção de servidores em empresas é o gasto energético, e o gasto energético de um processador ARM é muito menor que o de um processador x86.\newline
+Com os resultados dos testes de benchmark obtidos, foi esperado encontrar alguma prova se a arquitetura \myref{sig}{AMD64} é substituível pela arquitetura \myref{sig}{aarch64} em servidores, já que o maior custo de manutenção de servidores em empresas é o gasto energético, sendo que o gasto energético de um processador \myref{sig}{ARM} é muito menor.\newline
 Durante os próximos capítulos foram descritas:
 \begin{itemize}
     \item Fundamentação teórica, capítulo 1: explica as tecnologias e programas utilizados durante a pesquisa;
@@ -448,13 +448,7 @@ Entretanto, não é possível utilizar placas de vídeo ou outros hardwares PCI 
 
 
 \sec{Arquiteturas}
-Por definição, arquitetura de computador é um conjunto de circuitos eletrônicos padronizados associados a um conjunto de instruções, de forma a simplificar a programação para que executem comandos diferentes do binário, os compiladores utilizam esse conjunto de instruções para que o código de uma linguagem de programação de alto nível seja convertido para uma de baixo nível. A arquitetura também define e limita várias propriedades do hardware, como quantidade máxima de RAM, de armazenamento, suporte de saída de vídeo, capacidades de rede, entre outros.\newline
-
-%Uma micro arquitetura é quando adiciona-se tanto um circuito eletrônico novo ao circuito original da arquitetura quanto apenas uma simplificação ou reorganização dos comandos originais de uma arquitetura,
-%entretanto, em uma micro arquitetura essas modificações são muito pequenas de forma a serem mais similares a arquitetura original do que uma nova arquitetura.
-%Dessa forma as micro arquiteturas podem ser consideradas updates de uma arquitetura e quando são acumulados muitos desses updates, pode ser que seja gerada uma nova arquitetura,
-%como foi o caso da arquitetura \myref{sig}{x86} para a arquitetura \myref{sig}{x64}, onde nesta última foi um upgrade grande o bastante da \myref{sig}{x86} a ponto de ser considerado uma nova arquitetura.
-%A principal e mais visível diferença entre esses dois é a mudança de 32bit(na \myref{sig}{x86}) para 64bit(no \myref{sig}{x64}).\newline
+Por definição, arquitetura de computador é um conjunto de circuitos eletrônicos padronizados associados a um conjunto de instruções, de forma a simplificar a programação para que executem comandos diferentes do binário. Os compiladores utilizam esse conjunto de instruções para que o código de uma linguagem de programação de alto nível seja convertido para uma de baixo nível. A arquitetura também define e limita várias propriedades do hardware, como quantidade máxima de RAM, de armazenamento, suporte de saída de vídeo, capacidades de rede, entre outros.\newline
 
 As arquiteturas também podem ser definidas além da CPU, o que inclui a GPU, \myref{sig}{TPU} e vários outros módulos de hardware de um computador. Inclusive existem arquiteturas especiais que são aplicadas em nível de software, que não são necessariamente arquiteturas de computador, mas sim um tipo diferente de arquitetura, 
 que existem em máquinas abstratas e que simplificam a programação de uma linguagem para que ela funcione com maior compatibilidade em várias máquinas de arquiteturas e de hardware diferentes. 
@@ -464,7 +458,7 @@ No entanto, as arquiteturas não são limitadas apenas a esses exemplos previame
 Isso quer dizer que uma arquitetura não necessariamente é algo que precise de um hardware potente ou que só funcione ou exista em computadores, mas sim a forma como os algoritmos são interpretados no hardware, sendo eles algoritmos como softwares de computador ou como sequências de instruções realizadas por alguém.
 Sendo assim, desde que exista um software e um hardware que se comuniquem, existe uma arquitetura e provavelmente houve uma conversão da linguagem de programação para a linguagem de máquina dessa arquitetura neste dispositivo.\newline
 
-Após o lançamento dos MacBooks de 2020 com processador M1, que funcionam com a arquitetura \myref{sig}{aarch64}, a Apple lançou uma camada de compatibilidade dos softwares com arquitetura \myref{sig}{AMD64} para \myref{sig}{aarch64} chamado de Rosetta2 esse software funciona parcialmente como um emulador, exceto que ele faz as adaptações num nível mais próximo do da máquina real e do sistema operacional nativo da máquina, resultando num desempenho muito superior a qualquer emulador existente. O Rosetta2 funciona de forma análoga ao projeto \myref{sig}{WINE} do Linux que reinterpreta os programas do Windows para funcionarem no Linux,em alguns casos essa conversão leva a uma pequena perda de desempenho por esse processo de reinterpretação, em outros essa perda é bem mais visível, e podendo até mesmo, em raros casos, ocorrer um ganho de desempenho em comparação com o sistema original.\newline
+Após o lançamento dos MacBooks de 2020 com processador M1, que funcionam com a arquitetura \myref{sig}{aarch64}, a Apple lançou uma camada de compatibilidade dos softwares com arquitetura \myref{sig}{AMD64} para \myref{sig}{aarch64} chamado de Rosetta2. Esse software funciona parcialmente como um emulador, exceto que ele faz as adaptações num nível mais próximo da máquina real e do sistema operacional nativo da máquina, resultando num desempenho muito superior a qualquer emulador existente. O Rosetta2 funciona de forma análoga ao projeto \myref{sig}{WINE} do Linux que reinterpreta os programas do Windows para funcionarem no Linux. Em alguns casos essa conversão leva a uma pequena perda de desempenho por esse processo de reinterpretação, em outros essa perda é bem mais visível, e podendo até mesmo, em raros casos, ocorrer um ganho de desempenho em comparação com o sistema original.\newline
 
 Existem arquiteturas com propósitos diferentes, como o caso dos processadores \myref{sig}{ARM} que foram pensados para entregar uma grande eficiência energética, enquanto os processadores \myref{sig}{x86} foram pensados para apresentarem grande poder de processamento independentemente do consumo energético. Entretanto, o principal propósito da arquitetura \myref{sig}{ARM} não é se diferenciar tanto da arquitetura \myref{sig}{x86}, mas sim tornar os computadores mais energeticamente eficientes, um exemplo disso é que um computador doméstico comum utiliza de 200 a 300w por hora, enquanto um computador raspberry pi 4, que é o computador \myref{sig}{ARM} mais potente da marca mais popular dentre os \myref{sig}{SBC} atualmente, consome em torno de 15w por hora. É uma grande diferença, principalmente levando em consideração que ambos têm a possibilidade de rodar os mesmos programas open source de Linux, tanto editores de texto, navegadores de internet quanto IDEs de programação que estão disponíveis para ambos. Para um usuário médio não existe limitação ao se migrar de um para o outro.\newline
 \begin{easyTableAuto}{Tabela comparativa da filosofia de implementação RISC X CISC}{Comparativo & RISC & CISC}{3}{p{.3\textwidth}|p{.3\textwidth}|p{.3\textwidth}}
@@ -476,7 +470,7 @@ Quantidades de instruções & somente o essencial para otimizar o uso de CPU & t
 Pipeline & existe desde o principio & implementado posteriormente \\ \hline
 \end{easyTableAuto}
 
-As operações RISC são o mais simples possível e diversos métodos de programação diferentes são necessários para que algumas operações sejam realizadas, isso apesar de tornar a execução mais otimizada, também faz com que a programação seja mais difícil.
+As operações RISC são o mais simples possível e diversos métodos de programação são necessários para que algumas operações sejam realizadas, isso apesar de tornar a execução mais otimizada, também faz com que a programação seja mais difícil.
 As operações de um processador levam uma quantidade definida de pulsos elétricos gerados por um cristal oscilador para serem executadas, um ciclo equivale ao número de oscilações por segundo que o cristal consegue fazer.\newline
 
 Nos processadores RISC existem apenas duas instruções que conseguem acessar a RAM, todas as operações e instruções são lidas para o cache do processador e apenas utilizadas as que se encontram dentro dele, já que após uma operação ter sido encerrada o resultado dela é movido para a RAM. A memória RAM apenas é acessada antes da operação de um processador RISC ter sido terminada caso não haja espaço suficiente no cache do processador para a operação ser concluída, nesse caso os dados seriam alternados entre a RAM e o cache do CPU o mínimo de vezes possíveis.\newline 
@@ -485,15 +479,15 @@ No entanto, essa forma de troca de dados entre o cache e a RAM não ocorre no CI
 Os processadores RISC desde os seus primórdios buscaram utilizar pipelines para otimizar o tempo de uso de CPU, o que não pode ser dito dos processadores CISC.
 
 \subsec{ARM}
-A arquitetura \myref{sig}{ARM} é baseada na arquitetura RISC, uma arquitetura de processadores concorrente da CISC que veio a se tornar a \myref{sig}{AMD64}, a primeira revisão da arquitetura \myref{sig}{ARM}, chamada de ARM-1, foi lançada em 1985, no mesmo ano foi lançada a segunda revisão ARM-2, que apresentava mais funcionalidades e desempenho no mesmo tamanho de \myref{sig}{die}, já em 1989 foi lançada a terceira revisão, chamada ARM3 operando a 25MHz.
-De forma geral a arquitetura ARM sempre apresentou \myref{sig}{die} menor e mais eficiente em comparação com a arquitetura \myref{sig}{x86} e suas variantes, o principal foco de mercado das primeiras revisões da arquitetura ARM foram sistemas embarcados que não dependiam de tantas operações por segundo em comparação com computadores convencionais como servidores, computadores de mesa e notebooks.\newline
+A arquitetura \myref{sig}{ARM} é baseada na arquitetura RISC, uma arquitetura de processadores concorrente da CISC que veio a se tornar a \myref{sig}{AMD64}. A primeira revisão da arquitetura \myref{sig}{ARM}, chamada de ARM-1, foi lançada em 1985, no mesmo ano foi lançada a segunda revisão ARM-2, que apresentava mais funcionalidades e desempenho no mesmo tamanho de \myref{sig}{die}. Já em 1989 foi lançada a terceira revisão, chamada ARM3 operando a 25MHz.
+De forma geral a arquitetura ARM sempre apresentou \myref{sig}{die} menor e mais eficiente em comparação com a arquitetura \myref{sig}{x86} e suas variantes. O principal foco de mercado das primeiras revisões da arquitetura ARM foram sistemas embarcados que não dependiam de tantas operações por segundo em comparação com computadores convencionais como servidores, computadores de mesa e notebooks.\newline
 
 Com o tempo a arquitetura ARM alterou o ARM3 até que chegou a arquitetura ARMv6 \cite{ARMv6Manual} onde ela começou a ficar comparativamente mais potente ao ponto de ser mais amplamente utilizada. Após essa revisão, lançada por volta de 2007, a arquitetura ARM começou a ser amplamente utilizada para computação com o advento dos smartfones como conhecemos hoje em dia \cite{histARMEmbarcados}.
 A arquitetura ARM passou por mais 3 grandes revisões após o ARMv6, chamadas \cite{ARMhist}:
 \begin{itemize}
  \item ARMv7: foi a arquitetura mais amplamente utilizadas em smartfones no principio do Android, iOS e Windows Phone. Isso devido aos seus ganhos em economia energética e processamento em relação ao espaço necessário para o processador funcionar corretamente em relação as outras alternativas existentes no mercado;
  \item ARMv8: foi a primeira implementação oficial das instruções 64bit, também conhecida como \myref{sig}{aarch64}, essa foi a revisão que possibilitou a criação dos tablets e notebooks com processador ARM que existem atualmente;
- \item ARMv9: é a revisão mais atual da arquitetura, nela foram implementadas várias partes dedicadas a propósitos específicos, como criptografia, virtualização e outras aplicações mais específicas como inteligência artificial. Essa revisão possui 3 ramificações cada uma focada para um dos ramos que a ARM trabalha, são eles: aplicações gerais, processadores e micro controladores; onde cada uma possui cortes ou ampliações para melhor se adequar ao propósito.
+ \item ARMv9: é a revisão mais atual da arquitetura, nela foram implementadas várias partes dedicadas a propósitos específicos, como criptografia, virtualização e outras aplicações mais específicas como inteligência artificial. Essa revisão possui 3 RAMificações cada uma focada para um dos RAMos que a ARM trabalha, são eles: aplicações gerais, processadores e micro controladores; onde cada uma possui cortes ou ampliações para melhor se adequar ao propósito.
 \end{itemize}
 
 \sec{Bancos de dados}
@@ -504,11 +498,11 @@ Sistemas de computadores, dos mais diversos tipos, utilizam banco de dados para 
 A partir dessas características, justifica-se a escolha dos bancos de dados como meio do benchmark realizado para essa comparação de arquiteturas.\newline
 
 \sec{Docker}
-Docker é um sistema de virtualização de máquinas que busca simplicidade no gerenciamento e entrega de desempenho do hardware real da máquina que está sendo usada. Este sistema executa as chamadas de seus ambientes virtualizados, nomeados de contêineres, no mesmo nível do sistema operacional, logo acima do Kernel do sistema, isto possibilita dedicar parte do hardware da máquina real para um contêiner. E permite, dentre outras possibilidades, reservar de forma fixa porções do hardware, como por exemplo, definir limite de memória RAM ou quantidade de núcleos de CPU utilizados.\newline
+Docker é um sistema de virtualização de máquinas que busca simplicidade no gerenciamento e entrega de desempenho do hardware real da máquina que está sendo usada. Este sistema executa as chamadas de seus ambientes virtualizados, nomeados de contêineres, no mesmo nível do sistema operacional, logo acima do Kernel do sistema, isto possibilita dedicar parte do hardware da máquina real para um contêiner. Permite, dentre outras possibilidades, reservar de forma fixa porções do hardware, como por exemplo, definir limite de memória RAM ou quantidade de núcleos de CPU utilizados.\newline
 
 Outra funcionalidade do Docker é a implementação de volumes, que é a forma de isolar as pastas do contêiner, e mantê-las mesmo se houver a necessidade do contêiner ser reinstalado para realizar atualização.\newline
 
-O Docker foi desenvolvido a pedido da Google utilizando a linguagem GO, desenvolvida pela própria empresa, e ele foi criado visando a simplificação da gerência dos clusters de processamento da Google, que utilizam dezenas de computadores mais fracos para fazer o processamento. Portanto essa implementação tem um menor custo para compor um ambiente de processamento tão potente quanto em um ambiente com poucas máquinas de maior valor. O Docker também facilita a manutenção devido à fácil reimplementação de um contêiner caso a máquina tenha algum problema \cite{dockerdoc}.
+O Docker foi desenvolvido a pedido da Google utilizando a linguagem GO, desenvolvida pela própria empresa, e foi criado visando a simplificação da gerência dos clusters de processamento da Google, que utilizam dezenas de computadores mais fracos para fazer o processamento. Portanto essa implementação tem um menor custo para compor um ambiente de processamento tão potente quanto em um ambiente com poucas máquinas de maior valor. O Docker também facilita a manutenção devido à fácil reimplementação de um contêiner caso a máquina tenha algum problema \cite{dockerdoc}.
 
 \subsec{Contêiner Docker}
 Um container Docker executa em um nível logo acima do Kernel, isto permite que qualquer dispositivo, ou dado disponível na máquina real do usuário, possa ser acessível por um container Docker. Além disso, ele possui maior eficiência de uso de memória RAM e de CPU em comparação às máquinas virtuais ou outros métodos de virtualização.\newline
@@ -566,7 +560,7 @@ O PSutil (Python System and Process Utilities) é uma biblioteca multiplataforma
 Neste trabalho foram utilizados vários tipos de bancos de dados além do Postgres e do MariaDB para a comparação de performance, sendo o foco principal entre MariaDB e MySQL, além disso, foram monitorados CPU e memória RAM, e durante os testes foi usado um hypervisor chamado XEN nas máquinas com plataforma \myref{sig}{AMD64} e foram usados 4 GB de memória RAM nas máquinas dos testes. A mesma estrutura de BD foi utilizada em todos os servidores.\newline
 
 MariaDB e MySQL foram muito próximos em relação ao desempenho no primeiro teste, e no segundo teste MariaDB foi ligeiramente mais pesado em relação a CPU que MySQL \cite{MariaDBMySQLOLTP}.\newline
-% \imagempng{valores encontrados oltp mariadb}{artigos relacionados/oltp mariadb.png}{valores encontrados para o container mariadb para o 1 teste no artigo citado}
+% \imagempng{valores encontrados oltp  MariaDB}{artigos relacionados/oltp  MariaDB.png}{valores encontrados para o container  MariaDB para o 1 teste no artigo citado}
 % \imagempng{valores encontrados oltp mysql}{artigos relacionados/oltp mysql.png}{valores encontrados para o container mysql para o 1 teste no artigo citado}
 \newline\newline
 
@@ -617,7 +611,7 @@ O autor chegou à conclusão de que o Raspberry Pi é uma boa plataforma para re
 Cerca de 4 anos após a conclusão deste trabalho, foi lançada uma versão nova e exponencialmente mais útil em termos de testes replicáveis, pois não há limitação às placas de 1gb de RAM e nem a limitação das baixas velocidades de transferência, tanto de disco quanto de rede. A partir disso, as conclusões do autor se comprovaram pouco tempo antes dessa versão ser lançada, e a tendência é de que continue lançando versões superiores, visto que após lançarem versões com 2gb e 4gb de RAM a Raspberry Pi Foundation lançou mais uma versão de 8gb de RAM e posteriormente uma versão estável do seu sistema operacional oficial, agora chamado de Raspberry Pi OS, com suporte a instruções 64 bits. Essas melhorias ocorreram apenas em uma nova revisão da placa, as futuras evoluções tendem a ser ainda maiores levando em conta as evoluções que têm ocorrido nas revisões da arquitetura \myref{sig}{ARM}.\newline
 
 \sec{HS06 Benchmark para um servidor ARM}%{HS06 Benchmark for an ARM Server}
-Este artigo se resume em um benchmark e a análise de um servidor de arquitetura \myref{sig}{ARM}, esse servidor possui 12 slots para encaixes das placas de \myref{sig}{SoC}, cada placa de \myref{sig}{SoC} possui 4 CPUs com 4 núcleos, um pente de RAM, 4 portas SATA e um conector de porta 10GBE para cada cpu, resultando em 16 núcleos, 4 pentes e 16 portas SATA por placa \myref{sig}{SoC}. Cada servidor consome cerca de 300w de energia, entretanto apenas um \myref{sig}{SoC} foi utilizado para os testes.\newline
+Este artigo se resume em um benchmark e a análise de um servidor de arquitetura \myref{sig}{ARM}, esse servidor possui 12 slots para encaixes das placas de \myref{sig}{SoC}, cada placa de \myref{sig}{SoC} possui 4 CPUs com 4 núcleos, um pente de RAM, 4 portas SATA e um conector de porta 10GBE para cada CPU, resultando em 16 núcleos, 4 pentes e 16 portas SATA por placa \myref{sig}{SoC}. Cada servidor consome cerca de 300w de energia, entretanto apenas um \myref{sig}{SoC} foi utilizado para os testes.\newline
 
 Foram utilizados para essa comparação mais 5 servidores \myref{sig}{AMD64}, sendo 1 HP, 3 IBM e 1 Dell, o consumo energético do servidor \myref{sig}{ARM} entre os analisados é o menor e o mais potente em relação ao consumo energético, visto que de acordo com a tabela de resultados apresentada no texto o único que conseguiu mais que 1 ponto por watt gasto foi o computador \myref{sig}{ARM} \cite{hs06}.\newline
 
@@ -654,10 +648,10 @@ Os algoritmos principais do código são a geração do SQLite e a inserção no
 O algoritmo de geração de banco de dados é muito impactado pela quantidade de núcleos de CPU da máquina na qual foi rodada, mais do que a arquitetura ou clock dela. Enquanto na inserção do banco de dados, as especificações do computador não pareceram interferir tanto quanto a aleatoriedade da consistência do funcionamento das threads, essa inconsistência acabou fazendo com que os testes tivessem que ser realizados sob supervisão, sendo muitas vezes necessário interromper uma etapa e depois reiniciá-la, além disso, várias das operações foram testadas de formas diferentes. Foram utilizadas sempre duas etapas de testes, sendo que pequenas modificações foram feitas em cada uma de acordo com o objetivo .\newline
 
 
-%\subsection{teste de tempo de criação do bd}
-%\label{subsec:teste de tempo de criação do bd}
-\subsec{Teste de tempo de criação do BD}
-O teste dessa etapa foi feito para, dentre outros objetivos, comprovar o funcionamento do algoritmo de geração de dados descrito em \myref{subsec}{geradorDeSql}. À medida que o desenvolvimento dessa biblioteca acontecia, testes de geração tiveram que ser feitos, esses testes foram usados para saber a eficiência da geração de dados, isso porque os dados gerados levavam uma quantidade parcialmente aleatória de tempo para serem gerados, muito disso devido aos dados gerados serem semi-procedurais, descrito em \myref{subsec}{Sqlite}. %semi-procedurais pois não segue corretamente a seed de geração procedural
+%\subsection{Teste de tempo de criação do BD e funcionalidade}
+%\label{subsec:Teste de tempo de criação do BD e funcionalidade}
+\subsec{Teste de tempo de criação do BD e funcionalidade}
+O teste dessa etapa foi feito para, dentre outros objetivos, comprovar o funcionamento do algoritmo de geração de dados descrito em \myref{subsec}{geradorDeSql}. À medida que o desenvolvimento dessa biblioteca acontecia, testes de geração tiveram que ser feitos, esses testes foram usados para saber a eficiência da geração de dados, isso porque os dados gerados levavam uma quantidade parcialmente aleatória de tempo para serem gerados, muito disso devido aos dados gerados serem semi-procedurais, descrito em \myref{subsec}{SQLite}. %semi-procedurais pois não segue corretamente a seed de geração procedural
 Além disso, esse teste foi necessário devido a etapa de geração de dados de inserção \myref{sec}{Geração de dados}.\newline
 
 Na etapa principal desse teste, foi feito um teste aditivo que testou 30 ciclos com adição de 100 em 100 elementos em cada ciclo, ademais foi feito um teste de 4 sub ciclos internos para quantidades diferentes de dados. Os testes desta etapa foram realizados em um PC \myref{sig}{aarch64} e dois PCS \myref{sig}{AMD64}, os dados resultaram em valores de tempo consistentes em relação a diferença de frequências dos computadores.\newline
@@ -668,66 +662,66 @@ Sendo assim, se existe um valor de perda entre as arquiteturas para esse teste �
 \item Precision Boost Overdrive: essa tecnologia permite que o processador varie seu clock de acordo com a necessidade, tanto aumentando quanto diminuindo para economizar energia.
 \end{itemize}
 
-Dessa forma, o clock do processador foi diminuído, já que apenas 1 dos núcleos do processador estava em carga alta e essa tecnologia aparentemente leva em conta a porcentagem de todos os núcleos somados para funcionar. Essa informação se baseia nos métodos de economia de energia existentes nos notebooks AMD da mesma geração, visto que a AMD não detalha muito esse processo da sua tecnologia.\newline
+Dessa forma, o clock do processador foi diminuído, já que apenas um dos núcleos do processador estava em carga alta e essa tecnologia aparentemente leva em conta a porcentagem de todos os núcleos somados para funcionar. Essa informação se baseia nos métodos de economia de energia existentes nos notebooks AMD da mesma geração, visto que a AMD não detalha muito esse processo da sua tecnologia. Além disso, também foi realizado um segundo teste referente ao descrito acima, seguindo os mesmos parâmetros, mas utilizando o processamento paralelo.\newline
 
-Também foi realizado um segundo teste referente ao descrito acima, seguindo os mesmos parâmetros, mas utilizando o processamento paralelo. O maior diferencial entre os testes da arquitetura \myref{sig}{ARM} e \myref{sig}{x86} foi que na arquitetura \myref{sig}{ARM} devido a limitações dos recursos disponíveis, foi necessário utilizar um HD ao invés de um SSD. E como dito em \myref{sec}{Geração de dados} isso impacta consideravelmente na velocidade da geração dos dados, resultando em valores piores que o teste anterior devido aos múltiplos acessos simultâneos do armazenamento.\newline
+O maior diferencial entre os testes da arquitetura \myref{sig}{ARM} e \myref{sig}{x86} foi observado que na arquitetura \myref{sig}{ARM}, devido a limitações dos recursos disponíveis, foi necessário utilizar um HD ao invés de um SSD. Em \myref{sec}{Geração de dados} é abordado o quanto isso impacta negativamente na velocidade da geração dos dados, resultando em valores piores que o teste anterior devido aos múltiplos acessos simultâneos do armazenamento.\newline
 
 
 \subsec{Teste de tempo de operação de inserção no BD}
-este teste foi proposto para ser um teste de dois tipos:
+Este teste foi proposto para ser um teste de dois tipos:
 \begin{itemize}
-\item Os dados de inserção foram projetados para não apresentarem erro e sempre retornarem o resultado de operação inserida com sucesso.Isso quer dizer que caso nada tenha ocorrido um problema do algoritmo de geração, apenas operações foram realizadas sem erro.
+\item O primeiro tipo de teste é um teste de tempo para operações sem erros acontecerem, onde os dados de inserção foram projetados para não apresentarem erro e sempre retornarem o resultado de operação inserida com sucesso, ou seja, caso não tenha ocorrido um problema do algoritmo de geração, serão geradas apenas operações que retornam uma mensagem dizendo que nenhum erro foi encontrado durante a inserção;
 
-\item Muitos bancos de dados são usados primariamente para inserção de dados, como bancos de dados de log e de análise de dados.Como o próprio \myref{sec}{Elasticsearch monitoring stack} utilizado durante os testes, onde operações de busca, listagem e filtragem não são a maioria.Sendo assim é um comparativo para esse propósito de teste.Para esse propósito foi utilizada uma variação do \myref{subsec}{Teste de tempo de criação do BD} benchmark de criação de BD.Foi usada uma inserção fracionada dos dados, o que significa que foram realizadas as operações em grupos de 5000 até completar os 100.000.Diferente dos testes de criação, não foram valores aditivos, mas sim interações dos dados em grupos de tamanho fixo.Para que a máquina onde os testes finais não travassem foi definido um valor mais baixo de subprocessos, sendo 1 para cada thread do processador da máquina, onde 3 executavam os testes para o arm e 3 para o amd.
+\item O segundo tipo de teste consiste na medição do tempo gasto, velocidades de leitura e de escrita de disco em aplicações com muitas inserções, já que muitos bancos de dados são usados primariamente para inserção de dados, como bancos de dados de log e de análise de dados, um exemplo é o próprio \myref{sec}{Elasticsearch monitoring stack} que foi utilizado durante os testes, onde juntando a quantidade de operações de busca, listagem e filtragem não refletem a maioria das operações.
 \end{itemize}
-para esse propósito foi utilizada uma variação do benchmark de criação de BD,foi usada uma inserção fracionada dos dados,o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000.
-para que a máquina onde os testes finais não travasse foi definido um valor mais baixo de subprocessos,sendo 1 para cada núcleo do processador da máquina,onde 3 executavam os testes para o \myref{sig}{ARM} e 3 para o amd.
+
+Para esse propósito foi utilizada uma variação do \myref{subsec}{Teste de tempo de criação do BD e funcionalidade}, onde ao invés de utilizar a inserção completa dos dados foi usada uma inserção fracionada, o que quer dizer que foram realizadas as operações em grupos de 5000 até completar os 100.000. Além disso, para que a máquina onde os testes finais foram executados não travasse foi definido um valor mais baixo de subprocessos, sendo um para cada núcleo do processador da máquina, onde três executavam os testes para o \myref{sig}{ARM} e três para o \myref{sig}{AMD64}.
 
 
 \subsec{Teste de tempo de operações variadas no BD}
-Após a confirmação da funcionalidade de forma satisfatória da geração do sqlite, foi iniciado o processo de interação com o banco de dados.Esse processo foi dividido em algumas etapas, primeiramente para verificar se a operação funcionava corretamente.Essa etapa foi feita seguindo os testes de funcionalidade já descritos, onde uma pequena quantidade de operações era gerada, usando a geração de sqlite em ambos os bancos de dados ao mesmo tempo.Após essa etapa de confirmação de funcionalidade não foi feito um teste de desempenho, pois foi deixado para a etapa de testes paralelos.A qual se mostrou mais importante, visto que após a confirmação de funcionalidade mais testes para essa etapa não eram necessários.\newline
+Após a confirmação da funcionalidade de forma satisfatória da geração do SQLite, foi iniciado o processo de interação com o banco de dados, sendo que foi dividido em algumas etapas. Primeiramente foi feita a verificação para confirmar o funcionamento correto da operação, essa etapa foi feita seguindo os testes de funcionalidade já descritos, onde uma pequena quantidade de operações era gerada usando a geração de SQLite em ambos os bancos de dados ao mesmo tempo. Além disso, foram feitos vários testes diferentes de acesso e manipulação do banco de dados foram feitos e as operações sem retorno e comunicação geral com o banco de dados foram os tiveram resultados satisfatórios, sendo assim, tornando-se possíveis as funcionalidades utilizadas da biblioteca \myref{subsec}{gerenciadorDeBD}.\newline
 
-Apenas testes de realização de operações sem retorno, leitura de arquivos, criação de usuários e comunicação geral com o banco de dados, foram feitos todos esses testes que tiveram resultados satisfatórios, tornando-se possível as funcionalidades utilizadas da biblioteca \myref{subsec}{gerenciadorDeBD}.Os dados foram gerados seguindo o seguinte processo:
-50.000 operações de inserção foram gerados e posteriormente foram pedidos 5.000.000 operações randômicas, o que resultou em 50.000 operações de inserção seguidas de 4.950.000 operações randômicas geradas.\newline
+Logo após a etapa de confirmação de funcionalidade não foram feitos testes de desempenho, já que eles foram conduzidos na etapa de testes paralelos, a qual se mostrou mais importante, visto que após a confirmação de funcionalidade não foram necessários mais testes para essa etapa.
+Os dados foram gerados seguindo o seguinte processo:
+50.000 operações de inserção foram geradas e posteriormente foi pedida ao programa a geração de 5.000.000 de operações randômicas, o que resultou em 50.000 operações de inserção seguidas de 4.950.000 operações randômicas geradas. Tendo em vista as grandes quantidade de dados gerados neste teste, para que a máquina onde os testes rodaram não travasse, foi utilizado o mesmo procedimento do \myref{subsec}{Teste de tempo de operação de inserção no BD}.\newline
 
-O principal propósito deste teste foi mostrar que muitos bancos de dados, principalmente de sites de comércio eletrônico e sistemas de gerência de estoque utilizam muitos tipos variados de operações, como as que foram utilizadas nesse teste.Isso faz com que os resultados sejam facilmente aplicáveis para essas situações do mundo real.Para que a máquina onde os testes rodaram não travasse, foi utilizado o mesmo procedimento do \myref{subsec}{Teste de tempo de operação de inserção no BD}.\newline
+O principal propósito deste teste foi mostrar que muitos bancos de dados, principalmente de sites de comércio eletrônico e sistemas de gerência de estoque utilizam muitos tipos variados de operações, como as que foram utilizadas nesse teste, sendo assim faz com que os resultados sejam facilmente aplicáveis para estas situações do mundo real.\newline
 
-%\subsection{teste de tempo de operações paralelas}
-%\label{subsec:teste de tempo de operações paralelas}
 \subsec{Teste de tempo de operações paralelas}
-Essa foi a etapa que demandou maior quantidade de testes, estudos e desenvolvimento dos testes implementados.Visto que além da programação paralela ser mais complexa que a programação linear, ela é bem mais difícil de ser testada.Apenas foi possível após as outras classes principais,\myref{subsec}{gerenciadorDeBD} e \myref{subsec}{geradorDeSql}, serem finalizadas.\newline
+Essa foi a etapa que demandou maior quantidade de testes, estudos e desenvolvimento dos testes implementados, visto que além da programação paralela ser mais complexa que a programação linear, ela é bem mais difícil de ser testada. No entanto, apenas foi possível após as outras classes principais,\myref{subsec}{gerenciadorDeBD} e \myref{subsec}{geradorDeSql}, serem finalizadas.\newline
 
-Basicamente para a execução desse teste foi feita a execução dos testes de tempo, porém com modificações no código para que ele funcionasse de forma paralela.\newline
+Resumidamente, para a execução desse teste foi feita uma variação dos testes descritos em \myref{subsec}{Teste de tempo de operações variadas no BD}, porém com algumas modificações no código para que ele funcionasse de forma paralela.\newline
 
 
-%\section{testes de eficiencia}
-%\label{sec:testes de eficiencia}
+
 \sec{Testes de eficiência}
-Esses testes não apenas levam em conta o tempo que foi gasto para concluir a operação, mas também a forma como elas foram concluídas.Isso quer dizer que o tempo é um dos parâmetros para a sua avaliação, mas também a quantidade de falhas apresentadas, quantidade de cpu utilizada, e quantidade de interação do operador do algoritmo para que ele funcione como deveria.
+Esses testes não levam apenas em conta o tempo que foi gasto para concluir a operação, mas também a forma como elas foram concluídas. Isso quer dizer que o tempo é um dos parâmetros para a sua avaliação, mas também a quantidade de falhas apresentadas, quantidade de CPU utilizada, e quantidade de interação do operador do algoritmo para que ele funcione como deveria.
 
 %\subsection{teste de eficiencia de operações paralelas}
 %\label{subsec:teste de eficiencia de operações paralelas}
 \subsec{Teste de eficiência de operações paralelas}
-Esse foi o teste que mais demandou tempo e esforço dentre os realizados.Isso porque devido a complexidade da programação paralela, como já dito em \myref{subsec}{Teste de tempo de operações paralelas}, uma quantidade maior de testes foram demandados.Um dos grandes motivadores foi a etapa descrita em \myref{subsec}{Teste de tempo de inserção no BD}.Apesar dessa etapa não ter sido complicada por si só ela demandou muita atenção pois apresentava muitos erros.Essas operações demandaram muitos testes manuais alternando o método de programação paralela, sendo usando threads ou subprocessos, quantidade de operadores paralelos, quantidade de elementos inseridos e forma dos elementos inseridos.\newline
+Este foi o teste que mais demandou tempo e esforço dentre os realizados, pois devido a complexidade da programação paralela, como já dito em \myref{subsec}{Teste de tempo de operações paralelas}, uma quantidade maior de testes foram demandados, onde um dos grandes motivadores deste teste foi a etapa descrita em \myref{subsec}{Teste de tempo de operação de inserção no BD}.\newline
 
-Tudo isso pois em vários momentos foram apresentados erros randomicamente sem nenhum indício de justificativa.Os erros apareciam em certos momentos quando era usado o processamento paralelo em threads e em outros utilizando o processamento paralelo de subprocessos.Os mesmos erros eram corrigidos para que em sequência ao se implementar a próxima funcionalidade necessária o mesmo erro se repetisse.Isso gerou um loop do processo de desenvolvimento , onde muitos testes eram realizados e alternados com leitura de documentação das bibliotecas utilizadas, ou mesmo leitura de exemplos de códigos de fóruns e sites.\newline
+Apesar desta etapa não ter sido complicada por si só, essas operações demandaram muitos testes manuais alternando o método de programação paralela, já que apresentava muitos erros e por isso ela demandou muita atenção, para tentar solucionar esses erros foram usados varias formas diferentes de se implementar a programação paralela, sendo usando threads ou subprocessos, quantidade de operadores paralelos, quantidade de elementos inseridos e forma dos elementos inseridos. Isso ocorreu pois em vários momentos foram apresentados erros randomicamente sem nenhum indício de justificativa.\newline
 
-Essa etapa se misturou muito com o desenvolvimento do programa, pois a otimização do código era necessária para que certas partes dele funcionassem corretamente.Também se misturou com as outras etapas de teste, isso muito por que as outras etapas acabaram por servir como etapas desse mesmo teste.\newline
+Os erros apareciam em certos momentos quando era usado o processamento paralelo em threads e em outros utilizando o processamento paralelo de subprocessos, os mesmos erros eram corrigidos para que em sequência ao se implementar a próxima funcionalidade necessária o mesmo erro se repetisse. Isso gerou um ciclo no processo de desenvolvimento, onde muitos testes eram realizados e alternados com leitura de documentação das bibliotecas utilizadas, ou mesmo leitura de exemplos de códigos de fóruns e sites.\newline
 
-Durante estes testes foram detectados outros fatores interessantes: primeiro que o postgres apresenta uma demora maior na sua execução em comparação com o mariadb caso ocorram operações que não retornam nada.Esse tipo de operação constitui a maioria das operações geradas para os testes, isso devido a única que é garantida de não dar problema ser a operação de inserção.Além disso, foi detectado que o quadro se inverte nas operações válidas, onde o postgres é bem mais rápido que o MariaDB.Outro fator detectado é que caso seja feita uma implementação sequencial, a inserção dos dados será feita mais rapidamente que uma implementação paralela, além de apresentar menos erros próximos a zero.\newline
+Essa etapa se misturou muito com o desenvolvimento do programa, pois a otimização do código foi necessária para que certas partes dele funcionassem corretamente, e também se misturou com as outras etapas de teste, já que as outras etapas acabaram por servir como etapas desse mesmo teste.\newline
+
+Durante estes testes foram detectados outros fatores interessantes, primeiramente que o Postgres apresenta uma demora maior na sua execução em comparação com o  MariaDB caso ocorram operações que retornem erro, esse tipo de operação constitui a maioria das operações geradas para os testes, isso porquê a única que é garantida de não dar erro é a operação de inserção. Além disso, foi detectado que o quadro se inverte nas operações válidas, onde o Postgres é mais rápido que o MariaDB. Outro fator detectado é que caso seja feita uma implementação sequencial, a inserção dos dados será feita mais rapidamente do que em uma implementação paralela, além de apresentar uma quantidade de erros próximos a zero.\newline
 
 
 
 %\chapter{Metodologia}
 %\label{ch: materiais e métodos}
 \ch{Metodologia}
-O desenvolvimento do software foi feito utilizando vários métodos de análise de log com o objetivo de agilizar a depuração.Possibilitando que os dados gerados pudessem ser facilmente conferidos durante o desenvolvimento.\newline
-Durante esse capítulo, serão descritos os procedimentos mais importantes das etapas de desenvolvimento e funcionamento do software, com o intuito de proporcionar um entendimento simples.\newline
+O desenvolvimento do software foi feito utilizando vários métodos de análise de log com o objetivo de agilizar a depuração possibilitando que os dados gerados pudessem ser facilmente conferidos durante o desenvolvimento.
+Durante esse capítulo, serão descritos os procedimentos mais importantes das etapas de desenvolvimento e funcionamento do software com o intuito de proporcionar um entendimento simples.\newline
 
 %\section{bibliotecas criadas}
 %\label{sec:bibliotecas criadas}
 \sec{Bibliotecas criadas}
-Algumas bibliotecas foram criadas para facilitar o desenvolvimento delas, algumas valem a pena ser mencionadas mais detalhadamente, mas outras apenas serão citadas aqui, uma dessas bibliotecas foi uma para o tratamento de erros.Essa classe é uma derivação da classe padrão do Python de exceção.Essa biblioteca é composta de 3 classes, cada uma para um tipo de mensagem e tratamento de erro, apenas para simplificar e facilitar o debug do código durante a manipulação dele.Ela não faz real diferença em relação ao funcionamento em si, exceto no fator de poderem ser chamadas correções específicas dos erros, quando um try-catch é usado numa função.ainda foi criada uma biblioteca de timer, usada nos testes de tempo do projeto, essa biblioteca apenas é uma contração de forma simples e com tratamento de erro do uso da biblioteca time do Python.Essa técnica de medida de tempo é amplamente utilizada, mas apenas para fins de simplificação no momento do uso foi criada essa biblioteca.
+Algumas bibliotecas foram criadas para facilitar o desenvolvimento delas, algumas valem a pena ser mencionadas mais detalhadamente, mas outras apenas serão citadas aqui, uma dessas bibliotecas foi uma para o tratamento de erros. Essa classe é uma derivação da classe padrão do Python de exceção.Essa biblioteca é composta de 3 classes, cada uma para um tipo de mensagem e tratamento de erro, apenas para simplificar e facilitar o debug do código durante a manipulação dele.Ela não faz real diferença em relação ao funcionamento em si, exceto no fator de poderem ser chamadas correções específicas dos erros, quando um try-catch é usado numa função.ainda foi criada uma biblioteca de timer, usada nos testes de tempo do projeto, essa biblioteca apenas é uma contração de forma simples e com tratamento de erro do uso da biblioteca time do Python.Essa técnica de medida de tempo é amplamente utilizada, mas apenas para fins de simplificação no momento do uso foi criada essa biblioteca.
 
 %\subsection{loggingSystem}
 %\label{subsec:loggingSystem}
@@ -763,13 +757,13 @@ Essa biblioteca se baseia na biblioteca \myref{sec}{Biblioteca psutil} e utiliza
 %\subsection{gerenciadosDeBD}
 %\label{subsec:gerenciadosDeBD}
 \subsec{gerenciadorDeBD}
-Essa biblioteca é feita para que a gerência das conexões do banco de dados seja feita mais facilmente, visto que tem as funções adaptadas para serem iguais para o MariaDB e para o postgres, além disso existem tratamentos de erro customizados para todos os erros que foram observados durante a etapa de desenvolvimento.Dessa forma todos os erros que acontecem são tratados de forma similar, mas como as bibliotecas são diferentes e desenvolvidas por entidades diferentes, várias das correções de erros e funcionamentos também são diferentes.Um exemplo simples disso é que para a biblioteca do postgres para executar um arquivo sql só precisa do string contido nele, mas na biblioteca do MariaDB precisa ser lido e executado linha a linha.Na biblioteca criada foram feitas as adaptações para que independente do banco de dados usado, a função de executar um arquivo sql apenas precisa do caminho do arquivo no sistema ,ela já abre o arquivo e o executa.\newline
+Essa biblioteca é feita para que a gerência das conexões do banco de dados seja feita mais facilmente, visto que tem as funções adaptadas para serem iguais para o MariaDB e para o Postgres, além disso existem tratamentos de erro customizados para todos os erros que foram observados durante a etapa de desenvolvimento.Dessa forma todos os erros que acontecem são tratados de forma similar, mas como as bibliotecas são diferentes e desenvolvidas por entidades diferentes, várias das correções de erros e funcionamentos também são diferentes.Um exemplo simples disso é que para a biblioteca do Postgres para executar um arquivo SQL só precisa do string contido nele, mas na biblioteca do MariaDB precisa ser lido e executado linha a linha.Na biblioteca criada foram feitas as adaptações para que independente do banco de dados usado, a função de executar um arquivo SQL apenas precisa do caminho do arquivo no sistema ,ela já abre o arquivo e o executa.\newline
 
-Algumas outras coisas são feitas, no postgres por exemplo existe uma função de rollback, que é usada para desfazer alguma operação quando ela é identificada como erro numa comunicação com o banco de dados.Não existe algo equivalente para o MariaDB, sendo assim a classe criada trata esse erro tentando executar mais 5 vezes a operação, para garantir que não foi algum erro de conexão aberta, após essas 5 vezes o algoritmo considera que a operação inserida está com problema e a ignora.\newline
+Algumas outras coisas são feitas, no Postgres por exemplo existe uma função de rollback, que é usada para desfazer alguma operação quando ela é identificada como erro numa comunicação com o banco de dados.Não existe algo equivalente para o MariaDB, sendo assim a classe criada trata esse erro tentando executar mais 5 vezes a operação, para garantir que não foi algum erro de conexão aberta, após essas 5 vezes o algoritmo considera que a operação inserida está com problema e a ignora.\newline
 
-     Essa biblioteca serve principalmente para essa generalização, além de controlar a inserção, execução de sql, ainda gerenciar consulta, criação de usuário e ler diretamente o sqlite para realizar as operações escritas Dessa forma essa biblioteca simplifica muito a interação com o banco de dados, essa simplificação chega num ponto em que se tornou possível a paralelização, visto que uma adaptação para isso é bastante complexa caso o código não tenha sido pensado para este fim desde o começo, sendo assim o algoritmo sendo modularizado acabou fazendo possível a implementação de forma paralela.\newline
-     
-      A biblioteca ainda faz com que seja possível consultar o sqlite dos dados gerados diretamente na comunicação com o banco de dados final, isso faz com que seja mais econômico de memória RAM o algoritmo, mas faz também com que ele consuma por mais tempo disco e cpu, mas não necessariamente em maior quantidade.Isso faz com que tenha sido necessário um controle mais preciso da quantidade de threads na execução do benchmark, pois como o cpu é usado por mais tempo, isso poderia causar um travamento da máquina que está gerando os testes e uma subsequente inconsistência dos dados de benchmark gerados, como apresentado em \myref{subsec}{Resultados todos parte 9}.
+Essa biblioteca serve principalmente para essa generalização, além de controlar a inserção, execução de SQL, ainda gerenciar consulta, criação de usuário e ler diretamente o SQLite para realizar as operações escritas Dessa forma essa biblioteca simplifica muito a interação com o banco de dados, essa simplificação chega num ponto em que se tornou possível a paralelização, visto que uma adaptação para isso é bastante complexa caso o código não tenha sido pensado para este fim desde o começo, sendo assim o algoritmo sendo modularizado acabou fazendo possível a implementação de forma paralela.\newline
+
+A biblioteca ainda faz com que seja possível consultar o SQLite dos dados gerados diretamente na comunicação com o banco de dados final, isso faz com que seja mais econômico de memória RAM o algoritmo, mas faz também com que ele consuma por mais tempo disco e CPU, mas não necessariamente em maior quantidade.Isso faz com que tenha sido necessário um controle mais preciso da quantidade de threads na execução do benchmark, pois como o CPU é usado por mais tempo, isso poderia causar um travamento da máquina que está gerando os testes e uma subsequente inconsistência dos dados de benchmark gerados, como apresentado em \myref{subsec}{Resultados todos parte 9}.
 
 
 %\subsection{geradorDeSql}
@@ -780,7 +774,7 @@ essa é a classe referida na seção \myref{sec}{Geração de dados},todas as in
 %\section{software de benchmark}
 %\label{sec:software de benchmark}
 \sec{Software de benchmark}
-O benchmark foi feito utilizando um software desenvolvido para o propósito deste teste, o software de benchmark está mais para um software para gerar estresse na máquina na qual está rodando o banco de dados por meio de várias execuções de comandos direto no banco de dados.O software de benchmark funciona carregando e construindo os dados a partir das inserções no arquivo sqlite, os testes de estresse foram tentados de algumas formas:\newline
+O benchmark foi feito utilizando um software desenvolvido para o propósito deste teste, o software de benchmark está mais para um software para gerar estresse na máquina na qual está rodando o banco de dados por meio de várias execuções de comandos direto no banco de dados.O software de benchmark funciona carregando e construindo os dados a partir das inserções no arquivo SQLite, os testes de estresse foram tentados de algumas formas:\newline
 \begin{itemize}
 \item Primeiramente o algoritmo inicia o contêiner que contém o banco de dados que está sendo analisado;
 \item Após isso é inserindo uma quantidade definida de operações que é lida de forma sequencial do banco de dados inicial;
@@ -817,8 +811,8 @@ os containers utilizados foram desenvolvidos para os propósitos desta pesquisa,
 %\section{geração de dados}
 %\label{sec:geração de dados}
 \sec{Geração de dados}
-Os dados foram todos gerados para um sqlite projetado para ser simples de aceitar qualquer formato de dados que pudesse ser gerado para qualquer tabela.Essas etapas funcionam da seguinte forma: \newline
-No início, os dados foram gerados em sqlite pelo fato que, caso houvesse algum problema e o computador, que estava gerando os dados, fosse abruptamente desligado, não se perdesse as informações que já haviam sido criadas e salvas no banco de dados.Desta forma, economiza  memória ram, já que não é necessário carregar o arquivo todo quando fosse necessária uma consulta de dados, e tempo uma vez que esta etapa é a mais demorada da geração de dados, como descrito em\myref{subsec}{Sqlite}.\newline
+Os dados foram todos gerados para um SQLite projetado para ser simples de aceitar qualquer formato de dados que pudesse ser gerado para qualquer tabela.Essas etapas funcionam da seguinte forma: \newline
+No início, os dados foram gerados em SQLite pelo fato que, caso houvesse algum problema e o computador, que estava gerando os dados, fosse abruptamente desligado, não se perdesse as informações que já haviam sido criadas e salvas no banco de dados.Desta forma, economiza  memória RAM, já que não é necessário carregar o arquivo todo quando fosse necessária uma consulta de dados, e tempo uma vez que esta etapa é a mais demorada da geração de dados, como descrito em\myref{subsec}{SQLite}.\newline
 O código consegue gerar os dados de 3 formas,mas apenas a última é realmente utilizada.As outras duas foram feitas para propósito de testes:
 \begin{itemize}
 \item Gerar uma quantidade x de dados de uma tabela específica;
@@ -830,17 +824,17 @@ Todos esses tipos de geração são feitos pela mesma função que são alterado
 
 Além dos parâmetros relacionados aos tipos de geração informados, existem os parâmetros relacionados a biblioteca faker e uma lista que define quais tipos de operação, descritos em \myref{subsec}{Tipos de dados gerados}, que define, caso não esteja vazia, quais os tipos de dados que serão gerados.Isso foi útil pois utilizou-se o tipo de criação de dados de inserção na primeira etapa de testes, como descrito em teste de tempo de operação de inserção no BD[referenciar], antes de gerar os dados dos outros tipos.\newline
 
-Devido a limitações intencionais, o valor total de operações inseridas em cada execução deve considerar a quantidade da execução anterior.Isso se faz necessário pois o algoritmo verifica apenas a quantidade total de elementos cadastrados no sqlite, ou seja, caso sejam requisitadas 3 tipos de geração diferentes teriam que ser passadas da seguinte forma:
+Devido a limitações intencionais, o valor total de operações inseridas em cada execução deve considerar a quantidade da execução anterior.Isso se faz necessário pois o algoritmo verifica apenas a quantidade total de elementos cadastrados no SQLite, ou seja, caso sejam requisitadas 3 tipos de geração diferentes teriam que ser passadas da seguinte forma:
 \begin{itemize}
 \item Uma geração da quantidade X de dados, resultando em X dados gerados;
 \item Uma geração de Y dados, sendo que Y é igual a X+A, resultando em Y dados gerados;
 \item Uma geração de Z dados, sendo que Z é igual a X+A+B, resultando em Z dados gerados;
 \end{itemize}
-Sendo assim,os dados gerados teriam que ser algo como X=5, Y=10 e Z=15, onde cada etapa apenas teriam 5 dados adicionados ao sqlite.\newline
+Sendo assim,os dados gerados teriam que ser algo como X=5, Y=10 e Z=15, onde cada etapa apenas teriam 5 dados adicionados ao SQLite.\newline
 
 A geração de dados inicialmente foi pensada para rodar em um servidor de forma sequencial, isso simplesmente por que não teria processamento paralelo inicialmente no software, entretanto quando isso se tornou necessário também foi possível utilizar o código previamente existente da geração de dados para a geração de forma paralela.Isso se mostrou uma grande vantagem para a etapa de desenvolvimento, onde vários bancos de dados de testes foram gerados para que fosse garantido que todas as partes desenvolvidas do software estivessem funcionando corretamente, devido a forma como isso foi pensado.\newline
 
-O grande limitador da velocidade de geração de dados é o fator randômico, devido a toda a recursão que ocorre em consequência aos tratamentos de erros, além disso o outro maior limitador é a velocidade da mídia de armazenamento, visto que a aplicação sqlite3 aceita apenas uma inserção por vez no banco de dados de forma paralela, isso faz com que quanto mais rápido fosse possível a escrita em disco, mais rapidamente esse fator limitador era deixado de lado.Devido ao fato de durante os testes da etapa de desenvolvimento todos terem sido usando um SSD para o salvamento desses dados isso não impactou em quase nada na velocidade de geração dos dados,mas na etapa de execução de testes isso se mostrou um problema, já que no dispositivo usado para executar o algoritmo dos testes o HD mecânico fez com que ocorresse diminuição da velocidade de leitura e escrita, sendo assim mesmo na operação de leitura, onde podem ser feitas várias leituras concorrentemente isso impactasse na performance e gerassem alguns erros como descrito em erro de leitura pela falta de velocidade de disco.Como descrito em \myref{subsec}{Erro de leitura pela falta de velocidade de disco}.
+O grande limitador da velocidade de geração de dados é o fator randômico, devido a toda a recursão que ocorre em consequência aos tratamentos de erros, além disso o outro maior limitador é a velocidade da mídia de armazenamento, visto que a aplicação SQLite3 aceita apenas uma inserção por vez no banco de dados de forma paralela, isso faz com que quanto mais rápido fosse possível a escrita em disco, mais rapidamente esse fator limitador era deixado de lado.Devido ao fato de durante os testes da etapa de desenvolvimento todos terem sido usando um SSD para o salvamento desses dados isso não impactou em quase nada na velocidade de geração dos dados,mas na etapa de execução de testes isso se mostrou um problema, já que no dispositivo usado para executar o algoritmo dos testes o HD mecânico fez com que ocorresse diminuição da velocidade de leitura e escrita, sendo assim mesmo na operação de leitura, onde podem ser feitas várias leituras concorrentemente isso impactasse na performance e gerassem alguns erros como descrito em erro de leitura pela falta de velocidade de disco.Como descrito em \myref{subsec}{Erro de leitura pela falta de velocidade de disco}.
 
 %\subsection{tipos de dados gerados}
 %\label{subsec:tipos de dados gerados}
@@ -856,7 +850,7 @@ Foram selecionadas para os teste apenas as operações mais utilizadas por um ba
 \end{enumerate}
 Antes de ser gerada, a operação de inserção passa por vários processos de tratamento de erro para se certificar que não houve dependência alguma que não foi gerada, como por exemplo, gerar uma cidade sem existir um país cadastrado.\newline
 
-Esse foi um dos motivos de ter sido utilizado um arquivo sqlite ao invés de outro método de armazenamento.Dessa forma, pode-se executar essa consulta de dependência de forma rápida e apenas retornar índices válidos para associações de tabela.\newline
+Esse foi um dos motivos de ter sido utilizado um arquivo SQLite ao invés de outro método de armazenamento.Dessa forma, pode-se executar essa consulta de dependência de forma rápida e apenas retornar índices válidos para associações de tabela.\newline
 
 Os vários dados gerados por esse programa são usados parcialmente para a geração dos dados novos, mas todos os dados gerados são gerados de forma simplificada e sendo assim, poucas coisas que já haviam sido cadastrados, apenas os ids cadastrados são usados, isso porque  para a associação de dados é levado em conta os dados realmente existentes, ou seja, não são consultados os dados para as queries e nem nenhum outro dado como update.A maioria dos dados gerados não conseguem retornar algum valor, como updates ou deleções, isso foi feito dessa forma para simplificar o algoritmo, e seria totalmente possível a modificação para que esses dados sejam levados em conta no futuro.\newline
 
@@ -879,14 +873,14 @@ O algoritmo de geração de dados funciona de forma que qualquer banco de dados 
 
 Dentro do algoritmo existem vários tipos de dados aceitáveis, tais como id, nome, associação e timestamp, sendo que cada um deles possui um tipo bem definido pelo seu nome, mas o único que vale a pena citar seu funcionamento é a associação.\newline
 
-Como descrito em \myref{subsec}{Sqlite} existe uma tabela do sqlite contendo as quantidades de elementos associados a cada tabela do banco de dados final.O tipo de associação vai pegar esse valor e usar uma função de seleção randômica para que seja escolhido um elemento de id existente no intervalo descrito.Caso não exista algum elemento dessa tabela, por um tratamento de erro é gerado um elemento para ela, permitindo o funcionamento da associação no novo elemento que foi criado.\newline
+Como descrito em \myref{subsec}{SQLite} existe uma tabela do SQLite contendo as quantidades de elementos associados a cada tabela do banco de dados final.O tipo de associação vai pegar esse valor e usar uma função de seleção randômica para que seja escolhido um elemento de id existente no intervalo descrito.Caso não exista algum elemento dessa tabela, por um tratamento de erro é gerado um elemento para ela, permitindo o funcionamento da associação no novo elemento que foi criado.\newline
 
 Os únicos dados que não são passados para o algoritmo funcionar são: o país que deve ser gerado os dados de acordo com \myref{sec}{Biblioteca faker} e a quantidade de dados que devem ser gerados.Ambos sendo necessários de serem inseridos na chamada da função.Os outros dados relevantes referentes ao funcionamento da chamada da função estão em \myref{sec}{Geração de dados}\newline
 
-%\subsection{sqlite}
-%\label{subsec:sqlite}
-\subsec{Sqlite}
-O banco de dados do sqlite foi projetado para ser totalmente maleável e modular, de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark.Foi pensado no seguinte método para facilitar o desenvolvimento, sendo uma tabela de índices e uma tabela de operações.A tabela de índices possui apenas 3 colunas, uma id, uma com o nome da tabela e uma com o total de elementos dessa tabela.A outra tabela é um pouco mais complexa e está descrita a seguir:
+%\subsection{SQLite}
+%\label{subsec:SQLite}
+\subsec{SQLite}
+O banco de dados do SQLite foi projetado para ser totalmente maleável e modular, de forma que não teriam que ser geradas várias tabelas para os vários tipos de dados do benchmark.Foi pensado no seguinte método para facilitar o desenvolvimento, sendo uma tabela de índices e uma tabela de operações.A tabela de índices possui apenas 3 colunas, uma id, uma com o nome da tabela e uma com o total de elementos dessa tabela.A outra tabela é um pouco mais complexa e está descrita a seguir:
 \begin{itemize}
 \item A tabela de operações a ser executada é constituída de uma coluna inteira para o tipo de operação que será realizada, de acordo com \myref{subsec}{Tipos de dados gerados};
 \item Uma coluna é uma string contendo o nome do banco de dados que será executada a operação;
@@ -894,13 +888,13 @@ O banco de dados do sqlite foi projetado para ser totalmente maleável e modular
 \item Uma coluna text, nessa coluna serão inseridos valores adicionais necessários para a execução da operação, como os parâmetros de quais colunas devem ser atualizadas em um update.Aqui os dados inseridos são salvos em formato json para facilitar o trabalho com a linguagem Python, visto que existe uma conversão direta de string json para o tipo dictionary do Python.
 \item Uma coluna text seguindo a mesma ideia da coluna anterior.Esses dados são os dados obrigatórios de qualquer operação, onde dependendo da operação os dados contidos são diferentes.
 \end{itemize}
-Dessa forma, independente se é apenas uma operação de listagem completa, que só necessita de ter preenchida a coluna com o nome do banco de dados e a coluna com o tipo de operação ou se for uma operação de update onde todos os campos podem estar preenchidos, o banco de dados sqlite consegue lidar de forma rápida e segura com qualquer uma das operações e dados gerados pelo algoritmo.Foi cogitado o uso de outras estruturações da tabela de operações, mas essa foi a mais simples de ser implementada, válida para todas as operações e a mais reaproveitável.
+Dessa forma, independente se é apenas uma operação de listagem completa, que só necessita de ter preenchida a coluna com o nome do banco de dados e a coluna com o tipo de operação ou se for uma operação de update onde todos os campos podem estar preenchidos, o banco de dados SQLite consegue lidar de forma rápida e segura com qualquer uma das operações e dados gerados pelo algoritmo.Foi cogitado o uso de outras estruturações da tabela de operações, mas essa foi a mais simples de ser implementada, válida para todas as operações e a mais reaproveitável.
 
 
 %\section{containers docker}
 %\label{sec:containers docker}
 \sec{Contêineres docker}
-Os containers Dockerforam criados a partir do sistema Alpine Linux, no qual foram feitos 2 contêineres diferentes, um para o MariaDB e outro para o postgres.Os contêineres se certificam de criar o banco de dados de forma correta durante a inicialização dele, após isso o contêiner durante a sua inicialização se certifica que o Python está instalado e tudo necessário para que o daemon, descrito em \myref{sec}{Daemon de monitoramento},funcione após isso.O banco de dados do contêiner é finalmente iniciado.Essa forma de instalação do daemon certifica que tanto o interpretador Python3 quanto as bibliotecas usadas estão sempre atualizadas todas as vezes que o contêiner é instanciado.\newline
+Os containers Dockerforam criados a partir do sistema Alpine Linux, no qual foram feitos 2 contêineres diferentes, um para o MariaDB e outro para o Postgres.Os contêineres se certificam de criar o banco de dados de forma correta durante a inicialização dele, após isso o contêiner durante a sua inicialização se certifica que o Python está instalado e tudo necessário para que o daemon, descrito em \myref{sec}{Daemon de monitoramento},funcione após isso.O banco de dados do contêiner é finalmente iniciado.Essa forma de instalação do daemon certifica que tanto o interpretador Python3 quanto as bibliotecas usadas estão sempre atualizadas todas as vezes que o contêiner é instanciado.\newline
 
 Apesar de esse método causar uma grande demora na primeira inicialização do contêiner, devido a forma como o script de inicialização funciona somente a primeira inicialização é impactada na sua velocidade de inicialização.Foi tentada a implementação de um heathcheck para saber se o contêiner já havia iniciado o banco de dados e se ele já estava acessível, entretanto além de ocorrer algum problema desconhecido que resultou numa falha nesse procedimento, sua necessidade se provou inexistente.Visto que seria verificada a saúde do contêiner antes da inicialização das execuções dos testes, mas apenas deixar um delay de alguns segundos bastou para que não ocorressem erros relacionados a isso.
 Containers baseados no alpine possui uma especificidade, para a arquitetura armhf, presente no Orangepi PC +, só funcionam corretamente sem grandes modificações do sistema até a versão 3.12, isso devido a uma mudança no método como o sistema operacional manipula o relógio interno, o que quer dizer que não é possível utilizar o gerenciador de pacotes dele uma vez que os repositórios utilizam SSL e ele necessita do relógio funcionar corretamente para completar uma conexão, sendo assim a versão utilizada foi a versão 3.12.\newline
@@ -912,7 +906,7 @@ Outra especificidade do alpine é que ele é um dos poucos sistemas Linux que n�
 \sec{Daemon de monitoramento}
 O daemon de monitoramento monitora os status da máquina na qual está rodando, seja uma máquina física ou um container docker, para esse fim é utilizada a biblioteca \myref{sec}{Biblioteca psutil} que é a principal biblioteca Python quando se trata de monitoramento de hardware.O daemon utiliza também uma biblioteca feita para simplificar o tratamento de log,uma das funcionalidades contidas nesta biblioteca é a comunicação com o aglutinador de logs Logstash do\myref{sec}{Elasticsearch monitoring stack} ,isso feito em cima da biblioteca python-logstash.\newline
 
-O arquivo de configuração do daemon é um json constituído de 2 partes, os parâmetros para se conectar ao Logstash e os dados que serão coletados da máquina local, esses dados coletados serão enviados para o servidor Logstash onde lá serão trabalhados.O daemon envia esses dados com um intervalo de 0.1 segundos, que é apenas passado para que não sejam enviados dados errados de cpu para o servidor de log, uma vez que é comum o erro de se enviar 0\% de uso de cpu caso as consultas sejam feitas muito rapidamente, mas poderia ser aumentado para diminuir o estresse na máquina que está rodando ele e diminuir um pouco o estresse do servidor de coleta de logs, que com as máquinas usadas não se provou necessário.Além é claro de diminuir a quantidade de dados no pós processamento de resultados descritos em \myref{sec}{Processamento de resultados}
+O arquivo de configuração do daemon é um json constituído de 2 partes, os parâmetros para se conectar ao Logstash e os dados que serão coletados da máquina local, esses dados coletados serão enviados para o servidor Logstash onde lá serão trabalhados.O daemon envia esses dados com um intervalo de 0.1 segundos, que é apenas passado para que não sejam enviados dados errados de CPU para o servidor de log, uma vez que é comum o erro de se enviar 0\% de uso de CPU caso as consultas sejam feitas muito rapidamente, mas poderia ser aumentado para diminuir o estresse na máquina que está rodando ele e diminuir um pouco o estresse do servidor de coleta de logs, que com as máquinas usadas não se provou necessário.Além é claro de diminuir a quantidade de dados no pós processamento de resultados descritos em \myref{sec}{Processamento de resultados}
 
 %\section{ambiente de desenvolvimento}
 %\label{sec:ambiente de desenvolvimento}
@@ -921,7 +915,7 @@ O ambiente utilizado foi dividido em duas partes, programação local e remota.N
 
 Foram utilizados Visual Studio Code e DBeaver para o desenvolvimento da \myref{sec}{Software de benchmark} , e ainda foi utilizada uma implementação de um algoritmo de processamento para  \myref{sec}{Elasticsearch monitoring stack} com finalidade de gerar os gráficos e tabelas apresentadas neste trabalho.Os dois primeiros foram escolhidos dentre outros motivos por serem open-source e estarem disponíveis tanto para Linux quanto Windows, visto que ambos sistemas operacionais foram utilizados para o desenvolvimento de acordo com a necessidade.\newline
 
-Para o controle de versão foi utilizado o Git, deixando registrado todo o histórico de alterações do programa, o que se mostrou bem útil para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código.Para os testes iniciais do código foram utilizados containers Dockernão limitados durante a etapa de implementação dos scripts do DBbench, que demandam a existência dos servidores dos bancos de dados sendo executados, ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados.A geração do banco de dados inicial, descrito em \myref{subsec}{Sqlite}, foi feita completamente em um Raspberry Pi 4 com um pequeno overclock, essa geração foi feita durante alguns dias, visto que o \myref{sig}{SBC}, de acordo com \myref{sec}{Testes de tempo}, consome menos energia e devido a sua configuração pré existente, possui um acesso headless mais simplificado que as outras máquinas utilizadas.
+Para o controle de versão foi utilizado o Git, deixando registrado todo o histórico de alterações do programa, o que se mostrou bem útil para o rastreio de erros ocorridos durante o longo tempo de desenvolvimento do código.Para os testes iniciais do código foram utilizados containers Dockernão limitados durante a etapa de implementação dos scripts do DBbench, que demandam a existência dos servidores dos bancos de dados sendo executados, ao contrário do restante do desenvolvimento da aplicação, que não interagiu diretamente com os bancos de dados.A geração do banco de dados inicial, descrito em \myref{subsec}{SQLite}, foi feita completamente em um Raspberry Pi 4 com um pequeno overclock, essa geração foi feita durante alguns dias, visto que o \myref{sig}{SBC}, de acordo com \myref{sec}{Testes de tempo}, consome menos energia e devido a sua configuração pré existente, possui um acesso headless mais simplificado que as outras máquinas utilizadas.
 
 
 \sec{Processamento de resultados}
@@ -936,24 +930,24 @@ Cada um sendo correspondente a uma interação.Após isso o algoritmo de process
 \ch{Resultados}
 
 \sec{Resultados de inserção fracionada}
-O resultado encontrado do primeiro teste de manipulação de bancos de dados, que é o teste de inserção contínua, onde foram inseridos de acordo com \myref{subsec}{Teste de tempo de operação de inserção no BD}, esses dados são comprovadamente sem ocorrência de erros de acordo com o código descrito em \myref{sec}{Geração de dados}, de acordo com os dados coletados pelo \myref{sec}{Contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso, como descrito nos arquivos de logs anexos e na tabela \myref{tab}{Resultados insercao fracionada}.Essa variação ocorre, no computador \myref{sig}{ARM} por ter mais núcleos físicos, portanto é mais complicado de ser avaliada a porcentagem de uso devido a forma como o Dockerdistribui a carga de uso de cpu.Em relação ao uso de RAM, ele se manteve mais constante na arquitetura \myref{sig}{ARM}.O uso de RAM é bem menor que no \myref{sig}{AMD64}, nas duas arquiteturas a diferença do uso de RAM é de cerca de 5\%, onde no MariaDB a variação faz com que o uso de RAM seja ligeiramente maior no\myref{sig}{AMD64}.Para o postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{ARM} e 3Mbps para o amd.Já para o MariaDB é de 3.5Mbps para o \myref{sig}{ARM} e 9.5Mbps para o \myref{sig}{AMD64}.\newline
+O resultado encontrado do primeiro teste de manipulação de bancos de dados, que é o teste de inserção contínua, onde foram inseridos de acordo com \myref{subsec}{Teste de tempo de operação de inserção no BD}, esses dados são comprovadamente sem ocorrência de erros de acordo com o código descrito em \myref{sec}{Geração de dados}, de acordo com os dados coletados pelo \myref{sec}{Contêineres docker} em todos os núcleos disponíveis para o contêiner existe uma variação de porcentagem de uso, como descrito nos arquivos de logs anexos e na tabela \myref{tab}{Resultados insercao fracionada}.Essa variação ocorre, no computador \myref{sig}{ARM} por ter mais núcleos físicos, portanto é mais complicado de ser avaliada a porcentagem de uso devido a forma como o Dockerdistribui a carga de uso de CPU.Em relação ao uso de RAM, ele se manteve mais constante na arquitetura \myref{sig}{ARM}.O uso de RAM é bem menor que no \myref{sig}{AMD64}, nas duas arquiteturas a diferença do uso de RAM é de cerca de 5\%, onde no MariaDB a variação faz com que o uso de RAM seja ligeiramente maior no\myref{sig}{AMD64}.Para o Postgres a velocidade de disco de escrita é em torno de 500kbps para o \myref{sig}{ARM} e 3Mbps para o amd.Já para o MariaDB é de 3.5Mbps para o \myref{sig}{ARM} e 9.5Mbps para o \myref{sig}{AMD64}.\newline
 
 levando em conta a descrição de \myref{ch}{Testes}, essas variações das velocidades são provavelmente devido a otimizações das arquiteturas para cada banco de dados.já a velocidade de leitura de disco é praticamente 0\% o tempo todo, isso se deve a pouca necessidade de informações consultada dos dados cadastrados pelo algoritmo de benchmark.\newline
 
-A principal diferença identificada em relação aos testes além do previamente informado é o tempo, em 60\% das vezes o postgres \myref{sig}{ARM} é mais rápido que o \myref{sig}{AMD64}, enquanto isso em 85\% das vezes do MariaDB o \myref{sig}{AMD64} é mais rápido.
+A principal diferença identificada em relação aos testes além do previamente informado é o tempo, em 60\% das vezes o Postgres \myref{sig}{ARM} é mais rápido que o \myref{sig}{AMD64}, enquanto isso em 85\% das vezes do MariaDB o \myref{sig}{AMD64} é mais rápido.
 
 \imagemsvg{resultados insercao fracionada}{insercao fracionada/insercao tempos.svg}{valores tempo benchmark inserção fracionada,o eixo x corresponde a quantidade de elementos totais inseridos e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
 
 
-\begin{easyTableAuto}{dados encontrados de uso de hardware teste inserção}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
+\begin{easyTableAuto}{dados encontrados de uso de hardware teste inserção}{ container & média de CPU & valor máximo médio de CPU & média de RAM & valor máximo médio de RAM }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
 %nome da tabela e label
 %cabeçalho
 %quantidade total de colunas
 %formatação da tabela
- postgres arm & 8 & 25 & 27 & 28 \\ \hline
- postgres amd & 18 & 27 & 30 & 30 \\ \hline
- mariadb arm & 8 & 16 & 34 & 35 \\ \hline
- mariadb amd & 18 & 27 & 34 & 35 \\ \hline
+ Postgres arm & 8 & 25 & 27 & 28 \\ \hline
+ Postgres amd & 18 & 27 & 30 & 30 \\ \hline
+  MariaDB arm & 8 & 16 & 34 & 35 \\ \hline
+  MariaDB amd & 18 & 27 & 34 & 35 \\ \hline
 
 \end{easyTableAuto}
 %lable
@@ -962,11 +956,11 @@ A principal diferença identificada em relação aos testes além do previamente
 \sec{Resultados de operação completa fracionada}
 Ao contrário do que era esperado, os valores gerados pelo \myref{sec}{Software de benchmark} geraram de forma igualmente distribuída, ou seja,os dados foram gerados com uma distribuição de aproximadamente 20\% para cada tipo de operação.Isso por que por algum motivo desconhecido as operações de tipo 5, como descrito em \myref{subsec}{Tipos de dados gerados}, não foram gerados nenhuma vez durante os testes, fora isso todos os outros dados gerados ocorreram como o esperado, onde são feitas queries de seleção, pesquisa e inserção da forma como era esperada e as operações ocorreram como o esperado.\newline
 
-Um fator interessante a se destacar é que, apesar da distribuição de operações ter sido homogênea, o custo de uso de hardware não foi.Em certos momentos houve um grande uso de cpu, mas nunca fugindo muito dos valores apresentados em \myref{sec}{Resultados de inserção fracionada}, e na maioria dos casos houve um maior uso de ram que o apresentado no dito teste, um fator a se destacar é o de que os primeiros ciclos de teste funciona da seguinte forma:
+Um fator interessante a se destacar é que, apesar da distribuição de operações ter sido homogênea, o custo de uso de hardware não foi.Em certos momentos houve um grande uso de CPU, mas nunca fugindo muito dos valores apresentados em \myref{sec}{Resultados de inserção fracionada}, e na maioria dos casos houve um maior uso de RAM que o apresentado no dito teste, um fator a se destacar é o de que os primeiros ciclos de teste funciona da seguinte forma:
 \pagebreak
 \begin{itemize}
 \item A maior parte, cerca de 60\% dos dados, foi de inserção e o restante de operações variadas, diferente do esperado, isso provavelmente se deve a algum problema durante a gerência dos arquivos salvos na máquina, não no algoritmo em si, isso se comprova nos próximos nove ciclos.
-\item A partir do 11° ciclo, no postgres, houve um aumento significativo de RAM, os valores que variam entre 18 a 30\% começaram a variar de 18 a 53\% no \myref{sig}{AMD64} e no \myref{sig}{ARM} a variação saiu de 20\% a 34\% para de 20 a 52\%.
+\item A partir do 11° ciclo, no Postgres, houve um aumento significativo de RAM, os valores que variam entre 18 a 30\% começaram a variar de 18 a 53\% no \myref{sig}{AMD64} e no \myref{sig}{ARM} a variação saiu de 20\% a 34\% para de 20 a 52\%.
 \end{itemize}
 Os tempos apresentados por esse teste estão descritos em \autoref{imagem:resultados todos fracionada}
 \imagemsvg{resultados todos fracionada}{todos fracionada/todos tempos.svg}{valores tempo benchmark de operações mistas fracionadas,o eixo x corresponde a quantidade de elementos totais inseridos em função de 10e6  e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
@@ -976,25 +970,25 @@ Uma coisa interessante ocorreu em uma etapa do teste, onde aparentemente a máqu
 %arquivo
 %caption
 
-\begin{easyTableAuto}{dados encontrados de uso de hardware teste completo}{ container & média de cpu & valor máximo médio de cpu & média de ram & valor máximo médio de ram }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
+\begin{easyTableAuto}{dados encontrados de uso de hardware teste completo}{ container & média de CPU & valor máximo médio de CPU & média de RAM & valor máximo médio de RAM }{5}{p{.15\textwidth}|p{.15\textwidth}|p{.2\textwidth}|p{.15\textwidth}|p{.2\textwidth}}
 %nome da tabela e label
 %cabeçalho
 %quantidade total de colunas
 %formatação da tabela
- postgres arm & 16 & 33 & 61 & 63 \\ \hline
- postgres amd & 9 & 45 & 62 & 63 \\ \hline
- mariadb arm & 16 & 23 & 30 & 30 \\ \hline
- mariadb amd & 9 & 16 & 35 & 35 \\ \hline
+ Postgres arm & 16 & 33 & 61 & 63 \\ \hline
+ Postgres amd & 9 & 45 & 62 & 63 \\ \hline
+  MariaDB arm & 16 & 23 & 30 & 30 \\ \hline
+  MariaDB amd & 9 & 16 & 35 & 35 \\ \hline
 \end{easyTableAuto}
 
 \sec{Problemas e erros}
 aqui foram descritos os erros mais marcantes durante os processos necessários para a obtenção dos resultados.
 
 \subsec{Desenvolvimento do algorítimo}
-Durante o desenvolvimento, vários tipos de erros aconteceram.Em praticamente todas as etapas de desenvolvimento do algoritmo erros marcantes ocorreram, os principais ocorreram durante a etapa de criação do sqlite, no processamento paralelo e na inserção dentro do banco de dados finais.Os dados relevantes das máquinas usadas para o desenvolvimento foram um ryzen 3200g com 16GB de RAM e ssd de 480GB e um i7 7500u com 8GB de RAM e ssd de 240GB.
+Durante o desenvolvimento, vários tipos de erros aconteceram.Em praticamente todas as etapas de desenvolvimento do algoritmo erros marcantes ocorreram, os principais ocorreram durante a etapa de criação do SQLite, no processamento paralelo e na inserção dentro do banco de dados finais.Os dados relevantes das máquinas usadas para o desenvolvimento foram um ryzen 3200g com 16GB de RAM e ssd de 480GB e um i7 7500u com 8GB de RAM e ssd de 240GB.
 
-\subsubsec{Erros da geração do Sqlite}
-Durante a geração do sqlite vários problemas relacionados a geração ocorreram.Um deles fez com que a funcionalidade de seleção de múltiplos países na geração de dados tivesse que ser travada apenas para o Brasil, isso principalmente por que dos vários dados gerados, alguns causam problemas ao ser trocado o país.Como foi dito em \myref{sec}{Biblioteca faker} existem vários parâmetros diferentes dependendo do país selecionado, o mais marcante desses dados no entanto é a geração de números de celular, visto que o brasil é um dos poucos países que possuem essa opção dentre os existentes na biblioteca.Apesar de não ser o único problema encontrado, existem também problemas com os parâmetros de geração de endereço e alguns poucos dados de informações pessoais.Todos esses erros podem facilmente ser corrigidos com tratamentos de erro internos em cada tipo, mas para os propósitos deste trabalho não se provaram proveitosos o bastante.\newline
+\subsubsec{Erros da geração do SQLite}
+Durante a geração do SQLite vários problemas relacionados a geração ocorreram.Um deles fez com que a funcionalidade de seleção de múltiplos países na geração de dados tivesse que ser travada apenas para o Brasil, isso principalmente por que dos vários dados gerados, alguns causam problemas ao ser trocado o país.Como foi dito em \myref{sec}{Biblioteca faker} existem vários parâmetros diferentes dependendo do país selecionado, o mais marcante desses dados no entanto é a geração de números de celular, visto que o brasil é um dos poucos países que possuem essa opção dentre os existentes na biblioteca.Apesar de não ser o único problema encontrado, existem também problemas com os parâmetros de geração de endereço e alguns poucos dados de informações pessoais.Todos esses erros podem facilmente ser corrigidos com tratamentos de erro internos em cada tipo, mas para os propósitos deste trabalho não se provaram proveitosos o bastante.\newline
 
 \subsubsec{Erro do processamento paralelo de threads}
 Durante a etapa de processamento paralelo, seus problemas de desenvolvimento e erros se misturam com a etapa de inserção de dados no banco de dados final, pois ambos foram desenvolvidos simultaneamente, apesar de o processamento paralelo ter sido iniciado primeiro.\newline
@@ -1008,14 +1002,14 @@ Esse erro de acordo com as documentações encontradas é devido ao compartilham
 \subsubsec{Erro do processamento paralelo de subprocessos daemon}
 Um dos problemas encontrados foi uma mensagem de erro chamada de "AssertionError: daemonic processes are not allowed to have children" esse erro impede que processos daemon tenham processos filhos, o que fez com que o processo de sub-processamento tivesse q ser convertido de daemon para um processo convencional, isso pode ser problemático quando se quer fazer um monitoramento do tempo de forma mais direta, isso pois no modo daemon é possível rodar um código enquanto aguarda a execução dos processos daemon serem terminadas, esse foi o método escolhido no final do desenvolvimento devido a modificação na forma como o processo que possui daemon foi implementado, sendo que apenas as threads filhas eram daemons, as threads principais, que são as onde o tempo é monitorado, foi utilizado o método de se esperar a execução de todos subprocessos terminarem e medir o tempo gasto pelo conjunto, onde essa thread retornava o tempo para a função que a chamou, o processo foi um pouco mais complexo de implementar que o previamente proposto, mas terminou com o mesmo resultado.\newline
 
-\subsubsec{Rollback de dados no postgres}
-Outro erro marcante foi o de tratamento de rollback nas operações do postgres, devido a forma como as operações dos bancos de dados foram geradas, nenhuma das operações além da inserção, é realmente válida, o que quer dizer que de acordo com os métodos de segurança e otimização do postgres é necessário executar um rollback após a sua execução para evitar problemas.Isso resulta entre outras coisas numa maior demora da execução do postgres quando dados considerados inválidos são executados e também numa maior necessidade de tratamento de erros na parte relacionada ao postgres da biblioteca \myref{subsec}{gerenciadorDeBD}, devido ao rollback necessário, durante a etapa de desenvolvimento foi necessário reformular os tratamentos de erro de várias formas para que apenas os erros que realmente necessitavam de rollback tivessem a operação executada, já que devido a hierarquia do tratamento de erro da biblioteca psycopg2, alguns erros que ocorriam eram entendidos como necessários de serem executados os rollback em vez do tratamento correto, principalmente o erro de timeout da conexão ou de conexão fechada.
+\subsubsec{Rollback de dados no Postgres}
+Outro erro marcante foi o de tratamento de rollback nas operações do Postgres, devido a forma como as operações dos bancos de dados foram geradas, nenhuma das operações além da inserção, é realmente válida, o que quer dizer que de acordo com os métodos de segurança e otimização do Postgres é necessário executar um rollback após a sua execução para evitar problemas.Isso resulta entre outras coisas numa maior demora da execução do Postgres quando dados considerados inválidos são executados e também numa maior necessidade de tratamento de erros na parte relacionada ao Postgres da biblioteca \myref{subsec}{gerenciadorDeBD}, devido ao rollback necessário, durante a etapa de desenvolvimento foi necessário reformular os tratamentos de erro de várias formas para que apenas os erros que realmente necessitavam de rollback tivessem a operação executada, já que devido a hierarquia do tratamento de erro da biblioteca psycopg2, alguns erros que ocorriam eram entendidos como necessários de serem executados os rollback em vez do tratamento correto, principalmente o erro de timeout da conexão ou de conexão fechada.
 
 \subsec{Erros dos testes finais}
 Durante a etapa de testes finais,ou seja,após a etapa de testes de desenvolvimento,foi utilizado um servidor baseado no FX-6300, utilizando 4GB de RAM e um HD mecânico de 160GB.
 
 \subsubsec{Erro de leitura pela falta de velocidade de disco}
-O HD mecânico da máquina dos testes finais possui velocidades limitadas pela sua tecnologia, SATA 2.Isso impactou de forma considerável a execução dos testes, pois mesmo com a possibilidade de serem feitos diversas leituras simultâneas no sqlite, mesmo sendo possível várias leituras simultâneas nesse método de armazenamento de dados, isso pois a latência entre a requisição da consulta e todo o processo lógico e físico da leitura causasse um time out ocasional na biblioteca sqlite.Uma solução para isso foi a substituição da mídia de armazenamento do arquivo sqlite, foi utilizado um pendrive Kingston 3.0 de 16GB, com velocidades de leitura superiores, de quase o dobro da velocidade, e latência muito inferior que a tecnologia SATA 2, após essa substituição não foi mais visto nenhum erro de timeout durante os testes.
+O HD mecânico da máquina dos testes finais possui velocidades limitadas pela sua tecnologia, SATA 2.Isso impactou de forma considerável a execução dos testes, pois mesmo com a possibilidade de serem feitos diversas leituras simultâneas no SQLite, mesmo sendo possível várias leituras simultâneas nesse método de armazenamento de dados, isso pois a latência entre a requisição da consulta e todo o processo lógico e físico da leitura causasse um time out ocasional na biblioteca SQLite.Uma solução para isso foi a substituição da mídia de armazenamento do arquivo SQLite, foi utilizado um pendrive Kingston 3.0 de 16GB, com velocidades de leitura superiores, de quase o dobro da velocidade, e latência muito inferior que a tecnologia SATA 2, após essa substituição não foi mais visto nenhum erro de timeout durante os testes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      Capítulo 6                      %
@@ -1023,9 +1017,9 @@ O HD mecânico da máquina dos testes finais possui velocidades limitadas pela s
 \ch{Conclusão}
 Como conclusão dos testes realizados, foi confirmado que a arquitetura a \myref{sig}{ARM} é a mais eficiente em relação ao desempenho por watt consumido.Mas os resultados de ambos foram bem próximos, quase iguais para cada banco de dados diferente.O que resultou numa eficiência de cerca de 9 vezes para a arquitetura arm, visto que o computador \myref{sig}{ARM} utilizado consome 10w de energia enquanto o computador \myref{sig}{AMD64} utilizado consome 90w de energia, isso considerando que o consumo de ambos foi de 100\% da capacidade das respectivas fontes o tempo todo.\newline
 
-Os testes realizados foram focados em manter ambos os servidores com a mesma exata característica de carga e desempenho, isso sempre visando o objetivo final de fazer com que a maior parte dos dados coletados pudesse ser diretamente comparáveis, já que o mesmo número de núcleos, ram, velocidade de disco e rede estavam disponíveis para ambas máquinas e o clock de ambas também foi limitado para exatos 1ghz para que as contas finais de comparação fossem mais simples.Sendo assim pode-se considerar os testes como sendo testes 1 para 1 nas diferentes arquiteturas.\newline
+Os testes realizados foram focados em manter ambos os servidores com a mesma exata característica de carga e desempenho, isso sempre visando o objetivo final de fazer com que a maior parte dos dados coletados pudesse ser diretamente comparáveis, já que o mesmo número de núcleos, RAM, velocidade de disco e rede estavam disponíveis para ambas máquinas e o clock de ambas também foi limitado para exatos 1ghz para que as contas finais de comparação fossem mais simples.Sendo assim pode-se considerar os testes como sendo testes 1 para 1 nas diferentes arquiteturas.\newline
 
-Os dados coletados apontam que a arquitetura \myref{sig}{ARM} possui uma porcentagem de uso de cpu mais baixa que a da arquitetura \myref{sig}{AMD64}, o que indica uma otimização em relação a isso do ponto de vista dessa arquitetura.Essa diferença causou uma maior demora de processamento na arquitetura \myref{sig}{ARM}, isso levando em conta que a diferença é bem baixa se torna irrisória em relação às comparações de arquiteturas.Enquanto a arquitetura \myref{sig}{AMD64} apresentou um consumo maior de ram, sendo assim é possível indicar que os programas de banco de dados utilizados tiveram suas otimizações focadas em coisas diferentes.Os bancos de dados Mariadb e postgres apresentam diferenças visíveis entre si em relação a uso de RAM e CPU.\newline
+Os dados coletados apontam que a arquitetura \myref{sig}{ARM} possui uma porcentagem de uso de CPU mais baixa que a da arquitetura \myref{sig}{AMD64}, o que indica uma otimização em relação a isso do ponto de vista dessa arquitetura.Essa diferença causou uma maior demora de processamento na arquitetura \myref{sig}{ARM}, isso levando em conta que a diferença é bem baixa se torna irrisória em relação às comparações de arquiteturas.Enquanto a arquitetura \myref{sig}{AMD64} apresentou um consumo maior de RAM, sendo assim é possível indicar que os programas de banco de dados utilizados tiveram suas otimizações focadas em coisas diferentes.Os bancos de dados Mariadb e Postgres apresentam diferenças visíveis entre si em relação a uso de RAM e CPU.\newline
 
 Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benchmark resultou em dados estatisticamente iguais em ambas as máquinas utilizadas, resultando apenas numa diferença final apenas em relação ao consumo energético entre as máquinas que, levando em conta que ambas máquinas estão bem ultrapassadas em quesitos de eficiência energética para suas respectivas arquiteturas, torna a arquitetura \myref{sig}{ARM} a mais indicada para ambientes de servidor de bancos de dados visto que pode resultar numa visível diferença de custos para a empresa que hospedar essas máquinas.
 
@@ -1042,15 +1036,15 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 \nocite{m1vsi5}
 \nocite{armv9}
 \nocite{mariamongomysqlpostgre}
-\nocite{mysqlpostgressqlserver}
-\nocite{mysqlpostgres}
+\nocite{mysqlPostgressqlserver}
+\nocite{mysqlPostgres}
 \nocite{dockerdoc}
 \nocite{dockercomposedoc}
 \nocite{psutil}
 \nocite{portainer}
 \nocite{multiprocessing}
 \nocite{threading}
-\nocite{sqlite3}
+\nocite{SQLite3}
 \nocite{logging}
 \nocite{faker}
 \nocite{dockerpython}
@@ -1059,7 +1053,7 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 \nocite{G405}
 \nocite{E1}
 \nocite{h3}
-\nocite{postgrespython}
+\nocite{Postgrespython}
 \nocite{mysqlpython}
 \nocite{histARMEmbarcados}
 \nocite{ARMv6Manual}
@@ -1069,6 +1063,7 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 \nocite{risc}
 \nocite{armevolution}
 \nocite{riscvscisc}
+\nocite{codigo}
 \bibliography{abntex2-modelo-references}
 
 % ---
@@ -1083,107 +1078,107 @@ Em resumo,levando em conta as comparações feitas no ambiente utilizado, o benc
 \apendices
 \ch{apendices relacionados ao teste completo}
 \sec{imagens}
-o eixo x em todos os graficos é o tempo decorrido,no grafico de cima o eixo y é o uso de cpu,onde cada cor é um nucleo diferente,no grafico do meio o eixo y é o uso de ram em porcentagem e no grafico de baixo o eixo y corresponde ao uso de disco em megabytes,ou bytes em escala de 10e6,onde em azul é a leitura de disco e em laranja é a leitura de disco
+o eixo x em todos os graficos é o tempo decorrido,no grafico de cima o eixo y é o uso de CPU,onde cada cor é um nucleo diferente,no grafico do meio o eixo y é o uso de RAM em porcentagem e no grafico de baixo o eixo y corresponde ao uso de disco em megabytes,ou bytes em escala de 10e6,onde em azul é a leitura de disco e em laranja é a leitura de disco
 \subsec{todos tempos}
 \apendicesvg{todos fracionada/todos tempos.svg}{valores tempo benchmark de operações mistas fracionadas,o eixo x corresponde a quantidade de elementos totais inseridos em função de 10e6  e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
 \pagebreak
 
 \subsec{Resultados todos parte 0}
-\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}{Intervalo 0 do uso de hardware do container mariadb na arquitetura amd64}%
-\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}{Intervalo 0 do uso de hardware do container mariadb na arquitetura armhf}%
-\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0.svg}{Intervalo 0 do uso de hardware do container postgres na arquitetura amd64}%
-\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}{Intervalo 0 do uso de hardware do container postgres na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo0.svg}{Intervalo 0 do uso de hardware do container  MariaDB na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo0.svg}{Intervalo 0 do uso de hardware do container  MariaDB na arquitetura armhf}%
+\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo0.svg}{Intervalo 0 do uso de hardware do container Postgres na arquitetura amd64}%
+\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo0.svg}{Intervalo 0 do uso de hardware do container Postgres na arquitetura armhf}%
 \pagebreak
 
 %\subsec{Resultados todos parte 1}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}{Intervalo 1 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}{Intervalo 1 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1.svg}{Intervalo 1 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}{Intervalo 1 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo1.svg}{Intervalo 1 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo1.svg}{Intervalo 1 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo1.svg}{Intervalo 1 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo1.svg}{Intervalo 1 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 2}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}{Intervalo 2 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}{Intervalo 2 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2.svg}{Intervalo 2 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}{Intervalo 2 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo2.svg}{Intervalo 2 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo2.svg}{Intervalo 2 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo2.svg}{Intervalo 2 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo2.svg}{Intervalo 2 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 3}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}{Intervalo 3 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}{Intervalo 3 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3.svg}{Intervalo 3 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}{Intervalo 3 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo3.svg}{Intervalo 3 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo3.svg}{Intervalo 3 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo3.svg}{Intervalo 3 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo3.svg}{Intervalo 3 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 4}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}{Intervalo 4 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}{Intervalo 4 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4.svg}{Intervalo 4 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}{Intervalo 4 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo4.svg}{Intervalo 4 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo4.svg}{Intervalo 4 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo4.svg}{Intervalo 4 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo4.svg}{Intervalo 4 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 5}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}{Intervalo 5 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}{Intervalo 5 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5.svg}{Intervalo 5 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}{Intervalo 5 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo5.svg}{Intervalo 5 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo5.svg}{Intervalo 5 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo5.svg}{Intervalo 5 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo5.svg}{Intervalo 5 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 6}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}{Intervalo 6 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}{Intervalo 6 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6.svg}{Intervalo 6 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}{Intervalo 6 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo6.svg}{Intervalo 6 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo6.svg}{Intervalo 6 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo6.svg}{Intervalo 6 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo6.svg}{Intervalo 6 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 7}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}{Intervalo 7 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}{Intervalo 7 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7.svg}{Intervalo 7 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}{Intervalo 7 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo7.svg}{Intervalo 7 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo7.svg}{Intervalo 7 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo7.svg}{Intervalo 7 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo7.svg}{Intervalo 7 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 8}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}{Intervalo 8 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}{Intervalo 8 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8.svg}{Intervalo 8 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}{Intervalo 8 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo8.svg}{Intervalo 8 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo8.svg}{Intervalo 8 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo8.svg}{Intervalo 8 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo8.svg}{Intervalo 8 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 9}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}{Intervalo 9 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}{Intervalo 9 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9.svg}{Intervalo 9 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}{Intervalo 9 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo9.svg}{Intervalo 9 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo9.svg}{Intervalo 9 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo9.svg}{Intervalo 9 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo9.svg}{Intervalo 9 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 10}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}{Intervalo 10 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}{Intervalo 10 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10.svg}{Intervalo 10 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}{Intervalo 10 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo10.svg}{Intervalo 10 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo10.svg}{Intervalo 10 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo10.svg}{Intervalo 10 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo10.svg}{Intervalo 10 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 11}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}{Intervalo 11 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}{Intervalo 11 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11.svg}{Intervalo 11 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}{Intervalo 11 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo11.svg}{Intervalo 11 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo11.svg}{Intervalo 11 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo11.svg}{Intervalo 11 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo11.svg}{Intervalo 11 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 %\subsec{Resultados todos parte 12}
-%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}{Intervalo 12 do uso de hardware do container mariadb na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo12.svg}{Intervalo 12 do uso de hardware do container mariadb na arquitetura armhf}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo12.svg}{Intervalo 12 do uso de hardware do container postgres na arquitetura amd64}%
-%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}{Intervalo 12 do uso de hardware do container postgres na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_amd_limpo12.svg}{Intervalo 12 do uso de hardware do container  MariaDB na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_mariadb_armhf_limpo12.svg}{Intervalo 12 do uso de hardware do container  MariaDB na arquitetura armhf}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_amd_limpo12.svg}{Intervalo 12 do uso de hardware do container Postgres na arquitetura amd64}%
+%\apendicesvg{todos fracionada/uso do container container_postgres_armhf_limpo12.svg}{Intervalo 12 do uso de hardware do container Postgres na arquitetura armhf}%
 %\pagebreak
 
 \sec{Arquivos}
-\subsec{Logs todas operações mariadb amd}
+\subsec{Logs todas operações  MariaDB amd}
 \fbox{\begin{minipage}{\textwidth}
 
-uso de ram\newline
+uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 2, 2, 0, 15, 54]\newline
@@ -1195,12 +1190,12 @@ uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 40\newline
-o valor com mais ocorrencias de uso de ram é 35\newline
+a faixa com mais ocorrencias de uso de RAM é de 40\newline
+o valor com mais ocorrencias de uso de RAM é 35\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [4, 7, 2, 1, 0, 1, 5, 2482, 51165, 700744]\newline
 [0, 1288, 49, 11, 86, 3079, 290263, 2, 59534, 0]\newline
 [0, 246, 682, 9325, 0, 10315, 30, 9474, 334, 0]\newline
@@ -1212,14 +1207,14 @@ uso de cpu\newline
 [0, 856, 0, 463, 90, 7, 0, 2, 50, 0]\newline
 [943, 647, 153, 2, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 10\newline
-o valor com mais ocorrencias de uso de cpu é 09\newline
+a faixa com mais ocorrencias de uso de CPU é de 10\newline
+o valor com mais ocorrencias de uso de CPU é 09\newline
 \end{minipage}}
 \pagebreak
 
-\subsec{Logs todos operações mariadb armhf}
+\subsec{Logs todos operações  MariaDB armhf}
 \fbox{\begin{minipage}{\textwidth}
-uso de ram\newline
+uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 5, 16, 8]\newline
 [16, 21, 58, 123, 903, 7033, 21051, 106000, 133555, 188308]\newline
@@ -1231,12 +1226,12 @@ uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 30\newline
-o valor com mais ocorrencias de uso de ram é 30\newline
+a faixa com mais ocorrencias de uso de RAM é de 30\newline
+o valor com mais ocorrencias de uso de RAM é 30\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [21, 6, 7, 12, 15, 72, 129, 65494, 34474, 104121]\newline
 [5, 252, 96, 132, 2292, 7845, 385212, 10, 30660, 5]\newline
 [4, 1269, 188, 189609, 3, 22745, 145, 4737, 6845, 16]\newline
@@ -1248,14 +1243,14 @@ uso de cpu\newline
 [0, 227, 0, 433, 261, 77, 11, 2, 2, 0]\newline
 [102, 215, 145, 3, 1, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 20\newline
-o valor com mais ocorrencias de uso de cpu é 16\newline
+a faixa com mais ocorrencias de uso de CPU é de 20\newline
+o valor com mais ocorrencias de uso de CPU é 16\newline
 \end{minipage}}
 \pagebreak
 
-\subsec{Logs todos operações postgres amd}
+\subsec{Logs todos operações Postgres amd}
 \fbox{\begin{minipage}{\textwidth}
- uso de ram\newline
+ uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 3263, 30386, 26906, 1113, 12273, 13977, 6987]\newline
@@ -1267,12 +1262,12 @@ o valor com mais ocorrencias de uso de cpu é 16\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 60\newline
-o valor com mais ocorrencias de uso de ram é 62\newline
+a faixa com mais ocorrencias de uso de RAM é de 60\newline
+o valor com mais ocorrencias de uso de RAM é 62\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [6, 8, 1, 3, 1, 1, 31, 2597, 38173, 344957]\newline
 [0, 17264, 1282, 143, 901, 7344, 166851, 17, 177235, 1]\newline
 [0, 1847, 13955, 19279, 1, 94879, 784, 146286, 3954, 65]\newline
@@ -1284,14 +1279,14 @@ uso de cpu\newline
 [35, 45854, 1037, 33769, 14665, 6772, 2917, 4874, 12472, 378]\newline
 [45469, 37198, 23804, 5302, 2657, 991, 261, 52, 2, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 10\newline
-o valor com mais ocorrencias de uso de cpu é 09\newline
+a faixa com mais ocorrencias de uso de CPU é de 10\newline
+o valor com mais ocorrencias de uso de CPU é 09\newline
 \end{minipage}}
 \pagebreak
 
-\subsec{Logs todos operações postgres armhf}
+\subsec{Logs todos operações Postgres armhf}
 \fbox{\begin{minipage}{\textwidth}
- uso de ram\newline
+ uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 255, 7152, 16283]\newline
 [32831, 19896, 2336, 2662, 4372, 6181, 7587, 12039, 10345, 12301]\newline
@@ -1303,12 +1298,12 @@ o valor com mais ocorrencias de uso de cpu é 09\newline
 [72, 55, 24, 12, 3, 27, 121, 72, 70, 61]\newline
 [71, 14, 7, 2, 2, 3, 1, 83, 61, 112]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 60\newline
-o valor com mais ocorrencias de uso de ram é 61\newline
+a faixa com mais ocorrencias de uso de RAM é de 60\newline
+o valor com mais ocorrencias de uso de RAM é 61\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [6, 12, 10, 28, 68, 588, 3618, 118494, 330874, 352961]\newline
 [85, 10533, 4960, 2176, 16008, 92217, 623653, 285, 282050, 39]\newline
 [7, 12853, 7361, 220074, 4, 274752, 2669, 134714, 22195, 439]\newline
@@ -1320,27 +1315,27 @@ uso de cpu\newline
 [52, 33862, 653, 46121, 23382, 6358, 2337, 1375, 1741, 188]\newline
 [25154, 40896, 30033, 3361, 890, 339, 148, 70, 8, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 20\newline
-o valor com mais ocorrencias de uso de cpu é 16\newline
+a faixa com mais ocorrencias de uso de CPU é de 20\newline
+o valor com mais ocorrencias de uso de CPU é 16\newline
 \end{minipage}}
 \pagebreak
 
 \ch{Apendices relacionados ao teste insercao}
 \sec{Imagens}
-primeira linha dos resultados mostra o uso decpu,na segunda mostra o uso de ram e na terceira mostra o uso de disco
+primeira linha dos resultados mostra o uso deCPU,na segunda mostra o uso de RAM e na terceira mostra o uso de disco
 \subsec{Todos tempos}
 %%\apendicesvg{insercao fracionada/insercao tempos.svg}{valores tempo benchmark de operação de inserção,o eixo x corresponde a quantidade de elementos totais inseridos em função de 10e6  e o eixo y corresponde ao tempo gasto em segundos para cada 5000 elementos inseridos}
 \subsec{Resultados insercao parte 0}
-%%\apendicesvg{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}{Intervalo 1 do uso de hardware do container mariadb na arquitetura amd64}
-%%\apendicesvg{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}{Intervalo 1 do uso de hardware do container mariadb na arquitetura armhf}
-%%\apendicesvg{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}{Intervalo 1 do uso de hardware do container postgres na arquitetura amd64}
-%%\apendicesvg{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}{Intervalo 1 do de hardware do container postgres na arquitetura amd64}
+%%\apendicesvg{insercao fracionada/uso do container container_mariadb_amd_limpo0.svg}{Intervalo 1 do uso de hardware do container  MariaDB na arquitetura amd64}
+%%\apendicesvg{insercao fracionada/uso do container container_mariadb_armhf_limpo0.svg}{Intervalo 1 do uso de hardware do container  MariaDB na arquitetura armhf}
+%%\apendicesvg{insercao fracionada/uso do container container_postgres_amd_limpo0.svg}{Intervalo 1 do uso de hardware do container Postgres na arquitetura amd64}
+%%\apendicesvg{insercao fracionada/uso do container container_postgres_armhf_limpo0.svg}{Intervalo 1 do de hardware do container Postgres na arquitetura amd64}
 \pagebreak
 
 \sec{Arquivos}
-\subsec{Logs insercao mariadb amd}
+\subsec{Logs insercao  MariaDB amd}
 \fbox{\begin{minipage}{\textwidth}
-uso de ram\newline
+uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 2, 2, 0, 15, 54]\newline
@@ -1352,12 +1347,12 @@ uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 40\newline
-o valor com mais ocorrencias de uso de ram é 35\newline
+a faixa com mais ocorrencias de uso de RAM é de 40\newline
+o valor com mais ocorrencias de uso de RAM é 35\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [4, 7, 2, 1, 0, 1, 5, 2482, 51165, 700744]\newline
 [0, 1288, 49, 11, 86, 3079, 290263, 2, 59534, 0]\newline
 [0, 246, 682, 9325, 0, 10315, 30, 9474, 334, 0]\newline
@@ -1369,14 +1364,14 @@ uso de cpu\newline
 [0, 856, 0, 463, 90, 7, 0, 2, 50, 0]\newline
 [943, 647, 153, 2, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 10\newline
-o valor com mais ocorrencias de uso de cpu é 09\newline
+a faixa com mais ocorrencias de uso de CPU é de 10\newline
+o valor com mais ocorrencias de uso de CPU é 09\newline
 \end{minipage}}
 \pagebreak
 
-\subsec{Logs insercao mariadb armhf}
+\subsec{Logs insercao  MariaDB armhf}
 \fbox{\begin{minipage}{\textwidth}
-uso de ram\newline
+uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 5, 16, 8]\newline
 [16, 21, 58, 123, 903, 7033, 21051, 106000, 133555, 188308]\newline
@@ -1388,12 +1383,12 @@ uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 30\newline
-o valor com mais ocorrencias de uso de ram é 30\newline
+a faixa com mais ocorrencias de uso de RAM é de 30\newline
+o valor com mais ocorrencias de uso de RAM é 30\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [21, 6, 7, 12, 15, 72, 129, 65494, 34474, 104121]\newline
 [5, 252, 96, 132, 2292, 7845, 385212, 10, 30660, 5]\newline
 [4, 1269, 188, 189609, 3, 22745, 145, 4737, 6845, 16]\newline
@@ -1405,14 +1400,14 @@ uso de cpu\newline
 [0, 227, 0, 433, 261, 77, 11, 2, 2, 0]\newline
 [102, 215, 145, 3, 1, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 20\newline
-o valor com mais ocorrencias de uso de cpu é 16\newline
+a faixa com mais ocorrencias de uso de CPU é de 20\newline
+o valor com mais ocorrencias de uso de CPU é 16\newline
 \end{minipage}}
 \pagebreak
 
-\subsec{Logs insercao postgres amd}
+\subsec{Logs insercao Postgres amd}
 \fbox{\begin{minipage}{\textwidth}
-uso de ram\newline
+uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 3263, 30386, 26906, 1113, 12273, 13977, 6987]\newline
@@ -1424,12 +1419,12 @@ uso de ram\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 60\newline
-o valor com mais ocorrencias de uso de ram é 62\newline
+a faixa com mais ocorrencias de uso de RAM é de 60\newline
+o valor com mais ocorrencias de uso de RAM é 62\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [6, 8, 1, 3, 1, 1, 31, 2597, 38173, 344957]\newline
 [0, 17264, 1282, 143, 901, 7344, 166851, 17, 177235, 1]\newline
 [0, 1847, 13955, 19279, 1, 94879, 784, 146286, 3954, 65]\newline
@@ -1441,14 +1436,14 @@ uso de cpu\newline
 [35, 45854, 1037, 33769, 14665, 6772, 2917, 4874, 12472, 378]\newline
 [45469, 37198, 23804, 5302, 2657, 991, 261, 52, 2, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 10\newline
-o valor com mais ocorrencias de uso de cpu é 09\newline
+a faixa com mais ocorrencias de uso de CPU é de 10\newline
+o valor com mais ocorrencias de uso de CPU é 09\newline
 \end{minipage}}
 \pagebreak
 
-\subsec{Logs insercao postgres armhf}
+\subsec{Logs insercao Postgres armhf}
 \fbox{\begin{minipage}{\textwidth}
-uso de ram\newline
+uso de RAM\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 255, 7152, 16283]\newline
 [32831, 19896, 2336, 2662, 4372, 6181, 7587, 12039, 10345, 12301]\newline
@@ -1460,12 +1455,12 @@ uso de ram\newline
 [72, 55, 24, 12, 3, 27, 121, 72, 70, 61]\newline
 [71, 14, 7, 2, 2, 3, 1, 83, 61, 112]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de ram é de 60\newline
-o valor com mais ocorrencias de uso de ram é 61\newline
+a faixa com mais ocorrencias de uso de RAM é de 60\newline
+o valor com mais ocorrencias de uso de RAM é 61\newline
 \newline
 \newline
 \newline
-uso de cpu\newline
+uso de CPU\newline
 [6, 12, 10, 28, 68, 588, 3618, 118494, 330874, 352961]\newline
 [85, 10533, 4960, 2176, 16008, 92217, 623653, 285, 282050, 39]\newline
 [7, 12853, 7361, 220074, 4, 274752, 2669, 134714, 22195, 439]\newline
@@ -1477,8 +1472,8 @@ uso de cpu\newline
 [52, 33862, 653, 46121, 23382, 6358, 2337, 1375, 1741, 188]\newline
 [25154, 40896, 30033, 3361, 890, 339, 148, 70, 8, 0]\newline
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\newline
-a faixa com mais ocorrencias de uso de cpu é de 20\newline
-o valor com mais ocorrencias de uso de cpu é 16\newline
+a faixa com mais ocorrencias de uso de CPU é de 20\newline
+o valor com mais ocorrencias de uso de CPU é 16\newline
 \end{minipage}}
 \postextual
 
